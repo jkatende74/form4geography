@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCSE Geography - Transport & Communication Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // MathJax v3 configuration
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f9; 
+            color: #343a40; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+
+        #sidebar-wrapper {
+            min-height: 100vh;
+            width: 280px; 
+            background-color: #ffffff; 
+            border-right: 1px solid #dee2e6; 
+            transition: margin-left 0.25s ease-out;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1030; 
+            overflow-y: auto; 
+            padding-top: 10px; 
+        }
+
+        .sidebar-heading {
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            color: #0056b3; 
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #e9ecef; 
+        }
+        .sidebar-heading img {
+            width: 32px; 
+            height: 32px;
+            margin-right: 0.75rem;
+        }
+
+        #sidebar-nav .list-group-item {
+            border: none; 
+            padding: 0.8rem 1.25rem; 
+            font-size: 0.95rem;
+            color: #495057; 
+            background-color: transparent; 
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-left-color 0.2s ease-in-out;
+            border-left: 4px solid transparent; 
+        }
+
+        #sidebar-nav .list-group-item:hover,
+        #sidebar-nav .list-group-item:focus {
+            background-color: #eef2f7; 
+            color: #0056b3; 
+            text-decoration: none;
+            border-left-color: #007bff; 
+        }
+
+        #sidebar-nav .list-group-item.active {
+            background-color: #007bff; 
+            color: white;
+            font-weight: 500;
+            border-left-color: #0056b3; 
+        }
+
+        #sidebar-nav .category-heading {
+            font-size: 0.85rem; 
+            font-weight: bold;
+            color: #6c757d;
+            padding: 1rem 1.25rem 0.3rem; 
+            text-transform: uppercase;
+            margin-top: 0.75rem; 
+        }
+         #sidebar-nav .sub-item { 
+            padding-left: 2.5rem; 
+            font-size: 0.9rem;
+        }
+
+        #page-content-wrapper {
+            flex: 1;
+            padding-left: 280px; 
+            transition: padding-left 0.25s ease-out;
+            display: flex;
+            flex-direction: column;
+            min-width: 0; 
+            background-color: #f4f6f9; 
+        }
+
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: -280px; 
+        }
+
+        #wrapper.toggled #page-content-wrapper {
+            padding-left: 0; 
+        }
+
+        @media (max-width: 991.98px) { 
+            #sidebar-wrapper {
+                margin-left: -280px; 
+                position: fixed; 
+                height: 100%;
+                z-index: 1040; 
+            }
+            #wrapper.toggled #sidebar-wrapper { margin-left: 0; }
+            #page-content-wrapper { padding-left: 0; }
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+            background-color: #ffffff !important; 
+        }
+        .navbar .navbar-brand, .navbar .breadcrumb-item a, .navbar .breadcrumb-item.active {
+             color: #343a40 !important; 
+        }
+         .navbar .breadcrumb-item a:hover { color: #0056b3 !important; }
+
+        #menu-toggle {
+            border: 1px solid #007bff;
+            color: #007bff;
+        }
+        #menu-toggle:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            margin-bottom: 0; 
+        }
+        .breadcrumb-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .breadcrumb-item a:hover { text-decoration: underline; }
+        .breadcrumb-item.active { color: #6c757d; }
+
+        #content-area {
+            background-color: #ffffff; 
+            border-radius: 0.375rem; 
+            min-height: calc(100vh - 160px); 
+            box-shadow: 0 0 15px rgba(0,0,0,0.05); 
+        }
+
+        #content-area h1, #content-area h2, #content-area h3, #content-area h4, #content-area h5 {
+            color: #0056b3; 
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        #content-area h1 { font-size: 2rem; border-bottom: 2px solid #e9ecef; padding-bottom: 0.5rem;}
+        #content-area h2 { font-size: 1.75rem; }
+        #content-area h3 { font-size: 1.5rem; margin-top: 1.75rem; }
+        #content-area h4 { font-size: 1.25rem; margin-top: 1.5rem; }
+
+        #content-area p, #content-area ul, #content-area ol, #content-area table {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+        #content-area ul, #content-area ol { padding-left: 1.5rem; }
+        #content-area li { margin-bottom: 0.5rem; }
+        #content-area ul ul, #content-area ol ol { 
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+        }
+         #content-area .table {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        #content-area .table th {
+            background-color: #e9ecef; 
+            color: #343a40;
+            font-weight: 600;
+        }
+         #content-area .table td, #content-area .table th {
+            vertical-align: middle;
+        }
+
+        .diagram-placeholder {
+            border: 2px dashed #6c757d; 
+            background-color: #f8f9fa; 
+            padding: 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+            color: #6c757d;
+        }
+        .diagram-placeholder img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .revision-question-item {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .revision-question-header {
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #0056b3;
+        }
+        .revision-question-header:hover { background-color: #e9ecef; }
+        .revision-question-header .arrow-icon { transition: transform 0.2s ease-in-out; }
+        .revision-question-header[aria-expanded="true"] .arrow-icon { transform: rotate(180deg); }
+
+        .revision-answer {
+            padding: 1.25rem;
+            border-top: 1px solid #dee2e6;
+            background-color: #fff;
+        }
+        .revision-answer ul, .revision-answer ol { padding-left: 1.25rem; }
+
+        .MathJax_Display, mjx-container[jax="CHTML"][display="true"] {
+            display: block;
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+        }
+
+        #navigation-buttons button { min-width: 100px; }
+
+        footer {
+            font-size: 0.9rem;
+            background-color: #ffffff; 
+            border-top: 1px solid #e9ecef;
+        }
+
+        :focus-visible {
+          outline: 2px solid #007bff;
+          outline-offset: 2px;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+        }
+        .btn:focus-visible, .list-group-item:focus-visible {
+          outline: 2px solid #007bff !important; 
+          outline-offset: 2px !important;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <nav class="border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading bg-light p-3">
+                <img src="https://placehold.co/32x32/17a2b8/white?text=T" alt="Transport & Comm Guide Logo" class="me-2 rounded-circle"> Transport & Comm. Guide
+            </div>
+            <div class="list-group list-group-flush" id="sidebar-nav"></div>
+        </nav>
+
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top">
+                <div class="container-fluid">
+                    <button class="btn btn-outline-primary btn-sm" id="menu-toggle">☰ Menu</button>
+                    <nav aria-label="breadcrumb" class="ms-3 flex-grow-1">
+                        <ol class="breadcrumb mb-0" id="breadcrumb-trail"></ol>
+                    </nav>
+                </div>
+            </nav>
+
+            <main class="container-fluid p-4" id="main-content-scroll-area">
+                <div id="content-area" class="bg-white p-md-4 p-3 rounded shadow-sm">
+                    <h1 id="main-title-placeholder">Welcome to the Transport & Communication Guide</h1>
+                    <p>Please select a topic from the menu on the left to begin your learning journey.</p>
+                </div>
+                <div class="d-flex justify-content-between mt-4" id="navigation-buttons">
+                    <button class="btn btn-outline-secondary" id="prev-button" disabled>&laquo; Previous</button>
+                    <button class="btn btn-outline-primary" id="next-button" disabled>Next &raquo;</button>
+                </div>
+            </main>
+
+            <footer class="text-center text-muted p-3 mt-auto">
+                <p class="mb-0">&copy; <span id="currentYear"></span> KCSE Transport & Communication Guide</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // --- 1. GUIDE CONTENT DATA ---
+        const guideData = [
+            // Chapter 1: Introduction
+            {
+                id: "tc_ch1",
+                title: "1. Introduction to Transport & Communication",
+                breadcrumb: "Introduction",
+                category: "General Concepts",
+                isChapter: true, 
+                content: `
+                    <h1 id="tc_ch1">1. Introduction</h1>
+                    <p>Transport and communication are fundamental to the functioning and development of any society. They are the lifelines that connect people, facilitate trade, enable access to services, and drive economic growth. Understanding the various modes, their roles, challenges, and environmental impacts is crucial.</p>
+                    <h2 id="tc_ch1_s1">1.1 Definitions</h2>
+                    <p><strong>Transport</strong> refers to the movement of people, goods, and services from one location to another. It involves various means (modes) and infrastructure designed to overcome distance. Efficient transport systems are essential for economic activities, social interaction, and regional integration.</p>
+                    <p><strong>Communication</strong> is the process of imparting or exchanging information, ideas, or news. It involves sending and receiving messages through various channels or media. Efficient communication systems are vital for disseminating information, coordinating activities, fostering social cohesion, and supporting economic transactions.</p>
+                `
+            },
+            // Chapter 2: Modes of Transport
+            {
+                id: "tc_ch2",
+                title: "2. Modes of Transport",
+                breadcrumb: "Modes of Transport",
+                category: "Transport Systems",
+                isChapter: true,
+                content: `<h1 id="tc_ch2">2. Modes of Transport</h1><p>Modes of transport can be broadly categorized into traditional and modern methods.</p>`
+            },
+            {
+                id: "tc_ch2_s1",
+                title: "2.1 Traditional Modes",
+                breadcrumb: "Traditional",
+                category: "Transport Systems",
+                parentId: "tc_ch2",
+                content: `
+                    <h2 id="tc_ch2_s1">2.1 Traditional Modes of Transport</h2>
+                    <p>These methods rely on human or animal power and are often used in rural or less developed areas for short distances or difficult terrain.</p>
+                    <h4 id="tc_ch2_s1_1">2.1.1 Human Porterage</h4>
+                    <p>Involves individuals carrying goods on their heads, shoulders, or backs. It is the oldest form of transport. Advantages include access to remote terrain and no fuel requirement. Disadvantages include being slow, having limited carrying capacity, and being strenuous.</p>
+                    <p><strong>Relevance in Kenya:</strong> Still used in rural areas for carrying farm produce, water, or firewood over short distances and in urban areas for small-scale deliveries.</p>
+                    <h4 id="tc_ch2_s1_2">2.1.2 Animal Transport</h4>
+                    <p>Utilizes animals like donkeys, camels, oxen, and horses to carry goods or pull carts/ploughs.</p>
+                    <p><strong>Examples:</strong> Pack animals like donkeys (common in Kenya for water, produce) and camels (used in ASALs). Draught animals like oxen (for pulling ploughs and carts).</p>
+                    <p><strong>Advantages:</strong> Higher carrying capacity than human porterage, can traverse rough terrain. Animals can often feed locally.</p>
+                    <p><strong>Disadvantages:</strong> Relatively slow, limited range, animals require care, susceptible to diseases, potential environmental degradation.</p>
+                    <p><strong>Relevance in Kenya:</strong> Donkeys and camels are vital in many rural and ASAL areas. Oxen are used for farming.</p>
+                    <h4 id="tc_ch2_s1_3">2.1.3 Carts and Sledges</h4>
+                    <p>Non-motorized wheeled vehicles (carts) or flat-bottomed conveyances (sledges) pulled by animals or humans.</p>
+                    <p><strong>Examples:</strong> Ox-carts, donkey-carts, handcarts (mkokoteni in Kenya).</p>
+                    <p><strong>Advantages:</strong> Can carry heavier/bulkier loads than pack animals or human porters alone; relatively simple technology.</p>
+                    <p><strong>Disadvantages:</strong> Slow, limited by pulling force, dependent on path condition.</p>
+                    <p><strong>Relevance in Kenya:</strong> Donkey-carts and ox-carts common for agricultural produce in rural areas. Handcarts widely used in urban centers.</p>
+                `
+            },
+            {
+                id: "tc_ch2_s2",
+                title: "2.2 Modern Modes",
+                breadcrumb: "Modern",
+                category: "Transport Systems",
+                parentId: "tc_ch2",
+                content: `
+                    <h2 id="tc_ch2_s2">2.2 Modern Modes of Transport</h2>
+                    <p>These methods utilize advanced technology and infrastructure, enabling faster, more efficient, and larger-scale movement over longer distances.</p>
+                    <h4 id="tc_ch2_s2_1">2.2.1 Road Transport</h4>
+                    <p>Movement using vehicles on roads. Infrastructure includes roads (tarmacked, gravel, earth), bridges. Types include all-weather roads (tarmac, murram) and dry-weather roads.</p>
+                    <p><strong>Advantages:</strong> Flexibility and door-to-door service, relatively low capital outlay for vehicles, suitable for short to medium distances, feeder to other modes, wide network coverage, relatively cheap over short distances, accommodates a wide variety of vehicles.</p>
+                    <p><strong>Disadvantages:</strong> Traffic congestion, high maintenance costs, susceptible to weather, environmental pollution, accidents, limited carrying capacity per unit, prone to theft/robbery.</p>
+                    <p><strong>Relevance in Kenya:</strong> Most dominant mode for passengers and freight. Matatus and buses are key for public transport.</p>
+                    
+                    <h4 id="tc_ch2_s2_2">2.2.2 Railway Transport</h4>
+                    <p>Movement using trains on railway tracks. Infrastructure: lines, stations, locomotives, wagons.</p>
+                    <p><strong>Advantages:</strong> High carrying capacity (bulky/heavy goods over long distances), relatively low fuel consumption per ton-mile, safer than road, less affected by traffic, can be faster for long distances, low maintenance cost for operations, uses little land space.</p>
+                    <p><strong>Disadvantages:</strong> Some trains are slow, high initial capital investment, inflexibility (fixed routes, no door-to-door), high maintenance costs for tracks/rolling stock, vulnerable to vandalism, cannot use rails during construction.</p>
+                    <p><strong>Relevance in Kenya:</strong> Historically important (Kenya-Uganda Railway). Standard Gauge Railway (SGR) is a major modern investment. Commuter rail in Nairobi.</p>
+                    
+                    <h4 id="tc_ch2_s2_3">2.2.3 Water Transport</h4>
+                    <p>Movement over water bodies using vessels. Types: Inland waterways (rivers, lakes, canals) and Ocean/Sea transport.</p>
+                    <p><strong>Advantages:</strong> Highest carrying capacity (ideal for very large/bulky goods internationally), cheapest mode per ton-mile for long distances/bulk cargo, natural routes require less infrastructure construction (though ports are key), goods protected in containers/tankers.</p>
+                    <p><strong>Disadvantages:</strong> Slowest mode, limited accessibility (requires navigable waters/ports), susceptible to weather/natural hazards, risk of piracy/accidents, environmental concerns (oil spills), ports expensive to construct/maintain.</p>
+                    <p><strong>Relevance in Kenya:</strong> Port of Mombasa crucial for international trade. Lake Victoria supports local/regional transport. Limited river transport.</p>
+
+                    <h4 id="tc_ch2_s2_4">2.2.4 Air Transport</h4>
+                    <p>Movement by aircraft. Infrastructure: Airports, air traffic control.</p>
+                    <p><strong>Advantages:</strong> Fastest mode (ideal for long distances, time-sensitive cargo/passengers), can access remote areas, not constrained by ground barriers, efficient for perishables, free of traffic congestion.</p>
+                    <p><strong>Disadvantages:</strong> Most expensive mode, limited carrying capacity, high fuel consumption/environmental impact (GHG, noise), dependent on airports, susceptible to weather, high security requirements, requires highly trained personnel.</p>
+                    <p><strong>Relevance in Kenya:</strong> JKIA is a major regional hub. Moi International Airport (Mombasa) and others support travel, tourism, export of perishables. Kenya Airways (KQ) is the national carrier.</p>
+
+                    <h4 id="tc_ch2_s2_5">2.2.5 Pipeline Transport</h4>
+                    <p>Movement of liquids and gases through pipes. Infrastructure: Pipelines, pumping stations, storage.</p>
+                    <p><strong>Advantages:</strong> Continuous/uninterrupted flow, suitable for large volumes over long distances, relatively low operating costs, safe for hazardous materials, minimal environmental disturbance during operation, cheap, reliable, not affected by weather, reduces road congestion by tankers.</p>
+                    <p><strong>Disadvantages:</strong> High initial capital investment, inflexible (fixed routes, specific products), risk of leakages/environmental damage, vulnerable to sabotage/tapping, not for solid goods, selective (one product type at a time).</p>
+                    <p><strong>Relevance in Kenya:</strong> KPC operates pipelines for refined petroleum products from Mombasa inland. Crucial for fuel distribution.</p>
+                `
+            },
+            // ... (Continue for Chapter 3, 4, 5, 6, 7, 8, 9 - Revision Questions) ...
+            // Chapter 3: Role of Transport and Communication
+            {
+                id: "tc_ch3",
+                title: "3. Role in Economic Development",
+                breadcrumb: "Role in Econ. Dev.",
+                category: "Impact and Significance",
+                isChapter: true,
+                content: `<h1 id="tc_ch3">3. Role of Transport and Communication in Economic Development</h1><p>Transport and communication are indispensable for economic development, acting as catalysts and facilitators of growth.</p>`
+            },
+            { id: "tc_ch3_s1", title: "3.1 Role of Transport", breadcrumb: "Role of Transport", category: "Impact and Significance", parentId: "tc_ch3", content: `
+                <h2 id="tc_ch3_s1">3.1 Role of Transport in Economic Development</h2>
+                <ul>
+                    <li>Facilitates Trade: Connects producers to markets, enabling exchange and reducing costs.</li>
+                    <li>Movement of Materials & Goods: Essential for industrial processes.</li>
+                    <li>Access to Resources: Enables exploitation of natural resources.</li>
+                    <li>Labour Mobility: Allows workers to commute and migrate.</li>
+                    <li>Agricultural Development: Transport of inputs and produce.</li>
+                    <li>Industrial Growth: Ensures timely supply chains.</li>
+                    <li>Tourism Development: Movement of tourists.</li>
+                    <li>Regional Development & Integration: Connects regions and countries.</li>
+                    <li>Generation of Employment: Direct jobs in the transport sector.</li>
+                    <li>Increased National Income/GDP.</li>
+                    <li>Opening up Remote Areas.</li>
+                </ul>
+            `},
+            { id: "tc_ch3_s2", title: "3.2 Role of Communication", breadcrumb: "Role of Communication", category: "Impact and Significance", parentId: "tc_ch3", content: `
+                <h2 id="tc_ch3_s2">3.2 Role of Communication in Economic Development</h2>
+                <ul>
+                    <li>Facilitates Business Transactions: Quick exchange of info for trade, banking (mobile money, e-commerce).</li>
+                    <li>Market Information: Disseminates price, demand, supply info.</li>
+                    <li>Coordination of Economic Activities: Supply chains, logistics.</li>
+                    <li>Access to Information & Knowledge: Education, technical knowledge, innovation.</li>
+                    <li>Globalization & International Trade.</li>
+                    <li>Development of Service Industries (IT-enabled services).</li>
+                    <li>Improved Governance & Efficiency.</li>
+                    <li>Disaster Management & Emergency Response.</li>
+                    <li>Social Cohesion & Networking.</li>
+                    <li>Innovation & Entrepreneurship.</li>
+                </ul>
+            `},
+
+            // Chapter 4: Problems & Solutions
+            {
+                id: "tc_ch4",
+                title: "4. Problems & Solutions (Kenya & Africa)",
+                breadcrumb: "Problems & Solutions",
+                category: "Challenges & Interventions",
+                isChapter: true,
+                content: `<h1 id="tc_ch4">4. Problems Facing Transport and Communication in Kenya and Africa, and Their Solutions</h1>`
+            },
+            { id: "tc_ch4_s1", title: "4.1 Problems in Transport", breadcrumb: "Transport Problems", category: "Challenges & Interventions", parentId: "tc_ch4", content: `
+                <h2 id="tc_ch4_s1">4.1 Problems Facing Transport in Kenya and Africa</h2>
+                <ul>
+                    <li>Inadequate and poorly maintained infrastructure (roads, railways, ports).</li>
+                    <li>High cost of transport (poor roads, fuel prices, levies).</li>
+                    <li>Traffic congestion (urban areas).</li>
+                    <li>High rate of road accidents.</li>
+                    <li>Inadequate capital for investment and maintenance.</li>
+                    <li>Management and corruption issues.</li>
+                    <li>Difficult terrain for construction.</li>
+                    <li>Vandalism of infrastructure.</li>
+                    <li>Unhealthy competition between modes.</li>
+                    <li>Environmental concerns.</li>
+                    <li>Specific to railways: outdated tech, different gauges hindering links, low capacity.</li>
+                    <li>Specific to water: floating vegetation, seasonal water fluctuation, siltation, waterfalls.</li>
+                    <li>Specific to air: high costs, competition, limited capacity for bulk.</li>
+                </ul>
+            `},
+            { id: "tc_ch4_s2", title: "4.2 Solutions to Transport Problems", breadcrumb: "Transport Solutions", category: "Challenges & Interventions", parentId: "tc_ch4", content: `
+                <h2 id="tc_ch4_s2">4.2 Solutions to Transport Problems in Kenya and Africa</h2>
+                <ul>
+                    <li>Infrastructure development and rehabilitation (new roads, SGR, port/airport modernization).</li>
+                    <li>Improved maintenance culture.</li>
+                    <li>Traffic management and decongestion (bypasses, public transport promotion).</li>
+                    <li>Enhancing road safety (enforcement, education).</li>
+                    <li>Mobilizing financial resources (PPPs, levies).</li>
+                    <li>Good governance and anti-corruption measures.</li>
+                    <li>Use of appropriate technology in construction and management.</li>
+                    <li>Community involvement against vandalism.</li>
+                    <li>Integrated transport planning.</li>
+                    <li>Promoting Non-Motorized Transport (NMT).</li>
+                    <li>For inland water: dredging, dam construction, modern vessels.</li>
+                    <li>For railway: gauge standardization, joint ventures, training personnel.</li>
+                    <li>For air: airport expansion, budget flights, modern equipment.</li>
+                </ul>
+            `},
+            { id: "tc_ch4_s3", title: "4.3 Problems in Communication", breadcrumb: "Communication Problems", category: "Challenges & Interventions", parentId: "tc_ch4", content: `
+                <h2 id="tc_ch4_s3">4.3 Problems Facing Communication in Kenya and Africa</h2>
+                <ul>
+                    <li>Limited network coverage in remote areas.</li>
+                    <li>High cost of services and devices.</li>
+                    <li>Vandalism of infrastructure.</li>
+                    <li>Cybersecurity threats.</li>
+                    <li>Inadequate skilled ICT personnel.</li>
+                    <li>Power unreliability affecting services.</li>
+                    <li>Low digital literacy.</li>
+                    <li>Regulatory challenges.</li>
+                    <li>In Africa broadly: varied physical landscape, inefficient systems, language barriers, civil wars/terrorism, political interference.</li>
+                </ul>
+            `},
+            { id: "tc_ch4_s4", title: "4.4 Solutions to Communication Problems", breadcrumb: "Communication Solutions", category: "Challenges & Interventions", parentId: "tc_ch4", content: `
+                <h2 id="tc_ch4_s4">4.4 Solutions to Communication Problems in Kenya and Africa</h2>
+                <ul>
+                    <li>Expansion of network infrastructure (e.g., Universal Service Fund).</li>
+                    <li>Promoting affordability (tax reduction, competition).</li>
+                    <li>Enhancing infrastructure security.</li>
+                    <li>Strengthening cybersecurity measures.</li>
+                    <li>Human capital development (ICT training).</li>
+                    <li>Improving power reliability.</li>
+                    <li>Promoting digital literacy programs.</li>
+                    <li>Adaptive regulatory frameworks.</li>
+                    <li>In Africa broadly: liberalization of sector, trading blocs, wireless tech, satellites, adopting international languages, appropriate legislation, lowering tariffs.</li>
+                    <li>Developments in Kenya: Mobile phones, liberalization of airwaves/press, internet expansion, Ministry of ICT.</li>
+                </ul>
+            `},
+            // Chapter 5: Environmental Impact
+            {
+                id: "tc_ch5",
+                title: "5. Environmental Impact",
+                breadcrumb: "Environmental Impact",
+                category: "Impact and Significance",
+                isChapter: true,
+                content: `<h1 id="tc_ch5">5. Impact of Transport and Communication on the Environment</h1><p>These sectors have both positive and negative environmental impacts.</p>`
+            },
+            { id: "tc_ch5_s1", title: "5.1 Positive Impacts", breadcrumb: "Positive Impacts", category: "Impact and Significance", parentId: "tc_ch5", content: `
+                <h2 id="tc_ch5_s1">5.1 Positive Impacts</h2>
+                <ul>
+                    <li><strong>Facilitating Environmental Management:</strong> Communication disseminates conservation info, early warnings. Transport enables access for conservation.</li>
+                    <li><strong>Reduced Need for Physical Travel:</strong> Communication tech (video conferencing, remote work) can lower transport emissions.</li>
+                    <li><strong>Efficient Resource Management:</strong> Communication aids monitoring (GIS, remote sensing).</li>
+                </ul>
+            `},
+            { id: "tc_ch5_s2", title: "5.2 Negative Impacts", breadcrumb: "Negative Impacts", category: "Impact and Significance", parentId: "tc_ch5", content: `
+                <h2 id="tc_ch5_s2">5.2 Negative Impacts</h2>
+                <ul>
+                    <li><strong>Air Pollution:</strong> Vehicle emissions (CO, NOx, SO2, PM) cause smog, acid rain.</li>
+                    <li><strong>Greenhouse Gas Emissions & Climate Change:</strong> Transport is a major CO2 contributor.</li>
+                    <li><strong>Noise Pollution:</strong> Traffic, airports cause stress, disrupt wildlife.</li>
+                    <li><strong>Water Pollution:</strong> Oil spills, road runoff, waste from vessels.</li>
+                    <li><strong>Land Degradation & Habitat Loss:</strong> Construction clears land, causes erosion, fragments habitats. Quarrying degrades land.</li>
+                    <li><strong>Solid Waste Generation:</strong> Old vehicles, e-waste.</li>
+                    <li><strong>Visual Intrusion:</strong> Large infrastructure can be unsightly.</li>
+                    <li><strong>Introduction of Invasive Species:</strong> Via ships (ballast water), aircraft.</li>
+                    <li><strong>Resource Depletion:</strong> Manufacturing vehicles/devices consumes materials and energy.</li>
+                </ul>
+            `},
+            // Chapter 6: Case Studies
+            {
+                id: "tc_ch6",
+                title: "6. Case Studies",
+                breadcrumb: "Case Studies",
+                category: "Global and Regional Examples",
+                isChapter: true,
+                content: `<h1 id="tc_ch6">6. Case Studies</h1><p>Examining specific transport and communication systems.</p>`
+            },
+            { id: "tc_ch6_s1", title: "6.1 Great Lakes & St. Lawrence Seaway", breadcrumb: "St. Lawrence Seaway", category: "Global and Regional Examples", parentId: "tc_ch6", content: `
+                <h2 id="tc_ch6_s1">6.1 The Great Lakes and St. Lawrence Seaway</h2>
+                <p>A system of lakes, canals, and locks in North America (Canada/USA) allowing ocean vessels to travel from the Atlantic to the Great Lakes.</p>
+                <p><strong>Key Components:</strong> Great Lakes (Superior, Michigan, Huron, Erie, Ontario), St. Lawrence River, Welland Canal, Soo Locks.</p>
+                <p><strong>Significance:</strong> Crucial for bulk cargo (iron ore, coal, grains), connects inland regions to global markets, supported industrial growth around Great Lakes, facilitates agricultural exports, HEP generation.</p>
+                <p><strong>Challenges:</strong> Seasonal operation (winter ice), competition from rail/road, maintenance costs, environmental concerns (invasive species), aging infrastructure, water level fluctuations.</p>
+            `},
+            { id: "tc_ch6_s2", title: "6.2 Transport in Kenya", breadcrumb: "Transport in Kenya", category: "Global and Regional Examples", parentId: "tc_ch6", content: `
+                <h2 id="tc_ch6_s2">6.2 Transport in Kenya</h2>
+                <h4>Road Transport:</h4>
+                <p>Dominant mode. Network quality varies. Key highways: Nairobi-Mombasa (A109), Northern Corridor (A104), Thika Superhighway. Problems: poor maintenance, congestion, accidents. Developments: road construction/rehab, KeNHA/KURA/KeRRA, NTSA.</p>
+                <h4>Railway Transport:</h4>
+                <p>Historical MGR. Modern SGR (Mombasa-Nairobi-Naivasha) for freight/passengers. Aims to reduce road congestion, lower costs. Problems: MGR dilapidation, SGR debt/viability, last-mile connectivity.</p>
+            `},
+            { id: "tc_ch6_s3", title: "6.3 Air & Pipeline (Kenya)", breadcrumb: "Air & Pipeline (Kenya)", category: "Global and Regional Examples", parentId: "tc_ch6", content: `
+                <h2 id="tc_ch6_s3">6.3 Air and Pipeline Transport in Kenya</h2>
+                <h4>Air Transport:</h4>
+                <p>JKIA (Nairobi) is a regional hub. MIA (Mombasa), Kisumu, Eldoret support domestic/regional. Airstrips serve tourism. Crucial for tourism, perishables export. Problems: cost, competition, security. Developments: airport modernization.</p>
+                <h4>Pipeline Transport:</h4>
+                <p>KPC operates pipelines for refined petroleum from Mombasa inland (Nairobi, Nakuru, Eldoret, Kisumu). Efficient, cost-effective, safe for bulk liquids. Reduces road tankers. Problems: limited network, vandalism, aging sections, capacity constraints.</p>
+            `},
+            { id: "tc_ch6_s4", title: "6.4 Major Highways in Africa", breadcrumb: "African Highways", category: "Global and Regional Examples", parentId: "tc_ch6", content: `
+                <h2 id="tc_ch6_s4">6.4 Major Highways in Africa</h2>
+                <p>Trans-continental networks promoting intra-African trade and integration.</p>
+                <h4>Trans-African Highway Network (TAH):</h4>
+                <p>System of nine proposed highways linking capitals/economic centers. Examples: Cairo-Dakar, Tripoli-Cape Town, Lagos-Mombasa (Northern Corridor). Objectives: boost trade, integration, reduce costs. Challenges: missing links, poor conditions, border delays, funding.</p>
+                <h4>The Great North Road:</h4>
+                <p>Historical Cape-to-Cairo concept. Alignment largely covered by TAH 4. Kenya's A104 and A2 form parts of these corridors.</p>
+            `},
+             // Chapter 7: Types of Communication (Detailed)
+            {
+                id: "tc_ch7",
+                title: "7. Types of Communication (Detailed)",
+                breadcrumb: "Types of Communication",
+                category: "Communication Systems",
+                isChapter: true,
+                content: `<h1 id="tc_ch7">7. Types of Communication</h1><p>Communication can be categorized based on the methods and technologies used.</p>`
+            },
+            { id: "tc_ch7_s1", title: "7.1 Telecommunication", breadcrumb: "Telecommunication", category: "Communication Systems", parentId: "tc_ch7", content: `
+                <h2 id="tc_ch7_s1">7.1 Telecommunication</h2>
+                <p>Passing information between two or more persons over long distances.</p>
+                <p><strong>Examples:</strong></p>
+                <ul>
+                    <li>Telephone (landline)</li>
+                    <li>Cellular phone (mobile phone)</li>
+                    <li>Facsimile (Fax)</li>
+                    <li>Internet (Email, VoIP, Instant Messaging)</li>
+                    <li>Telex services (historical)</li>
+                    <li>Paging services (historical)</li>
+                    <li>Telegraphic services (historical)</li>
+                </ul>
+            `},
+            { id: "tc_ch7_s2", title: "7.2 Mass Communication", breadcrumb: "Mass Communication", category: "Communication Systems", parentId: "tc_ch7", content: `
+                <h2 id="tc_ch7_s2">7.2 Mass Communication</h2>
+                <p>Transmission of information to reach a very wide audience.</p>
+                <p><strong>Types/Media:</strong></p>
+                <ul>
+                    <li>Radio</li>
+                    <li>Television</li>
+                    <li>Internet (Websites, Social Media, Streaming)</li>
+                    <li>Newspapers/Magazines</li>
+                    <li>Films/Videos</li>
+                    <li>Billboards/Posters/Banners</li>
+                    <li>Flyers</li>
+                </ul>
+            `},
+            // Chapter 8: Revision Questions
+            {
+                id: "tc_ch8_rev", 
+                title: "8. Transport & Comm. Revision Questions",
+                breadcrumb: "Revision",
+                category: "Self-Assessment",
+                isChapter: true, 
+                content: `
+                    <h1 id="tc_ch8_rev">8. Revision Questions</h1>
+                    <p>Test your understanding of Transport and Communication with these questions.</p>
+                    <div id="transport-revision-questions-container">
+                        </div>
+                `
+            }
+        ];
+
+        const transportRevisionQuestionsData = [
+            // Sourced from transport_and_communication2.docx 
+            { q: "1. Define the term transport.", a: "Transport refers to the physical movement of goods and/or people from one place to another. It involves various means (modes) and infrastructure designed to overcome distance." },
+            { q: "2. What is the definition of communication, according to the sources?", a: "Communication is the transmission of ideas/information from one person to another. It is also defined as the process of imparting or exchanging information, ideas, or news, involving sending and receiving messages through various channels or media." },
+            { q: "3. Distinguish between transport and communication.", a: "Transport is the physical movement of people or goods from one location to another, involving overcoming distance. Communication, on the other hand, is the transmission or exchange of information, ideas, or messages between people or entities. The distinction lies in transport dealing with the movement of physical entities (people, goods), while communication deals with the movement of non-physical entities (information, ideas)." },
+            { q: "4. Identify the main modes of transport mentioned in the sources.", a: "The main modes of transport mentioned in the sources include land transport (human/animal, road, railway, pipeline), water transport, and air transport." },
+            { q: "5. List three types of communication mentioned in the sources.", a: "Oral/verbal communication, written communication, and audio-visual communication. Sign language, telecommunication, and mass communication are also listed." },
+            { q: "6. List three traditional modes of transport mentioned in the sources.", a: "Human Porterage, Animal Transport, and Carts and Sledges." },
+            { q: "7. Describe human porterage as a traditional mode of transport.", a: "Human porterage involves individuals carrying goods on their heads, shoulders, or backs. It is described as the oldest form of transport." },
+            { q: "8. State two advantages of human porterage.", a: "It can access very remote or difficult terrain where other modes cannot operate (e.g., steep slopes, narrow paths, dense forests) and it requires no fuel or complex infrastructure. It also provides employment in some contexts." },
+            { q: "9. Outline three disadvantages of human porterage.", a: "It is very slow, has a limited carrying capacity (small loads), and is strenuous and physically demanding. It is also unsuitable for long distances or bulky goods and can be unreliable due to human fatigue or illness." },
+            { q: "10. Give an example of how human porterage is still relevant in Kenya.", a: "Human porterage is still relevant in Kenya as it is used in rural areas for carrying farm produce, water, or firewood over short distances, and in some urban areas for small-scale deliveries." },
+            { q: "11. Which animals are commonly used for transport in Kenya, according to the sources?", a: "Animals commonly used for transport in Kenya, according to the sources, include donkeys and camels. Oxen and horses are also mentioned." },
+            { q: "12. Distinguish between pack animals and draught animals, providing examples from the sources.", a: "Pack animals carry goods on their backs, with examples from the sources including donkeys, camels, mules, horses, and llamas. Draught animals are used for pulling ploughs and carts, with examples including oxen and horses." },
+            { q: "13. State two advantages of animal transport.", a: "They have a higher carrying capacity than human porterage and can traverse rough terrain better than some vehicles. Animals can often feed on locally available vegetation, reducing running costs, and animal transport provides a source of livelihood." },
+            { q: "14. Outline three disadvantages of animal transport.", a: "They are relatively slow compared to modern transport, have a limited range, and require care, food, and water. They are also susceptible to diseases and can contribute to environmental degradation (e.g., overgrazing). Animal welfare concerns also exist." },
+            { q: "15. Mention two types of carts or sledges described in the sources.", a: "Wheeled vehicles (carts) and flat-bottomed conveyances (sledges) pulled by animals or humans. Specific examples mentioned are ox-carts, donkey-carts, and handcarts ('mkokoteni' in Kenya)." },
+            { q: "16. What are 'mkokoteni' and where are they commonly used in Kenya?", a: "'Mkokoteni' are handcarts and they are widely used in urban centers in Kenya for short-distance haulage of goods by vendors and small traders." },
+            { q: "17. Give one advantage of using carts for transport.", a: "They can carry heavier and bulkier loads than pack animals or human porters alone. They also represent relatively simple technology and have low construction and maintenance costs for basic types." },
+            { q: "18. What limits the efficiency of carts over very rough terrain?", a: "The efficiency of carts over very rough terrain is limited because they are dependent on the condition of paths or tracks and are less efficient compared to pack animals." },
+            { q: "19. Define road transport.", a: "Road transport is the movement of goods and/or people on roads using means like vehicles, bicycles, or motorcycles. It is the movement of people and goods using vehicles on roads (e.g., cars, buses, trucks, motorcycles, bicycles)." },
+            { q: "20. Name three types of roads mentioned in the sources.", a: "All weather roads (tarmac and murram), dry weather roads, and motorable trucks." },
+            { q: "21. Distinguish between an all-weather road and a dry-weather road.", a: "An all-weather road can be used all year round, including tarmac and murram roads. A dry-weather road is used or reliable during dry seasons." },
+            { q: "22. What is a by-pass, according to the sources?", a: "A by-pass, according to the sources, is a road or highway that avoids passing through a town or residential area in order to avoid traffic jams." },
+            { q: "23. State four advantages of road transport.", a: "Its flexibility and door-to-door service, it is relatively fast over short distances, it is widespread and opens up remote areas, and it accommodates a wide variety of vehicles." },
+            { q: "24. Outline four disadvantages of road transport.", a: "Roads are expensive to maintain, it is expensive to transport bulky goods over long distances, it suffers from traffic jams and congestion, and it is prone to accidents." },
+            { q: "25. Why is road transport described as the most dominant mode in Kenya?", a: "Road transport is described as the most dominant mode in Kenya for both passengers and freight due to its extensive network coverage." },
+            { q: "26. Name two international highways that link Kenya to other countries in Africa.", a: "The Great North Road (connecting Capetown and Cairo) and the Trans-African highway (connecting Port of Mombasa and Dakar)." },
+            { q: "27. State three benefits of Trans Africa highway to the economies of Africa.", a: "It has encouraged trade/agriculture by providing cheap means of transport, it allows quick movement of goods/services/people, and it has facilitated growth of industries by encouraging cheap/easy movement of raw materials/finished products." },
+            { q: "28. List four causes of road accidents in Kenya mentioned in the sources.", a: "Careless/reckless driving (e.g., under the influence of alcohol), overloading of vehicles, driving unroadworthy vehicles with defective braking systems, and failure to enforce traffic rules." },
+            { q: "29. Describe three conditions of roads in Kenya that may lead to accidents.", a: "Some roads having potholes/uneven surfaces, some roads being steep which may cause vehicles to overturn, and some roads having sharp bends which may make drivers lose control." },
+            { q: "30. Give two reasons why road transport is more developed than railway transport in Africa.", a: "Roads are cheaper to construct/maintain than railways, and roads are more flexible/provide door-to-door services unlike railways." },
+            { q: "31. Explain three measures that the government of Kenya has put in place to improve road transport.", a: "Construction of dual carriage/highways, construction of by-passes/sub-ways/flyovers/tunnels/underpasses to reduce congestion, and rehabilitation/repair and maintenance of major roads." },
+            { q: "32. State three benefits that would result from improving the conditions of roads in rural areas in Kenya.", a: "It would encourage setting up of industries/growth of tourism, it would encourage the setting up/improvement of social amenities, and it would attract investors/encourage diverse investments/improve trade." },
+            { q: "33. Identify two factors that hinder the development of road transport in Kenya.", a: "Limited advanced technology causing substandard works and inadequate capital for construction/maintenance." },
+            { q: "34. Define railway transport.", a: "Railway transport is the movement of goods and/or people on rails using trains." },
+            { q: "35. State three advantages of railway transport.", a: "It is convenient for transporting a variety of goods, it is used to carry bulky/heavy goods, and it is more efficient/reliable due to fixed time schedule/no traffic jams." },
+            { q: "36. Outline three disadvantages of railway transport.", a: "Some trains are slow, it is very expensive to construct railway lines in areas of hilly terrain, and it is expensive to buy and maintain trains." },
+            { q: "37. Name the railway line that connects Zambia and Tanzania.", a: "The Tazara Railway." },
+            { q: "38. Describe the route of the Kenya-Uganda Railway mentioned in the sources.", a: "The Kenya-Uganda Railway runs from Mombasa to Kisumu with an extension from Nakuru through Eldoret to Malaba then through Tororo to Kampala." },
+            { q: "39. Give three factors that hinder the development of railway links among African countries.", a: "African countries having railways of different gauges, administration by different colonial governments who constructed lines only within their jurisdiction, and different political ideologies/political instability among African countries." },
+            { q: "40. Explain three problems facing railway transport in Africa.", a: "Stiff competition from faster/flexible means of transport, inadequate capital making it difficult to extend/maintain existing railways, and vandalism/uprooting of railway lines causing losses/delays." },
+            { q: "41. State three measures that African countries could take to solve the problems associated with railway transport.", a: "Standardization of the railway gauge, establishing peace missions/improving relations to reduce vandalism, and joint venture in railway construction." },
+            { q: "42. State three benefits of the Standard Gauge Railway (SGR) construction in Kenya.", a: "Providing efficient, high-capacity freight transport from the Port of Mombasa to the interior, reducing road congestion and damage, and lowering transport costs." },
+            { q: "43. Define pipeline transport.", a: "Pipeline transport is the movement of fluids/gas products like water/gas/oil/petrol/diesel through pipes from one place to another. It is the movement of liquids and gases through pipes." },
+            { q: "44. State three advantages of pipeline transport.", a: "It is a cheap means of transport as it requires little maintenance, it is a safe means of transporting liquids, and it does not suffer from traffic congestions/delays." },
+            { q: "45. Outline three disadvantages of pipeline transport.", a: "It is selective (only one type of product transported at a time), it may cause pollution in case of leakages, and it is prone to sabotage in case of war." },
+            { q: "46. Give three reasons why the government of Kenya is expanding pipeline transport.", a: "To reduce congestion on roads, to reduce damage on roads by tankers, and to reduce congestion of oil terminus." },
+            { q: "47. Define water transport.", a: "Water transport involves the movement of goods and/or people over waterways/waterbodies like rivers/lakes/oceans/seas." },
+            { q: "48. Identify two types of water transport.", a: "Inland water ways (e.g., rivers, lakes, canals) and Ocean/Sea/Marine waterways." },
+            { q: "49. Name two navigable rivers in Africa mentioned in the sources.", a: "River Nile and River Congo. (Also: River Zambezi, River Tana, River Niger)." },
+            { q: "50. Name two lakes which are inland waterways in Africa.", a: "Lake Victoria and Lake Tanganyika. (Also: Lake Malawi, Lake Albert, and man-made lakes like Kariba, Nasser, Volta, Kainji)." },
+            { q: "51. Explain three reasons why most rivers in Africa are not fully navigable.", a: "The presence of floating vegetation which blocks channels, the seasonal fluctuation of the water regime, and the siltation of the river courses." },
+            { q: "52. State three measures taken to improve inland water transport in Africa.", a: "Dredging waterways regularly, constructing dams to control flooding, and constructing canals where waterfalls/rapids/rock outcrops exist." },
+            { q: "53. What is a canal?", a: "A canal is a water channel that is cut through land for boats/ships to travel along. Some canals join large waterbodies like seas/oceans." },
+            { q: "54. Name two examples of canals mentioned in the sources.", a: "The Suez Canal and the Panama Canal. (Also: Dortmund-Ems Canal, Soo Canals)." },
+            { q: "55. Name two ports on Lake Victoria located in Kenya.", a: "Mbita point, Homa bay, Kendu bay, Kisumu, Asembo." },
+            { q: "56. State four advantages of water transport.", a: "It does not require much capital to establish, it is a cheap means of transporting bulky goods over long distances, goods are transported in containers/tankers and are protected, and it is not affected by congestion as waterways are large." },
+            { q: "57. Outline four disadvantages of water transport.", a: "It is very slow hence unsuitable for perishable goods, ports and harbours are expensive to construct and maintain, great loses are incurred during accidents, and sea vessels pollute water." },
+            { q: "58. Define containerization.", a: "Containerization is the packing of goods in standardized containers designed for use in transporting cargo." },
+            { q: "59. Name two container depots in Kenya mentioned in the sources.", a: "Mombasa, Nairobi, Eldoret, Kisumu." },
+            { q: "60. Define air transport.", a: "Air transport involves the movement of people and goods in air by aeroplanes/flights/helicopters. It is the movement of people and high-value, low-bulk, perishable goods by aircraft." },
+            { q: "61. Name three international airports in Kenya.", a: "Jomo Kenyatta International Airport, Moi International Airport, and Eldoret International Airport. (Also: Kisumu, Wajir, Isiolo, Malindi)." },
+            { q: "62. State three advantages of air transport.", a: "It is faster/quicker, it is more efficient in transporting perishable goods, and it is free of traffic congestion/less traffic congestion." },
+            { q: "63. Outline three disadvantages of air transport.", a: "It is expensive in terms of fare, maintenance, and establishment, it requires highly trained personnel which is expensive/not easily available, and there is a high risk of accidents, leading to great losses." },
+            { q: "64. Explain five roles of transport in the economic development of Africa.", a: "Facilitates Trade, enables Movement of Raw Materials and Finished Goods, provides Access to Resources, allows Labour Mobility, and supports Agricultural Development." },
+            { q: "65. Define communication.", a: "Communication is the transmission of ideas/information from one person to another. It is also the process of imparting or exchanging information, ideas, or news, involving sending and receiving messages through various channels or media." },
+            { q: "66. What is telecommunication?", a: "Telecommunication is the process of passing information between two or more persons over long distances." },
+            { q: "67. List three examples of telecommunication services.", a: "Telephone, cellular phone, and facsimile. (Also: Internet, telex, paging, telegraphic)." },
+            { q: "68. What is mass communication?", a: "Mass communication is the transmission of information used to reach a very wide audience." },
+            { q: "69. Identify three types of mass communication.", a: "Radio, television, and internet. (Also: Newspapers/magazines, films/videos, billboards/posters/banners, flyers)." },
+            { q: "70. Explain four roles of communication in the economic development of Africa.", a: "Enhances trade, employs many people, promotes tourism, and allows governments to disseminate information for economic responses." },
+            { q: "71. Give three problems facing communication in Africa.", a: "Varied physical landscape hindering construction, vandalism of equipment, and inadequate capital to install equipment." },
+            { q: "72. Explain three efforts being made to solve the problems facing communication in Africa.", a: "Liberalization of the communication sector, establishment of trading blocs creating favourable conditions, and installing wireless telephones." },
+            { q: "73. State three developments that have taken place in Kenya to improve communication of information.", a: "Introduction of mobile phones, liberalization of air waves, and expansion of internet/e-mail services." },
+            { q: "74. State four causes of the decline in the use of letter writing as a means of communication in Kenya.", a: "The high cost of postage, competition from faster means of communication like phones, the delay in the delivery of letters, and rampant loss of letters." },
+            { q: "75. Explain three problems facing telephone as a means of communication in Kenya.", a: "Development of more efficient means (e.g., email) leading to reduced use, high cost of installation and maintenance, and vandalism of telephone equipment." },
+            { q: "76. Give four ways in which the use of mobile phones has contributed to the economy of Kenya.", a: "Providing security on money transfers/savings, easing money transfers through M-Pesa/online banking, providing revenue for the government through taxation, and offering job opportunities." },
+            { q: "77. Name the five Great Lakes that form part of the St. Lawrence Seaway.", a: "Superior, Ontario, Michigan, Huron, and Erie." },
+            { q: "78. What were the main objectives of the St. Lawrence Seaway project?", a: "To construct canals by-passing sections with rapids and waterfalls, establish locks to regulate flow and movement of vessels, construct dams for HEP and river flow regulation, deepen the river channel and regulate lake level differences, and remove obstacles hindering navigation." },
+            { q: "79. Identify three shortcomings of the St. Lawrence Seaway before its development.", a: "Presence of rock shoals/rapids/waterfalls/small islands, shallow and narrow sections, and blocked navigation during winter due to freezing." },
+            { q: "80. Explain four benefits of the Great Lakes and St. Lawrence Seaway to the economies of the USA and Canada.", a: "Dams provide HEP, it provides cheap/easy navigation for imports/exports encouraging trade/agriculture, it has created employment opportunities, and it has led to the growth of ports/towns along its course." },
+            { q: "81. Give three challenges facing the Great Lakes and St. Lawrence Seaway.", a: "Seasonal operation (closed during winter due to ice), competition from other modes (rail and road), and maintenance costs (requires ongoing dredging and maintenance)." },
+            { q: "82. Name two international airports in Kenya apart from JKIA.", a: "Moi International Airport (Mombasa), Eldoret International Airport. (Also: Kisumu, Wajir, Isiolo, Malindi)." },
+            { q: "83. Why is the Port of Mombasa considered crucial for Kenya's international trade?", a: "It serves as the main gateway for imports and exports, not only for Kenya but also for several landlocked neighboring countries." },
+            { q: "84. What is the primary role of the Kenya Pipeline Company (KPC)?", a: "KPC operates pipelines for transporting refined petroleum products from Mombasa inland to various parts of Kenya, ensuring fuel distribution." },
+            { q: "85. What is the main objective of the Trans-African Highway Network (TAH)?", a: "To boost intra-African trade, promote economic integration, reduce transport costs, and improve access for landlocked countries by linking capitals and major economic centers." },
+            { q: "86. Explain one positive environmental impact of communication technologies.", a: "Communication technologies like video conferencing and remote working can reduce the need for physical travel, thereby lowering transport-related emissions and air pollution." },
+            { q: "87. List two specific air pollutants emitted by vehicles.", a: "Carbon monoxide (CO), Nitrogen oxides (NOx), Sulphur dioxide (SO2), Particulate matter." },
+            { q: "88. How does the construction of transport infrastructure like roads and railways lead to habitat fragmentation?", a: "It divides large, continuous habitats into smaller, isolated patches, which can restrict the movement of wildlife, reduce genetic diversity, and make populations more vulnerable." },
+            { q: "89. What is a 'dry port' or 'inland container depot' (ICD)?", a: "A dry port or ICD is an inland intermodal terminal directly connected by road or rail to a seaport, operating as a center for the transshipment of sea cargo to inland destinations. Examples in Kenya include Naivasha and Embakasi (Nairobi)." },
+            { q: "90. Why is 'last-mile connectivity' a challenge for infrastructure projects like the SGR in Kenya?", a: "Last-mile connectivity refers to the final leg of a transport network that connects a major transport hub (like an SGR station or ICD) to the final destinations of goods or passengers. If this link is inefficient or underdeveloped, it can undermine the benefits of the main infrastructure." },
+            { q: "91. State two non-motorized forms of transport.", a: "Walking (human porterage), Cycling, Animal-drawn carts." },
+            { q: "92. How can the Universal Service Fund (USF) help improve communication in Kenya?", a: "The USF is typically used to subsidize the expansion of communication network infrastructure (mobile, internet) to unserved or underserved areas, usually rural and remote regions." },
+            { q: "93. What is one major advantage of the Standard Gauge Railway (SGR) over the old Meter Gauge Railway (MGR) in Kenya?", a: "The SGR allows for higher speeds and has a greater carrying capacity for both freight and passengers compared to the older, narrower MGR." },
+            { q: "94. Describe one problem specifically associated with pipeline transport.", a: "Risk of leakages causing environmental pollution or product loss, or vulnerability to sabotage and illegal tapping." },
+            { q: "95. How does improving digital literacy contribute to solving communication problems?", a: "Improving digital literacy equips people with the necessary skills to effectively use digital communication technologies, thereby increasing access to information, services, and economic opportunities." }
+        ];
+
+        // --- 2. DOM Elements ---
+        const sidebarNavEl = document.getElementById('sidebar-nav');
+        const contentAreaEl = document.getElementById('content-area');
+        const breadcrumbTrailEl = document.getElementById('breadcrumb-trail');
+        const breadcrumbDesktopEl = document.getElementById('breadcrumb-desktop'); 
+        const prevButtonEl = document.getElementById('prev-button');
+        const nextButtonEl = document.getElementById('next-button');
+        const menuToggleEl = document.getElementById('menu-toggle');
+        const wrapperEl = document.getElementById('wrapper');
+        const mainContentScrollAreaEl = document.getElementById('main-content-scroll-area');
+
+        // --- 3. State Variables ---
+        let currentGuideDataIndex = -1; 
+
+        // --- 4. Core Functions ---
+        function populateSidebar() {
+            if (!sidebarNavEl) {
+                console.error("Sidebar nav element (#sidebar-nav) not found!");
+                return;
+            }
+            sidebarNavEl.innerHTML = '';
+            let currentCategory = "";
+
+            guideData.forEach((item, index) => {
+                if (item.category && item.category !== currentCategory) {
+                    currentCategory = item.category;
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'category-heading';
+                    categoryDiv.textContent = currentCategory;
+                    sidebarNavEl.appendChild(categoryDiv);
+                }
+
+                const link = document.createElement('a');
+                link.href = `#${item.id}`;
+                link.className = 'list-group-item list-group-item-action list-group-item-light p-3';
+                if (!item.isChapter && item.category) { 
+                    link.classList.add('sub-item');
+                } else if (item.isChapter) {
+                    link.classList.add('fw-bold'); 
+                }
+                link.textContent = item.title;
+                link.setAttribute('role', 'button');
+                link.setAttribute('tabindex', '0');
+                link.dataset.index = index; 
+
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContentByIndex(index, 'directClick');
+                    if (window.innerWidth < 992 && wrapperEl.classList.contains('toggled')) {
+                        wrapperEl.classList.remove('toggled');
+                    }
+                });
+                link.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        loadContentByIndex(index, 'directClick');
+                         if (window.innerWidth < 992 && wrapperEl.classList.contains('toggled')) {
+                            wrapperEl.classList.remove('toggled');
+                        }
+                    }
+                });
+                sidebarNavEl.appendChild(link);
+            });
+        }
+        
+        function loadContentByIndex(index, navigationSource = 'directClick') {
+            if (index < 0 || index >= guideData.length) {
+                console.warn("Invalid content index:", index, "Attempting to load default.");
+                if (guideData.length > 0) index = 0; 
+                else {
+                    if(contentAreaEl) contentAreaEl.innerHTML = "<p>No content available to display.</p>";
+                    return;
+                }
+            }
+
+            currentGuideDataIndex = index;
+            const sectionData = guideData[index]; 
+
+            if (!sectionData || !contentAreaEl) {
+                console.error("Section data or content area element missing for index:", index);
+                if(contentAreaEl) contentAreaEl.innerHTML = "<p>Error loading content.</p>";
+                return;
+            }
+            
+            const placeholderTitle = document.getElementById('main-title-placeholder');
+            if(placeholderTitle && contentAreaEl.contains(placeholderTitle)) {
+                contentAreaEl.innerHTML = ''; 
+            }
+            contentAreaEl.innerHTML = sectionData.content; 
+
+            updateActiveSidebarLink();
+            updateBreadcrumbsUI(sectionData.category, sectionData.breadcrumb);
+            updateNavigationButtons();
+            sessionStorage.setItem('currentTransportCommSectionIndex', currentGuideDataIndex); 
+
+            if (sectionData.id === "tc_ch8_rev") { 
+                renderRevisionQuestions();
+            }
+
+            if (navigationSource !== 'scroll') {
+                if(mainContentScrollAreaEl) mainContentScrollAreaEl.scrollTop = 0; 
+            }
+
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                MathJax.typesetPromise([contentAreaEl]).catch(err => console.error('MathJax typesetting error:', err));
+            }
+        }
+
+        function updateActiveSidebarLink() {
+            if (!sidebarNavEl) return;
+            const links = sidebarNavEl.querySelectorAll('.list-group-item');
+            links.forEach(link => link.classList.remove('active'));
+
+            if (currentGuideDataIndex === -1) return;
+            const activeEntry = guideData[currentGuideDataIndex];
+            if (!activeEntry) return;
+
+            const currentLink = sidebarNavEl.querySelector(`[data-index="${currentGuideDataIndex}"]`);
+            if (currentLink) currentLink.classList.add('active');
+
+            if (activeEntry.parentId) { 
+                const parentChapterEntry = guideData.find(item => item.id === activeEntry.parentId && item.isChapter);
+                if (parentChapterEntry) {
+                    const parentIndex = guideData.indexOf(parentChapterEntry);
+                    const parentChapterLink = sidebarNavEl.querySelector(`[data-index="${parentIndex}"]`);
+                    if (parentChapterLink) parentChapterLink.classList.add('active');
+                }
+            }
+        }
+
+        function updateBreadcrumbsUI(category, breadcrumbText) {
+            const trails = [breadcrumbTrailEl, breadcrumbDesktopEl];
+            trails.forEach(trail => {
+                if (!trail) return;
+                trail.innerHTML = ''; 
+                const homeLi = document.createElement('li');
+                homeLi.classList.add('breadcrumb-item');
+                const homeLink = document.createElement('a');
+                homeLink.href = '#';
+                homeLink.textContent = 'Home';
+                 if (trail === breadcrumbDesktopEl) homeLink.classList.add('text-dark'); 
+                homeLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContentByIndex(0, 'directClick'); 
+                });
+                homeLi.appendChild(homeLink);
+                trail.appendChild(homeLi);
+
+                const currentSectionData = guideData[currentGuideDataIndex];
+                if (!currentSectionData) return;
+
+                const parentEntry = currentSectionData.parentId ? guideData.find(item => item.id === currentSectionData.parentId) : null;
+                
+                if (parentEntry) { 
+                    const parentChapterLi = document.createElement('li');
+                    parentChapterLi.classList.add('breadcrumb-item');
+                    const parentChapterLink = document.createElement('a');
+                    parentChapterLink.href = `#${parentEntry.id}`;
+                    parentChapterLink.textContent = parentEntry.title.replace(/^[0-9]+\.\s*/, ''); 
+                    if (trail === breadcrumbDesktopEl) parentChapterLink.classList.add('text-dark');
+                    parentChapterLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        loadContentByIndex(guideData.indexOf(parentEntry), 'directClick');
+                    });
+                    parentChapterLi.appendChild(parentChapterLink);
+                    trail.appendChild(parentChapterLi);
+                }
+                
+                if (breadcrumbText) {
+                    const activeLi = document.createElement('li');
+                    activeLi.classList.add('breadcrumb-item', 'active');
+                    activeLi.setAttribute('aria-current', 'page');
+                    activeLi.textContent = breadcrumbText; 
+                     if (trail === breadcrumbDesktopEl) activeLi.classList.add('text-muted'); 
+                    trail.appendChild(activeLi);
+                }
+            });
+        }
+        
+        function updateNavigationButtons() {
+            if (prevButtonEl) prevButtonEl.disabled = currentGuideDataIndex <= 0;
+            if (nextButtonEl) nextButtonEl.disabled = currentGuideDataIndex >= guideData.length - 1;
+        }
+
+        function renderRevisionQuestions() {
+            const container = document.getElementById('transport-revision-questions-container'); 
+            if (!container) {
+                console.warn("Revision questions container 'transport-revision-questions-container' not found.");
+                return;
+            }
+            container.innerHTML = ''; 
+            const accordion = document.createElement('div');
+            accordion.className = 'accordion';
+            accordion.id = 'transportRevisionAccordion'; 
+
+            transportRevisionQuestionsData.forEach((item, index) => { 
+                const questionId = `transport-question-${index}`;
+                const answerId = `transport-answer-${index}`;
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('revision-question-item', 'accordion-item'); 
+                const header = document.createElement('h2'); 
+                header.classList.add('accordion-header'); 
+                header.id = `heading-${questionId}`;
+                const button = document.createElement('button'); 
+                button.className = 'accordion-button collapsed revision-question-header'; 
+                button.type = 'button';
+                button.setAttribute('data-bs-toggle', 'collapse');
+                button.setAttribute('data-bs-target', `#${answerId}`);
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-controls', answerId);
+                button.innerHTML = `${item.q ? item.q : 'Question not available'} <span class="arrow-icon ms-auto">&#9662;</span>`;
+                header.appendChild(button);
+                const answerCollapseDiv = document.createElement('div');
+                answerCollapseDiv.id = answerId;
+                answerCollapseDiv.classList.add('revision-answer', 'accordion-collapse', 'collapse');
+                answerCollapseDiv.setAttribute('aria-labelledby', `heading-${questionId}`);
+                answerCollapseDiv.setAttribute('data-bs-parent', '#transportRevisionAccordion');
+                const answerBody = document.createElement('div');
+                answerBody.className = 'accordion-body';
+                answerBody.innerHTML = `<p>${item.a ? item.a : 'Answer not available'}</p>`;
+                answerCollapseDiv.appendChild(answerBody);
+                questionDiv.appendChild(header);
+                questionDiv.appendChild(answerCollapseDiv);
+                accordion.appendChild(questionDiv);
+            });
+            container.appendChild(accordion);
+        }
+
+        // --- 5. Event Listeners ---
+        if (menuToggleEl) {
+            menuToggleEl.addEventListener('click', () => wrapperEl.classList.toggle('toggled'));
+        }
+        if (prevButtonEl) {
+            prevButtonEl.addEventListener('click', () => {
+                if (currentGuideDataIndex > 0) loadContentByIndex(currentGuideDataIndex - 1, 'button');
+            });
+        }
+        if (nextButtonEl) {
+            nextButtonEl.addEventListener('click', () => {
+                if (currentGuideDataIndex < guideData.length - 1) loadContentByIndex(currentGuideDataIndex + 1, 'button');
+            });
+        }
+        
+        if (mainContentScrollAreaEl) {
+            let scrollTimeout;
+            mainContentScrollAreaEl.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    let mostProminentItemId = null;
+                    let minDistanceToViewportTop = Infinity;
+                    const viewportTopEdge = mainContentScrollAreaEl.getBoundingClientRect().top + 70; // Adjusted for sticky navbar
+
+                    guideData.forEach((item) => {
+                        const element = contentAreaEl.querySelector(`#${item.id}`); // Query within current #content-area
+                        if (element) {
+                            const rect = element.getBoundingClientRect();
+                            // Check if element's top is within a reasonable range of the viewport top
+                            if (rect.top < viewportTopEdge + 150 && rect.bottom > viewportTopEdge - 100) { // Adjust visibility threshold
+                                const distance = Math.abs(rect.top - viewportTopEdge);
+                                if (distance < minDistanceToViewportTop) {
+                                    minDistanceToViewportTop = distance;
+                                    mostProminentItemId = item.id;
+                                }
+                            }
+                        }
+                    });
+                    
+                    // Fallback if nothing is prominently visible
+                    if (!mostProminentItemId) { 
+                        if (mainContentScrollAreaEl.scrollTop <= 20 && guideData.length > 0) { // Very top
+                            mostProminentItemId = guideData[0].id;
+                        } else if ((mainContentScrollAreaEl.scrollTop + mainContentScrollAreaEl.clientHeight) >= mainContentScrollAreaEl.scrollHeight - 20 && guideData.length > 0) { // Very bottom
+                            mostProminentItemId = guideData[guideData.length - 1].id;
+                        }
+                    }
+
+                    if (mostProminentItemId && mostProminentItemId !== (guideData[currentGuideDataIndex] ? guideData[currentGuideDataIndex].id : null)) {
+                        const newIndex = guideData.findIndex(item => item.id === mostProminentItemId);
+                        if (newIndex !== -1) {
+                            currentGuideDataIndex = newIndex; 
+                            sessionStorage.setItem('currentTransportCommSectionIndex', currentGuideDataIndex); // Use specific key
+                            updateActiveSidebarLink();
+                            const currentSectionData = guideData[currentGuideDataIndex];
+                            updateBreadcrumbsUI(currentSectionData.category, currentSectionData.breadcrumb);
+                            updateNavigationButtons();
+                        }
+                    }
+                }, 200); // Increased debounce time slightly
+            });
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            populateSidebar(); 
+            
+            const savedIndexStr = sessionStorage.getItem('currentTransportCommSectionIndex'); // Use specific key
+            let initialIndex = 0; 
+
+            if (savedIndexStr !== null) {
+                const savedIdx = parseInt(savedIndexStr, 10);
+                if (savedIdx >= 0 && savedIdx < guideData.length) {
+                    initialIndex = savedIdx;
+                }
+            }
+            
+            const hash = window.location.hash.substring(1); 
+            if (hash) {
+                const itemFromHash = guideData.find(item => item.id === hash);
+                if (itemFromHash) {
+                    initialIndex = guideData.indexOf(itemFromHash);
+                }
+            }
+            
+            if (guideData.length > 0) {
+                 setTimeout(() => { 
+                    loadContentByIndex(initialIndex, 'initialLoad');
+                 }, 100); // Slightly increased timeout for initial load
+            } else {
+                console.error("guideData is empty. Cannot load initial content.");
+                if(contentAreaEl) contentAreaEl.innerHTML = "<p>Error: No content available to display.</p>";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCSE Geography - Fishing Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa; /* Light gray background */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Wrapper for sidebar and page content */
+        #wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+            min-height: 100vh; /* Ensure wrapper takes full viewport height */
+        }
+
+        /* Sidebar Styles */
+        #sidebar-wrapper {
+            min-height: 100vh;
+            width: 280px; 
+            background-color: #f8f9fa; 
+            border-right: 1px solid #dee2e6; 
+            transition: margin-left 0.25s ease-out;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1030; 
+            overflow-y: auto; 
+        }
+
+        .sidebar-heading {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #0056b3; 
+            display: flex;
+            align-items: center;
+        }
+        .sidebar-heading img {
+            width: 30px;
+            height: 30px;
+        }
+
+        #sidebar-nav .list-group-item {
+            border: none; 
+            padding: 0.75rem 1.25rem;
+            font-size: 0.95rem;
+            color: #495057; 
+            background-color: transparent; 
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+
+        #sidebar-nav .list-group-item:hover,
+        #sidebar-nav .list-group-item:focus {
+            background-color: #e9ecef; 
+            color: #0056b3; 
+            text-decoration: none;
+        }
+
+        #sidebar-nav .list-group-item.active {
+            background-color: #007bff; 
+            color: white;
+            font-weight: 500;
+            border-left: 3px solid #0056b3; 
+            padding-left: calc(1.25rem - 3px); 
+        }
+
+        #sidebar-nav .category-heading {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #6c757d;
+            padding: 0.75rem 1.25rem 0.25rem;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+         #sidebar-nav .sub-item {
+            padding-left: 2.25rem; /* Indent sub-items more */
+            font-size: 0.9rem;
+        }
+
+
+        /* Page Content Wrapper Styles */
+        #page-content-wrapper {
+            flex: 1;
+            padding-left: 280px; 
+            transition: padding-left 0.25s ease-out;
+            display: flex;
+            flex-direction: column;
+            min-width: 0; 
+        }
+
+        /* Toggled state for sidebar */
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: -280px; 
+        }
+
+        #wrapper.toggled #page-content-wrapper {
+            padding-left: 0; 
+        }
+
+        /* Mobile Styles for Sidebar */
+        @media (max-width: 991.98px) { /* lg breakpoint */
+            #sidebar-wrapper {
+                margin-left: -280px; 
+                position: fixed; 
+                height: 100%;
+                z-index: 1040; 
+            }
+
+            #wrapper.toggled #sidebar-wrapper {
+                margin-left: 0; 
+            }
+
+            #page-content-wrapper {
+                padding-left: 0; 
+            }
+        }
+
+        /* Top Navigation Bar */
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #menu-toggle {
+            border: 1px solid #007bff;
+            color: #007bff;
+        }
+        #menu-toggle:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        .breadcrumb-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .breadcrumb-item a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb-item.active {
+            color: #6c757d; 
+        }
+
+        /* Main Content Area */
+        #content-area {
+            background-color: #ffffff;
+            border-radius: 0.375rem; 
+            min-height: calc(100vh - 150px); 
+        }
+
+        #content-area h1, #content-area h2, #content-area h3, #content-area h4, #content-area h5 {
+            color: #0056b3; 
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        #content-area h1 { font-size: 2rem; border-bottom: 2px solid #e9ecef; padding-bottom: 0.5rem;}
+        #content-area h2 { font-size: 1.75rem; }
+        #content-area h3 { font-size: 1.5rem; margin-top: 1.75rem; } /* Added more top margin for H3 */
+        #content-area h4 { font-size: 1.25rem; margin-top: 1.5rem; } /* Added more top margin for H4 */
+
+
+        #content-area p {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+
+        #content-area ul, #content-area ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem; 
+        }
+        #content-area li {
+            margin-bottom: 0.5rem;
+        }
+        #content-area ul ul, #content-area ol ol { /* Nested lists */
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+        }
+
+
+        /* Diagram Placeholder Styles */
+        .diagram-placeholder {
+            border: 2px dashed #6c757d; 
+            background-color: #f8f9fa; 
+            padding: 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+            color: #6c757d;
+        }
+        .diagram-placeholder img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Revision Question Styles */
+        .revision-question-item {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .revision-question-header {
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #0056b3;
+        }
+        .revision-question-header:hover {
+            background-color: #e9ecef;
+        }
+        .revision-question-header .arrow-icon {
+            transition: transform 0.2s ease-in-out;
+        }
+        .revision-question-header[aria-expanded="true"] .arrow-icon {
+            transform: rotate(180deg);
+        }
+
+
+        .revision-answer {
+            padding: 1.25rem;
+            border-top: 1px solid #dee2e6;
+            background-color: #fff;
+        }
+        .revision-answer ul, .revision-answer ol {
+            padding-left: 1.25rem; /* Indent lists within answers */
+        }
+
+
+        /* MathJax Scaling for Mobile */
+        .MathJax_Display { /* For MathJax v2 */
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+        }
+        mjx-container[jax="CHTML"][display="true"] { /* For MathJax v3 */
+            display: block;
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+        }
+
+
+        /* Navigation Buttons */
+        #navigation-buttons button {
+            min-width: 100px;
+        }
+
+        /* Footer */
+        footer {
+            font-size: 0.9rem;
+        }
+
+        /* Accessibility: Focus visible for keyboard navigation */
+        :focus-visible {
+          outline: 2px solid #007bff;
+          outline-offset: 2px;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+        }
+        .btn:focus-visible, .list-group-item:focus-visible {
+          outline: 2px solid #007bff !important; 
+          outline-offset: 2px !important;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <nav class="bg-light border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom bg-light p-3">
+                <img src="https://placehold.co/30x30/20c997/white?text=F" alt="Fishing Guide Logo" class="me-2 rounded"> Fishing Guide
+            </div>
+            <div class="list-group list-group-flush" id="sidebar-nav">
+                </div>
+        </nav>
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+                <div class="container-fluid">
+                    <button class="btn btn-primary d-lg-none" id="menu-toggle">☰ Menu</button>
+                    <nav aria-label="breadcrumb" class="ms-3 flex-grow-1">
+                        <ol class="breadcrumb mb-0" id="breadcrumb-trail">
+                            </ol>
+                    </nav>
+                </div>
+            </nav>
+            <main class="container-fluid p-4">
+                <div id="content-area" class="bg-white p-4 rounded shadow-sm">
+                    <h1 id="main-title">Welcome to the Fishing Guide</h1>
+                    <p>Please select a topic from the menu on the left to begin your learning journey.</p>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4" id="navigation-buttons">
+                    <button class="btn btn-outline-secondary" id="prev-button" disabled>&laquo; Previous</button>
+                    <button class="btn btn-outline-primary" id="next-button" disabled>Next &raquo;</button>
+                </div>
+            </main>
+            <footer class="bg-light text-center text-muted p-3 mt-auto border-top">
+                <p class="mb-0">&copy; 2025 KCSE Fishing Guide</p>
+            </footer>
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // content.js - Stores the learning guide material for Fishing
+        const guideData = [
+            {
+                id: "intro",
+                title: "1. Introduction",
+                breadcrumb: "Introduction",
+                category: "General Introduction",
+                content: `
+                    <h2>1. Introduction</h2>
+                    <p>Fishing is a significant global economic activity involving the exploitation of aquatic resources, primarily fish, from various water bodies. It serves as a crucial source of food (protein), income, and employment for millions of people worldwide. In the context of KCSE Geography, understanding fishing involves exploring its various facets, from the types of fish and fishing grounds to the methods employed, its economic importance, challenges, and the need for sustainable management. The KCSE syllabus specifically covers fishing as an economic activity, emphasizing its importance in Kenya and comparing it with other regions like Japan.</p>
+                `
+            },
+            {
+                id: "definitions",
+                title: "2. Defining Key Terms",
+                breadcrumb: "Definitions",
+                category: "General Introduction",
+                content: `
+                    <h2>2. Defining Key Terms</h2>
+                    <p>According to the KCSE syllabus and common geographical understanding:</p>
+                    <ul>
+                        <li><strong>Fishing:</strong> This is defined as the exploitation of water resources, specifically the catching of aquatic animals like fish, and other aquatic organisms such as crabs, prawns, lobsters, and seaweed.</li>
+                        <li><strong>Fisheries:</strong> These are the water bodies (such as oceans, seas, lakes, rivers, and fish ponds) that contain fish and other related aquatic resources that are suitable for fishing.</li>
+                        <li><strong>Fish Farming (Aquaculture):</strong> This refers to the artificial rearing or cultivation of fish in controlled environments like ponds, tanks, or enclosures. In Kenya, areas like Kibos, Sagana, and Bamburi practice fish farming, rearing species such as Tilapia, Mudfish, and Trout. Fish farming is considered a method of fishing.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "factors-influencing",
+                title: "3. Factors Influencing Fishing",
+                breadcrumb: "Factors Influencing",
+                category: "Core Concepts",
+                content: `
+                    <h2>3. Factors Influencing Fishing</h2>
+                    <p>The development and success of fishing activities are influenced by a combination of physical and human factors.</p>
+                    
+                    <h3>3.1. Physical Factors</h3>
+                    <ol>
+                        <li><strong>Presence of Fishing Grounds with Fish Food (Plankton):</strong>
+                            <ul>
+                                <li>Fish populations thrive where there is an abundant supply of food, primarily <strong>plankton</strong> (microscopic plants - phytoplankton, and animals - zooplankton).</li>
+                                <li>Shallow waters over <strong>continental shelves</strong> are rich in plankton due to sunlight penetration (up to 200m or 100 fathoms), which supports photosynthesis by phytoplankton. The extensive continental shelf provides a large feeding area.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Water Temperature (Climate):</strong>
+                            <ul>
+                                <li><strong>Cool waters</strong> (temperate regions) are generally more ideal for fish breeding and the abundance of plankton, as plankton thrives best in water temperatures around $20^\\circ C$. Temperate regions often have richer fishing grounds than tropical regions for certain species.</li>
+                                <li><strong>Warm ocean currents</strong> can raise water temperatures in cold regions, making them ice-free and suitable for fishing year-round (e.g., the warm North Atlantic Drift's effect on North-East Atlantic grounds, keeping Norwegian ports ice-free).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Convergence of Ocean Currents:</strong>
+                            <ul>
+                                <li>The meeting of warm and cold ocean currents causes <strong>upwelling</strong> of nutrient-rich deep water to the surface. This disturbance brings minerals essential for plankton growth.</li>
+                                <li>This mixing also moderates water temperatures and increases oxygen supply, promoting plankton growth and attracting large fish populations. A prime example is the convergence of the cold Labrador Current and the warm Gulf Stream in the North-West Atlantic, creating the foggy but rich Grand Banks of Newfoundland.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Nature of the Coastline:</strong>
+                            <ul>
+                                <li><strong>Indented Coastlines:</strong> Coastlines with many bays, estuaries, and inlets provide sheltered waters ideal for fish breeding (spawning grounds) and the development of fishing ports and villages. These calm waters also protect fishing vessels.</li>
+                                <li><strong>Shallow Continental Shelf:</strong> A wide, shallow (less than 200m deep), and long continental shelf allows sunlight to penetrate, supporting plankton growth, which in turn supports large fish populations.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Depth of Water:</strong>
+                            <ul>
+                                <li>Shallow waters over continental shelves are generally richer fishing grounds due to plankton availability.</li>
+                                <li>Deep waters may host different types of fish (demersal species).</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <div class="diagram-placeholder">
+                        <img src="https://placehold.co/600x300/e9ecef/6c757d?text=Diagram:+Ocean+Currents+&+Plankton" alt="Diagram: Ocean Currents and Plankton Distribution">
+                        <p>Conceptual diagram showing how ocean current convergence and upwelling influence plankton and fish concentration.</p>
+                    </div>
+
+                    <h3>3.2. Human Factors</h3>
+                    <ol>
+                        <li><strong>Availability of Capital:</strong>
+                            <ul>
+                                <li>Capital is needed to purchase fishing equipment (boats, nets, modern gear like echo sounders), establish processing facilities (for canning, freezing, smoking), and refrigeration for preservation and transport.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Level of Technology:</strong>
+                            <ul>
+                                <li>Advanced technology allows for deep-sea fishing, larger catches, modern fish processing, and preservation (e.g., refrigerated vessels, fish finders, factory ships that process fish at sea). This leads to higher quality and quantity of fish products.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Market Availability:</strong>
+                            <ul>
+                                <li>A ready market, both local and international, for fish and fish products is essential to make fishing a viable economic activity. Dense populations, especially those with a fish-eating tradition, provide a good local market.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Labour:</strong>
+                            <ul>
+                                <li>Availability of skilled (e.g., for operating modern vessels and processing plants) and unskilled labour is necessary for fishing operations, processing, and marketing.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Transport and Communication:</strong>
+                            <ul>
+                                <li>Well-developed transport networks (roads, railways, refrigerated trucks, ports) are needed to link fishing grounds to markets and processing factories efficiently, preventing spoilage. Good communication facilitates trade and coordination.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Government Policy:</strong>
+                            <ul>
+                                <li>Government support through research (on fish breeding, new fishing grounds, conservation), provision of loans to fishermen, training programs, fisheries management regulations (e.g., licensing, quotas), and conservation measures can significantly influence the fishing industry.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Tradition and Culture:</strong>
+                            <ul>
+                                <li>In some communities, fishing is a traditional way of life passed down through generations, and fish forms a staple part of their diet. This encourages the development of the fishing industry and provides a skilled labour force.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                `
+            },
+            {
+                id: "major-grounds",
+                title: "4. Major World Fishing Grounds",
+                breadcrumb: "Major Grounds",
+                category: "Global Fisheries",
+                content: `
+                    <h2>4. Major World Fishing Grounds</h2>
+                    <p>The KCSE syllabus typically highlights the following major fishing grounds:</p>
+                    
+                    <h3>4.1. North-West Atlantic Fishing Grounds</h3>
+                    <ul>
+                        <li><strong>Location:</strong> Off the east coast of North America, covering areas around Canada (Newfoundland - Grand Banks, Nova Scotia, Sable Bank) and the USA (New England coast - Georges Bank).</li>
+                        <li><strong>Fish Species:</strong> Cod (most important historically), herring, haddock, mackerel, flounder, tuna, halibut, plaice, sardines, shellfish (lobsters, crabs, shrimps).</li>
+                        <li><strong>Favourable Factors:</strong>
+                            <ul>
+                                <li>Convergence of the cold Labrador Current and the warm Gulf Stream (rich plankton, ideal temperatures).</li>
+                                <li>Broad and shallow continental shelf (Grand Banks).</li>
+                                <li>Highly indented coastline (sheltered harbours).</li>
+                                <li>Cool temperate climate.</li>
+                                <li>Densely populated and industrialized hinterland (market, capital, labour).</li>
+                                <li>Advanced technology.</li>
+                                <li>Rugged adjacent land limiting agriculture.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="diagram-placeholder">
+                        <img src="https://placehold.co/600x300/e9ecef/6c757d?text=Map:+NW+Atlantic+Fishing+Grounds" alt="Map: North-West Atlantic Fishing Grounds">
+                        <p>Map highlighting the North-West Atlantic fishing grounds, including the Grand Banks.</p>
+                    </div>
+
+                    <h3>4.2. North-East Atlantic Fishing Grounds</h3>
+                    <ul>
+                        <li><strong>Location:</strong> Coasts of Western European countries (Norway, UK, Denmark, Iceland, etc.), including the North Sea (Dogger Bank).</li>
+                        <li><strong>Fish Species:</strong> Cod, herring (most important), mackerel, haddock, plaice, sardines.</li>
+                        <li><strong>Favourable Factors:</strong>
+                            <ul>
+                                <li>Influence of the warm North Atlantic Drift current (ice-free ports, plankton conditions).</li>
+                                <li>Broad and shallow continental shelf (North Sea).</li>
+                                <li>Highly indented coastline (fjords, rias).</li>
+                                <li>Cool temperate climate.</li>
+                                <li>Large, affluent, industrialized hinterland.</li>
+                                <li>Advanced fishing technology and tradition.</li>
+                                <li>Land unsuitable for agriculture in some areas (e.g., Norway).</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>4.3. North-West Pacific Fishing Grounds</h3>
+                    <ul>
+                        <li><strong>Location:</strong> Off the east coast of Asia (Japan, China, Russia, Korea). World's largest fishing ground.</li>
+                        <li><strong>Fish Species:</strong> Salmon (very important), tuna, cod, sardine, mackerel, pollock, bonito, herring, crabs, lobsters, oysters, seaweed.</li>
+                        <li><strong>Favourable Factors:</strong>
+                            <ul>
+                                <li>Convergence of cold Oyashio Current and warm Kuroshio Current.</li>
+                                <li>Extensive and shallow continental shelf.</li>
+                                <li>Highly indented coastline with islands (Japan).</li>
+                                <li>Mountainous landscape limiting agriculture.</li>
+                                <li>Large, skilled fishing population with fish-eating tradition.</li>
+                                <li>Advanced technology and aquaculture.</li>
+                                <li>Government support.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                     <div class="diagram-placeholder">
+                        <img src="https://placehold.co/600x300/e9ecef/6c757d?text=Map:+NW+Pacific+Fishing+Grounds" alt="Map: North-West Pacific Fishing Grounds">
+                        <p>Map highlighting the North-West Pacific fishing grounds, showing currents like Oyashio and Kuroshio.</p>
+                    </div>
+
+                    <h3>4.4. North-East Pacific Fishing Grounds</h3>
+                    <ul>
+                        <li><strong>Location:</strong> Off the west coast of North America (Alaska to California, including British Columbia).</li>
+                        <li><strong>Fish Species:</strong> Salmon (most important), tuna, sardines, herring, halibut, pollock, cod.</li>
+                        <li><strong>Favourable Factors:</strong>
+                            <ul>
+                                <li>Convergence of cold and warm currents.</li>
+                                <li>Deeply indented coastline with fjords.</li>
+                                <li>Numerous rivers for salmon spawning.</li>
+                                <li>Relatively shallow continental shelf in parts.</li>
+                                <li>Advanced technology (USA, Canada).</li>
+                                <li>Forested/mountainous hinterland limiting agriculture.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            {
+                id: "fish-types-methods",
+                title: "5. Types of Fish & Fishing Methods",
+                breadcrumb: "Fish Types & Methods",
+                category: "Core Concepts",
+                content: `
+                    <h2>5. Types of Fish and Fishing Methods</h2>
+                    
+                    <h3>5.1. Types of Fish (Fish Communities)</h3>
+                    <p>Fish are categorized based on their habitat and behaviour:</p>
+                    <ul>
+                        <li><strong>Pelagic Fish:</strong> Live near the surface or in mid-waters (open waters). Often move in large groups (shoals) and can be migratory. Examples: Mackerel, herring, sardines, tuna, menhaden.</li>
+                        <li><strong>Demersal Fish:</strong> Live near the bottom (seabed) of deep water bodies. Often larger, found in smaller shoals. Examples: Cod, haddock, hake, flounder, halibut.</li>
+                        <li><strong>Anadromous Fish:</strong> Migrate from saltwater (oceans) to freshwater (rivers) to breed (spawn). Examples: Salmon, sturgeon.</li>
+                        <li><strong>Freshwater Fish:</strong> Live exclusively in inland freshwaters. Examples: Tilapia, Nile perch, trout, carp, catfish (mudfish).</li>
+                        <li><strong>Marine/Saltwater Fish:</strong> Live in saline waters of oceans and seas. Includes pelagic and demersal ocean fish.</li>
+                        <li><strong>Shellfish:</strong> Aquatic invertebrates with shells.
+                            <ul>
+                                <li><strong>Crustaceans:</strong> Crabs, lobsters, shrimps, prawns.</li>
+                                <li><strong>Molluscs:</strong> Oysters, mussels, clams.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <h3>5.2. Methods of Fishing</h3>
+                    <p>Broadly divided into traditional (small-scale) and modern (large-scale/commercial) methods.</p>
+                    <h4>A. Traditional Fishing Methods</h4>
+                    <p>Often small-scale, using simple equipment for local consumption or sale.</p>
+                    <ul>
+                        <li><strong>Harpooning/Use of Spears:</strong> Impaling individual fish.</li>
+                        <li><strong>Use of Gill Nets (small scale):</strong> Simple nets entangling fish by their gills.</li>
+                        <li><strong>Use of Herbs (Poisoning):</strong> Using plant toxins to stun/kill fish (often destructive and illegal).</li>
+                        <li><strong>Use of Barrier Traps:</strong> Weirs guiding fish into inescapable traps.</li>
+                        <li><strong>Use of Baskets:</strong> Scooping or trapping fish.</li>
+                        <li><strong>Handline Fishing (Hook and Line):</strong> Single line with baited hooks.</li>
+                        <li><strong>Lamp Luring:</strong> Using lamps at night to attract fish.</li>
+                    </ul>
+                    <div class="diagram-placeholder">
+                        <img src="https://placehold.co/600x300/e9ecef/6c757d?text=Diagram:+Traditional+Fishing+Methods" alt="Diagram: Traditional Fishing Methods (Spears, Baskets, Handlines)">
+                        <p>Illustrations of various traditional fishing techniques.</p>
+                    </div>
+
+                    <h4>B. Modern Fishing Methods</h4>
+                    <p>Typically large-scale, commercial, using advanced technology.</p>
+                    <ol>
+                        <li><strong>Seining (Using Seine Nets):</strong>
+                            <ul>
+                                <li><strong>Purse Seining:</strong> Encircling a shoal with a large net, then closing the bottom with a drawstring (purse line). Very efficient for shoaling pelagic fish like tuna and mackerel.</li>
+                                <li><strong>Haul/Beach Seining:</strong> Net set from a boat, ropes pulled from shore to drag the net and fish landwards.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Trawling:</strong>
+                            <ul>
+                                <li>A large, bag-shaped net (trawl) is dragged by a vessel (trawler).</li>
+                                <li><strong>Bottom Trawling:</strong> Dragged along the seabed for demersal fish (cod, haddock). Can be destructive to seabed habitats.</li>
+                                <li><strong>Midwater Trawling (Pelagic Trawling):</strong> Dragged through the water column for pelagic fish (herring, mackerel).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Drifting (Using Drift Nets / Gill Nets - Large Scale):</strong>
+                            <ul>
+                                <li>Long nets hung vertically, drifting with currents, entangling fish by gills. Large-scale drift netting ("walls of death") is controversial due to high bycatch.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Line Fishing (Long-Lining):</strong>
+                            <ul>
+                                <li>A very long main line with thousands of baited hooks on shorter branch lines. Used for tuna, swordfish (pelagic) or cod, halibut (demersal). Can have bycatch issues.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Whaling/Harpooning (Modern):</strong>
+                            <ul>
+                                <li>Using factory ships and harpoon guns for large whales (heavily regulated).</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <div class="diagram-placeholder">
+                        <img src="https://placehold.co/600x300/e9ecef/6c757d?text=Diagram:+Modern+Fishing+Methods" alt="Diagram: Modern Fishing Methods (Purse Seining, Trawling, Long-Lining)">
+                        <p>Illustrations of purse seining, trawling, and long-lining techniques.</p>
+                    </div>
+                `
+            },
+            {
+                id: "kenya-fisheries",
+                title: "6. Fisheries in Kenya & East Africa",
+                breadcrumb: "Kenya Fisheries",
+                category: "Regional Focus: Kenya",
+                content: `
+                    <h2>6. Fisheries in Kenya and East Africa</h2>
+
+                    <h3>6.1. Marine Fisheries in Kenya</h3>
+                    <ul>
+                        <li><strong>Location:</strong> Off the Kenyan coast (Indian Ocean, EEZ). Landing sites: Mombasa, Malindi, Lamu, Shimoni, Kiunga.</li>
+                        <li><strong>Fish Species:</strong> Tuna, kingfish, sailfish, marlin, snapper, rock cod, prawns, lobsters, crabs.</li>
+                        <li><strong>Challenges:</strong>
+                            <ul>
+                                <li>Narrow continental shelf.</li>
+                                <li>Small local market for some marine species.</li>
+                                <li>Inadequate refrigeration/cold storage.</li>
+                                <li>High price of some marine fish.</li>
+                                <li>Competition from foreign fleets (IUU fishing).</li>
+                                <li>Strong tides/currents hazardous for small boats.</li>
+                                <li>Inadequate technology.</li>
+                                <li>Destruction of coral reefs.</li>
+                                <li>Limited capital for local fishermen.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Conservation Measures:</strong> Restocking, net mesh size regulations, licensing, closed seasons/areas, pollution control, monitoring foreign fishing.</li>
+                    </ul>
+
+                    <h3>6.2. Inland/Freshwater Fisheries in Kenya</h3>
+                    <ul>
+                        <li><strong>Main Grounds:</strong> Lake Victoria (most important), L. Turkana, L. Naivasha, L. Baringo, smaller lakes, rivers (Tana, Athi), fish ponds.</li>
+                        <li><strong>Fish Species:</strong>
+                            <ul>
+                                <li><strong>Lake Victoria:</strong> Tilapia (ngege), Nile Perch (mbuta), Dagaa (omena), catfish (mumi).</li>
+                                <li><strong>Lake Turkana:</strong> Nile Perch, Tilapia, Tiger fish.</li>
+                                <li><strong>Lake Naivasha:</strong> Black bass, Tilapia, Crayfish.</li>
+                                <li><strong>Lake Baringo:</strong> Tilapia, Barbus, Catfish.</li>
+                                <li><strong>Rivers:</strong> Trout (highland rivers), mudfish.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <h4>Fishing in Lake Victoria (Kenya)</h4>
+                    <ul>
+                        <li><strong>Favourable Factors:</strong> Largest tropical freshwater lake, many landing beaches (Mbita, Homa Bay, Usenge), dense local population (labour & market), diverse species (historically), processing plants.</li>
+                        <li><strong>Problems:</strong>
+                            <ul>
+                                <li>Poor feeder roads.</li>
+                                <li>Inadequate refrigeration.</li>
+                                <li>Exploitation by middlemen.</li>
+                                <li>Impact of HIV/AIDS on communities.</li>
+                                <li>Inter-territorial conflicts (Uganda, Tanzania).</li>
+                                <li>Overfishing (Tilapia, Nile Perch).</li>
+                                <li>Invasive water hyacinth.</li>
+                                <li>Accidents from storms.</li>
+                                <li>Pollution.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="diagram-placeholder">
+                        <img src="https://placehold.co/600x300/e9ecef/6c757d?text=Map:+Lake+Victoria+Fishing+Areas" alt="Map: Lake Victoria Fishing Areas and Landing Sites">
+                        <p>Map of Lake Victoria showing key fishing areas and landing beaches in Kenya.</p>
+                    </div>
+
+                    <h3>6.3. Reasons for Widespread Freshwater Fishing over Marine Fishing in East Africa</h3>
+                     <ul>
+                        <li>Numerous accessible inland water bodies.</li>
+                        <li>Higher local demand for freshwater fish.</li>
+                        <li>Simpler, lower-cost technology and traditional methods are often sufficient.</li>
+                        <li>High population density around inland grounds (market, labour).</li>
+                        <li>Freshwater fish are an accessible, cheap protein source.</li>
+                        <li>Lower capital investment needed compared to marine fishing.</li>
+                        <li>Marine grounds may be limited (e.g., narrow continental shelf in Kenya).</li>
+                    </ul>
+
+                    <h3>6.4. Fish Farming in Kenya (Aquaculture)</h3>
+                    <ul>
+                        <li><strong>Definition:</strong> Rearing fish in artificial ponds.</li>
+                        <li><strong>Areas:</strong> Kibos (Kisumu), Sagana (Central), Bamburi (Mombasa), various small-scale ponds.</li>
+                        <li><strong>Species Reared:</strong> Tilapia (most common), Mudfish (catfish), Trout (cool highlands), Common Carp.</li>
+                        <li><strong>Reasons Encouraged by Government:</strong>
+                            <ul>
+                                <li>Free from inter-territorial conflicts.</li>
+                                <li>Export potential.</li>
+                                <li>Requires small space, can use unproductive land.</li>
+                                <li>Creates employment.</li>
+                                <li>Improves nutrition (protein supply).</li>
+                                <li>Stimulates related industries (feed production).</li>
+                                <li>Provides income to farmers.</li>
+                                <li>Conserves natural fisheries.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Government Promotion:</strong> Demonstration ponds/hatcheries (e.g., Sagana), extension services, funding, awareness campaigns, supporting cooperatives.</li>
+                        <li><strong>Problems Facing Fish Farming:</strong>
+                            <ul>
+                                <li>Lack of capital.</li>
+                                <li>Inadequate quality fish feed.</li>
+                                <li>Lack of technical knowledge.</li>
+                                <li>Pests and diseases.</li>
+                                <li>Predation (birds, snakes).</li>
+                                <li>Limited market/poor marketing.</li>
+                                <li>Water scarcity.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                     <div class="diagram-placeholder">
+                        <img src="https://placehold.co/600x300/e9ecef/6c757d?text=Diagram:+Typical+Fish+Pond+Setup" alt="Diagram: Typical Fish Pond Setup for Aquaculture">
+                        <p>Illustration of a typical fish pond used in aquaculture.</p>
+                    </div>
+                `
+            },
+            {
+                id: "significance-kenya",
+                title: "7. Significance of Fishing in Kenya",
+                breadcrumb: "Significance in Kenya",
+                category: "Regional Focus: Kenya",
+                content: `
+                    <h2>7. Significance of the Fishing Industry in Kenya</h2>
+                    <ul>
+                        <li><strong>Source of Income:</strong> For fishermen, traders, processors, etc., improving living standards.</li>
+                        <li><strong>Employment Creation:</strong> Direct and indirect jobs.</li>
+                        <li><strong>Food Security:</strong> Vital source of affordable animal protein.</li>
+                        <li><strong>Foreign Exchange Earnings:</strong> Through export of products like Nile perch fillets.</li>
+                        <li><strong>Raw Materials for Industries:</strong> Fish waste for animal feed (fish meal) or fertilizers; fish oils.</li>
+                        <li><strong>Development of Infrastructure:</strong> Roads to landing sites, processing plants.</li>
+                        <li><strong>Promotion of Tourism:</strong> Sport fishing.</li>
+                        <li><strong>Growth of Towns:</strong> Stimulates growth of fishing ports (Kisumu, Mbita, Lamu).</li>
+                        <li><strong>Government Revenue:</strong> Taxes, licensing fees.</li>
+                        <li><strong>Diversification of the Economy:</strong> Reduces over-reliance on agriculture.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "problems-solutions-kenya",
+                title: "8. Problems & Solutions in Kenya",
+                breadcrumb: "Problems & Solutions",
+                category: "Regional Focus: Kenya",
+                content: `
+                    <h2>8. Problems Facing Fishing in Kenya and Possible Solutions</h2>
+                    <ul>
+                        <li><strong>Over-exploitation/Overfishing:</strong> Due to indiscriminate harvesting, small mesh nets.
+                            <ul><li><em>Solution:</em> Enforce net mesh size regulations, quotas, closed seasons, promote fish farming.</li></ul>
+                        </li>
+                        <li><strong>Pollution:</strong> From industrial effluents, sewage, agricultural chemicals.
+                            <ul><li><em>Solution:</em> Enforce anti-pollution laws (NEMA), treat waste, promote sustainable farming.</li></ul>
+                        </li>
+                        <li><strong>Inadequate Capital:</strong> Lack of funds for modern gear, boats, preservation.
+                            <ul><li><em>Solution:</em> Provide credit (SACCOs, cooperatives), subsidize inputs.</li></ul>
+                        </li>
+                        <li><strong>Poor Transport Network:</strong> Impassable roads to landing sites leading to spoilage.
+                            <ul><li><em>Solution:</em> Improve feeder roads, encourage refrigerated transport.</li></ul>
+                        </li>
+                        <li><strong>Aquatic Weeds:</strong> E.g., Water hyacinth in Lake Victoria.
+                            <ul><li><em>Solution:</em> Integrated weed control (biological, mechanical, manual).</li></ul>
+                        </li>
+                        <li><strong>Limited Market & Poor Marketing:</strong> Low fish-eating culture in some areas, exploitation by middlemen.
+                            <ul><li><em>Solution:</em> Promote fish consumption, strengthen cooperatives, explore exports.</li></ul>
+                        </li>
+                        <li><strong>Dangerous Animals:</strong> Crocodiles, hippos in inland waters.</li>
+                        <li><strong>Accidents:</strong> Storms, lack of safety equipment.</li>
+                        <li><strong>Inadequate Preservation & Storage:</strong> Lack of cold storage, ice.
+                            <ul><li><em>Solution:</em> Invest in cold storage at landing sites, promote ice box use.</li></ul>
+                        </li>
+                        <li><strong>Inadequate Research:</strong> On stocks, breeding, sustainable yields.
+                            <ul><li><em>Solution:</em> Increase funding for research (KEMFRI).</li></ul>
+                        </li>
+                        <li><strong>Poaching & Foreign Competition (IUU):</strong> Depletes stocks.
+                            <ul><li><em>Solution:</em> Enhance surveillance (Kenya Coast Guard), vessel monitoring.</li></ul>
+                        </li>
+                        <li><strong>Inter-boundary Conflicts:</strong> E.g., Lake Victoria.
+                            <ul><li><em>Solution:</em> Diplomatic engagement, joint management (LVFO).</li></ul>
+                        </li>
+                        <li><strong>Destruction of Fish Habitats:</strong> Mangrove clearing, siltation, coral reef destruction.
+                            <ul><li><em>Solution:</em> Protect/restore habitats, promote soil conservation.</li></ul>
+                        </li>
+                    </ul>
+                `
+            },
+            {
+                id: "kenya-japan-comparison",
+                title: "9. Kenya vs. Japan Fishing",
+                breadcrumb: "Kenya-Japan Comparison",
+                category: "Global Fisheries",
+                content: `
+                    <h2>9. Comparative Study: Fishing in Kenya and Japan</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Kenya</th>
+                                    <th>Japan</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Scale of Fishing</strong></td><td>Mostly small-scale (artisanal); some commercial, esp. L. Victoria.</td><td>Predominantly large-scale, highly commercial, global operations.</td></tr>
+                                <tr><td><strong>Technology Level</strong></td><td>Generally low; traditional methods common, limited modern equipment.</td><td>Highly advanced; modern fleets, factory ships, fish finders, advanced processing.</td></tr>
+                                <tr><td><strong>Main Fishing Grounds</strong></td><td>Inland lakes (esp. L. Victoria), rivers, coastal Indian Ocean.</td><td>Extensive coastal waters, North-West Pacific (Oyashio & Kuroshio currents).</td></tr>
+                                <tr><td><strong>Fish Consumption</strong></td><td>Moderate; high in lake/coastal regions, lower inland. Fish-eating culture not universal.</td><td>Very high; fish is a staple part of the national diet, strong cultural tradition.</td></tr>
+                                <tr><td><strong>Market</strong></td><td>Primarily local; some export (Nile Perch, tuna).</td><td>Large domestic market; major exporter and importer of diverse fish products.</td></tr>
+                                <tr><td><strong>Fish Farming</strong></td><td>Less developed but growing, mainly freshwater ponds (Tilapia).</td><td>Highly developed and advanced aquaculture (marine and freshwater species).</td></tr>
+                                <tr><td><strong>Research & Development</strong></td><td>Limited funding and scope for fisheries research.</td><td>Extensive research on fish breeding, oceanography, fishing technology, aquaculture.</td></tr>
+                                <tr><td><strong>Government Support</strong></td><td>Some support, but faces funding/implementation challenges.</td><td>Strong government support, subsidies, well-established cooperatives, strict management.</td></tr>
+                                <tr><td><strong>Variety of Species Caught</strong></td><td>Fewer marine species commercially exploited; freshwater dominated by few key species.</td><td>Wide variety of marine species exploited; diverse aquaculture.</td></tr>
+                                <tr><td><strong>Problems Faced</strong></td><td>Overfishing, pollution, lack of capital, post-harvest losses, IUU fishing.</td><td>Overfishing (some stocks), distant water fishing disputes, coastal pollution, aging workforce.</td></tr>
+                                <tr><td><strong>Coastline</strong></td><td>Relatively smooth, few natural harbours.</td><td>Highly indented, numerous natural harbours, many islands.</td></tr>
+                                <tr><td><strong>Continental Shelf</strong></td><td>Narrow continental shelf.</td><td>Broad and rich continental shelf in many areas.</td></tr>
+                                <tr><td><strong>Capital Investment</strong></td><td>Low for majority of fishermen.</td><td>Very high, supporting large fleets and advanced industry.</td></tr>
+                                <tr><td><strong>Labour</strong></td><td>Abundant but often less skilled in modern techniques.</td><td>Highly skilled and specialized fishing workforce.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h4>Similarities between Fishing in Kenya and Japan:</h4>
+                    <ul>
+                        <li>Both countries practice freshwater and marine fishing.</li>
+                        <li>Both countries practice fish farming (aquaculture).</li>
+                        <li>Overfishing is a problem faced in certain fisheries of both countries.</li>
+                        <li>Fish caught is consumed locally and also exported (though the scale and value differ greatly).</li>
+                        <li>Fish and fish products are used as raw materials for other industries (e.g., animal feed, fertilizers).</li>
+                        <li>Both governments have policies aimed at managing and conserving fisheries resources.</li>
+                        <li>Both face challenges of pollution affecting their fisheries.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "management-conservation",
+                title: "10. Management & Conservation",
+                breadcrumb: "Management & Conservation",
+                category: "Sustainability",
+                content: `
+                    <h2>10. Management and Conservation of Fisheries</h2>
+                    <p>Effective planning and control of fish resources and their habitats are crucial for sustainability. Measures include:</p>
+                    <ul>
+                        <li><strong>Restricting Disposal of Untreated Wastes:</strong> Enforcing anti-pollution laws (e.g., by NEMA in Kenya).</li>
+                        <li><strong>Restricting Fishing Seasons (Closed Seasons):</strong> Prohibiting fishing during breeding (spawning) to allow stocks to replenish.</li>
+                        <li><strong>Restocking Overfished Areas (Artificial Recruitment):</strong> Breeding fingerlings in hatcheries and releasing them.</li>
+                        <li><strong>Standardizing Net Mesh Sizes (Gear Restriction):</strong> Legislating minimum mesh sizes to ensure only mature fish are caught.</li>
+                        <li><strong>Licensing Fishermen and Vessels:</strong> Limiting fishing effort.</li>
+                        <li><strong>Promoting Fish Farming (Aquaculture):</strong> Reducing pressure on wild stocks.</li>
+                        <li><strong>Carrying Out Research:</strong> Investing in scientific research (e.g., KEMFRI).</li>
+                        <li><strong>Training Personnel:</strong> For fisheries management, extension, research, enforcement.</li>
+                        <li><strong>Enforcing International Conventions and Agreements.</strong></li>
+                        <li><strong>Monitoring, Control, and Surveillance (MCS):</strong> Especially against IUU fishing.</li>
+                        <li><strong>Controlling Invasive Aquatic Weeds:</strong> E.g., Water hyacinth.</li>
+                        <li><strong>Establishing Marine Protected Areas (MPAs) and community conservation areas.</strong></li>
+                        <li><strong>Public Awareness and Education:</strong> On sustainable fishing and conservation.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "conclusion-fishing",
+                title: "11. Conclusion",
+                breadcrumb: "Conclusion",
+                category: "Summary",
+                content: `
+                    <h2>11. Conclusion</h2>
+                    <p>Fishing is a vital sector for Kenya, contributing to food security, employment, and the national economy. However, it faces numerous challenges, including overfishing, pollution, inadequate infrastructure, and climate change impacts. Sustainable management and conservation practices, as outlined in the KCSE syllabus and reflected in national efforts, are essential. These include robust regulation, investment in research and technology, promotion of aquaculture, protection of aquatic habitats, and strong community and international cooperation. Understanding the complexities of both local and global fisheries, as exemplified by comparing Kenya with major fishing nations like Japan, provides valuable insights for developing a resilient and productive fishing industry for the future.</p>
+                `
+            },
+            {
+                id: "revision-fishing",
+                title: "Revision Questions",
+                breadcrumb: "Revision",
+                category: "Self-Assessment",
+                content: `
+                    <h2>Revision Questions</h2>
+                    <p>Test your understanding of Fishing with these questions.</p>
+                    <div id="revision-questions-container">
+                        </div>
+                `
+            }
+        ];
+
+        // Revision Questions Data for Fishing
+        const revisionQuestionsData = [
+            // Definitions
+            { q: "1. Define the term 'fishing' as used in Geography.", a: "Fishing is defined as the exploitation of water resources, specifically the catching of aquatic animals like fish, and other aquatic organisms such as crabs, prawns, lobsters, and seaweed." },
+            { q: "2. What are 'fisheries'?", a: "Fisheries are the water bodies (such as oceans, seas, lakes, rivers, and fish ponds) that contain fish and other related aquatic resources that are suitable for fishing." },
+            { q: "3. Define 'fish farming' or 'aquaculture'.", a: "Fish farming (Aquaculture) refers to the artificial rearing or cultivation of fish in controlled environments like ponds, tanks, or enclosures." },
+            { q: "4. Name two areas in Kenya where fish farming is practiced.", a: "Kibos (Kisumu), Sagana (Central Kenya), Bamburi (Mombasa)." },
+            { q: "5. List two fish species commonly reared in fish ponds in Kenya.", a: "Tilapia, Mudfish (catfish), Trout." },
+            
+            // Factors Influencing Fishing - Physical
+            { q: "6. Explain the importance of plankton in fishing grounds.", a: "Plankton (phytoplankton and zooplankton) form the base of the aquatic food web and are the primary food source for many fish species. Abundant plankton supports large fish populations." },
+            { q: "7. How does water temperature influence fish breeding and plankton growth?", a: "Cool waters (around 20°C) are generally more ideal for certain fish breeding and the abundance of plankton. Warm ocean currents can make cold regions ice-free, allowing year-round fishing and promoting plankton." },
+            { q: "8. Explain how the convergence of warm and cold ocean currents favours fishing.", a: "The meeting of warm and cold currents causes upwelling of nutrient-rich deep water, bringing minerals essential for plankton growth. It also moderates water temperatures and increases oxygen supply, attracting fish." },
+            { q: "9. Describe two ways the nature of a coastline influences fishing.", a: "1. Indented coastlines (bays, estuaries) provide sheltered waters for fish breeding and development of fishing ports. 2. A wide, shallow continental shelf allows sunlight penetration, supporting plankton and thus fish." },
+            { q: "10. Why are shallow continental shelves generally rich fishing grounds?", a: "Sunlight penetrates shallow waters, supporting photosynthesis by phytoplankton (base of the food chain). They also provide extensive feeding areas for fish." },
+
+            // Factors Influencing Fishing - Human
+            { q: "11. State two ways the availability of capital influences fishing.", a: "1. Capital is needed to purchase fishing equipment (boats, nets, modern gear). 2. Capital is required for processing facilities and refrigeration for preservation and transport." },
+            { q: "12. Explain how advanced technology has influenced modern fishing.", a: "Advanced technology (e.g., refrigerated vessels, fish finders, factory ships) allows for deep-sea fishing, larger catches, efficient processing at sea, and better preservation, leading to higher quality and quantity of fish products." },
+            { q: "13. How does market availability influence the viability of fishing as an economic activity?", a: "A ready market, both local and international, ensures that the catch can be sold, making fishing economically sustainable. Dense populations with fish-eating traditions provide strong local markets." },
+            { q: "14. Why is skilled labour important in the fishing industry?", a: "Skilled labour is necessary for operating modern fishing vessels and equipment, advanced processing techniques, and management of fisheries." },
+            { q: "15. Why are well-developed transport networks essential for the fishing industry?", a: "They are needed to link fishing grounds to markets and processing factories efficiently, preventing spoilage of perishable fish products." },
+            { q: "16. State three ways government policy can influence the fishing industry.", a: "1. Providing research and development support. 2. Offering loans or subsidies to fishermen. 3. Implementing and enforcing fisheries management regulations (e.g., quotas, licenses, closed seasons)." },
+            { q: "17. How can tradition and culture influence the development of a fishing industry?", a: "Communities with a strong fishing tradition and where fish is a staple food often have a skilled labour force and a ready local market, encouraging the industry's development." },
+
+            // Major World Fishing Grounds
+            { q: "18. Name two major world fishing grounds in the Atlantic Ocean.", a: "North-West Atlantic Fishing Grounds, North-East Atlantic Fishing Grounds." },
+            { q: "19. Identify two major fishing grounds in the Pacific Ocean.", a: "North-West Pacific Fishing Grounds, North-East Pacific Fishing Grounds." },
+            { q: "20. Name three fish species commonly caught in the North-West Atlantic fishing grounds.", a: "Cod, herring, haddock, mackerel, flounder, tuna." },
+            { q: "21. Explain one physical factor that makes the Grand Banks of Newfoundland a rich fishing ground.", a: "The convergence of the cold Labrador Current and the warm Gulf Stream, leading to nutrient upwelling and abundant plankton." },
+            { q: "22. How does the warm North Atlantic Drift current benefit fishing in the North-East Atlantic?", a: "It raises water temperatures, keeping ports (e.g., in Norway) ice-free year-round and improving conditions for plankton growth." },
+            { q: "23. Which fishing ground is considered the world's largest, according to the provided notes?", a: "The North-West Pacific Fishing Grounds." },
+            { q: "24. Name two countries that heavily fish in the North-West Pacific grounds.", a: "Japan, China, Russia, North Korea, South Korea." },
+            { q: "25. What is the significance of the Oyashio and Kuroshio currents for fishing in the North-West Pacific?", a: "Their convergence creates ideal conditions (temperature, nutrients from upwelling) for plankton growth, which supports large fish populations like salmon and tuna." },
+            { q: "26. Name two important fish species caught in the North-East Pacific fishing grounds.", a: "Salmon (most important), tuna, sardines, halibut." },
+            { q: "27. How does the presence of numerous rivers influence fishing in the North-East Pacific?", a: "Many rivers (e.g., Fraser, Columbia) serve as spawning grounds for anadromous fish like salmon." },
+
+            // Types of Fish
+            { q: "28. Define pelagic fish and give one example.", a: "Pelagic fish live near the surface or in the mid-waters of lakes and oceans, often moving in shoals. Example: Mackerel, herring, tuna." },
+            { q: "29. Define demersal fish and give one example.", a: "Demersal fish live near the bottom (seabed) of deep water bodies. Example: Cod, haddock, flounder." },
+            { q: "30. What are anadromous fish? Give an example.", a: "Anadromous fish migrate from saltwater (oceans) to freshwater (rivers) to breed (spawn). Example: Salmon, sturgeon." },
+            { q: "31. Name two examples of freshwater fish found in Kenya.", a: "Tilapia, Nile perch, mudfish (catfish), trout." },
+            { q: "32. Give an example of a crustacean and a mollusc caught as shellfish.", a: "Crustacean: Crab, lobster, prawn. Mollusc: Oyster, mussel, clam." },
+
+            // Fishing Methods
+            { q: "33. List three traditional fishing methods.", a: "Harpooning/spears, use of small-scale gill nets, use of herbs (poisoning), barrier traps, baskets, handline fishing, lamp luring." },
+            { q: "34. Describe the traditional fishing method of 'use of barrier traps'.", a: "Weirs or barriers made of reeds, papyrus, or stones are constructed across a river or in shallow lake waters to guide fish into a trap from which they cannot escape." },
+            { q: "35. Name three modern fishing methods.", a: "Seining (Purse seining, Haul/Beach seining), Trawling (Bottom, Midwater), Drifting (Drift nets), Line fishing (Long-lining)." },
+            { q: "36. Explain the process of purse seining.", a: "A large net is used to encircle a shoal of fish. A drawstring (purse line) at the bottom of the net is then pulled, closing the net like a purse and trapping the fish. The net is then hauled aboard." },
+            { q: "37. What is the main difference between bottom trawling and midwater trawling?", a: "Bottom trawling involves dragging the net along the seabed to catch demersal fish, while midwater trawling involves dragging the net through the water column (not touching the bottom) for pelagic fish." },
+            { q: "38. Why has large-scale drift netting been criticized?", a: "It is often indiscriminate and leads to high bycatch of non-target species like dolphins, turtles, and seabirds, earning it the name 'walls of death'." },
+            { q: "39. Describe the long-lining method of fishing.", a: "A very long main fishing line with hundreds or thousands of shorter branch lines, each with a baited hook, is set either floating near the surface or anchored near the seabed." },
+            
+            // Fisheries in Kenya
+            { q: "40. Name three main landing sites for marine fisheries along the Kenyan coast.", a: "Mombasa, Malindi, Lamu, Shimoni, Kiunga." },
+            { q: "41. Identify two types of commercially valuable fish caught in Kenya's marine fisheries.", a: "Tuna, kingfish, sailfish, marlin, snapper, prawns, lobsters." },
+            { q: "42. State two physical challenges facing marine fishing in Kenya.", a: "1. Narrow continental shelf, limiting rich shallow fishing grounds. 2. Strong ocean tides, currents, and rough seas hazardous for small boats." },
+            { q: "43. State two human-related challenges facing marine fishing in Kenya.", a: "1. Inadequate technology and limited capital among local fishermen. 2. Competition from better-equipped foreign fishing fleets (IUU fishing)." },
+            { q: "44. Name three major inland fishing grounds in Kenya.", a: "Lake Victoria, Lake Turkana, Lake Naivasha, Lake Baringo, River Tana." },
+            { q: "45. What are the three most commercially important fish species in Lake Victoria (Kenya)?", a: "Nile Perch (mbuta), Tilapia (ngege), Dagaa (omena)." },
+            { q: "46. List two physical factors favouring fishing in Lake Victoria.", a: "1. It is the largest tropical freshwater lake, providing extensive fishing grounds. 2. Historically, it had diverse fish species (though this has changed)." },
+            { q: "47. Identify three problems specifically affecting fishing in Lake Victoria.", a: "1. Overfishing of key species. 2. Invasive water hyacinth. 3. Pollution from surrounding areas. (Also: poor roads, inadequate refrigeration, inter-territorial conflicts)." },
+            { q: "48. Explain how the invasive water hyacinth negatively impacts fishing in Lake Victoria.", a: "It blocks landing beaches and fishing routes, makes navigation difficult, depletes oxygen in the water harming fish, and provides breeding grounds for disease vectors like snails (bilharzia) and mosquitoes." },
+            { q: "49. Give two reasons why freshwater fishing is more widespread than marine fishing in East Africa.", a: "1. Numerous accessible inland water bodies. 2. Higher local demand for freshwater fish and simpler, lower-cost technology often used." },
+            { q: "50. Name two areas in Kenya known for fish farming (aquaculture).", a: "Kibos (Kisumu), Sagana (Central Kenya), Bamburi (Mombasa)." },
+            { q: "51. What is the most commonly reared fish species in Kenyan fish farms?", a: "Tilapia." },
+            { q: "52. State three reasons why the Kenyan government encourages fish farming.", a: "1. To increase fish supply and improve food security/nutrition. 2. To create employment and provide income. 3. To conserve natural fisheries by reducing pressure on wild stocks." },
+            { q: "53. Identify two measures taken by the Kenyan government to promote fish farming.", a: "1. Setting up demonstration fish ponds and hatcheries (e.g., Sagana). 2. Providing extension services and training to farmers." },
+            { q: "54. List two problems facing fish farming in Kenya.", a: "1. Lack of capital for pond construction and inputs (fingerlings, feed). 2. Inadequate supply of quality fish feed. (Also: lack of technical knowledge, pests/diseases, predation, limited market)." },
+
+            // Significance of Fishing in Kenya
+            { q: "55. State three ways fishing contributes to the economy of Kenya.", a: "1. Source of income for individuals. 2. Employment creation. 3. Foreign exchange earnings through exports." },
+            { q: "56. How does fishing contribute to food security in Kenya?", a: "It provides a vital and relatively affordable source of high-quality animal protein for the population." },
+            { q: "57. Give an example of how fish provides raw materials for other industries in Kenya.", a: "Fish waste (offal) can be processed into animal feed (fish meal) or fertilizers." },
+            { q: "58. How can fishing lead to the development of infrastructure?", a: "It can stimulate the development of transport networks (roads to landing sites), landing facilities (jetties, cold storage), and processing plants in fishing regions." },
+            { q: "59. Name one town in Kenya whose growth has been significantly influenced by fishing activities.", a: "Kisumu, Mbita, Lamu, Malindi." },
+            
+            // Problems and Solutions in Kenyan Fisheries
+            { q: "60. Explain the problem of over-exploitation/overfishing in Kenya's fisheries.", a: "It involves indiscriminate harvesting, use of undersized nets, and fishing in breeding grounds, leading to the depletion of fish stocks and reduced future catches." },
+            { q: "61. Suggest one specific solution to control overfishing in Lake Victoria.", a: "Enforce regulations on net mesh sizes to allow juvenile fish to escape and mature OR implement and enforce closed fishing seasons during breeding periods for key species." },
+            { q: "62. Describe how pollution from agricultural runoff affects fisheries.", a: "Agricultural runoff containing pesticides and fertilizers enters water bodies, leading to eutrophication (algal blooms that deplete oxygen) and direct poisoning of aquatic life, contaminating fish." },
+            { q: "63. Why is inadequate capital a persistent problem for many small-scale fishermen in Kenya?", a: "They lack the funds to purchase modern, efficient fishing gear, better boats, and essential preservation facilities like ice boxes or cold storage, limiting their catch and income." },
+            { q: "64. How do poor transport networks specifically impact fishermen's earnings?", a: "Impassable or poorly maintained roads to landing beaches delay the transport of fresh fish to markets, leading to spoilage and forcing fishermen to sell their catch at very low prices to middlemen." },
+            { q: "65. What is IUU fishing, and how does it affect Kenyan marine fisheries?", a: "IUU (Illegal, Unreported, and Unregulated) fishing, often by foreign fleets, involves fishing without permission, not reporting catches, or using banned gear. It depletes Kenya's fish stocks and undermines local fishermen." },
+            { q: "66. State one solution to the problem of inadequate fish preservation facilities at landing sites.", a: "Invest in establishing or improving cold storage facilities and ice plants at major landing beaches." },
+            { q: "67. How do inter-boundary conflicts in shared waters like Lake Victoria affect fishermen?", a: "Disputes over fishing rights and boundaries can lead to harassment, arrest, confiscation of gear and catch by authorities from neighboring countries, creating insecurity and economic loss." },
+            { q: "68. What is the role of KEMFRI in Kenyan fisheries?", a: "KEMFRI (Kenya Marine and Fisheries Research Institute) conducts research on fish stocks, aquatic ecosystems, aquaculture, and sustainable fishing practices to provide scientific information for fisheries management." },
+            { q: "69. How does the destruction of mangrove forests impact marine fisheries?", a: "Mangrove forests serve as crucial breeding and nursery grounds for many marine fish species and shellfish. Their destruction leads to loss of habitat and a decline in fish populations." },
+            { q: "70. Suggest a measure to combat the problem of aquatic weeds like water hyacinth.", a: "Implement integrated weed control measures, which can include biological control (e.g., introducing weevils), mechanical harvesting, and manual removal." },
+
+            // Comparative Study: Kenya and Japan
+            { q: "71. State two major differences in the scale of fishing operations between Kenya and Japan.", a: "1. Kenya: Mostly small-scale (artisanal). Japan: Predominantly large-scale, highly commercial, global operations. 2. Kenya: Limited deep-sea fishing. Japan: Extensive deep-sea and distant water fishing fleets." },
+            { q: "72. Compare the level of technology used in the fishing industries of Kenya and Japan.", a: "Kenya generally uses low technology with traditional methods being common and limited modern equipment. Japan employs highly advanced technology, including modern fleets, factory ships, fish finders, and sophisticated processing." },
+            { q: "73. How do the main types of fishing grounds exploited differ between Kenya and Japan?", a: "Kenya primarily exploits inland lakes (like Victoria) and rivers, along with its coastal Indian Ocean waters. Japan exploits its extensive coastal waters and the rich North-West Pacific grounds, and also fishes in distant global waters." },
+            { q: "74. Contrast the fish consumption patterns in Kenya and Japan.", a: "In Kenya, fish consumption is moderate, higher in specific regions, and not a universal staple. In Japan, fish consumption is very high, and it's a staple part of the national diet with a strong cultural tradition." },
+            { q: "75. Describe one difference in the market orientation of fish products from Kenya and Japan.", a: "Kenya's fish market is primarily local, with some exports (e.g., Nile Perch). Japan has a large domestic market and is a major global exporter and importer of diverse fish products." },
+            { q: "76. How does fish farming (aquaculture) differ in its development between Kenya and Japan?", a: "In Kenya, fish farming is less developed but growing, mainly focusing on freshwater ponds (e.g., Tilapia). In Japan, aquaculture is highly developed, advanced, and includes a wide variety of marine and freshwater species." },
+            { q: "77. Compare government support for the fishing industry in Kenya and Japan.", a: "Government support in Kenya exists but often faces funding and implementation challenges. Japan has strong government support, including subsidies, well-established cooperatives, and strict management regimes." },
+            { q: "78. What is a key difference in the variety of fish species commercially caught by Kenya and Japan?", a: "Kenya commercially exploits fewer marine species, with freshwater fisheries dominated by a few key species. Japan exploits a wide variety of marine species and has diverse aquaculture." },
+            { q: "79. Identify one problem common to both Kenyan and Japanese fisheries.", a: "Overfishing of certain fish stocks is a problem faced in both countries. Pollution affecting fisheries is another common issue." },
+            { q: "80. How does the nature of the coastline differ between Kenya and Japan, and how does this impact fishing?", a: "Kenya has a relatively smooth coastline with few natural harbours. Japan has a highly indented coastline with numerous natural harbours and many islands, which provides more sheltered areas for fishing ports and fish breeding." },
+            { q: "81. Compare the continental shelves of Kenya and Japan in relation to fishing.", a: "Kenya has a narrow continental shelf, limiting the extent of rich shallow fishing grounds. Japan has a broad and rich continental shelf in many areas, supporting larger fish populations." },
+
+            // Management and Conservation
+            { q: "82. Define 'management of fisheries'.", a: "Management of fisheries refers to the effective planning and control of fish resources and their habitats to ensure their sustainable exploitation." },
+            { q: "83. Define 'conservation of fisheries'.", a: "Conservation of fisheries refers to the careful use and protection of fish resources and their aquatic environments to prevent depletion, ensure their long-term availability, and maintain ecological balance." },
+            { q: "84. Why is restricting fishing during closed seasons an important conservation measure?", a: "It allows fish to breed (spawn) without disturbance, leading to the replenishment of fish stocks." },
+            { q: "85. Explain the purpose of standardizing net mesh sizes in fishing.", a: "Standardizing net mesh sizes (gear restriction) ensures that only mature fish are caught, allowing juvenile (young) fish to escape, grow, and reproduce, thus helping to maintain healthy fish populations." },
+            { q: "86. How does licensing fishermen and vessels contribute to fisheries management?", a: "Licensing helps to control the number of fishermen and fishing boats operating in specific fisheries, thereby managing fishing effort and preventing overcrowding and over-exploitation." },
+            { q: "87. State two ways promoting fish farming helps in the conservation of wild fisheries.", a: "1. It provides an alternative source of fish, reducing the fishing pressure on wild stocks in lakes, rivers, and oceans. 2. It can be used for restocking overfished natural waters with hatchery-bred fingerlings." },
+            { q: "88. What is the role of research institutions like KEMFRI in fisheries management?", a: "They conduct scientific research on fish biology, population dynamics, stock assessment, impacts of fishing methods, and effective management practices, providing data and advice for sustainable fisheries policies." },
+            { q: "89. Why is international cooperation important for the conservation of marine fisheries?", a: "Many fish stocks are migratory or straddle the waters of multiple countries, and some fishing occurs on the high seas. International cooperation is needed for joint management, combating IUU fishing, and conserving shared resources." },
+            { q: "90. What does MCS stand for in fisheries management, and what is its purpose?", a: "MCS stands for Monitoring, Control, and Surveillance. Its purpose is to actively monitor fishing activities, ensure compliance with regulations, and deter illegal, unreported, and unregulated (IUU) fishing." },
+            { q: "91. How can public awareness and education contribute to fisheries conservation?", a: "Educating fishermen and the general public on the importance of sustainable fishing practices, the value of marine ecosystems, and the consequences of overfishing can foster responsible behavior and support for conservation efforts." },
+            { q: "92. What is a Marine Protected Area (MPA)?", a: "A Marine Protected Area (MPA) is a designated area of the sea, ocean, or large lake where human activities are restricted to protect natural or cultural resources." },
+            { q: "93. How do MPAs contribute to fish conservation?", a: "MPAs provide safe havens for fish to breed and grow, leading to an increase in fish populations and biodiversity within the protected area, which can then spill over into adjacent fishing grounds." },
+            { q: "94. Explain the term 'bycatch' in fishing.", a: "Bycatch refers to non-target species (fish, marine mammals, seabirds, turtles) that are caught unintentionally during fishing operations targeting other species. It is often discarded and can be a major conservation concern." },
+            { q: "95. Give one example of a fishing method known for high bycatch.", a: "Large-scale drift netting (also known as 'walls of death') or bottom trawling can have high bycatch rates." },
+            { q: "96. What is the significance of the Exclusive Economic Zone (EEZ) in relation to marine fishing?", a: "The EEZ is an area extending 200 nautical miles from a country's coastline, within which the coastal state has sovereign rights for exploring, exploiting, conserving, and managing natural resources, including fisheries." },
+            { q: "97. Why is controlling pollution from land-based sources important for fisheries?", a: "Pollutants like industrial waste, sewage, and agricultural chemicals can enter water bodies, degrading water quality, harming or killing fish and other aquatic life, and contaminating seafood, making it unsafe for consumption." },
+            { q: "98. What is meant by 'sustainable yield' in fisheries management?", a: "Sustainable yield is the amount of fish that can be harvested from a fish stock over an indefinite period without causing the stock to decline or impairing its ability to replenish itself." },
+            { q: "99. How can traditional ecological knowledge (TEK) of fishing communities contribute to modern fisheries management?", a: "TEK, accumulated over generations, often includes valuable insights into local fish behavior, breeding seasons, sustainable harvesting practices, and ecosystem dynamics, which can complement scientific data and improve management strategies." },
+            { q: "100. Why is the protection of fish breeding grounds (spawning areas) crucial for sustainable fisheries?", a: "Protecting breeding grounds ensures that fish can reproduce successfully, leading to the replenishment of fish stocks and maintaining the long-term health and productivity of the fishery." }
+        ];
+    </script>
+
+    <script>
+        // script.js - Handles the interactivity of the learning guide
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarNav = document.getElementById('sidebar-nav');
+            const contentArea = document.getElementById('content-area');
+            const mainTitle = document.getElementById('main-title');
+            const breadcrumbTrail = document.getElementById('breadcrumb-trail');
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+            const menuToggle = document.getElementById('menu-toggle');
+            const wrapper = document.getElementById('wrapper');
+
+            let currentSectionIndex = -1; // No section selected initially
+            let currentCategory = ""; // For sidebar category headings
+
+            // --- 1. Content Loading and Sidebar Generation ---
+            function generateSidebar() {
+                sidebarNav.innerHTML = ''; // Clear existing links
+                let currentCategory = "";
+                guideData.forEach((section, index) => {
+                    // Add category heading if it's a new category
+                    if (section.category && section.category !== currentCategory) {
+                        currentCategory = section.category;
+                        const categoryDiv = document.createElement('div');
+                        categoryDiv.classList.add('category-heading');
+                        categoryDiv.textContent = currentCategory;
+                        sidebarNav.appendChild(categoryDiv);
+                    }
+
+                    const link = document.createElement('a');
+                    link.href = `#${section.id}`;
+                    link.classList.add('list-group-item', 'list-group-item-action', 'list-group-item-light', 'p-3');
+                    if (section.category) { // Indent items under a category
+                        link.classList.add('sub-item');
+                    }
+                    link.textContent = section.title;
+                    link.setAttribute('role', 'button');
+                    link.setAttribute('tabindex', '0'); 
+                    link.dataset.index = index;
+
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        loadSection(index);
+                        if (window.innerWidth < 992) { 
+                            wrapper.classList.remove('toggled');
+                        }
+                    });
+                    link.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            loadSection(index);
+                            if (window.innerWidth < 992) {
+                                wrapper.classList.remove('toggled');
+                            }
+                        }
+                    });
+                    sidebarNav.appendChild(link);
+                });
+            }
+
+            function loadSection(index) {
+                if (index < 0 || index >= guideData.length) {
+                    console.error("Invalid section index:", index);
+                    return;
+                }
+
+                currentSectionIndex = index;
+                const section = guideData[index];
+
+                mainTitle.textContent = section.title.substring(section.title.indexOf('.') + 2); // Remove numbering for main title
+                contentArea.innerHTML = section.content; 
+
+                updateBreadcrumbs(section.category, section.breadcrumb);
+                updateNavigationButtons();
+                updateActiveSidebarLink();
+                saveProgress();
+
+                if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                    MathJax.typesetPromise([contentArea]).catch(function (err) {
+                        console.error('MathJax Typesetting Error:', err);
+                    });
+                } else if (typeof MathJax !== 'undefined' && MathJax.Hub && MathJax.Hub.Queue) {
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, contentArea]);
+                }
+
+                if (section.id === "revision-fishing") { // Ensure correct ID check
+                    renderRevisionQuestions();
+                }
+                
+                contentArea.scrollTop = 0;
+                document.getElementById('page-content-wrapper').scrollTop = 0; 
+            }
+
+            menuToggle.addEventListener('click', () => {
+                wrapper.classList.toggle('toggled');
+            });
+
+            prevButton.addEventListener('click', () => {
+                if (currentSectionIndex > 0) {
+                    loadSection(currentSectionIndex - 1);
+                }
+            });
+            prevButton.addEventListener('keydown', (e) => {
+                if ((e.key === 'Enter' || e.key === ' ') && currentSectionIndex > 0) {
+                    e.preventDefault();
+                    loadSection(currentSectionIndex - 1);
+                }
+            });
+
+            nextButton.addEventListener('click', () => {
+                if (currentSectionIndex < guideData.length - 1) {
+                    loadSection(currentSectionIndex + 1);
+                }
+            });
+             nextButton.addEventListener('keydown', (e) => {
+                if ((e.key === 'Enter' || e.key === ' ') && currentSectionIndex < guideData.length - 1) {
+                    e.preventDefault();
+                    loadSection(currentSectionIndex + 1);
+                }
+            });
+
+            function updateNavigationButtons() {
+                prevButton.disabled = currentSectionIndex <= 0;
+                nextButton.disabled = currentSectionIndex >= guideData.length - 1;
+            }
+
+            function updateActiveSidebarLink() {
+                const links = sidebarNav.querySelectorAll('.list-group-item');
+                links.forEach((link, idx) => {
+                    if (idx === currentSectionIndex) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            function updateBreadcrumbs(category, breadcrumbText) {
+                breadcrumbTrail.innerHTML = ''; 
+                const homeLi = document.createElement('li');
+                homeLi.classList.add('breadcrumb-item');
+                const homeLink = document.createElement('a');
+                homeLink.href = '#';
+                homeLink.textContent = 'Home';
+                homeLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentSectionIndex = -1;
+                    mainTitle.textContent = "Welcome to the Fishing Guide";
+                    contentArea.innerHTML = "<p>Please select a topic from the menu on the left to begin your learning journey.</p>";
+                    updateBreadcrumbs("Home", "");
+                    updateNavigationButtons();
+                    updateActiveSidebarLink();
+                    sessionStorage.removeItem('currentSectionIndex');
+                });
+                homeLi.appendChild(homeLink);
+                breadcrumbTrail.appendChild(homeLi);
+
+                if (category && currentSectionIndex !== -1) {
+                    const categoryLi = document.createElement('li');
+                    categoryLi.classList.add('breadcrumb-item');
+                    // Make category breadcrumb clickable to go to the first item in that category (optional)
+                    const categoryLink = document.createElement('a');
+                    categoryLink.href = '#';
+                    categoryLink.textContent = category;
+                    categoryLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const firstInCategory = guideData.findIndex(item => item.category === category);
+                        if (firstInCategory !== -1) loadSection(firstInCategory);
+                    });
+                    categoryLi.appendChild(categoryLink);
+                    breadcrumbTrail.appendChild(categoryLi);
+                }
+
+                if (breadcrumbText && breadcrumbText !== "Home" && currentSectionIndex !== -1) {
+                    const activeLi = document.createElement('li');
+                    activeLi.classList.add('breadcrumb-item', 'active');
+                    activeLi.setAttribute('aria-current', 'page');
+                    activeLi.textContent = breadcrumbText;
+                    breadcrumbTrail.appendChild(activeLi);
+                }
+            }
+            
+            function renderRevisionQuestions() {
+                const container = document.getElementById('revision-questions-container');
+                if (!container) {
+                    console.error("Revision questions container not found.");
+                    return;
+                }
+                container.innerHTML = ''; 
+
+                revisionQuestionsData.forEach((item, index) => {
+                    const questionId = `fishing-question-${index}`;
+                    const answerId = `fishing-answer-${index}`;
+
+                    const questionDiv = document.createElement('div');
+                    questionDiv.classList.add('revision-question-item');
+
+                    const header = document.createElement('div');
+                    header.classList.add('revision-question-header');
+                    header.setAttribute('data-bs-toggle', 'collapse');
+                    header.setAttribute('data-bs-target', `#${answerId}`);
+                    header.setAttribute('aria-expanded', 'false');
+                    header.setAttribute('aria-controls', answerId);
+                    header.setAttribute('role', 'button');
+                    header.setAttribute('tabindex', '0'); 
+                    header.innerHTML = `
+                        <span>${item.q}</span>
+                        <span class="arrow-icon">&#9662;</span> `;
+
+                    const answerDiv = document.createElement('div');
+                    answerDiv.id = answerId;
+                    answerDiv.classList.add('revision-answer', 'collapse');
+                    answerDiv.innerHTML = `<p>${item.a}</p>`;
+
+                    questionDiv.appendChild(header);
+                    questionDiv.appendChild(answerDiv);
+                    container.appendChild(questionDiv);
+
+                    header.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            new bootstrap.Collapse(answerDiv).toggle(); 
+                        }
+                    });
+                    
+                    answerDiv.addEventListener('show.bs.collapse', function () {
+                        header.querySelector('.arrow-icon').style.transform = 'rotate(180deg)';
+                    });
+                    answerDiv.addEventListener('hide.bs.collapse', function () {
+                         header.querySelector('.arrow-icon').style.transform = 'rotate(0deg)';
+                    });
+                });
+            }
+
+            function saveProgress() {
+                if (currentSectionIndex !== -1) {
+                    sessionStorage.setItem('currentFishingSectionIndex', currentSectionIndex);
+                }
+            }
+
+            function loadProgress() {
+                const savedIndex = sessionStorage.getItem('currentFishingSectionIndex');
+                if (savedIndex !== null && savedIndex >= 0 && savedIndex < guideData.length) {
+                    loadSection(parseInt(savedIndex, 10));
+                } else {
+                    loadSection(0); 
+                }
+            }
+
+            generateSidebar();
+            loadProgress(); 
+            if(currentSectionIndex !== -1 && guideData[currentSectionIndex]){
+                 updateBreadcrumbs(guideData[currentSectionIndex].category, guideData[currentSectionIndex].breadcrumb);
+            } else {
+                 updateBreadcrumbs("Home", "");
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCSE Geography - Industry Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // MathJax v3 configuration
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f9; 
+            color: #343a40; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+
+        #sidebar-wrapper {
+            min-height: 100vh;
+            width: 280px; 
+            background-color: #ffffff; 
+            border-right: 1px solid #dee2e6; 
+            transition: margin-left 0.25s ease-out;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1030; 
+            overflow-y: auto; 
+            padding-top: 10px; 
+        }
+
+        .sidebar-heading {
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            color: #0056b3; 
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #e9ecef; 
+        }
+        .sidebar-heading img {
+            width: 32px; 
+            height: 32px;
+            margin-right: 0.75rem;
+        }
+
+        #sidebar-nav .list-group-item {
+            border: none; 
+            padding: 0.8rem 1.25rem; 
+            font-size: 0.95rem;
+            color: #495057; 
+            background-color: transparent; 
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-left-color 0.2s ease-in-out;
+            border-left: 4px solid transparent; 
+        }
+
+        #sidebar-nav .list-group-item:hover,
+        #sidebar-nav .list-group-item:focus {
+            background-color: #eef2f7; 
+            color: #0056b3; 
+            text-decoration: none;
+            border-left-color: #007bff; 
+        }
+
+        #sidebar-nav .list-group-item.active {
+            background-color: #007bff; 
+            color: white;
+            font-weight: 500;
+            border-left-color: #0056b3; 
+        }
+
+        #sidebar-nav .category-heading {
+            font-size: 0.85rem; 
+            font-weight: bold;
+            color: #6c757d;
+            padding: 1rem 1.25rem 0.3rem; 
+            text-transform: uppercase;
+            margin-top: 0.75rem; 
+        }
+         #sidebar-nav .sub-item { 
+            padding-left: 2.5rem; 
+            font-size: 0.9rem;
+        }
+
+        #page-content-wrapper {
+            flex: 1;
+            padding-left: 280px; 
+            transition: padding-left 0.25s ease-out;
+            display: flex;
+            flex-direction: column;
+            min-width: 0; 
+            background-color: #f4f6f9; 
+        }
+
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: -280px; 
+        }
+
+        #wrapper.toggled #page-content-wrapper {
+            padding-left: 0; 
+        }
+
+        @media (max-width: 991.98px) { 
+            #sidebar-wrapper {
+                margin-left: -280px; 
+                position: fixed; 
+                height: 100%;
+                z-index: 1040; 
+            }
+            #wrapper.toggled #sidebar-wrapper { margin-left: 0; }
+            #page-content-wrapper { padding-left: 0; }
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+            background-color: #ffffff !important; 
+        }
+        .navbar .navbar-brand, .navbar .breadcrumb-item a, .navbar .breadcrumb-item.active {
+             color: #343a40 !important; 
+        }
+         .navbar .breadcrumb-item a:hover { color: #0056b3 !important; }
+
+        #menu-toggle {
+            border: 1px solid #007bff;
+            color: #007bff;
+        }
+        #menu-toggle:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            margin-bottom: 0; 
+        }
+        .breadcrumb-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .breadcrumb-item a:hover { text-decoration: underline; }
+        .breadcrumb-item.active { color: #6c757d; }
+
+        #content-area {
+            background-color: #ffffff; 
+            border-radius: 0.375rem; 
+            min-height: calc(100vh - 160px); 
+            box-shadow: 0 0 15px rgba(0,0,0,0.05); 
+        }
+
+        #content-area h1, #content-area h2, #content-area h3, #content-area h4, #content-area h5 {
+            color: #0056b3; 
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        #content-area h1 { font-size: 2rem; border-bottom: 2px solid #e9ecef; padding-bottom: 0.5rem;}
+        #content-area h2 { font-size: 1.75rem; }
+        #content-area h3 { font-size: 1.5rem; margin-top: 1.75rem; }
+        #content-area h4 { font-size: 1.25rem; margin-top: 1.5rem; }
+
+        #content-area p, #content-area ul, #content-area ol, #content-area table {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+        #content-area ul, #content-area ol { padding-left: 1.5rem; }
+        #content-area li { margin-bottom: 0.5rem; }
+        #content-area ul ul, #content-area ol ol { 
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+        }
+         #content-area .table {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        #content-area .table th {
+            background-color: #e9ecef; /* Lighter table header */
+            color: #343a40;
+            font-weight: 600;
+        }
+         #content-area .table td, #content-area .table th {
+            vertical-align: middle;
+        }
+
+        .diagram-placeholder {
+            border: 2px dashed #6c757d; 
+            background-color: #f8f9fa; 
+            padding: 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+            color: #6c757d;
+        }
+        .diagram-placeholder img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .revision-question-item {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .revision-question-header {
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #0056b3;
+        }
+        .revision-question-header:hover { background-color: #e9ecef; }
+        .revision-question-header .arrow-icon { transition: transform 0.2s ease-in-out; }
+        .revision-question-header[aria-expanded="true"] .arrow-icon { transform: rotate(180deg); }
+
+        .revision-answer {
+            padding: 1.25rem;
+            border-top: 1px solid #dee2e6;
+            background-color: #fff;
+        }
+        .revision-answer ul, .revision-answer ol { padding-left: 1.25rem; }
+
+        .MathJax_Display, mjx-container[jax="CHTML"][display="true"] {
+            display: block;
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+        }
+
+        #navigation-buttons button { min-width: 100px; }
+
+        footer {
+            font-size: 0.9rem;
+            background-color: #ffffff; 
+            border-top: 1px solid #e9ecef;
+        }
+
+        :focus-visible {
+          outline: 2px solid #007bff;
+          outline-offset: 2px;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+        }
+        .btn:focus-visible, .list-group-item:focus-visible {
+          outline: 2px solid #007bff !important; 
+          outline-offset: 2px !important;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <nav class="border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading bg-light p-3">
+                <img src="https://placehold.co/32x32/fd7e14/white?text=I" alt="Industry Guide Logo" class="me-2 rounded-circle"> Industry Guide
+            </div>
+            <div class="list-group list-group-flush" id="sidebar-nav"></div>
+        </nav>
+
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top">
+                <div class="container-fluid">
+                    <button class="btn btn-outline-primary btn-sm" id="menu-toggle">☰ Menu</button>
+                    <nav aria-label="breadcrumb" class="ms-3 flex-grow-1">
+                        <ol class="breadcrumb mb-0" id="breadcrumb-trail"></ol>
+                    </nav>
+                </div>
+            </nav>
+
+            <main class="container-fluid p-4" id="main-content-scroll-area">
+                <div id="content-area" class="bg-white p-md-4 p-3 rounded shadow-sm">
+                    <h1 id="main-title-placeholder">Welcome to the Industry Guide</h1>
+                    <p>Please select a topic from the menu on the left to begin your learning journey.</p>
+                </div>
+                <div class="d-flex justify-content-between mt-4" id="navigation-buttons">
+                    <button class="btn btn-outline-secondary" id="prev-button" disabled>&laquo; Previous</button>
+                    <button class="btn btn-outline-primary" id="next-button" disabled>Next &raquo;</button>
+                </div>
+            </main>
+
+            <footer class="text-center text-muted p-3 mt-auto">
+                <p class="mb-0">&copy; <span id="currentYear"></span> KCSE Industry Guide</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // --- 1. GUIDE CONTENT DATA ---
+        const guideData = [
+            // Chapter 1: Introduction to Industry
+            {
+                id: "ind_ch1",
+                title: "1. Introduction to Industry",
+                breadcrumb: "Introduction",
+                category: "General Introduction",
+                isChapter: true, 
+                content: `
+                    <h1 id="ind_ch1">1. Introduction to Industry</h1>
+                    <p>This chapter introduces the fundamental concepts of industry as relevant to KCSE Geography. The term <strong>industry</strong> refers to an enterprise that facilitates the production of goods or the provision of services intended for consumption or sale. It encompasses a wide array of economic activities that transform raw materials into finished products or deliver various services to meet human needs and demands. <strong>Industrialization</strong>, on the other hand, is defined as the process and pace at which a country establishes and develops these enterprises that produce goods and services for consumption or sale. These definitions are fundamental to understanding the economic structures and developmental trajectories of nations.</p>
+                    <p>The conceptualization of industrialization as a "process and pace" is particularly significant. It underscores that industrial development is not a static endpoint but a dynamic and ongoing transformation. The "process" implies distinct stages, challenges, and opportunities as a nation shifts from agrarian or primary-production-based economies towards more complex manufacturing and service-oriented structures. The "pace" highlights that the speed of this transformation can differ markedly, influenced by internal and external factors.</p>
+                    <p>Furthermore, the distinction often made between "industrialized countries," which predominantly produce manufactured goods, and "less industrialized countries," which are often reliant on the production of agricultural raw materials, introduces a critical dimension of global economic analysis. The drive for industrialization in countries like Kenya, therefore, transcends mere economic growth; it represents a strategic effort to achieve greater economic sovereignty, add value to national resources, diversify the economy, create more stable and higher-paying employment, and fundamentally alter its position within the global economic hierarchy.</p>
+                `
+            },
+            {
+                id: "ind_ch1_s1",
+                title: "1.1 Definition of Industry and Industrialization",
+                breadcrumb: "Definitions",
+                category: "General Introduction",
+                parentId: "ind_ch1",
+                content: `
+                    <h2 id="ind_ch1_s1">1.1 Definition of Industry and Industrialization</h2>
+                    <p>The term <strong>industry</strong> refers to an enterprise that facilitates the production of goods or the provision of services intended for consumption or sale. It encompasses a wide array of economic activities that transform raw materials into finished products or deliver various services to meet human needs and demands.</p>
+                    <p><strong>Industrialization</strong> is defined as the process and pace at which a country establishes and develops these enterprises that produce goods and services for consumption or sale. These definitions are fundamental to understanding the economic structures and developmental trajectories of nations.</p>
+                    <h4>Key Aspects:</h4>
+                    <ul>
+                        <li><strong>Process and Pace:</strong> Industrial development is dynamic and ongoing, not static. The "process" involves stages and challenges in shifting from agrarian to manufacturing/service economies. The "pace" (speed of transformation) varies due to internal factors (resources, policy, technology) and external factors (global trends, trade).</li>
+                        <li><strong>Industrialized vs. Less Industrialized Countries:</strong> Industrialized countries mainly produce manufactured goods. Less industrialized countries often rely on producing agricultural raw materials. This distinction often correlates with differences in economic power, technology, and living standards.</li>
+                        <li><strong>Drive for Industrialization:</strong> For countries like Kenya, it means economic sovereignty, value addition, diversification, and better employment, aiming to alter its global economic position.</li>
+                    </ul>
+                `
+            },
+            // Chapter 2: Factors Influencing Industry
+            {
+                id: "ind_ch2",
+                title: "2. Factors Influencing Industry",
+                breadcrumb: "Influencing Factors",
+                category: "Core Concepts",
+                isChapter: true,
+                content: `
+                    <h1 id="ind_ch2">2. Factors Influencing the Location and Development of Industries</h1>
+                    <p>The establishment and growth of industries are not random occurrences but are shaped by a complex interplay of various geographical, economic, political, and social factors. Understanding these factors is essential for analyzing the spatial patterns of industrial activity and for formulating effective industrial development strategies. The primary influences include:</p>
+                    <ul>
+                        <li>Availability of Raw Materials</li>
+                        <li>Labour (Availability, Cost, Skills)</li>
+                        <li>Capital</li>
+                        <li>Markets (Local, Regional, International)</li>
+                        <li>Transport and Communication Infrastructure</li>
+                        <li>Power/Energy Supply</li>
+                        <li>Government Policies</li>
+                        <li>Personal Decisions of Entrepreneurs</li>
+                        <li>Industrial Inertia</li>
+                        <li>Cost of Land</li>
+                    </ul>
+                `
+            },
+            {
+                id: "ind_ch2_s1",
+                title: "2.1 Raw Materials",
+                breadcrumb: "Raw Materials",
+                category: "Core Concepts",
+                parentId: "ind_ch2",
+                content: `
+                    <h2 id="ind_ch2_s1">2.1 Raw Materials</h2>
+                    <p>The availability and nature of raw materials are foundational to many industrial activities. Industries often choose to locate near the source of their primary inputs for several reasons:</p>
+                    <ul>
+                        <li><strong>Bulky or Weight-Losing Raw Materials:</strong> If raw materials are heavy, voluminous, or lose significant weight during processing, locating the industry near the source minimizes transportation costs. For example, cement manufacturing plants are typically situated near limestone quarries, and sawmills are found in forested areas.</li>
+                        <li><strong>Perishable Raw Materials:</strong> Industries processing perishable goods, such as fruit and vegetable canning, milk processing, and fish processing, must be close to the supply source to prevent spoilage and maintain quality. Tea factories in Kenya, for instance, are strategically located within tea-growing estates in highland areas like Kericho, Kiambu, and Nandi to ensure fresh leaves are processed promptly. Similarly, Delmonte's pineapple canning operations in Thika benefit from proximity to its vast plantations.</li>
+                        <li><strong>Steady Supply:</strong> Certain industries require a continuous and reliable supply of raw materials. Paper manufacturing, for example, needs a consistent input of wood pulp or other fibrous materials, making proximity to sustainable forests or sources of recycled paper advantageous.</li>
+                    </ul>
+                    <p>While the pull of raw materials has historically been a dominant locational factor, technological advancements in transportation (e.g., refrigerated trucks for perishable goods) and preservation techniques can somewhat reduce this constraint, offering industries greater locational flexibility. However, for many of Kenya's agro-based industries, particularly those dealing with highly perishable or low-value bulky produce, the imperative to locate near the farm gate remains strong.</p>
+                `
+            },
+            {
+                id: "ind_ch2_s2",
+                title: "2.2 Labour",
+                breadcrumb: "Labour",
+                category: "Core Concepts",
+                parentId: "ind_ch2",
+                content: `
+                    <h2 id="ind_ch2_s2">2.2 Labour</h2>
+                    <p>The availability, cost, and skill level of the labour force are critical determinants of industrial location and development.</p>
+                    <ul>
+                        <li><strong>Labour-Intensive Industries:</strong> Industries that require a large workforce, such as textile and garment manufacturing or electronics assembly, tend to be located in densely populated areas where an adequate supply of labour is readily available.</li>
+                        <li><strong>Skill Levels:</strong> The type of skills required influences location. Industries needing a large pool of semi-skilled or unskilled labour may find advantages in areas with high population density. Conversely, industries demanding highly specialized or technical skills are often drawn to major urban centres or regions with established educational and vocational training institutions. Nairobi and Mombasa, with their diverse labour pools and training facilities, attract a wide range of industries. The Jua Kali sector thrives in urban areas due to available artisans.</li>
+                        <li><strong>Managerial Skills:</strong> Beyond shop-floor labour, the availability of personnel with managerial, technical, and entrepreneurial skills is crucial for ensuring efficient operations, innovation, and strategic decision-making to maximize output at low production costs.</li>
+                    </ul>
+                    <p>Kenya faces a challenge in aligning its educational output with the specific skill requirements of modern industries, often resulting in a mismatch. Inadequate skilled labour and "brain drain" can impede sophisticated industries. Initiatives like Recognition of Prior Learning (RPL) for Jua Kali are positive steps.</p>
+                `
+            },
+            { id: "ind_ch2_s3", title: "2.3 Capital", breadcrumb: "Capital", category: "Core Concepts", parentId: "ind_ch2", content: `<h2 id="ind_ch2_s3">2.3 Capital</h2><p>Capital is the financial resource essential for initiating and sustaining industrial operations. It is required for land, buildings, machinery, raw materials, and wages. Access to adequate and affordable capital is fundamental. In Kenya, inadequate capital is a major hindrance. Government initiatives like KIE provide some support. FDI can be vital but may lead to profit repatriation. Domestic capital formation is often limited.</p>` },
+            { id: "ind_ch2_s4", title: "2.4 Market", breadcrumb: "Market", category: "Core Concepts", parentId: "ind_ch2", content: `<h2 id="ind_ch2_s4">2.4 Market</h2><p>Availability of a market is a powerful magnet. Industries producing fragile, perishable, or bulky goods often locate near consumers. High population density with purchasing power creates a vibrant local market. Limited local markets (low purchasing power) are a challenge in Kenya. Regional (EAC, COMESA) and global markets are critical. EPZs in Kenya target export markets.</p>` },
+            { id: "ind_ch2_s5", title: "2.5 Transport & Communication", breadcrumb: "Transport & Communication", category: "Core Concepts", parentId: "ind_ch2", content: `<h2 id="ind_ch2_s5">2.5 Transport and Communication</h2><p>Efficient networks facilitate flow of materials, products, and information. Well-developed infrastructure reduces costs and enhances competitiveness. Poor networks discourage investment. Concentration in urban centers like Nairobi and Mombasa is partly due to superior linkages. Quality and cost-effectiveness matter (e.g., SGR, fiber optics).</p>` },
+            { id: "ind_ch2_s6", title: "2.6 Power/Energy", breadcrumb: "Power/Energy", category: "Core Concepts", parentId: "ind_ch2", content: `<h2 id="ind_ch2_s6">2.6 Power/Energy</h2><p>Reliable and affordable power is critical. Energy-intensive industries locate where power is available, consistent, and competitively priced. Unreliable supply or high tariffs deter investment. Kenya's investment in renewables (geothermal, hydro, solar, wind) offers a competitive advantage by providing stable, potentially lower-cost energy compared to imported fossil fuels.</p>` },
+            { id: "ind_ch2_s7", title: "2.7 Government Policy", breadcrumb: "Government Policy", category: "Core Concepts", parentId: "ind_ch2", content: `<h2 id="ind_ch2_s7">2.7 Government Policy</h2><p>Plays a decisive role. Policy levers include: Incentives (financial aid, tax breaks), Infrastructure Development, SEZs/EPZs, Regulatory Framework (laws, standards), Provision of Security, Land Policy, Trade Policy, and Decentralization Policies (encouraging rural industries). Effectiveness depends on consistency, predictability, transparency, and efficient implementation. Good governance is vital.</p>` },
+            { id: "ind_ch2_s8", title: "2.8 Personal Decisions", breadcrumb: "Personal Decisions", category: "Core Concepts", parentId: "ind_ch2", content: `<h2 id="ind_ch2_s8">2.8 Personal Decisions</h2><p>Influence location, especially for SMEs. Factors: Desire to develop home area, family ties, perceived security/familiarity, access to local networks, availability of amenities. Rooted in assessment of risk, opportunity, and social capital. Highlights importance of local context.</p>` },
+            { id: "ind_ch2_s9", title: "2.9 Industrial Inertia", breadcrumb: "Industrial Inertia", category: "Core Concepts", parentId: "ind_ch2", content: `<h2 id="ind_ch2_s9">2.9 Industrial Inertia</h2><p>Tendency for an industry to remain in its original location even when initial factors diminish. Attributed to: Established Infrastructure, Skilled Labour Pool, Established Markets/Linkages, Fear of Relocation Costs, Social/Community Ties. Can provide stability but also hinder adaptation. Germany's Ruhr region transformation is an example of overcoming negative inertia.</p>` },
+            { id: "ind_ch2_s10", title: "2.10 Cost of Land", breadcrumb: "Cost of Land", category: "Core Concepts", parentId: "ind_ch2", content: `<h2 id="ind_ch2_s10">2.10 Cost of Land</h2><p>Significant factor, especially for land-intensive industries. Cheap land encourages, expensive land deters. High urban land values push industries to peripheries. Land speculation can inflate prices. Effective land-use planning (zoning, industrial parks) is crucial.</p>` },
+
+            // Chapter 3: Types of Industries
+            {
+                id: "ind_ch3",
+                title: "3. Types of Industries",
+                breadcrumb: "Types of Industries",
+                category: "Core Concepts",
+                isChapter: true,
+                content: `<h1 id="ind_ch3">3. Types of Industries</h1><p>Industries can be classified based on activity, raw materials, scale, and products/services.</p>`
+            },
+            { id: "ind_ch3_s1", title: "3.1 Primary Industries", breadcrumb: "Primary", category: "Core Concepts", parentId: "ind_ch3", content: `<h2 id="ind_ch3_s1">3.1 Primary Industries</h2><p>Involve extraction of raw materials directly from natural sources or exploitation of natural resources. Examples: Mining, Agriculture (raw produce), Fishing, Forestry. Location dictated by resource occurrence.</p>` },
+            { id: "ind_ch3_s2", title: "3.2 Secondary Industries", breadcrumb: "Secondary", category: "Core Concepts", parentId: "ind_ch3", content: `
+                <h2 id="ind_ch3_s2">3.2 Secondary (Manufacturing/Processing) Industries</h2>
+                <p>Transform raw materials into semi-processed or finished products, adding value. Pivotal for employment and value addition.</p>
+                <h4 id="ind_ch3_s2_1">3.2.1 Light Industries</h4>
+                <p>Process lighter raw materials, smaller capital investment/scale. Often less polluting, flexible location. Examples in Kenya: Textile making, Coffee/Tea processing, Food processing, Pharmaceuticals.</p>
+                <h4 id="ind_ch3_s2_2">3.2.2 Heavy Industries</h4>
+                <p>Process heavy/bulky raw materials, substantial capital, large scale. Significant energy needs. Examples: Iron/Steel rolling, Cement factories, Vehicle assembly, Oil refining (historical).</p>
+            ` },
+            { id: "ind_ch3_s3", title: "3.3 Tertiary Industries", breadcrumb: "Tertiary", category: "Core Concepts", parentId: "ind_ch3", content: `<h2 id="ind_ch3_s3">3.3 Tertiary (Service) Industries</h2><p>Provide essential services and facilities. Crucial for economic functioning. Examples: Trade, Transport, Banking, Tourism, Healthcare, Education.</p>` },
+            { id: "ind_ch3_s4", title: "3.4 Cottage/Jua Kali Industries", breadcrumb: "Cottage/Jua Kali", category: "Core Concepts", parentId: "ind_ch3", content: `
+                <h2 id="ind_ch3_s4">3.4 Cottage Industries / Jua Kali Sector in Kenya</h2>
+                <p>Small-scale, often home-based or informal, using traditional/adapted skills and local orientation.</p>
+                <h5>Cottage Industries (General):</h5>
+                <p>Making products in homes/small workshops, manual labor, simple tools. Examples: Pottery, wood carving, basket weaving.</p>
+                <h5>Jua Kali Sector in Kenya:</h5>
+                <p>Artisans/small-scale manufacturers, often open-air. Low capital, local/recycled materials, basic skills. Promoted by low start-up costs, available materials, cheap goods for local market. Government encourages via loans (KIE), land, cooperatives, training, sheds. RPL and 4IR tech integration are recent focuses.</p>
+                <p><strong>Importance:</strong> Mass employment (80-90% new jobs), livelihoods, foreign exchange (crafts), import substitution, income, affordable goods, resourcefulness. Key to BETA.</p>
+                <p><strong>Problems:</strong> Market discrimination, competition, inadequate capital, exploitation, poor working conditions, infrastructure deficiencies, raw material sourcing issues, insecurity, informality issues, skills gaps.</p>
+            ` },
+
+            // Chapter 4: Distribution of Industries in Kenya
+            {
+                id: "ind_ch4",
+                title: "4. Distribution of Industries in Kenya",
+                breadcrumb: "Distribution in Kenya",
+                category: "Kenyan Context",
+                isChapter: true,
+                content: `<h1 id="ind_ch4">4. Distribution of Industries in Kenya</h1><p>Spatial distribution is uneven, concentrated in major urban centers and specific regions.</p>`
+            },
+            { id: "ind_ch4_s1", title: "4.1 Agricultural Food Processing", breadcrumb: "Agro-Food Processing", category: "Kenyan Context", parentId: "ind_ch4", content: `
+                <h2 id="ind_ch4_s1">4.1 Agricultural Food Processing Industries</h2>
+                <p>Widespread, tied to production zones. Examples:</p>
+                <ul>
+                    <li><strong>Tea Processing:</strong> Highland tea zones (Kericho, Nandi, Kiambu).</li>
+                    <li><strong>Coffee Processing:</strong> Coffee-growing areas (Central Highlands, Rift Valley, Western).</li>
+                    <li><strong>Milk Processing:</strong> Dairy farming regions (Naivasha, Nakuru, Eldoret).</li>
+                    <li><strong>Sugar Refining:</strong> Sugar belt (Western Kenya, Coast).</li>
+                    <li><strong>Fruit/Vegetable Canning:</strong> Horticultural areas (Thika - Delmonte).</li>
+                    <li><strong>Grain Milling:</strong> Grain areas (Rift Valley) and urban markets.</li>
+                    <li><strong>Meat Canning:</strong> Athi River (KMC).</li>
+                </ul>
+                <p>Central to rural income, reducing post-harvest losses, food security. A4I strategy aims to boost this.</p>
+            ` },
+            { id: "ind_ch4_s2", title: "4.2 Agricultural Non-Food Processing", breadcrumb: "Agro-Non-Food", category: "Kenyan Context", parentId: "ind_ch4", content: `
+                <h2 id="ind_ch4_s2">4.2 Agricultural Non-Food Processing Industries</h2>
+                <p>Utilize non-food agricultural materials. Examples:</p>
+                <ul>
+                    <li><strong>Cotton Ginneries/Textile Mills:</strong> Historically in cotton areas (Nyanza, Western, Eastern), mills in major towns (Nairobi, Thika, Rivatex). Sector faced decline.</li>
+                    <li><strong>Sisal Processing:</strong> Sisal regions (Kilifi, Voi, Mogotio).</li>
+                    <li><strong>Tobacco Processing:</strong> Teso (primary), manufacturing in Thika, Nairobi, Nakuru.</li>
+                    <li><strong>Pyrethrum Extraction:</strong> Nakuru.</li>
+                    <li><strong>Wood Processing/Pulp & Paper:</strong> Sawmills in forests, paper historically at Webuye (PanPaper).</li>
+                    <li><strong>Leather Tanning/Goods:</strong> Urban centers (Nairobi, Thika).</li>
+                </ul>
+                <p>Many face challenges: raw material decline, competition, mismanagement. Need integrated value chain development.</p>
+            ` },
+            { id: "ind_ch4_s3", title: "4.3 Non-Agricultural Manufacturing", breadcrumb: "Non-Agro Manufacturing", category: "Kenyan Context", parentId: "ind_ch4", content: `
+                <h2 id="ind_ch4_s3">4.3 Non-Agricultural Manufacturing Industries</h2>
+                <p>Utilize non-agricultural raw materials (local/imported). Concentrated in urban centers. Examples:</p>
+                <ul>
+                    <li><strong>Cement Production:</strong> Athi River, Bamburi.</li>
+                    <li><strong>Oil Refining (historical):</strong> Changamwe, Mombasa.</li>
+                    <li><strong>Iron/Steel Rolling Mills:</strong> Nairobi, Mombasa, Thika.</li>
+                    <li><strong>Motor Vehicle Assembly:</strong> Mombasa, Nairobi, Thika (CKD/SKD kits).</li>
+                    <li><strong>Pharmaceuticals:</strong> Nairobi.</li>
+                    <li><strong>Plastics/Packaging:</strong> Major urban centers.</li>
+                    <li><strong>Glass Making:</strong> Nairobi.</li>
+                    <li><strong>Clay/Ceramic Products.</strong></li>
+                </ul>
+                <p>Growth tied to economy, construction, consumer spending, input costs. Challenges: energy costs, import competition, technology needs.</p>
+            ` },
+            { id: "ind_ch4_s4", title: "4.4 Major Industrial Zones/Towns", breadcrumb: "Industrial Zones", category: "Kenyan Context", parentId: "ind_ch4", content: `
+                <h2 id="ind_ch4_s4">4.4 Major Industrial Zones and Towns in Kenya</h2>
+                <p>Activity concentrated in major urban centers and designated zones.</p>
+                <ul>
+                    <li><strong>Nairobi:</strong> Highest concentration/diversity (Industrial Area, Baba Dogo). Hub for food processing, metal fabrication, vehicle assembly, pharmaceuticals, etc. Benefits from market, labour, capital, transport.</li>
+                    <li><strong>Mombasa:</strong> Primary port city (Changamwe, Kipevu). Cement, steel, vehicle assembly, EPZ activities. Benefits from port, transport, EPZ incentives.</li>
+                    <li><strong>Thika:</strong> Near Nairobi. Pineapple canning (Delmonte), vehicle assembly, textiles. Benefits from agricultural hinterland, market proximity.</li>
+                    <li><strong>Kisumu:</strong> Lake port. Fish processing, beverage bottling. Benefits from lake, agricultural hinterland.</li>
+                    <li><strong>Eldoret:</strong> Agricultural processing (grain, dairy), textiles (Rivatex). Benefits from hinterland, transport hub.</li>
+                    <li><strong>Nakuru:</strong> Agro-processing, pyrethrum.</li>
+                    <li><strong>Athi River:</strong> Major EPZ (textiles, apparel), cement. Proximity to Nairobi, transport.</li>
+                </ul>
+                <h5>Export Processing Zones (EPZs):</h5>
+                <p>Athi River, Kipevu (Mombasa). Attract export-oriented investment (textiles, apparel). Offer incentives, infrastructure. Contribution to domestic industrialization needs strengthening via local linkages.</p>
+            ` },
+
+            // Chapter 5: Significance of Industrialization
+            {
+                id: "ind_ch5",
+                title: "5. Significance of Industrialization",
+                breadcrumb: "Significance",
+                category: "Kenyan Context",
+                isChapter: true,
+                content: `<h1 id="ind_ch5">5. Significance of Industrialization to Kenya</h1><p>Industrialization is a critical engine for economic growth and socio-economic transformation.</p>`
+            },
+            { id: "ind_ch5_s1", title: "5.1 Overview of Significance", breadcrumb: "Overview", category: "Kenyan Context", parentId: "ind_ch5", content: `
+                <h2 id="ind_ch5_s1">5.1 Overview of Significance</h2>
+                <ul>
+                    <li><strong>Employment Creation:</strong> Direct and indirect jobs (formal manufacturing ~369,200 in 2024; Jua Kali major employer).</li>
+                    <li><strong>Foreign Exchange Earnings:</strong> Export of manufactured goods. Value addition earns more.</li>
+                    <li><strong>Import Substitution & FX Savings:</strong> Local production reduces reliance on imports.</li>
+                    <li><strong>Development of Infrastructure:</strong> Stimulates transport, power, water, communication systems.</li>
+                    <li><strong>Development of Social Amenities:</strong> Schools, hospitals, housing with urban/industrial growth.</li>
+                    <li><strong>Diversification of the Economy:</strong> Reduces over-reliance on agriculture, increases resilience.</li>
+                    <li><strong>Utilization of Natural Resources:</strong> Adds value to local resources (minerals, agriculture).</li>
+                    <li><strong>Enhancement of Agricultural Production:</strong> Creates market for farm produce, stimulates farming.</li>
+                    <li><strong>Promotion of International Relations & Trade:</strong> Fosters economic/diplomatic ties.</li>
+                    <li><strong>Urbanization & Growth of Urban Centres:</strong> Drives urban growth and economic hubs.</li>
+                    <li><strong>Contribution to GDP & Vision 2030:</strong> Manufacturing 7.3% GDP (2024). Cornerstone of Vision 2030. KAM targets 20% GDP by 2030. Current modest contribution signals challenges.</li>
+                </ul>
+            ` },
+
+            // Chapter 6: Problems & Solutions
+            {
+                id: "ind_ch6",
+                title: "6. Problems & Solutions",
+                breadcrumb: "Problems & Solutions",
+                category: "Kenyan Context",
+                isChapter: true,
+                content: `<h1 id="ind_ch6">6. Problems of Industrialization in Kenya and Possible Solutions</h1><p>The sector faces myriad challenges constraining growth.</p>`
+            },
+            { id: "ind_ch6_s1", title: "6.1 Problems Facing Industrialization", breadcrumb: "Problems", category: "Kenyan Context", parentId: "ind_ch6", content: `
+                <h2 id="ind_ch6_s1">6.1 Problems Facing Industrialization in Kenya</h2>
+                <ul>
+                    <li><strong>Shortage of Raw Materials:</strong> Agricultural supply fluctuations, resource exhaustion, import dependence.</li>
+                    <li><strong>Inadequate Skilled Labor:</strong> Skills mismatch, limited relevant education, reliance on expatriates, brain drain.</li>
+                    <li><strong>Inadequate Capital:</strong> High cost of borrowing, limited access for SMEs/Jua Kali.</li>
+                    <li><strong>Limited Markets:</strong> Low local purchasing power, competition from imports.</li>
+                    <li><strong>High Cost of Energy.</strong></li>
+                    <li><strong>Competition from Cheap Imports:</strong> Affects local industries (e.g., textiles vs. "mitumba").</li>
+                    <li><strong>Industrial Unrest:</strong> Disputes disrupt production.</li>
+                    <li><strong>Underdeveloped Transport & Communication Networks.</strong></li>
+                    <li><strong>Mismanagement of Industries:</strong> Inefficiency, corruption.</li>
+                    <li><strong>Low Level of Technology:</strong> Outdated tech limits productivity/quality.</li>
+                    <li><strong>Environmental & Socio-economic Problems:</strong> Displacement, pollution (air, water, land), rural-urban migration issues, regional imbalance, potential neglect of agriculture.</li>
+                </ul>
+            ` },
+            { id: "ind_ch6_s2", title: "6.2 Possible Solutions & Gov Efforts", breadcrumb: "Solutions", category: "Kenyan Context", parentId: "ind_ch6", content: `
+                <h2 id="ind_ch6_s2">6.2 Possible Solutions and Government Efforts</h2>
+                <ul>
+                    <li><strong>Policy Frameworks:</strong> Kenya Industrial Transformation Program (KITP), Agriculture for Industry (A4I), MITCD role.</li>
+                    <li><strong>Financial Support:</strong> KIE loans, tax incentives, streamlined regulations.</li>
+                    <li><strong>Infrastructure Development:</strong> Industrial parks, EPZs/SEZs, transport/communication improvements.</li>
+                    <li><strong>Human Capital:</strong> Skills training (TVETs), Recognition of Prior Learning (RPL).</li>
+                    <li><strong>SME/Jua Kali Support:</strong> Finance, markets, workspaces, tech adoption.</li>
+                    <li><strong>Decentralization:</strong> Encouraging rural industries.</li>
+                    <li><strong>Environmental Management:</strong> NEMA regulations, cleaner production.</li>
+                    <li><strong>Promoting Local Content & Linkages.</strong></li>
+                </ul>
+                <p>A coherent policy must balance supporting local industries and attracting FDI. Success depends on coordination, political will, good governance, and private sector participation.</p>
+            ` },
+
+            // Chapter 7: Comparative Studies
+            {
+                id: "ind_ch7",
+                title: "7. Comparative Studies",
+                breadcrumb: "Comparative Studies",
+                category: "Global Context",
+                isChapter: true,
+                content: `<h1 id="ind_ch7">7. Comparative Studies of Industrialization</h1><p>Examining cottage industry in India, iron/steel in Ruhr (Germany), and car/electronics in Japan.</p>`
+            },
+            { id: "ind_ch7_s1", title: "7.1 Cottage Industry in India", breadcrumb: "India Cottage Industry", category: "Global Context", parentId: "ind_ch7", content: `
+                <h2 id="ind_ch7_s1">7.1 The Cottage Industry in India (vis-à-vis Kenya's Jua Kali Sector)</h2>
+                <p>Vast, historically significant small-scale, often home-based manufacturing.</p>
+                <ul>
+                    <li><strong>Characteristics:</strong> Low capital, labour-intensive, simple tools, local raw materials, diverse products (textiles, handicrafts), domestic/export markets, skilled craftsmanship, widespread.</li>
+                    <li><strong>Factors in India:</strong> Large population (labour, market), heritage skills, diverse raw materials, government support, global demand for artisanal products.</li>
+                    <li><strong>Significance:</strong> Mass employment, heritage preservation, FX earnings, rural development, women empowerment.</li>
+                    <li><strong>Problems:</strong> Credit access, competition, outdated tech, marketing issues, middlemen, raw material fluctuations.</li>
+                    <li><strong>Comparison with Kenya's Jua Kali:</strong> Similarities in labour intensity, local inputs, local markets, employment, challenges. Differences in India's deeper traditions, larger scale, more established export for certain crafts. Kenya's Jua Kali innovative but more "informal". Kenya can learn from India on promoting skills, clusters, GI tagging, e-commerce.</li>
+                </ul>
+            ` },
+            { id: "ind_ch7_s2", title: "7.2 Iron & Steel in Ruhr, Germany", breadcrumb: "Ruhr, Germany", category: "Global Context", parentId: "ind_ch7", content: `
+                <h2 id="ind_ch7_s2">7.2 Iron and Steel Industry in the Ruhr Region, Germany</h2>
+                <p>Historically a world center for coal mining and iron/steel production.</p>
+                <ul>
+                    <li><strong>Historical Locational Factors:</strong> Abundant local coal/iron ore, water resources (Rhine, Ruhr for transport/processes), skilled labour, capital, market access, infrastructure.</li>
+                    <li><strong>Significance:</strong> Pivotal for German economy/military, urban growth, employment.</li>
+                    <li><strong>Problems:</strong> Pollution, congestion, resource depletion.</li>
+                    <li><strong>Current Status & Transformation:</strong> Shift from coal/steel to diversified economy (services, tech, tourism). Focus on hydrogen economy and decarbonizing steel ("green steel"). Challenges: cost of transition, renewable energy supply.</li>
+                    <li><strong>Comparison with Kenya:</strong> Ruhr had strong local raw materials for heavy industry (absent in Kenya for similar scale). Ruhr's location and waterways offered advantages. Ruhr's transformation offers lessons on adaptation, managing decline, investing in sustainable industries.</li>
+                </ul>
+            ` },
+            { id: "ind_ch7_s3", title: "7.3 Car & Electronics in Japan", breadcrumb: "Japan Auto & Electronics", category: "Global Context", parentId: "ind_ch7", content: `
+                <h2 id="ind_ch7_s3">7.3 Car Manufacture and Electronic Industry in Japan</h2>
+                <p>Global leader in automotive and consumer electronics (quality, innovation, efficiency).</p>
+                <ul>
+                    <li><strong>Manufacturing Zones:</strong> Automotive (Tokyo-Yokohama, Osaka-Kobe, Nagoya). Electronics (Tokyo, Osaka, Kyoto).</li>
+                    <li><strong>Factors Favoring Development:</strong> Capital, Technology/R&D (lean manufacturing, JIT), Skilled/Industrious Workforce, Energy Sources, Domestic/Export Markets, Government Policy (MITI), Efficient Transport/Infrastructure, Education System, Product Strategy.</li>
+                    <li><strong>Significance:</strong> Economic powerhouse, FX earnings, employment, technological leadership.</li>
+                    <li><strong>Current Status & Transformation:</strong> Automotive shifting to EVs and "CASE" technologies. Electronics (semiconductors) reviving domestic chip industry (e.g., Rapidus) after decline. Challenges: EV transition speed, battery tech, labor gaps, geopolitical tensions.</li>
+                    <li><strong>Comparison with Kenya:</strong> Japan's success built on high tech, massive capital, skilled workforce, quality focus (areas of gap for Kenya). Strong industrial policy and collaboration. Japan's current adaptation challenges offer lessons on innovation and responding to disruption. Kenya can learn about human capital, quality culture, agile policies.</li>
+                </ul>
+            ` },
+
+            // Chapter 8: Field Work
+            {
+                id: "ind_ch8",
+                title: "8. Field Work in Industry",
+                breadcrumb: "Field Work",
+                category: "Geographical Skills",
+                isChapter: true,
+                content: `<h1 id="ind_ch8">8. Field Work in Geography: Studying Local Industries</h1><p>Fieldwork is indispensable for practical learning and direct engagement with geographical concepts.</p>`
+            },
+            { id: "ind_ch8_s1", title: "8.1 Definition & Importance", breadcrumb: "Definition & Importance", category: "Geographical Skills", parentId: "ind_ch8", content: `
+                <h2 id="ind_ch8_s1">8.1 Definition and Importance of Fieldwork</h2>
+                <p><strong>Fieldwork:</strong> Practical aspect of geography involving learning through direct experience outside the classroom; systematic observation, data collection, recording, and analysis in real-world context.</p>
+                <h5>Importance in Studying Industries:</h5>
+                <ul>
+                    <li>Experiential Learning (observe concepts).</li>
+                    <li>Enhanced Understanding (deepens grasp of principles).</li>
+                    <li>Skill Development (observation, data collection, analysis, reporting).</li>
+                    <li>Real-World Application (apply methods to real issues).</li>
+                    <li>Awareness of Local Context (insights into local industries).</li>
+                    <li>Appreciation of Interconnections (industry linkages).</li>
+                </ul>
+            ` },
+            { id: "ind_ch8_s2", title: "8.2 Types of Fieldwork", breadcrumb: "Types of Fieldwork", category: "Geographical Skills", parentId: "ind_ch8", content: `
+                <h2 id="ind_ch8_s2">8.2 Types of Fieldwork Applicable to Industrial Study</h2>
+                <ul>
+                    <li><strong>Case Study of a Single Industry/Factory:</strong> In-depth investigation.</li>
+                    <li><strong>Study of an Industrial Estate or Zone:</strong> Examining a cluster (EPZ, Jua Kali).</li>
+                    <li><strong>Transect Study:</strong> Mapping changes along a line.</li>
+                    <li><strong>Comparative Study:</strong> Comparing different industries or locations.</li>
+                    <li><strong>Problem-Oriented Study:</strong> Investigating a specific issue (e.g., environmental impact).</li>
+                </ul>
+            ` },
+            { id: "ind_ch8_s3", title: "8.3 Fieldwork Procedure", breadcrumb: "Procedure", category: "Geographical Skills", parentId: "ind_ch8", content: `
+                <h2 id="ind_ch8_s3">8.3 Fieldwork Procedure for Studying a Local Industry</h2>
+                <p>Systematic approach: pre-field, field, and post-field stages.</p>
+                <h5>8.3.1 Pre-field/Planning Stage:</h5>
+                <ul>
+                    <li>Defining Objectives and Scope.</li>
+                    <li>Formulating Hypotheses/Research Questions.</li>
+                    <li>Literature Review.</li>
+                    <li>Reconnaissance Visit (Pilot Study).</li>
+                    <li>Seeking Permission.</li>
+                    <li>Designing Data Collection Tools (Questionnaires, Interview Guides, Observation Checklists, Mapping Tools).</li>
+                    <li>Sampling Methods (if applicable).</li>
+                    <li>Logistics and Equipment.</li>
+                    <li>Group Organization and Roles.</li>
+                </ul>
+                <h5>8.3.2 Field Stage: Data Collection:</h5>
+                <ul>
+                    <li>Observation.</li>
+                    <li>Interviews.</li>
+                    <li>Administering Questionnaires.</li>
+                    <li>Mapping and Sketching.</li>
+                    <li>Measurement.</li>
+                    <li>Photography and Videography (with permission).</li>
+                    <li>Document Analysis.</li>
+                </ul>
+                <h5>8.3.3 Post-field Stage: Data Analysis, Presentation, and Report Writing:</h5>
+                <ul>
+                    <li>Data Processing and Organization.</li>
+                    <li>Data Analysis (Quantitative & Qualitative).</li>
+                    <li>Data Presentation (Tables, Graphs, Maps, Photos, Flow Diagrams).</li>
+                    <li>Interpretation and Conclusion.</li>
+                    <li>Report Writing (Intro, Methodology, Findings, Discussion, Conclusion, Recommendations, Appendices).</li>
+                </ul>
+            ` },
+            { id: "ind_ch8_s4", title: "8.4 Potential Problems", breadcrumb: "Potential Problems", category: "Geographical Skills", parentId: "ind_ch8", content: `
+                <h2 id="ind_ch8_s4">8.4 Potential Problems During Fieldwork on Industries</h2>
+                <ul>
+                    <li>Access and Permission difficulties.</li>
+                    <li>Respondent Reluctance to share information.</li>
+                    <li>Time Constraints.</li>
+                    <li>Safety Hazards in industrial environments.</li>
+                    <li>Language Barriers.</li>
+                    <li>Bias (informant or observer).</li>
+                    <li>Logistical Issues (transport, weather, equipment).</li>
+                    <li>Financial Constraints.</li>
+                </ul>
+                <p>Effective fieldwork requires interpersonal skills, ethical considerations (consent, confidentiality), and adaptability.</p>
+            ` },
+            // Chapter 9: Conclusion (Industry)
+            {
+                id: "ind_ch9",
+                title: "9. Conclusion (Industry)",
+                breadcrumb: "Conclusion",
+                category: "Summary",
+                isChapter: true,
+                content: `
+                    <h1 id="ind_ch9">9. Conclusion (Industry)</h1>
+                    <p>The study of industry within the KCSE Geography syllabus provides a comprehensive understanding of a critical sector that shapes economic landscapes, influences human settlement patterns, and presents both opportunities and challenges for national development. From the fundamental definitions of industry and industrialization, it is clear that this is a dynamic process, with Kenya, like other nations, navigating its unique path characterized by a specific "process and pace."</p>
+                    <p>The location and development of industries are governed by a complex web of factors. For Kenya, leveraging its agricultural base, developing a skilled workforce, mobilizing capital, expanding market access, investing in modern infrastructure (including renewable energy), and implementing supportive government policies are key. Industrialization brings substantial benefits but faces challenges like raw material shortages, skills gaps, capital constraints, and environmental concerns.</p>
+                    <p>Comparative studies of India, Germany, and Japan offer valuable lessons in adaptation, resilience, innovation, and strategic collaboration. Fieldwork provides invaluable practical learning.</p>
+                    <p>Kenya's industrial journey requires a multi-pronged, adaptive, and sustainable approach addressing weaknesses, building on strengths (like Jua Kali and renewable energy), fostering innovation, and ensuring inclusive benefits and environmental health. The effective management of the "energy trilemma" will be crucial in powering Kenya's industrial future.</p>
+                `
+            },
+            // Chapter 10: Revision Questions for Industry
+            {
+                id: "ind_ch10_rev", 
+                title: "10. Industry Revision Questions",
+                breadcrumb: "Industry Revision",
+                category: "Self-Assessment",
+                isChapter: true, 
+                content: `
+                    <h1 id="ind_ch10_rev">10. Industry Revision Questions</h1>
+                    <p>Test your understanding of the Industry topic with these revision questions. Click on a question to reveal the answer.</p>
+                    <div id="industry-revision-questions-container">
+                        </div>
+                `
+            }
+        ];
+
+        const industryRevisionQuestionsData = [
+            // Definitions and Concepts
+            { q: "1. Define the term 'Industry'.", a: "The term industry refers to an enterprise that facilitates the production of goods or the provision of services intended for consumption or sale." },
+            { q: "2. Define the term 'Industrialization'.", a: "Industrialization is defined as the process and pace at which a country establishes and develops enterprises that produce goods and services for consumption or sale." },
+            { q: "3. Distinguish between 'industrialized countries' and 'less industrialized countries'.", a: "Industrialized countries predominantly produce manufactured goods, while less industrialized countries are often reliant on the production of agricultural raw materials." },
+            { q: "4. What is meant by the 'process and pace' of industrialization?", a: "The 'process' implies distinct stages, challenges, and opportunities as an economy shifts from agrarian to manufacturing/service-oriented structures. The 'pace' highlights that the speed of this transformation varies based on internal and external factors." },
+            { q: "5. Why is understanding the 'process and pace' of industrialization significant for a country like Kenya?", a: "It's significant because Kenya's path to industrialization will be unique, shaped by its specific historical background, resource base, policy environment, and global integration. Direct comparisons must be nuanced." },
+            
+            // Factors Influencing Location and Development of Industries
+            { q: "6. State five main factors influencing the location and development of industries.", a: "Any five of: Raw Materials, Labour, Capital, Markets, Transport and Communication, Power/Energy, Government Policies, Personal Decisions, Industrial Inertia, Cost of Land." },
+            { q: "7. Explain how the availability and nature of raw materials influence industrial location.", a: "Industries often locate near raw material sources if materials are bulky/weight-losing (to cut transport costs), perishable (to prevent spoilage), or if a steady supply is crucial." },
+            { q: "8. Give two reasons why industries processing bulky or weight-losing raw materials are often located near their source.", a: "1. To minimize transportation costs for heavy or voluminous materials. 2. To reduce costs if significant weight is lost during processing." },
+            { q: "9. Explain why industries processing perishable raw materials must be located close to the supply source.", a: "To prevent spoilage and maintain the quality of the raw materials and finished products (e.g., tea factories, fruit canning)." },
+            { q: "10. Explain how the availability, cost, and skill level of labour influence industrial location and development.", a: "Labour-intensive industries locate in densely populated areas. Specialized skills attract industries to urban centers with training institutions. Cost relative to productivity is also a key consideration." },
+            { q: "11. Why are industries requiring highly skilled labour often drawn to major urban centres?", a: "Major urban centres usually have established educational and vocational training institutions that can supply the necessary specialized human capital, and a larger pool of such individuals." },
+            { q: "12. Discuss the importance of managerial skills for industrial operations.", a: "Managerial skills are crucial for ensuring efficient operations, innovation, strategic decision-making, and maximizing output at low production costs." },
+            { q: "13. Explain the role of capital in initiating and sustaining industrial operations.", a: "Capital is essential for purchasing land, constructing buildings, acquiring machinery, procuring raw materials, and paying wages." },
+            { q: "14. Why is inadequate capital identified as a major hindrance to industrialization in Kenya?", a: "It often compels seeking loans with high interest rates, limiting project scope/pace. SMEs and Jua Kali particularly struggle to access formal credit." },
+            { q: "15. Explain how the availability of a market influences industrial location.", a: "Industries producing fragile, perishable, or bulky goods often locate near consumers. High population density with purchasing power creates a vibrant local market, stimulating growth." },
+            { q: "16. Why do industries producing fragile, perishable, or bulky goods often locate near their consumer base?", a: "To minimize transportation costs, reduce the risk of damage (fragile goods), prevent spoilage (perishable goods), or manage the logistics of bulky items." },
+            { q: "17. Discuss the importance of regional and international markets for Kenyan industries.", a: "They are critical for achieving economies of scale, enhancing competitiveness, and driving growth, as the domestic market alone may not be large enough." },
+            { q: "18. Explain the significance of efficient transport and communication networks for industrial activity.", a: "They facilitate the seamless flow of raw materials, finished products, and information, reducing costs and time, and enhancing competitiveness." },
+            { q: "19. Why do poor transport and communication networks discourage industrial investment?", a: "They increase the cost and time of moving inputs and outputs, and unreliable communication hinders business operations, making an area less attractive for investment." },
+            { q: "20. Explain how the availability and cost of power/energy influence industrial location.", a: "Reliable and affordable power is a critical operational input. Energy-intensive industries locate where power is readily available, consistent, and competitively priced." },
+            { q: "21. Why do unreliable power supplies or high energy tariffs deter investment?", a: "They significantly increase production costs, reduce profitability, and create operational uncertainties, making investment less attractive." },
+            { q: "22. Discuss the role of government policy in shaping the landscape of industrial development.", a: "Government policies (incentives, infrastructure, regulations, trade, decentralization) can stimulate or stifle industrial growth and influence location." },
+            { q: "23. List three ways in which government policy influences the location of industries in Kenya.", a: "1. Establishing EPZs/SEZs with incentives. 2. Developing infrastructure in specific areas. 3. Decentralization policies encouraging rural industries." },
+            { q: "24. Explain how personal decisions of entrepreneurs can influence industrial location.", a: "Factors like desire to develop one's home area, family ties, perceived security, local networks, or personal amenities can influence location, especially for SMEs." },
+            { q: "25. Define industrial inertia and explain why it occurs.", a: "Industrial inertia is the tendency for an industry to remain in its original location even when initial advantages diminish. It occurs due to established infrastructure, skilled labour, market linkages, relocation costs, and social ties." },
+            { q: "26. Explain how the cost of land is a significant factor in industrial location decisions.", a: "Expensive land discourages, while affordable land encourages setup, especially for land-intensive industries. High urban costs can push industries to peripheries." },
+            
+            // Types of Industries
+            { q: "27. Name the four primary classifications of industries mentioned in the syllabus.", a: "Primary, Secondary (Light and Heavy), Tertiary, and Cottage/Jua Kali industries." },
+            { q: "28. Define Primary industries and give two examples relevant to Kenya.", a: "Primary industries involve the extraction of raw materials directly from natural sources. Examples: Agriculture (tea, coffee), Mining (fluorspar)." },
+            { q: "29. Define Secondary industries and explain their role in economic development.", a: "Secondary industries transform raw materials into semi-processed or finished products, adding value. They are pivotal for employment, value addition, and producing goods for domestic/export markets." },
+            { q: "30. Distinguish between Light industries and Heavy industries, giving one example of each from Kenya.", a: "Light industries process lighter raw materials with smaller capital/scale (e.g., Tea processing). Heavy industries process bulky raw materials with substantial capital/scale (e.g., Cement production)." },
+            { q: "31. List three examples of Light industries found in Kenya.", a: "Textile making, Coffee processing, Tea processing, Milk processing, Food processing (bakeries)." },
+            { q: "32. List three examples of Heavy industries found or historically significant in Kenya.", a: "Cement factories, Steel rolling mills, Motor vehicle assembly, Oil refining (historical)." },
+            { q: "33. Define Tertiary industries and explain their importance for the economy.", a: "Tertiary industries provide essential services and facilities for other industries and consumers. They are crucial for economic functioning and are often major contributors to GDP/employment." },
+            { q: "34. List three examples of Tertiary industries in Kenya.", a: "Trade (retail/wholesale), Transport (matatus, SGR), Banking (KCB, Equity), Tourism, Healthcare, Education." },
+            { q: "35. Define Cottage industries.", a: "Cottage industries are typically involved in making products, particularly in homes or small workshops, using manual labor and simple tools." },
+            { q: "36. Describe three characteristics of cottage industries.", a: "1. Labour-intensive. 2. Owned by families or individuals. 3. Utilize locally available raw materials and simple tools." },
+            { q: "37. What is the Jua Kali sector in Kenya?", a: "The Jua Kali sector comprises artisans and small-scale manufacturers, often working in open-air settings or rudimentary shelters, forming a critical part of Kenya's informal economy." },
+            { q: "38. Describe three characteristics of Jua Kali industries in Kenya.", a: "1. Low capital investment. 2. Use of local or recycled raw materials. 3. Application of basic or simple craft skills, often widespread in urban/peri-urban areas." },
+
+            // Distribution of Industries in Kenya
+            { q: "39. Describe the general spatial distribution of industries within Kenya.", a: "Industrial activity is unevenly distributed, concentrated in major urban centers (Nairobi, Mombasa) and specific regions with raw materials or strategic advantages." },
+            { q: "40. Name three types of agricultural food processing industries found in Kenya and a key location for one.", a: "1. Tea Processing (Kericho). 2. Sugar Refining (Western Kenya sugar belt). 3. Milk Processing (Naivasha, Nakuru)." },
+            { q: "41. Explain why the location of agricultural food processing industries is strongly tied to agricultural production zones in Kenya.", a: "To minimize transport costs of often perishable and bulky raw materials, prevent spoilage, and maintain the quality of inputs." },
+            { q: "42. Name two agricultural non-food processing industries in Kenya and their primary raw material.", a: "1. Cotton Ginneries/Textile Mills (Cotton). 2. Sisal Processing (Sisal fibre)." },
+            { q: "43. Identify two types of non-agricultural manufacturing industries in Kenya and a town where one is located.", a: "1. Cement Production (Athi River or Bamburi). 2. Motor Vehicle Assembly (Thika or Mombasa)." },
+            { q: "44. Name three major industrial towns in Kenya, excluding Nairobi and Mombasa.", a: "Thika, Kisumu, Eldoret, Nakuru, Athi River." },
+            { q: "45. What are Export Processing Zones (EPZs) and what is their main purpose in Kenya?", a: "EPZs are designated areas with incentives to attract export-oriented investment, create employment, and boost foreign exchange earnings." },
+
+            // Significance of Industrialization to Kenya
+            { q: "46. Discuss three ways industrialization is significant to Kenya's economy.", a: "1. Employment Creation (formal and informal sectors). 2. Foreign Exchange Earnings (from exporting manufactured goods). 3. Economic Diversification (reducing reliance on agriculture)." },
+            { q: "47. Explain how industrialization contributes to the development of infrastructure in Kenya.", a: "Industrial growth necessitates and stimulates improvements in transport networks, power generation, water supply, and communication systems." },
+            { q: "48. How does industrialization enhance agricultural production in Kenya?", a: "Agro-processing industries create a stable market for farm produce, stimulating increased agricultural production and improved farmer incomes through backward linkages." },
+            { q: "49. What is the role of industrialization in achieving Kenya's Vision 2030 goals?", a: "Industrialization is a cornerstone of Vision 2030, aiming to transform Kenya into a newly industrializing, middle-income nation by boosting manufacturing's contribution to GDP and creating quality jobs." },
+            
+            // Problems of Industrialization in Kenya
+            { q: "50. List five major problems facing industrialization in Kenya.", a: "Any five of: Shortage of raw materials, Inadequate skilled labor, Inadequate capital, Limited markets, High cost of energy, Competition from cheap imports, Underdeveloped transport/communication." },
+            { q: "51. Explain how a shortage of specific raw materials can hinder industrial growth in Kenya.", a: "Fluctuations in agricultural supply, resource exhaustion, or import dependence can lead to erratic production, increased costs, or even closure of industries reliant on those materials." },
+            { q: "52. Discuss the impact of 'brain drain' on Kenya's industrial sector.", a: "The emigration of skilled Kenyan professionals deprives the local industrial sector of valuable human capital, particularly in technical and managerial roles, hindering innovation and efficiency." },
+            { q: "53. Why is limited local purchasing power a challenge for Kenyan industries?", a: "A large segment of the population has low disposable income, limiting domestic demand for manufactured goods and making it difficult for industries to achieve economies of scale based on local sales." },
+            { q: "54. How does competition from cheap imported goods, like 'mitumba', affect local manufacturing in Kenya?", a: "Locally manufactured goods often struggle to compete on price, leading to reduced market share, production cutbacks, or closure of local industries, particularly in sectors like textiles." },
+            { q: "55. Identify three environmental problems associated with industrialization.", a: "1. Air pollution (smoke, gases). 2. Water pollution (effluents). 3. Land pollution (waste disposal)." },
+            { q: "56. Explain how rapid rural-urban migration due to industrialization can lead to urban problems.", a: "It can strain urban infrastructure and services, leading to housing shortages, overcrowding, development of slums, increased crime rates, and traffic congestion." },
+
+            // Solutions to Industrialization Problems
+            { q: "57. Describe two policy or strategic frameworks the Kenyan government uses to foster industrial growth.", a: "1. Kenya Industrial Transformation Program (KITP): Focuses on upgrading industrial parks, SEZs, local content. 2. Agriculture for Industry (A4I) Initiative: Aims to strengthen linkages between agriculture and industry." },
+            { q: "58. How does Kenya Industrial Estates (KIE) support SMEs and rural industrialization?", a: "KIE provides affordable finance, industrial sheds (infrastructure), and business development services to SMEs, with a focus on rural areas." },
+            { q: "59. What is the purpose of the Recognition of Prior Learning (RPL) initiative for the Jua Kali sector?", a: "RPL aims to formally acknowledge and certify the existing skills of Jua Kali artisans, potentially enhancing their employability, productivity, and access to formal opportunities." },
+            { q: "60. Why is the decentralization of industries encouraged in Kenya?", a: "To promote balanced regional development, create employment in rural areas, curb rural-urban migration, utilize local resources, and decongest major towns." },
+            { q: "61. What role does NEMA play in managing the environmental impacts of industrialization?", a: "NEMA (National Environment Management Authority) is responsible for enacting and enforcing environmental regulations, requiring Environmental Impact Assessments (EIAs), and promoting cleaner production to control industrial pollution." },
+
+            // Comparative Studies
+            { q: "62. Describe two key characteristics of the cottage industry in India.", a: "1. Low capital investment and labour-intensive, often using family labour. 2. Utilizes simple tools and locally available raw materials to produce diverse products like textiles and handicrafts." },
+            { q: "63. State two factors that have favored the development of cottage industries in India.", a: "1. Large population providing abundant cheap labour and a substantial domestic market. 2. Rich heritage of traditional skills and crafts, and availability of diverse local raw materials." },
+            { q: "64. Identify two similarities between India's cottage industry and Kenya's Jua Kali sector.", a: "1. Both are labour-intensive and rely on local/simple inputs. 2. Both primarily serve local markets and are significant employment generators." },
+            { q: "65. Mention one key difference between India's cottage industry and Kenya's Jua Kali sector.", a: "India's cottage industry is often rooted in deeper historical traditions and specialized crafts with more established export markets for certain products, while Kenya's Jua Kali sector is generally perceived as more informal, though highly innovative." },
+            { q: "66. What were two primary historical locational factors for the iron and steel industry in the Ruhr region of Germany?", a: "1. Abundant local raw materials (high-quality coal and initially, local iron ore). 2. Excellent water resources (rivers and canals) for industrial processes and cheap transport." },
+            { q: "67. Describe the current transformation ('Strukturwandel') of the Ruhr region's industry.", a: "A shift away from coal and steel towards a diversified economy including services, technology, education, and tourism, with a strong focus on developing a hydrogen-based economy and decarbonizing remaining industries." },
+            { q: "68. What is one lesson Kenya can learn from the Ruhr region's industrial transformation?", a: "The necessity of long-term planning, adaptability, managing industrial decline, and investing in sustainable new industries, as initial locational advantages are not permanent." },
+            { q: "69. List three factors that favored the development of Japan's car manufacturing and electronics industries.", a: "1. Strong domestic capital formation and supportive financial institutions. 2. Intense focus on technology, R&D, and innovation (e.g., lean manufacturing). 3. A highly educated, skilled, and disciplined workforce." },
+            { q: "70. What is a current challenge facing Japan's automotive industry?", a: "Accelerating the transition to Electric Vehicles (EVs) to meet global market demands and developing competitive battery technology." },
+            { q: "71. What is a key lesson Kenya can learn from Japan's industrial success and current challenges?", a: "The paramount importance of investing in human capital (especially STEM), fostering a culture of quality and innovation, and developing agile industrial policies. Also, that even advanced nations must continuously adapt to disruptive technologies." },
+
+            // Field Work
+            { q: "72. Define fieldwork in the context of Geography.", a: "Fieldwork is the practical aspect of Geography involving learning through direct experience outside the classroom, encompassing systematic observation, data collection, recording, and analysis of geographical phenomena in their real-world context." },
+            { q: "73. State three reasons why fieldwork is important in studying industries.", a: "1. Experiential Learning: Allows direct observation of concepts. 2. Enhanced Understanding: Deepens grasp of geographical/economic principles. 3. Skill Development: Fosters observation, data collection, analysis, and reporting skills." },
+            { q: "74. Name two types of fieldwork applicable to the study of local industries.", a: "1. Case Study of a single industry/factory. 2. Study of an Industrial Estate or Zone (e.g., EPZ, Jua Kali cluster)." },
+            { q: "75. List three essential steps in the pre-field/planning stage of industrial fieldwork.", a: "1. Defining Objectives and Scope. 2. Formulating Hypotheses/Research Questions. 3. Seeking Permission from relevant authorities/management." },
+            { q: "76. Name two data collection methods used during the field stage of an industrial study.", a: "1. Observation (of processes, layout, environment). 2. Interviews (with managers, workers). (Others: Questionnaires, Mapping, Measurement, Photography)." },
+            { q: "77. What activities are involved in the post-field stage of industrial fieldwork?", a: "Data processing and organization, data analysis (quantitative/qualitative), data presentation (tables, graphs, maps), interpretation and conclusion, and report writing." },
+            { q: "78. Identify two potential problems students might encounter during fieldwork on industries.", a: "1. Difficulty in obtaining access/permission. 2. Respondent reluctance to share information. (Others: Time constraints, safety hazards, language barriers, bias, logistical issues)."},
+            
+            // Additional Questions based on detailed notes
+            { q: "79. What is the significance of 'value addition' in the context of industrialization for a country like Kenya?", a: "Value addition, through industrial processing of raw materials (like agricultural produce or minerals), allows Kenya to earn more from its products on local and export markets, create more jobs, and reduce reliance on exporting low-value primary commodities." },
+            { q: "80. Explain the concept of 'backward linkages' created by agro-processing industries.", a: "Agro-processing industries create backward linkages by generating demand for raw materials from the agricultural sector. This stimulates increased farm production, adoption of better farming methods, and improved incomes for farmers." },
+            { q: "81. What does the term 'economies of scale' mean in relation to industrial production?", a: "Economies of scale refer to the cost advantages that enterprises obtain due to their scale of operation, with cost per unit of output decreasing with increasing scale. Access to larger markets helps industries achieve this." },
+            { q: "82. How can 'industrial inertia' be a disadvantage to a region?", a: "It can hinder adaptation to new technologies, changing market demands, or increased competition. If an industry or region fails to adapt due to inertia, it risks obsolescence and economic decline." },
+            { q: "83. What is the role of Kenya Industrial Estates (KIE) in promoting industrialization?", a: "KIE provides affordable finance, industrial sheds (infrastructure), and business development services to Small and Medium Enterprises (SMEs), with a particular focus on promoting rural industrialization." },
+            { q: "84. Why is a 'stable and predictable policy environment' important for attracting industrial investment?", a: "Investors, especially those making long-term commitments, value consistency. Frequent policy shifts, bureaucracy, or corruption create uncertainty and deter investment." },
+            { q: "85. What is the 'Jua Kali' sector's contribution to employment in Kenya?", a: "The Jua Kali sector is a massive source of employment, often cited as creating the majority (as much as 80-90% in some estimates) of new jobs in the Kenyan economy." },
+            { q: "86. Explain one major challenge faced by the Jua Kali sector in Kenya regarding market access.", a: "Jua Kali products often face discrimination due to perceptions of lower quality and stiff competition from both established formal manufacturers and cheap imported goods, leading to low demand." },
+            { q: "87. What does 'Recognition of Prior Learning (RPL)' aim to achieve for Jua Kali artisans?", a: "RPL aims to formally acknowledge and certify the existing skills of Jua Kali artisans, which can enhance their employability, productivity, and access to formal opportunities or credit." },
+            { q: "88. How does the 'Bottom-Up Economic Transformation Agenda (BETA)' relate to the Jua Kali sector?", a: "The Jua Kali sector is seen as a key driver in achieving BETA by providing widespread employment, livelihoods, and fostering grassroots economic activity." },
+            { q: "89. Why is the distinction between 'light' and 'heavy' industries important for a developing country's industrial strategy?", a: "Developing countries often find it more feasible to initially establish light industries (lower capital, quicker employment) while strategically pursuing heavy industries (higher capital, longer-term) as resources and conditions permit, for a balanced industrial base." },
+            { q: "90. What is the significance of the East African Community (EAC) for Kenyan industries?", a: "The EAC provides a larger regional market for Kenyan manufactured goods, allowing industries to achieve economies of scale, enhance competitiveness, and increase exports." },
+            { q: "91. How has the Standard Gauge Railway (SGR) potentially influenced industrial location in Kenya?", a: "The SGR aims to lower the cost of freight transport, potentially influencing future industrial location decisions along its corridor by making it cheaper to move raw materials and finished goods." },
+            { q: "92. Why is Kenya's investment in renewable energy sources considered a competitive advantage for attracting industries?", a: "Renewable energy (geothermal, hydro, solar, wind) can offer a more stable, potentially lower-cost, and environmentally friendly alternative to imported fossil fuels, attracting industries focused on sustainability and predictable energy pricing." },
+            { q: "93. What was the historical role of the Ministry of International Trade and Industry (MITI) in Japan's industrialization?", a: "MITI historically played a proactive role in guiding strategic industrial sectors in Japan, fostering collaboration between government and industry, which was key to Japan's industrial success." },
+            { q: "94. Explain 'lean manufacturing' or 'Just-in-Time (JIT)' production, pioneered in Japan.", a: "These are production strategies aimed at reducing waste and improving efficiency by producing only what is needed, when it is needed, and in the amount needed, minimizing inventory and streamlining processes." },
+            { q: "95. What does 'CASE' stand for in the context of Japan's automotive industry transformation?", a: "CASE stands for Connected, Autonomous, Shared, and Electric, representing the key technological shifts transforming the automotive industry." },
+            { q: "96. What is a 'fabless-foundry' model in the semiconductor industry, and how did Japan's resistance to it affect its market share?", a: "The fabless-foundry model involves companies designing chips (fabless) and outsourcing manufacturing to specialized foundries. Japan's resistance to this model, preferring integrated device manufacturing, contributed to its decline in global semiconductor market share as other companies leveraged the flexibility and specialization of the fabless-foundry system." },
+            { q: "97. What is the main objective of the 'Rapidus' venture in Japan?", a: "Rapidus is a state-backed venture aiming to revive Japan's domestic chip industry by mass-producing advanced 2-nanometer semiconductors by 2027." },
+            { q: "98. Why is a 'reconnaissance visit' or pilot study important in the pre-field stage of fieldwork?", a: "It helps in familiarizing with the study area, identifying potential challenges, refining research objectives, and testing data collection instruments before the main fieldwork." },
+            { q: "99. What are 'ethical considerations' in conducting industrial fieldwork?", a: "Ethical considerations include obtaining informed consent from participants, ensuring confidentiality of sensitive information, avoiding harm or misrepresentation, and accurately reporting findings." }
+        ];
+
+        // --- 2. DOM Elements ---
+        const sidebarNavEl = document.getElementById('sidebar-nav');
+        const contentAreaEl = document.getElementById('content-area');
+        const breadcrumbTrailEl = document.getElementById('breadcrumb-trail');
+        const breadcrumbDesktopEl = document.getElementById('breadcrumb-desktop'); 
+        const prevButtonEl = document.getElementById('prev-button');
+        const nextButtonEl = document.getElementById('next-button');
+        const menuToggleEl = document.getElementById('menu-toggle');
+        const wrapperEl = document.getElementById('wrapper');
+        const mainContentScrollAreaEl = document.getElementById('main-content-scroll-area');
+
+        // --- 3. State Variables ---
+        let currentGuideDataIndex = -1; 
+
+        // --- 4. Core Functions ---
+        function populateSidebar() {
+            if (!sidebarNavEl) {
+                console.error("Sidebar nav element (#sidebar-nav) not found!");
+                return;
+            }
+            sidebarNavEl.innerHTML = '';
+            let currentCategory = "";
+
+            guideData.forEach((item, index) => {
+                if (item.category && item.category !== currentCategory) {
+                    currentCategory = item.category;
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'category-heading';
+                    categoryDiv.textContent = currentCategory;
+                    sidebarNavEl.appendChild(categoryDiv);
+                }
+
+                const link = document.createElement('a');
+                link.href = `#${item.id}`;
+                link.className = 'list-group-item list-group-item-action list-group-item-light p-3';
+                if (!item.isChapter && item.category) { 
+                    link.classList.add('sub-item');
+                } else if (item.isChapter) {
+                    link.classList.add('fw-bold'); 
+                }
+                link.textContent = item.title;
+                link.setAttribute('role', 'button');
+                link.setAttribute('tabindex', '0');
+                link.dataset.index = index; 
+
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContentByIndex(index, 'directClick');
+                    if (window.innerWidth < 992 && wrapperEl.classList.contains('toggled')) {
+                        wrapperEl.classList.remove('toggled');
+                    }
+                });
+                link.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        loadContentByIndex(index, 'directClick');
+                         if (window.innerWidth < 992 && wrapperEl.classList.contains('toggled')) {
+                            wrapperEl.classList.remove('toggled');
+                        }
+                    }
+                });
+                sidebarNavEl.appendChild(link);
+            });
+        }
+        
+        function loadContentByIndex(index, navigationSource = 'directClick') {
+            // console.log(`loadContentByIndex called with index: ${index}, source: ${navigationSource}`);
+            if (index < 0 || index >= guideData.length) {
+                console.warn("Invalid content index:", index, "Attempting to load default.");
+                if (guideData.length > 0) index = 0; 
+                else {
+                    contentAreaEl.innerHTML = "<p>No content available to display.</p>";
+                    return;
+                }
+            }
+
+            currentGuideDataIndex = index;
+            const sectionData = guideData[index]; 
+
+            if (!sectionData || !contentAreaEl) {
+                console.error("Section data or content area element missing for index:", index);
+                contentAreaEl.innerHTML = "<p>Error loading content.</p>";
+                return;
+            }
+            
+            // Clear previous content, especially the placeholder
+            const placeholder = document.getElementById('main-title-placeholder');
+            if(placeholder && contentAreaEl.contains(placeholder)) {
+                contentAreaEl.innerHTML = ''; // Clear placeholder before adding new content
+            }
+            contentAreaEl.innerHTML = sectionData.content; 
+            // console.log(`Content for "${sectionData.title}" loaded into #content-area.`);
+
+
+            updateActiveSidebarLink();
+            updateBreadcrumbsUI(sectionData.category, sectionData.breadcrumb);
+            updateNavigationButtons();
+            sessionStorage.setItem('currentIndustrySectionIndex', currentGuideDataIndex); 
+
+            if (sectionData.id === "ind_ch10_rev") { 
+                renderRevisionQuestions();
+            }
+
+            if (navigationSource !== 'scroll') {
+                mainContentScrollAreaEl.scrollTop = 0; 
+            }
+
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                MathJax.typesetPromise([contentAreaEl]).catch(err => console.error('MathJax typesetting error:', err));
+            }
+        }
+
+        function updateActiveSidebarLink() {
+            if (!sidebarNavEl) return;
+            const links = sidebarNavEl.querySelectorAll('.list-group-item');
+            links.forEach(link => link.classList.remove('active'));
+
+            if (currentGuideDataIndex === -1) return;
+            const activeEntry = guideData[currentGuideDataIndex];
+            if (!activeEntry) return;
+
+            const currentLink = sidebarNavEl.querySelector(`[data-index="${currentGuideDataIndex}"]`);
+            if (currentLink) currentLink.classList.add('active');
+
+            if (activeEntry.parentId) { 
+                const parentChapterEntry = guideData.find(item => item.id === activeEntry.parentId && item.isChapter);
+                if (parentChapterEntry) {
+                    const parentIndex = guideData.indexOf(parentChapterEntry);
+                    const parentChapterLink = sidebarNavEl.querySelector(`[data-index="${parentIndex}"]`);
+                    if (parentChapterLink) parentChapterLink.classList.add('active');
+                }
+            }
+        }
+
+        function updateBreadcrumbsUI(category, breadcrumbText) {
+            const trails = [breadcrumbTrailEl, breadcrumbDesktopEl];
+            trails.forEach(trail => {
+                if (!trail) return;
+                trail.innerHTML = ''; 
+                const homeLi = document.createElement('li');
+                homeLi.classList.add('breadcrumb-item');
+                const homeLink = document.createElement('a');
+                homeLink.href = '#';
+                homeLink.textContent = 'Home';
+                 if (trail === breadcrumbDesktopEl) homeLink.classList.add('text-dark'); 
+                homeLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContentByIndex(0, 'directClick'); 
+                });
+                homeLi.appendChild(homeLink);
+                trail.appendChild(homeLi);
+
+                const currentSectionData = guideData[currentGuideDataIndex];
+                if (!currentSectionData) return;
+
+                const parentEntry = currentSectionData.parentId ? guideData.find(item => item.id === currentSectionData.parentId) : null;
+                
+                if (parentEntry) { 
+                    const parentChapterLi = document.createElement('li');
+                    parentChapterLi.classList.add('breadcrumb-item');
+                    const parentChapterLink = document.createElement('a');
+                    parentChapterLink.href = `#${parentEntry.id}`;
+                    parentChapterLink.textContent = parentEntry.title.replace(/^[0-9]+\.\s*/, ''); 
+                    if (trail === breadcrumbDesktopEl) parentChapterLink.classList.add('text-dark');
+                    parentChapterLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        loadContentByIndex(guideData.indexOf(parentEntry), 'directClick');
+                    });
+                    parentChapterLi.appendChild(parentChapterLink);
+                    trail.appendChild(parentChapterLi);
+                }
+                
+                if (breadcrumbText) {
+                    const activeLi = document.createElement('li');
+                    activeLi.classList.add('breadcrumb-item', 'active');
+                    activeLi.setAttribute('aria-current', 'page');
+                    activeLi.textContent = breadcrumbText; 
+                     if (trail === breadcrumbDesktopEl) activeLi.classList.add('text-muted'); 
+                    trail.appendChild(activeLi);
+                }
+            });
+        }
+        
+        function updateNavigationButtons() {
+            if (prevButtonEl) prevButtonEl.disabled = currentGuideDataIndex <= 0;
+            if (nextButtonEl) nextButtonEl.disabled = currentGuideDataIndex >= guideData.length - 1;
+        }
+
+        function renderRevisionQuestions() {
+            const container = document.getElementById('industry-revision-questions-container'); 
+            if (!container) {
+                const genericContainer = document.getElementById('revision-questions-container'); // Fallback, though specific one should exist
+                if (genericContainer) {
+                     console.warn("Using generic revision questions container as industry-specific one not found in current content.");
+                     container = genericContainer; 
+                } else {
+                    console.warn("Revision questions container not found for rendering.");
+                    return;
+                }
+            }
+            if (!container) {
+                 console.error("No valid container found for revision questions after fallback.");
+                 return;
+            }
+
+            container.innerHTML = ''; 
+            const accordion = document.createElement('div');
+            accordion.className = 'accordion';
+            accordion.id = 'industryRevisionAccordion'; 
+
+            industryRevisionQuestionsData.forEach((item, index) => { 
+                const questionId = `industry-question-${index}`;
+                const answerId = `industry-answer-${index}`;
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('revision-question-item', 'accordion-item'); 
+                const header = document.createElement('h2'); 
+                header.classList.add('accordion-header'); 
+                header.id = `heading-${questionId}`;
+                const button = document.createElement('button'); 
+                button.className = 'accordion-button collapsed revision-question-header'; 
+                button.type = 'button';
+                button.setAttribute('data-bs-toggle', 'collapse');
+                button.setAttribute('data-bs-target', `#${answerId}`);
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-controls', answerId);
+                button.innerHTML = `${item.q ? item.q : 'Question not available'} <span class="arrow-icon ms-auto">&#9662;</span>`;
+                header.appendChild(button);
+                const answerCollapseDiv = document.createElement('div');
+                answerCollapseDiv.id = answerId;
+                answerCollapseDiv.classList.add('revision-answer', 'accordion-collapse', 'collapse');
+                answerCollapseDiv.setAttribute('aria-labelledby', `heading-${questionId}`);
+                answerCollapseDiv.setAttribute('data-bs-parent', '#industryRevisionAccordion');
+                const answerBody = document.createElement('div');
+                answerBody.className = 'accordion-body';
+                answerBody.innerHTML = `<p>${item.a ? item.a : 'Answer not available'}</p>`;
+                answerCollapseDiv.appendChild(answerBody);
+                questionDiv.appendChild(header);
+                questionDiv.appendChild(answerCollapseDiv);
+                accordion.appendChild(questionDiv);
+            });
+            container.appendChild(accordion);
+        }
+
+        // --- 5. Event Listeners ---
+        if (menuToggleEl) {
+            menuToggleEl.addEventListener('click', () => wrapperEl.classList.toggle('toggled'));
+        }
+        if (prevButtonEl) {
+            prevButtonEl.addEventListener('click', () => {
+                if (currentGuideDataIndex > 0) loadContentByIndex(currentGuideDataIndex - 1, 'button');
+            });
+        }
+        if (nextButtonEl) {
+            nextButtonEl.addEventListener('click', () => {
+                if (currentGuideDataIndex < guideData.length - 1) loadContentByIndex(currentGuideDataIndex + 1, 'button');
+            });
+        }
+        
+        if (mainContentScrollAreaEl) {
+            let scrollTimeout;
+            mainContentScrollAreaEl.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    let mostProminentItemId = null;
+                    let minDistanceToViewportTop = Infinity;
+                    const viewportTopEdge = mainContentScrollAreaEl.getBoundingClientRect().top + 70; 
+
+                    guideData.forEach((item) => {
+                        // Content is loaded into #content-area, so query within it for the element by item.id
+                        const element = contentAreaEl.querySelector(`#${item.id}`); 
+                        if (element) {
+                            const rect = element.getBoundingClientRect();
+                            if (rect.top < viewportTopEdge + 100 && rect.bottom > viewportTopEdge - 50) {
+                                const distance = Math.abs(rect.top - viewportTopEdge);
+                                if (distance < minDistanceToViewportTop) {
+                                    minDistanceToViewportTop = distance;
+                                    mostProminentItemId = item.id;
+                                }
+                            }
+                        }
+                    });
+                    
+                    if (!mostProminentItemId) { 
+                        if (mainContentScrollAreaEl.scrollTop <= 5 && guideData.length > 0) {
+                            mostProminentItemId = guideData[0].id;
+                        } else if ((mainContentScrollAreaEl.scrollTop + mainContentScrollAreaEl.clientHeight) >= mainContentScrollAreaEl.scrollHeight - 20 && guideData.length > 0) {
+                            mostProminentItemId = guideData[guideData.length - 1].id;
+                        }
+                    }
+
+                    if (mostProminentItemId && mostProminentItemId !== (guideData[currentGuideDataIndex] ? guideData[currentGuideDataIndex].id : null)) {
+                        const newIndex = guideData.findIndex(item => item.id === mostProminentItemId);
+                        if (newIndex !== -1) {
+                            // Update UI based on scroll, but don't reload content or trigger scroll again
+                            currentGuideDataIndex = newIndex; 
+                            sessionStorage.setItem('currentIndustrySectionIndex', currentGuideDataIndex); 
+                            updateActiveSidebarLink();
+                            const currentSectionData = guideData[currentGuideDataIndex];
+                            updateBreadcrumbsUI(currentSectionData.category, currentSectionData.breadcrumb);
+                            updateNavigationButtons();
+                        }
+                    }
+                }, 150);
+            });
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            populateSidebar(); 
+            
+            const savedIndexStr = sessionStorage.getItem('currentIndustrySectionIndex'); 
+            let initialIndex = 0; 
+
+            if (savedIndexStr !== null) {
+                const savedIdx = parseInt(savedIndexStr, 10);
+                if (savedIdx >= 0 && savedIdx < guideData.length) {
+                    initialIndex = savedIdx;
+                }
+            }
+            
+            const hash = window.location.hash.substring(1); 
+            if (hash) {
+                const itemFromHash = guideData.find(item => item.id === hash);
+                if (itemFromHash) {
+                    initialIndex = guideData.indexOf(itemFromHash);
+                }
+            }
+            
+            if (guideData.length > 0) {
+                 setTimeout(() => { 
+                    loadContentByIndex(initialIndex, 'initialLoad');
+                 }, 50); 
+            } else {
+                console.error("guideData is empty. Cannot load initial content.");
+                if(contentAreaEl) contentAreaEl.innerHTML = "<p>Error: No content available to display.</p>";
+            }
+        });
+    </script>
+</body>
+</html>

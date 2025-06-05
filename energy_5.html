@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCSE Geography - Energy Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // MathJax v3 configuration
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f9; 
+            color: #343a40; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+
+        #sidebar-wrapper {
+            min-height: 100vh;
+            width: 280px; 
+            background-color: #ffffff; 
+            border-right: 1px solid #dee2e6; 
+            transition: margin-left 0.25s ease-out;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1030; 
+            overflow-y: auto; 
+            padding-top: 10px; 
+        }
+
+        .sidebar-heading {
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            color: #0056b3; 
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #e9ecef; 
+        }
+        .sidebar-heading img {
+            width: 32px; 
+            height: 32px;
+            margin-right: 0.75rem;
+        }
+
+        #sidebar-nav .list-group-item {
+            border: none; 
+            padding: 0.8rem 1.25rem; 
+            font-size: 0.95rem;
+            color: #495057; 
+            background-color: transparent; 
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-left-color 0.2s ease-in-out;
+            border-left: 4px solid transparent; 
+        }
+
+        #sidebar-nav .list-group-item:hover,
+        #sidebar-nav .list-group-item:focus {
+            background-color: #eef2f7; 
+            color: #0056b3; 
+            text-decoration: none;
+            border-left-color: #007bff; 
+        }
+
+        #sidebar-nav .list-group-item.active {
+            background-color: #007bff; 
+            color: white;
+            font-weight: 500;
+            border-left-color: #0056b3; 
+        }
+
+        #sidebar-nav .category-heading {
+            font-size: 0.85rem; 
+            font-weight: bold;
+            color: #6c757d;
+            padding: 1rem 1.25rem 0.3rem; 
+            text-transform: uppercase;
+            margin-top: 0.75rem; 
+        }
+         #sidebar-nav .sub-item { 
+            padding-left: 2.5rem; 
+            font-size: 0.9rem;
+        }
+
+        #page-content-wrapper {
+            flex: 1;
+            padding-left: 280px; 
+            transition: padding-left 0.25s ease-out;
+            display: flex;
+            flex-direction: column;
+            min-width: 0; 
+            background-color: #f4f6f9; 
+        }
+
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: -280px; 
+        }
+
+        #wrapper.toggled #page-content-wrapper {
+            padding-left: 0; 
+        }
+
+        @media (max-width: 991.98px) { 
+            #sidebar-wrapper {
+                margin-left: -280px; 
+                position: fixed; 
+                height: 100%;
+                z-index: 1040; 
+            }
+            #wrapper.toggled #sidebar-wrapper { margin-left: 0; }
+            #page-content-wrapper { padding-left: 0; }
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+            background-color: #ffffff !important; 
+        }
+        .navbar .navbar-brand, .navbar .breadcrumb-item a, .navbar .breadcrumb-item.active {
+             color: #343a40 !important; 
+        }
+         .navbar .breadcrumb-item a:hover { color: #0056b3 !important; }
+
+        #menu-toggle {
+            border: 1px solid #007bff;
+            color: #007bff;
+        }
+        #menu-toggle:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            margin-bottom: 0; 
+        }
+        .breadcrumb-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .breadcrumb-item a:hover { text-decoration: underline; }
+        .breadcrumb-item.active { color: #6c757d; }
+
+        #content-area {
+            background-color: #ffffff; 
+            border-radius: 0.375rem; 
+            min-height: calc(100vh - 160px); 
+            box-shadow: 0 0 15px rgba(0,0,0,0.05); 
+        }
+
+        #content-area h1, #content-area h2, #content-area h3, #content-area h4, #content-area h5 {
+            color: #0056b3; 
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        #content-area h1 { font-size: 2rem; border-bottom: 2px solid #e9ecef; padding-bottom: 0.5rem;}
+        #content-area h2 { font-size: 1.75rem; }
+        #content-area h3 { font-size: 1.5rem; margin-top: 1.75rem; }
+        #content-area h4 { font-size: 1.25rem; margin-top: 1.5rem; }
+
+        #content-area p, #content-area ul, #content-area ol, #content-area table {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+        #content-area ul, #content-area ol { padding-left: 1.5rem; }
+        #content-area li { margin-bottom: 0.5rem; }
+        #content-area ul ul, #content-area ol ol { 
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+        }
+         #content-area .table {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        #content-area .table th {
+            background-color: #e9ecef; /* Lighter table header */
+            color: #343a40;
+            font-weight: 600;
+        }
+         #content-area .table td, #content-area .table th {
+            vertical-align: middle;
+        }
+
+        .diagram-placeholder {
+            border: 2px dashed #6c757d; 
+            background-color: #f8f9fa; 
+            padding: 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+            color: #6c757d;
+        }
+        .diagram-placeholder img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .revision-question-item {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .revision-question-header {
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #0056b3;
+        }
+        .revision-question-header:hover { background-color: #e9ecef; }
+        .revision-question-header .arrow-icon { transition: transform 0.2s ease-in-out; }
+        .revision-question-header[aria-expanded="true"] .arrow-icon { transform: rotate(180deg); }
+
+        .revision-answer {
+            padding: 1.25rem;
+            border-top: 1px solid #dee2e6;
+            background-color: #fff;
+        }
+        .revision-answer ul, .revision-answer ol { padding-left: 1.25rem; }
+
+        .MathJax_Display, mjx-container[jax="CHTML"][display="true"] {
+            display: block;
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+        }
+
+        #navigation-buttons button { min-width: 100px; }
+
+        footer {
+            font-size: 0.9rem;
+            background-color: #ffffff; 
+            border-top: 1px solid #e9ecef;
+        }
+
+        :focus-visible {
+          outline: 2px solid #007bff;
+          outline-offset: 2px;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+        }
+        .btn:focus-visible, .list-group-item:focus-visible {
+          outline: 2px solid #007bff !important; 
+          outline-offset: 2px !important;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <nav class="border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading bg-light p-3">
+                <img src="https://placehold.co/32x32/007bff/white?text=E" alt="Energy Guide Logo" class="me-2 rounded-circle"> Energy Guide
+            </div>
+            <div class="list-group list-group-flush" id="sidebar-nav"></div>
+        </nav>
+
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top">
+                <div class="container-fluid">
+                    <button class="btn btn-outline-primary btn-sm" id="menu-toggle">☰ Menu</button>
+                    <nav aria-label="breadcrumb" class="ms-3 flex-grow-1">
+                        <ol class="breadcrumb mb-0" id="breadcrumb-trail"></ol>
+                    </nav>
+                </div>
+            </nav>
+
+            <main class="container-fluid p-4" id="main-content-scroll-area">
+                <div id="content-area" class="bg-white p-md-4 p-3 rounded shadow-sm">
+                    <h1 id="main-title-placeholder">Welcome to the Energy Guide</h1>
+                    <p>Please select a topic from the menu on the left to begin your learning journey.</p>
+                </div>
+                <div class="d-flex justify-content-between mt-4" id="navigation-buttons">
+                    <button class="btn btn-outline-secondary" id="prev-button" disabled>&laquo; Previous</button>
+                    <button class="btn btn-outline-primary" id="next-button" disabled>Next &raquo;</button>
+                </div>
+            </main>
+
+            <footer class="text-center text-muted p-3 mt-auto">
+                <p class="mb-0">&copy; <span id="currentYear"></span> KCSE Energy Guide</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // --- 1. GUIDE CONTENT DATA ---
+        const guideData = [
+            // Chapter 1: Introduction to Energy
+            {
+                id: "ch1",
+                title: "1. Introduction to Energy",
+                breadcrumb: "Introduction",
+                category: "General Introduction",
+                isChapter: true, 
+                content: `
+                    <h1 id="ch1">1. Introduction to Energy</h1>
+                    <p>This chapter introduces the fundamental concepts of energy as relevant to KCSE Geography. Energy is a cornerstone of modern civilization, underpinning economic activities, societal well-being, and technological advancement. Understanding its various forms, sources, and implications is fundamental to comprehending the complex interplay between human activities and the environment.</p>
+                `
+            },
+            {
+                id: "ch1_s1",
+                title: "1.1 Definition of Energy",
+                breadcrumb: "Definition",
+                category: "General Introduction",
+                parentId: "ch1",
+                content: `
+                    <h2 id="ch1_s1">1.1 Definition of Energy</h2>
+                    <p>In the context of geographical studies, energy is defined as <strong>the power or fuel needed to run a machine or assist people in production</strong>. This foundational definition establishes energy as a critical input for all forms of work and economic activity, ranging from basic human tasks such as cooking and heating to complex industrial processes and transportation systems. It is essential to recognize that "energy" in this context is not limited solely to electricity but encompasses all forms of power that enable and sustain human endeavors and economic productivity.</p>
+                    <p>This definition inherently establishes a direct link between energy availability, the level of technological sophistication a society can achieve, and its overall productive capacity. If energy is the "power needed to run a machine," then the more advanced the machinery and technological processes, the greater the demand for energy, often of specific types and qualities. This, in turn, dictates the scale, efficiency, and nature of how societies can "assist people in production". Consequently, a nation's access to diverse and reliable energy sources, coupled with its ability to harness and manage these resources effectively, becomes a significant factor in its industrialization pathway and economic growth potential. This perspective frames energy not merely as a consumable commodity but as a strategic enabler of development.</p>
+                `
+            },
+            {
+                id: "ch1_s2",
+                title: "1.2 Importance of Energy",
+                breadcrumb: "Importance",
+                category: "General Introduction",
+                parentId: "ch1",
+                content: `
+                    <h2 id="ch1_s2">1.2 Importance and Significance of Energy</h2>
+                    <p>The importance of energy in contemporary society cannot be overstated, as it permeates virtually every aspect of human life and underpins all economic activities. Its significance is evident across a multitude of sectors:</p>
+                    <ul>
+                        <li><strong>Domestic Uses:</strong> Energy is fundamental for daily household activities, providing power for cooking, lighting, and heating, which directly contribute to the comfort, health, and well-being of individuals and families.</li>
+                        <li><strong>Industrial Sector:</strong> The industrial sector relies heavily on energy to power machinery, illuminate factories, and provide heat for various manufacturing processes. It forms the backbone of industrial output and economic productivity.</li>
+                        <li><strong>Transportation:</strong> Energy, primarily in the form of fuels like diesel and petrol, is essential for powering vehicles (cars, trucks, trains, airplanes), enabling the movement of people and goods. This is vital for trade, commerce, access to services, and social connectivity.</li>
+                        <li><strong>Agriculture:</strong> In the agricultural sector, energy is used to power tractors and other farm machinery, operate irrigation pumps, and facilitate the drying and processing of grains and other produce. It is, therefore, crucial for enhancing food production, ensuring food security, and supporting rural livelihoods.</li>
+                        <li><strong>Water Supply:</strong> Access to clean and reliable water often depends on energy (derived from sources like windmills, solar power, or diesel engines) to pump water for domestic consumption, agricultural irrigation, and industrial use. This is critical for public health, sanitation, and various economic activities.</li>
+                        <li><strong>Medical Purposes:</strong> The healthcare sector requires energy to power essential diagnostic equipment such as X-Ray machines, provide lighting in hospitals and clinics, and maintain refrigeration for medicines and vaccines, thereby underpinning the delivery of quality healthcare services.</li>
+                    </ul>
+                    <p class="mt-3">The pervasive nature of energy across these diverse applications means that energy costs and the reliability of its supply have a significant multiplier effect throughout the entire economy. If energy is a fundamental input to industry, transport, and agriculture, then any substantial increase in energy costs (e.g., due to rising global fuel prices) will inevitably translate into higher production costs for goods, increased transport charges for their delivery, and consequently, higher prices for food and other essential commodities. Such scenarios can trigger inflationary pressures, reduce the competitiveness of domestic businesses in local and international markets, and diminish the purchasing power of consumers, potentially leading to a slowdown in economic activity.</p>
+                    <p>This critical role necessitates strategic national planning aimed at developing a diversified, resilient, and sustainable energy mix. Ensuring access to affordable and reliable energy is not merely an economic imperative but also a matter of national security and social equity. A stable energy supply is fundamental for modern living standards, providing opportunities for education, healthcare, and economic participation. Therefore, energy planning must be an integral component of broader national development strategies, including those focused on poverty reduction, industrialization, environmental conservation, and achieving sustainable development goals.</p>
+                `
+            },
+
+            // Chapter 2: Sources and Types of Energy
+            {
+                id: "ch2",
+                title: "2. Sources and Types of Energy",
+                breadcrumb: "Sources & Types",
+                category: "Core Concepts",
+                isChapter: true,
+                content: `
+                    <h1 id="ch2">2. Sources and Types of Energy</h1>
+                    <p>Energy sources are broadly classified into two main categories: <strong>renewable</strong> and <strong>non-renewable</strong>, a distinction pivotal to understanding global energy dynamics, resource management, and environmental sustainability.</p>
+                `
+            },
+            {
+                id: "ch2_s1", // Article for Renewable Sources
+                title: "2.1 Renewable Energy Sources",
+                breadcrumb: "Renewable Sources",
+                category: "Core Concepts",
+                parentId: "ch2",
+                content: `
+                    <h2 id="ch2_s1">2.1 Renewable Energy Sources</h2>
+                    <p>Renewable energy sources are those that are naturally replenished on a human timescale and are considered sustainable over the long term. They play an increasingly vital role in the global energy mix, driven by concerns over climate change and energy security. These are generally considered more environmentally benign as their use often results in lower greenhouse gas emissions compared to conventional fossil fuels.</p>
+                    <p>Examples include:</p>
+                    <ul>
+                        <li>Water (Hydro-electric power - HEP)</li>
+                        <li>Wind</li>
+                        <li>Solar/sun</li>
+                        <li>Waves/tides</li>
+                        <li>Geothermal steam/underground steam</li>
+                        <li>Biomass</li>
+                        <li>Wood/trees</li>
+                        <li>Draught animals</li>
+                    </ul>
+                    <h3 id="ch2_s1_1_solar">2.1.1 Solar Energy</h3>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <p>Solar energy, derived from the sun's radiation, is harnessed primarily through photovoltaic (PV) panels that convert sunlight directly into electricity, or through solar thermal systems that use sunlight to heat water or generate steam for electricity production.</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>Inexhaustible and widely available ("found everywhere").</li>
+                                <li>Clean (no emissions during operation).</li>
+                                <li>Versatile (grid-tied, off-grid applications).</li>
+                                <li>Relatively easy to use once installed.</li>
+                                <li>Can be stored (e.g., in batteries).</li>
+                                <li>Safe to use.</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>High initial cost of solar panels.</li>
+                                <li>Intermittent (daylight and weather dependent).</li>
+                                <li>Energy storage (batteries) can be expensive and cumbersome.</li>
+                                <li>Requires larger areas for significant output (lower energy production density).</li>
+                                <li>Technology perceived as new or complex by some potential users.</li>
+                            </ul>
+                            <h5>Solar Energy in Kenya:</h5>
+                            <p>Kenya is playing an increasingly significant role in solar energy. The country's installed solar capacity was 282.5 MW in 2023 and is projected to reach 407.4 MW by 2025. Notable projects include the Garissa Solar Power Plant (55 MW or 54.65 MW) and the Malindi Solar project (40MW). Kenya aims for 100% clean energy by 2030, with solar as a key contributor. Kenya is a leader in off-grid solar adoption in East Africa, with one in five households utilizing solar systems. The Kenya Off-Grid Solar Access Project (KOSAP) supports this expansion in underserved counties.</p>
+                        </div>
+                    </div>
+
+                    <h3 id="ch2_s1_2_wind">2.1.2 Wind Energy</h3>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <p>Wind energy is derived from the kinetic energy of air in motion, captured by wind turbines that convert this motion into electricity.</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>Inexhaustible and a free resource (once turbines are installed).</li>
+                                <li>Clean (no emissions during operation).</li>
+                                <li>Suitable for various scales; land can be multi-use.</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>Intermittent (unreliable due to fluctuating wind).</li>
+                                <li>High establishment and maintenance costs of turbines.</li>
+                                <li>Visual and noise impact.</li>
+                                <li>Potential impact on bird/bat populations.</li>
+                                <li>Lower energy production density (requires many turbines for large output).</li>
+                                <li>Limited applicability for powering heavy machinery directly.</li>
+                                <li>Significant land use for wind farms; requires open, windy locations.</li>
+                            </ul>
+                            <h5>Wind Energy in Kenya:</h5>
+                            <p>Kenya possesses substantial wind energy potential, particularly in Turkana, the Rift Valley, and Kajiado. The Lake Turkana Wind Power (LTWP) project is the largest wind farm in Africa (310 MW). The Kipeto Wind Power Project in Kajiado (100 MW or 102 MW) is also operational. Several other projects are in development. These projects often catalyze infrastructure development and create employment.</p>
+                        </div>
+                    </div>
+                    
+                    <h3 id="ch2_s1_3_hep">2.1.3 Hydro-Electric Power (HEP)</h3>
+                     <div class="card my-3">
+                        <div class="card-body">
+                            <p>Hydro-Electric Power (HEP) is energy derived from the force of falling or flowing water, which rotates turbines connected to generators to produce electricity. (Detailed in Chapter 3)</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>Renewable and inexhaustible (with continuous water cycles).</li>
+                                <li>Clean in operation (no direct emissions).</li>
+                                <li>Reliable baseload power (for storage dams).</li>
+                                <li>No fuel costs once built; long lifespan.</li>
+                                <li>Multi-purpose (flood control, irrigation, recreation).</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>High upfront capital cost for dam construction.</li>
+                                <li>Environmental impact (habitat alteration, resettlement).</li>
+                                <li>Susceptible to drought and climate change (fluctuating water levels).</li>
+                                <li>Siltation reduces reservoir capacity.</li>
+                                <li>Electricity cannot be easily stored on a large scale once generated.</li>
+                                <li>Obstruction of migratory fish pathways.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 id="ch2_s1_4_geo">2.1.4 Geothermal Energy</h3>
+                     <div class="card my-3">
+                        <div class="card-body">
+                            <p>Geothermal energy is derived from the natural heat stored within the Earth's interior. This heat, often manifesting as steam or hot water, is harnessed to drive turbines. (Detailed in Chapter 4)</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>Renewable and reliable baseload power (operates 24/7).</li>
+                                <li>Clean source with minimal environmental degradation during operation (if managed well).</li>
+                                <li>Relatively low cost of production once established.</li>
+                                <li>Small land footprint per MW.</li>
+                                <li>Indigenous resource for some regions (like Kenya's Rift Valley).</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>Site-specific (requires geothermal reservoirs).</li>
+                                <li>High exploration and drilling costs and risks.</li>
+                                <li>Potential emissions (e.g., Hydrogen Sulphide, $H_2S$).</li>
+                                <li>Noise pollution during drilling and operation.</li>
+                                <li>Induced seismicity (rare).</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 id="ch2_s1_5_biomass">2.1.5 Biomass and Biogas</h3>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <p><strong>Biomass</strong> refers to organic matter derived from plants and animals (e.g., wood, agricultural residues, animal manure). <strong>Biogas</strong> is primarily methane ($CH_4$) produced from the anaerobic digestion of organic wastes.</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>Renewable if sustainably sourced.</li>
+                                <li>Waste utilization; can use locally available waste products.</li>
+                                <li>Can be carbon neutral.</li>
+                                <li>Relatively simple technology for some biogas production.</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>Land use competition with food if crops are grown for energy.</li>
+                                <li>Emissions if combusted inefficiently or methane leaks from biogas systems.</li>
+                                <li>Unsustainable harvesting can lead to deforestation.</li>
+                                <li>Transport of bulky biomass feedstocks can be difficult.</li>
+                            </ul>
+                            <h5>Biomass in Kenya:</h5>
+                            <p>Bioenergy, predominantly traditional biomass (firewood and charcoal), accounts for approximately 68-70% of Kenya's total energy consumption. Over 90% of the rural population relies on it for cooking and heating. This reliance poses health risks (indoor air pollution) and environmental challenges (deforestation).</p>
+                        </div>
+                    </div>
+
+                    <h3 id="ch2_s1_6_wood">2.1.6 Wood Fuel</h3>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <p>Wood fuel encompasses firewood, charcoal, and sawdust.</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>Readily available in many areas.</li>
+                                <li>Relatively cheap or free for users (if collected).</li>
+                                <li>Renewable if managed sustainably (afforestation, reforestation).</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>Unsustainable harvesting leads to deforestation, soil erosion, biodiversity loss.</li>
+                                <li>Air pollution (indoor and outdoor) from inefficient combustion (soot, smoke).</li>
+                                <li>Bulky, requires considerable storage space; considered "dirty".</li>
+                                <li>Low thermal efficiency (large volume needed for small energy output).</li>
+                            </ul>
+                             <h5>Wood Fuel in Kenya:</h5>
+                            <p>Meets over 70% of domestic energy demand, especially for cooking. Firewood is used by ~90% rural and 26% urban households; charcoal by ~40% rural and 47% urban households. Current use patterns are largely unsustainable. The charcoal value chain employs ~200,000 producers but is often informal and poorly regulated.</p>
+                        </div>
+                    </div>
+
+                    <h3 id="ch2_s1_7_tidal">2.1.7 Tidal Energy</h3>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <p>Tidal energy harnesses power from the periodic rise and fall of sea levels (tides) driving turbines.</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>Inexhaustible and renewable.</li>
+                                <li>Predictable.</li>
+                                <li>High power density.</li>
+                                <li>Clean in operation (free "fuel").</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>High infrastructure costs.</li>
+                                <li>Site-specific (requires large tidal range).</li>
+                                <li>Potential marine ecosystem impact.</li>
+                                <li>Less developed technology compared to other renewables.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 id="ch2_s1_8_wave">2.1.8 Wave Energy</h3>
+                     <div class="card my-3">
+                        <div class="card-body">
+                            <p>Wave energy derives power from the motion of ocean surface waves captured by specialized devices.</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>Inexhaustible and renewable.</li>
+                                <li>Vast potential.</li>
+                                <li>Relatively consistent in some locations.</li>
+                                <li>Clean in operation.</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>Technologically challenging; harsh marine environment (durability).</li>
+                                <li>High costs for setup and maintenance.</li>
+                                <li>Potential navigation and ecosystem impact.</li>
+                                <li>Not safe in areas with storms, cyclones, tsunamis.</li>
+                                <li>Less developed technology.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h3 id="ch2_s1_9_draught">2.1.9 Draught Animal Power</h3>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <p>Draught animal power refers to the use of animals (oxen, donkeys, horses, camels) to perform mechanical work, primarily in agriculture and transportation.</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>Readily available in many rural areas.</li>
+                                <li>Renewable (animals reproduce); uses local resources (fodder).</li>
+                                <li>Relatively cheap to maintain compared to machinery.</li>
+                                <li>Flexible (can navigate rugged terrain).</li>
+                                <li>Suitable for small-scale/rural applications; some animals adapted to ASALs.</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>Limited power output.</li>
+                                <li>Animals require care, rest; prone to diseases and fatigue.</li>
+                                <li>Slow pace; use often restricted to rural areas/specific tasks.</li>
+                                <li>Lifespan can be shortened by excessive work or poor care.</li>
+                            </ul>
+                            <h5>Draught Animal Power in Kenya:</h5>
+                            <p>Remains highly relevant, particularly for small-scale farmers. It's a crucial form of renewable and locally available energy supporting livelihoods and food production.</p>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                id: "ch2_s2", // Article for Non-Renewable Sources
+                title: "2.2 Non-Renewable Energy Sources",
+                breadcrumb: "Non-Renewable Sources",
+                category: "Core Concepts",
+                parentId: "ch2",
+                content: `
+                    <h2 id="ch2_s2">2.2 Non-Renewable Energy Sources</h2>
+                    <p>Non-renewable energy sources are characterized by their finite availability; they are depleted with use and cannot be replenished on a human timescale. These have historically been the bedrock of industrial economies but are increasingly associated with environmental concerns. Examples include: Petroleum, Natural gas, Coal, Uranium, Peat.</p>
+                    
+                    <h3 id="ch2_s2_1_petrol">2.2.1 Petroleum (Oil)</h3>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <p>Petroleum (crude oil) is a complex mixture of liquid and gaseous hydrocarbons formed from ancient marine organisms deposited in sedimentary rocks over millions of years under high pressure and temperature. Formation requires organic-rich sediments, burial, non-porous cap rocks, and porous reservoir rocks.</p>
+                            <h5>Products and By-products:</h5>
+                            <p>Refined to produce: transport fuels (petrol, diesel, jet fuel, kerosene), lubricants, asphalt (bitumen), paraffin wax, petrochemicals (resins, plastics, sulphur).</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>High energy density.</li>
+                                <li>Convenient for transport fuel; established infrastructure.</li>
+                                <li>Versatile; can be used for thermal electricity generation.</li>
+                                <li>Availability not generally affected by short-term weather changes.</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>Finite resource; depleting reserves.</li>
+                                <li>Price volatility; often expensive for importing nations.</li>
+                                <li>Major source of Greenhouse Gas (GHG) emissions ($CO_2$) and other pollutants.</li>
+                                <li>Exploration and extraction can be expensive and environmentally disruptive (risk of spills).</li>
+                                <li>Crude oil is bulky to transport internationally; products can be highly inflammable.</li>
+                            </ul>
+                            <div class="diagram-placeholder">
+                                Diagram: Formation of Petroleum
+                                <p>(Illustrative diagram showing organic matter deposition, burial, pressure, and temperature leading to oil and gas formation in reservoir rocks capped by non-porous rock.)</p>
+                            </div>
+                            <h5>Petroleum in Kenya:</h5>
+                            <p>Historically a net importer, making the economy vulnerable to global oil price volatility. Discovery of oil reserves in Turkana County presents opportunities (reduced import bill, revenue) and challenges (environmental impacts, resource curse potential, transition away from fossil fuels).</p>
+                        </div>
+                    </div>
+
+                    <h3 id="ch2_s2_2_coal">2.2.2 Coal</h3>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <p>Coal is a combustible sedimentary rock formed from ancient terrestrial plant matter accumulated in swampy environments, buried, and transformed by heat and pressure through stages: peat, lignite, bituminous coal, anthracite.</p>
+                            <h5>Uses:</h5>
+                            <p>Primarily for thermal electricity generation and coking coal in iron and steel smelting.</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>Historically abundant global reserves.</li>
+                                <li>Relatively low cost in certain regions.</li>
+                                <li>Established mining and combustion technologies.</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>Non-renewable and exhaustible.</li>
+                                <li>Bulky and costly to transport.</li>
+                                <li>Major source of environmental pollution ($CO_2$, $SO_x$, $NO_x$, particulates, heavy metals).</li>
+                                <li>Mining causes significant land degradation and water pollution.</li>
+                                <li>Dirty and dusty to handle; some types have low calorific value.</li>
+                                <li>Mining can be expensive and hazardous.</li>
+                            </ul>
+                            <h5>Coal in Kenya:</h5>
+                            <p>The global trend is away from coal due to high carbon emissions. Development of Kenyan coal resources (e.g., Mui Basin) would contradict green energy commitments and risk stranded assets.</p>
+                        </div>
+                    </div>
+                    
+                    <h3 id="ch2_s2_3_gas">2.2.3 Natural Gas</h3>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <p>Natural gas is a fossil fuel composed primarily of methane ($CH_4$), often found with petroleum or in separate gas fields. Formed similarly to oil from ancient organic matter.</p>
+                            <h5>Uses:</h5>
+                            <p>Electricity generation, domestic/commercial heating and cooking, chemical industry feedstock (fertilizers, plastics), transport fuel (CNG, LNG).</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>Relatively cleaner burning than coal or oil (lower $CO_2$, $SO_x$, particulates).</li>
+                                <li>Efficient for power generation (especially CCGTs).</li>
+                                <li>Pipeline transport is generally cheap and efficient where infrastructure exists.</li>
+                                <li>Supply not directly affected by weather changes.</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>Non-renewable and exhaustible.</li>
+                                <li>Methane leakage (a potent GHG) during extraction, processing, transport, and use.</li>
+                                <li>Risk of accidental fires/explosions from leakages.</li>
+                                <li>Can be expensive; price volatility.</li>
+                                <li>Environmental impacts of extraction (e.g., "fracking").</li>
+                            </ul>
+                            <h5>Natural Gas in Kenya:</h5>
+                            <p>Often viewed as a "bridge fuel". Any future development in Kenya would require stringent regulations to minimize methane leakage and careful assessment against decarbonization goals.</p>
+                        </div>
+                    </div>
+
+                    <h3 id="ch2_s2_4_uranium">2.2.4 Uranium (Nuclear Energy)</h3>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <p>Nuclear energy is derived from controlled nuclear fission, typically of Uranium-235 ($^{235}U$). The heat released produces steam to drive turbines for electricity generation. Used in countries like USA, Russia, France, South Africa.</p>
+                            <h5>Advantages:</h5>
+                            <ul>
+                                <li>Vast electricity from small fuel quantity; substantial uranium reserves.</li>
+                                <li>Long operational lifetime of power plants.</li>
+                                <li>Low/no GHG emissions during electricity generation (low-carbon baseload power).</li>
+                                <li>Relatively low fuel costs once operational.</li>
+                            </ul>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>Extremely expensive and time-consuming reactor construction.</li>
+                                <li>Management of radioactive nuclear waste (hazardous for thousands of years).</li>
+                                <li>Uranium is a non-renewable resource.</li>
+                                <li>Public concerns about safety (accidents) and weapons proliferation.</li>
+                                <li>Requires highly specialized expertise.</li>
+                            </ul>
+                            <h5>Nuclear Energy in Kenya:</h5>
+                            <p>Kenya has expressed ambitions to include nuclear power, with potential construction of a 1000 MW plant starting by 2027 (commissioning by 2034). Uyombo in Kilifi County is a preferred site. This aims to diversify the energy mix and secure baseload power for industrialization. It's a monumental undertaking with profound financial, technical, regulatory, and societal implications.</p>
+                        </div>
+                    </div>
+                    
+                    <h3 id="ch2_s2_5_peat">2.2.5 Peat</h3>
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <p>Peat is an accumulation of partially decayed vegetation in peatlands/mires; an early stage of coalification. Found in Russia, Ireland, Finland, USA.</p>
+                            <h5>Uses:</h5>
+                            <p>Historically for domestic heating/cooking; horticulture.</p>
+                            <h5>Disadvantages:</h5>
+                            <ul>
+                                <li>Relatively low energy density and high moisture content.</li>
+                                <li>Combustion releases significant $CO_2$ and pollutants.</li>
+                                <li>Extraction damages valuable peatland ecosystems (carbon sinks, biodiversity habitats).</li>
+                            </ul>
+                            <p>Peat is a minor non-renewable source with significant environmental concerns, unlikely to be a major resource for Kenya.</p>
+                        </div>
+                    </div>
+                `
+            },
+            
+            // Chapter 3: HEP Development
+            {
+                id: "ch3",
+                title: "3. Hydro-Electric Power (HEP) Development",
+                breadcrumb: "HEP Development",
+                category: "Energy Sources in Detail",
+                isChapter: true,
+                content: `
+                    <h1 id="ch3">3. Hydro-Electric Power (HEP) Development</h1>
+                    <p>Hydro-Electric Power (HEP) is a significant renewable energy source derived from the kinetic energy of flowing or falling water, which is used to rotate turbines connected to generators, thereby producing electricity. It is a well-established technology and plays a crucial role in the energy mix of many countries, including Kenya and Uganda.</p>
+                    <div class="diagram-placeholder">
+                        Diagram: Typical Hydro-Electric Power Dam
+                        <p>(Illustrative diagram showing dam structure, reservoir, intake, penstock, turbine, generator, and transmission lines.)</p>
+                    </div>
+                `
+            },
+            {
+                id: "ch3_s1",
+                title: "3.1 HEP in Kenya",
+                breadcrumb: "HEP in Kenya",
+                category: "Energy Sources in Detail",
+                parentId: "ch3",
+                content: `
+                    <h2 id="ch3_s1">3.1 HEP in Kenya</h2>
+                    <p>Kenya has harnessed its river systems, particularly the Tana River, for HEP generation. These projects contribute significantly to the national grid. Low-emissions technologies, with hydro being a significant component, account for nearly 90% of Kenya's current power generation mix. However, HEP reliability is increasingly under scrutiny due to climate change impacts causing hydrological variability (droughts and floods).</p>
+                    
+                    <h4 id="ch3_s1_1_sevenforks">3.1.1 The Seven Forks Scheme (River Tana)</h4>
+                    <p>The Seven Forks Scheme is a cascade of five major dams and power stations along the Tana River, Kenya's longest river. This scheme is the backbone of Kenya's hydro-electric power generation.</p>
+                    <h5>Dams in the Scheme (Examples):</h5>
+                    <ul>
+                        <li><strong>Masinga Dam:</strong> 40 MW, largest reservoir, multi-purpose (power, water supply, flood control).</li>
+                        <li><strong>Kamburu Dam:</strong> 94.2 MW.</li>
+                        <li><strong>Gitaru Dam:</strong> 225 MW, largest single station in the scheme.</li>
+                        <li><strong>Kindaruma Dam:</strong> 72 MW, first major HEP station in Kenya.</li>
+                        <li><strong>Kiambere Dam:</strong> 168 MW, furthest downstream.</li>
+                    </ul>
+                    <p>(Masinga and Kiambere dams experienced overflows in May 2025 due to heavy rainfall, highlighting climate vulnerability).</p>
+                    <h5>Physical Factors Favoring Development:</h5>
+                    <ul>
+                        <li>Large and relatively regular volume of water from Tana River and tributaries.</li>
+                        <li>Hard basement rock for firm dam foundations.</li>
+                        <li>Favorable topography (waterfalls, steep gradients, deep gorges/valleys) providing hydraulic head.</li>
+                        <li>Ample space due to relatively low population density in some areas.</li>
+                        <li>Impervious rock layers minimizing water seepage.</li>
+                    </ul>
+                    <h5>Human Factors Favoring Development:</h5>
+                    <ul>
+                        <li>Availability of adequate capital (often through international financing).</li>
+                        <li>High and growing demand for electricity.</li>
+                        <li>Sparse population in some dam areas minimizing relocation costs.</li>
+                    </ul>
+                    <h5>Benefits of the Seven Forks Scheme:</h5>
+                    <ul>
+                        <li>Substantial electric power to the national grid.</li>
+                        <li>Reservoirs supply water for domestic, industrial, and irrigation purposes.</li>
+                        <li>Creation of fisheries and tourist attractions.</li>
+                        <li>Modification of local microclimates.</li>
+                        <li>Dams serve as bridges, improving transport connectivity.</li>
+                        <li>Flood control for downstream areas.</li>
+                    </ul>
+                    <h5>Problems Facing the Scheme:</h5>
+                    <ul>
+                        <li>Fluctuations in water levels due to variable rainfall and droughts, leading to power rationing.</li>
+                        <li>Significant ongoing capital investment needed for maintenance, dredging, and managing siltation.</li>
+                        <li>Siltation from soil erosion reduces reservoir capacity and turbine efficiency.</li>
+                        <li>Shortage of highly skilled technical personnel for specialized maintenance.</li>
+                        <li>Expensive and socially sensitive process of relocating people during construction.</li>
+                        <li>Increasing vulnerability to hydrological extremes associated with climate change.</li>
+                    </ul>
+
+                    <h4 id="ch3_s1_2_turkwell">3.1.2 Turkwell Gorge Project</h4>
+                    <p>Located on the Turkwel River in northwestern Kenya, with a capacity of 106 MW. Its operation is marked by challenges from Kenya's variable climate, experiencing dramatic swings in water levels from near-drought conditions to potential overspill. This poses flood risks and highlights the need for improved forecasting, adaptive dam management, and Integrated Water Resource Management (IWRM) in the catchment area.</p>
+
+                    <h4 id="ch3_s1_3_sondu">3.1.3 Sondu-Miriu Project</h4>
+                    <p>Situated on the Sondu River in Western Kenya, this is a run-of-river type power station (60 MW), commissioned in 2008. The Sang'oro Power Station (21.2 MW) was constructed downstream to utilize its outflow, creating an efficient cascade system. Run-of-river projects generally have a smaller environmental footprint but are more directly dependent on instantaneous river flow, making them vulnerable to short-term hydrological variations and droughts.</p>
+                `
+            },
+            { 
+                id: "ch3_s2", 
+                title: "3.2 HEP in Uganda", 
+                breadcrumb: "HEP in Uganda", 
+                category: "Energy Sources in Detail", 
+                parentId: "ch3", 
+                content: `
+                    <h2 id="ch3_s2">3.2 HEP in Uganda</h2>
+                    <p>Uganda relies significantly on HEP, primarily from the River Nile as it exits Lake Victoria.</p>
+                    <h4 id="ch3_s2_1_owenfalls">3.2.1 Owen Falls Dam (Nalubaale Power Station)</h4>
+                    <p>Historically the major source of electricity for Uganda, also exporting power to Kenya (historically ~30 MW). Located at a natural waterfall on the Nile. Original capacity 150MW (1954), uprated to 180MW. The Kiira Power Station (200MW) is an extension, bringing the Nalubaale-Kiira complex to 380MW.</p>
+                    <h5>Physical Factors Favoring Development:</h5>
+                    <ul>
+                        <li>Large and consistent water volume from Lake Victoria and the Nile.</li>
+                        <li>Natural head provided by the falls.</li>
+                        <li>High rainfall in the catchment area.</li>
+                        <li>Suitable geological conditions (hard basement rocks, deep valleys, impervious rock layers).</li>
+                    </ul>
+                    <h5>Challenges:</h5>
+                    <p>The aging infrastructure of Nalubaale (over 70 years old) has necessitated extensive rehabilitation. Climate change and variability affecting lake levels and river flows also pose challenges. The transboundary nature of the Nile necessitates collaborative management of shared water resources.</p>
+                ` 
+            },
+            { 
+                id: "ch3_s3", 
+                title: "3.3 Other Major African HEP Projects", 
+                breadcrumb: "Other African HEP", 
+                category: "Energy Sources in Detail", 
+                parentId: "ch3", 
+                content: `
+                    <h2 id="ch3_s3">3.3 Other Major Hydroelectric Power Projects in Africa</h2>
+                    <p>Africa has immense hydroelectric potential. Many large projects play critical roles in national and regional energy landscapes. Examples include:</p>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Project Name</th>
+                                    <th>River</th>
+                                    <th>Country(s)</th>
+                                    <th>Approx. Capacity (MW)</th>
+                                    <th>Key Significance/Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Kariba Dam</td><td>Zambezi</td><td>Zambia/Zimbabwe</td><td>2,130</td><td>Regional energy security</td></tr>
+                                <tr><td>Aswan High Dam</td><td>Nile</td><td>Egypt</td><td>2,100 (original)</td><td>Irrigation, flood control, electricity</td></tr>
+                                <tr><td>Cahora Bassa Dam</td><td>Zambezi</td><td>Mozambique</td><td>2,075</td><td>Major power producer for Mozambique & SAPP</td></tr>
+                                <tr><td>Inga Dams (Inga 1 & 2)</td><td>Congo</td><td>DRC</td><td>1,775 (combined)</td><td>Potential for Grand Inga (up to 40,000 MW)</td></tr>
+                                <tr><td>Kainji Dam</td><td>Niger</td><td>Nigeria</td><td>760 (designed 960)</td><td>Power, irrigation, fishing</td></tr>
+                                <tr><td>Akosombo Dam</td><td>Volta</td><td>Ghana</td><td>1,020</td><td>Created Lake Volta; electricity, irrigation</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Many of these large African HEP projects face common challenges: aging infrastructure requiring costly rehabilitation, vulnerability to climate change (droughts and floods), and complex socio-environmental legacies from their original construction.</p>
+                ` 
+            },
+            { 
+                id: "ch3_s4", 
+                title: "3.4 Factors Favouring HEP in Africa", 
+                breadcrumb: "Factors for HEP", 
+                category: "Energy Sources in Detail", 
+                parentId: "ch3", 
+                content: `
+                    <h2 id="ch3_s4">3.4 Factors Favouring HEP Development in Africa (General)</h2>
+                    <ul>
+                        <li><strong>Abundant Water Resources:</strong> Large river systems (Nile, Congo, Zambezi, Niger, Volta) with significant unexploited potential (almost 90%).</li>
+                        <li><strong>Favourable Topography:</strong> Steep gradients, escarpments (e.g., Great Rift Valley), and natural waterfalls create necessary hydraulic head. Deep, narrow valleys are ideal for dam construction.</li>
+                        <li><strong>Suitable Geological Conditions:</strong> Presence of hard, impermeable basement rocks for stable foundations and minimizing seepage.</li>
+                        <li><strong>Growing Energy Demand:</strong> Rising populations and growing economies increase demand for electricity for industries, businesses, and households.</li>
+                        <li><strong>Drive for Renewable Energy and Decarbonization:</strong> Global and continental push to transition towards cleaner energy sources.</li>
+                        <li><strong>Economic Development Aspirations:</strong> Access to reliable and affordable electricity is a critical enabler of broader economic development.</li>
+                    </ul>
+                    <p>This vast untapped potential offers Africa a significant opportunity for sustainable development, potentially leapfrogging fossil fuel-intensive industrialization.</p>
+                ` 
+            },
+            { 
+                id: "ch3_s5", 
+                title: "3.5 Challenges to HEP in Africa", 
+                breadcrumb: "Challenges for HEP", 
+                category: "Energy Sources in Detail", 
+                parentId: "ch3", 
+                content: `
+                    <h2 id="ch3_s5">3.5 Challenges to HEP Development in Africa</h2>
+                    <ul>
+                        <li><strong>Inadequate Capital:</strong> HEP projects are highly capital-intensive; many African countries face difficulties mobilizing large financial resources.</li>
+                        <li><strong>Remoteness of Potential Sites:</strong> Many ideal sites are in remote regions, requiring additional investment in infrastructure.</li>
+                        <li><strong>Low Industrial Development and Demand in Some Areas:</strong> Limited local demand can make large projects economically unviable without export commitments.</li>
+                        <li><strong>Fluctuating River Regimes and Climate Change:</strong> Seasonal and inter-annual variability in flow, exacerbated by climate change (droughts, floods), affects reliability.</li>
+                        <li><strong>Limited Research and Technical Expertise:</strong> Lack of comprehensive hydrological data and local technical expertise.</li>
+                        <li><strong>Environmental and Social Concerns:</strong> Land inundation, displacement, ecosystem alteration, impacts on fisheries. Requires comprehensive ESIAs and mitigation.</li>
+                        <li><strong>Governance and Institutional Weaknesses:</strong> Political instability, corruption, weak regulatory frameworks can deter investment.</li>
+                        <li><strong>Transboundary Water Management Issues:</strong> Development on shared rivers requires cooperation among riparian states, which can be complex.</li>
+                    </ul>
+                ` 
+            },
+
+            // Chapter 4: Geothermal
+            {
+                id: "ch4",
+                title: "4. Geothermal Power (Kenya)",
+                breadcrumb: "Geothermal (Kenya)",
+                category: "Energy Sources in Detail",
+                isChapter: true,
+                content: `
+                    <h1 id="ch4">4. Geothermal Power Development in Kenya</h1>
+                    <p>Geothermal energy, derived from the Earth's internal heat, is a significant and growing component of Kenya's renewable energy portfolio. Kenya's location within the Great Rift Valley, a tectonically active zone, provides abundant geothermal resources. Geothermal energy currently supplies over 42% of Kenya's daily electricity needs, forming a critical baseload component.</p>
+                    <div class="diagram-placeholder">
+                        Diagram: Geothermal Power Plant
+                        <p>(Illustrative diagram showing production well, steam separator, turbine, generator, condenser, cooling tower, and injection well.)</p>
+                    </div>
+                `
+            },
+            { 
+                id: "ch4_s1", 
+                title: "4.1 Fields & Projects", 
+                breadcrumb: "Fields & Projects", 
+                category: "Energy Sources in Detail", 
+                parentId: "ch4", 
+                content: `
+                    <h2 id="ch4_s1">4.1 Major Geothermal Fields and Projects</h2>
+                    <p>Development is concentrated in the Olkaria geothermal area and Menengai Crater, with other prospective sites along the Rift Valley.</p>
+                    <ul>
+                        <li><strong>Olkaria Complex (Naivasha):</strong> The most developed geothermal field in Africa. Hosts multiple power plants (Olkaria I: 273.7 MW, Olkaria II: 105 MW, Olkaria III (IPP): 139 MW, Olkaria IV: 140 MW, Olkaria V: 158 MW). KenGen is the primary operator.</li>
+                        <li><strong>Menengai Geothermal Project (Nakuru):</strong> Potential up to 1600 MW. Geothermal Development Company (GDC) developed the steam field for Phase 1 (approx. 400 MW steam for IPPs). IPPs include Sosian Energy (35 MW, operational but faced legal challenges regarding ESIA), Globeleq (35 MW), and Kaishan/Orpower22 (35 MW). Has faced community concerns regarding environmental and social impacts.</li>
+                        <li><strong>Eburru (Naivasha):</strong> KenGen operates a small wellhead geothermal plant (2.5 MW), commissioned in 2012.</li>
+                        <li><strong>Suswa (Narok County):</strong> Promising prospect with plans for significant development (e.g., CYRQ Energy 330 MW, GDC/Pertamina 300 MW).</li>
+                        <li><strong>Other Potential Sites:</strong> Lake Bogoria, Lake Baringo, areas around Lake Turkana, Lake Magadi, Homa Hills, Mai Mahiu. Total Kenyan potential estimated to exceed 7,000 $MW_e$.</li>
+                    </ul>
+                ` 
+            },
+            { 
+                id: "ch4_s2", 
+                title: "4.2 Influencing Factors", 
+                breadcrumb: "Influencing Factors", 
+                category: "Energy Sources in Detail", 
+                parentId: "ch4", 
+                content: `
+                    <h2 id="ch4_s2">4.2 Factors Influencing Geothermal Potential in Kenya</h2>
+                    <p>Kenya's significant geothermal potential is a direct consequence of its unique geological setting within the East African Rift System (EARS), an active continental rift zone. This results in:</p>
+                    <ul>
+                        <li><strong>High Heat Flow:</strong> Thinning Earth's crust along the rift allows mantle heat closer to the surface.</li>
+                        <li><strong>Volcanism:</strong> Active and dormant volcanoes (Longonot, Suswa, Menengai, Olkaria) indicate underlying magma chambers as heat sources.</li>
+                        <li><strong>Permeable Rock Formations:</strong> Faulting and fracturing create pathways and reservoirs for heated groundwater.</li>
+                        <li><strong>Water Availability:</strong> Rainfall recharges geothermal reservoirs, providing fluid to transport heat.</li>
+                    </ul>
+                ` 
+            },
+            { 
+                id: "ch4_s3", 
+                title: "4.3 Benefits for Kenya", 
+                breadcrumb: "Benefits", 
+                category: "Energy Sources in Detail", 
+                parentId: "ch4", 
+                content: `
+                    <h2 id="ch4_s3">4.3 Benefits of Geothermal Energy to Kenya</h2>
+                    The development of geothermal energy has yielded substantial benefits for Kenya:
+                    <ul>
+                        <li><strong>Alternative and Indigenous Energy Source:</strong> Reduces reliance on drought-vulnerable hydro and costly imported fossil fuels, enhancing energy security.</li>
+                        <li><strong>Increased National Energy Output:</strong> Significantly boosted Kenya's electricity generation capacity.</li>
+                        <li><strong>Stabilization of Electricity Costs:</strong> Provides reliable, cost-competitive baseload power, helping stabilize tariffs.</li>
+                        <li><strong>Development of Remote Areas:</strong> Spurs infrastructure and economic activity in Rift Valley regions.</li>
+                        <li><strong>Employment Creation:</strong> Opportunities in exploration, drilling, construction, operation, and support services.</li>
+                        <li><strong>Foreign Exchange Savings:</strong> Reduces need for imported fuels for thermal power generation.</li>
+                        <li><strong>Reliable Baseload Power:</strong> Operates continuously (24/7), essential for grid stability and industrial operations.</li>
+                        <li><strong>Low Greenhouse Gas Emissions:</strong> Produces very low GHG emissions during operation compared to fossil fuels, contributing to climate mitigation.</li>
+                    </ul>
+                    <p>Kenya's success positions it as a continental leader in renewable energy technology and expertise.</p>
+                ` 
+            },
+            { 
+                id: "ch4_s4", 
+                title: "4.4 Challenges", 
+                breadcrumb: "Challenges", 
+                category: "Energy Sources in Detail", 
+                parentId: "ch4", 
+                content: `
+                    <h2 id="ch4_s4">4.4 Reasons for Under-exploitation and Challenges</h2>
+                    Despite Kenya's advancements, full exploitation faces challenges:
+                    <ul>
+                        <li><strong>High Upfront Capital Costs and Risks:</strong> Exploration and drilling are extremely expensive and risky. Often requires government support (e.g., GDC) or risk mitigation.</li>
+                        <li><strong>Shortage of Skilled Personnel:</strong> Requires highly specialized skills; reliance on expatriates can add costs.</li>
+                        <li><strong>Technological Requirements:</strong> Access to and deployment of advanced technologies can be challenging.</li>
+                        <li><strong>Remoteness and Inaccessibility of Sites:</strong> Many potential sites are in remote, rugged areas, increasing development costs.</li>
+                        <li><strong>Environmental Concerns:</strong> Management of geothermal brine (saline, heavy metals), $H_2S$ emissions (odor, toxicity), noise pollution, potential land subsidence. Requires careful ESIAs and mitigation.</li>
+                        <li><strong>Community and Land Issues:</strong> Land acquisition, compensation, benefit-sharing, and community engagement are critical. Inadequate consultation can lead to opposition (e.g., Menengai).</li>
+                    </ul>
+                ` 
+            },
+
+            // Chapter 5: Energy Crisis
+            {
+                id: "ch5",
+                title: "5. The Energy Crisis",
+                breadcrumb: "Energy Crisis",
+                category: "Key Issues",
+                isChapter: true,
+                content: `<h1 id="ch5">5. The Energy Crisis</h1><p>The term "energy crisis" refers to any significant bottleneck or price rise in the supply of energy resources to an economy. While it often relates to oil, it can also encompass shortages or extreme price hikes in other energy forms.</p>`
+            },
+            { 
+                id: "ch5_s1", 
+                title: "5.1 Definition", 
+                breadcrumb: "Definition", 
+                category: "Key Issues", 
+                parentId: "ch5", 
+                content: `
+                    <h2 id="ch5_s1">5.1 Definition of Energy Crisis</h2>
+                    <p>An energy crisis is typically defined as a situation where the <strong>prices of fossil fuels, particularly petroleum, rise sharply as a result of a perceived or actual short supply relative to demand</strong>. This imbalance can be triggered by various factors, leading to significant economic and social disruptions. It's not solely about the physical absence of energy resources but also about economic accessibility; excessively high prices can render energy unaffordable, effectively creating a crisis.</p>
+                ` 
+            },
+            { 
+                id: "ch5_s2", 
+                title: "5.2 Causes", 
+                breadcrumb: "Causes", 
+                category: "Key Issues", 
+                parentId: "ch5", 
+                content: `
+                    <h2 id="ch5_s2">5.2 Causes of the Energy Crisis (Global and Local Factors)</h2>
+                    Energy crises result from a complex interplay of factors:
+                    <ul>
+                        <li><strong>High Demand and Over-reliance on Specific Fuels:</strong> Especially petroleum, driven by industrial activity, transportation, and population growth.</li>
+                        <li><strong>Supply Restrictions and Geopolitical Events:</strong> Embargoes, production controls by cartels (e.g., OPEC), political instability, conflicts in key energy-producing regions.</li>
+                        <li><strong>Market Dynamics and Pricing Policies:</strong> De-regulation of oil prices, artificial shortages created by producers.</li>
+                        <li><strong>Unequal Distribution of Resources:</strong> Countries lacking domestic reserves depend on imports.</li>
+                        <li><strong>Inadequate Development of Alternative Energy Sources:</strong> Perpetuates dependence on volatile fossil fuel markets.</li>
+                        <li><strong>Technological Advancements and Increased Consumption:</strong> More energy-consuming devices can increase overall demand if not offset by efficiency gains.</li>
+                        <li><strong>Climate-Related Factors:</strong> Prolonged droughts reducing HEP, increasing demand for thermal power from imported fuels.</li>
+                        <li><strong>Depletion of Reserves:</strong> Finite nature of fossil fuels leads to rising extraction costs for remaining reserves.</li>
+                    </ul>
+                ` 
+            },
+            { 
+                id: "ch5_s3", 
+                title: "5.3 Effects on Kenya", 
+                breadcrumb: "Effects on Kenya", 
+                category: "Key Issues", 
+                parentId: "ch5", 
+                content: `
+                    <h2 id="ch5_s3">5.3 Effects of the Energy Crisis on Kenya's Economy and Society</h2>
+                    An energy crisis has pervasive effects on Kenya:
+                    <ul>
+                        <li><strong>Inflation and Reduced Living Standards:</strong> Higher transport costs lead to increased prices of commodities, eroding purchasing power.</li>
+                        <li><strong>Impact on Agriculture and Food Security:</strong> Increased cost of farm inputs (fertilizers, fuel for machinery/irrigation) raises production costs, potentially reducing output and threatening food security.</li>
+                        <li><strong>Strain on Foreign Exchange Reserves and Trade Balance:</strong> Kenya, as a net oil importer, spends more foreign exchange, depleting reserves and worsening the trade balance.</li>
+                        <li><strong>Reduced Industrial Output and Competitiveness:</strong> Higher energy costs increase operational expenses, slowing industrial growth.</li>
+                        <li><strong>Scarcity of Petroleum By-products:</strong> Shortages or higher prices for lubricants, asphalt, petrochemicals.</li>
+                        <li><strong>Impact on Tourism:</strong> Increased fuel prices lead to higher airfares and tour costs, potentially reducing tourist arrivals.</li>
+                        <li><strong>Increased Pressure on Biomass Resources:</strong> Households may revert to firewood/charcoal, exacerbating deforestation.</li>
+                        <li><strong>Stimulus for Alternative Energy Development (Potential Positive Effect):</strong> Incentivizes development of indigenous renewable sources.</li>
+                        <li><strong>Reduced Consumption of Goods:</strong> High prices can lead to reduced consumer demand.</li>
+                    </ul>
+                ` 
+            },
+            { 
+                id: "ch5_s4", 
+                title: "5.4 Managing Crisis in Kenya", 
+                breadcrumb: "Managing Crisis", 
+                category: "Key Issues", 
+                parentId: "ch5", 
+                content: `
+                    <h2 id="ch5_s4">5.4 Measures Kenya May Take to Manage Energy Crisis</h2>
+                    <ul>
+                        <li>Developing alternative sources of energy like solar, wind, and geothermal to reduce overdependence on imported oil.</li>
+                        <li>Encouraging citizens and industries to adopt energy-saving devices and practices.</li>
+                        <li>Implementing policies to control the importation of vehicles with high fuel consumption (high engine capacities).</li>
+                        <li>Improving the flow of traffic in urban centres through better road networks and traffic management to reduce fuel wastage from congestion.</li>
+                        <li>Exploring the use of relatively cheaper fossil fuels like coal for specific industrial applications (where environmentally manageable).</li>
+                        <li>Investing in and developing nuclear energy for long-term energy self-sufficiency and baseload power.</li>
+                        <li>Promoting public transportation and non-motorized transport options.</li>
+                        <li>Building strategic fuel reserves to cushion against short-term supply disruptions.</li>
+                    </ul>
+                ` 
+            },
+
+            // Chapter 6: Management & Conservation
+            {
+                id: "ch6",
+                title: "6. Management & Conservation of Energy",
+                breadcrumb: "Management & Conservation",
+                category: "Sustainability",
+                isChapter: true,
+                content: `<h1 id="ch6">6. Management and Conservation of Energy</h1><p>Effective energy management and conservation are critical components of a sustainable energy strategy. <strong>Energy management</strong> involves the effective planning and control of energy resources, while <strong>energy conservation</strong> refers to the careful use and protection of these resources to ensure little or no wastage.</p>`
+            },
+            { 
+                id: "ch6_s1", 
+                title: "6.1 Importance", 
+                breadcrumb: "Importance", 
+                category: "Sustainability", 
+                parentId: "ch6", 
+                content: `
+                    <h2 id="ch6_s1">6.1 Importance of Energy Management and Conservation</h2>
+                    These practices are vital for several reasons:
+                    <ul>
+                        <li><strong>Sustainability:</strong> Conserving energy, especially non-renewable resources, prolongs their availability for future generations. Efficient use of renewable resources also ensures their long-term viability.</li>
+                        <li><strong>Economic Efficiency:</strong> Reducing energy waste lowers operational costs for businesses and households. Nationally, it can reduce the need for expensive energy imports and investment in new generation capacity. "Negawatts" (energy saved) are often cheaper than new "megawatts".</li>
+                        <li><strong>Environmental Protection:</strong> Lower energy consumption generally translates to reduced greenhouse gas emissions (especially from fossil fuels) and lessens other environmental impacts (air/water pollution, habitat disruption).</li>
+                        <li><strong>Energy Security:</strong> Reducing overall demand through conservation and efficiency makes a country less vulnerable to supply disruptions and price volatility.</li>
+                    </ul>
+                ` 
+            },
+            { 
+                id: "ch6_s2", 
+                title: "6.2 Kenyan Gov Measures", 
+                breadcrumb: "Kenyan Measures", 
+                category: "Sustainability", 
+                parentId: "ch6", 
+                content: `
+                    <h2 id="ch6_s2">6.2 Measures Taken by the Kenyan Government to Conserve Energy</h2>
+                    The Kenyan government has implemented a multifaceted approach:
+                    <ul>
+                        <li><strong>Promoting Renewable Energy Sources:</strong> Encouraging development of solar, wind, geothermal to reduce reliance on fossil fuels.</li>
+                        <li><strong>Developing Energy-Saving Technologies:</strong> Supporting adoption of energy-efficient appliances, lighting (LEDs), industrial equipment, and building designs.</li>
+                        <li><strong>Protecting Forest Resources:</strong> Enforcing legislation against indiscriminate tree cutting; promoting afforestation/reforestation for sustainable wood fuel.</li>
+                        <li><strong>Public Education & Awareness Campaigns:</strong> Campaigns on careful energy use.</li>
+                        <li><strong>Fiscal Measures:</strong> Progressive taxation on energy consumption or high-consumption goods (e.g., large engine vehicles).</li>
+                        <li><strong>Transport Sector Interventions:</strong>
+                            <ul>
+                                <li>Proper planning of road networks to reduce traffic congestion.</li>
+                                <li>Encouraging public transport, walking, cycling, revitalizing railway transport.</li>
+                                <li>Discouraging importation of vehicles with high fuel consumption.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                ` 
+            },
+            { 
+                id: "ch6_s3", 
+                title: "6.3 Individual/Community Roles", 
+                breadcrumb: "Individual Roles", 
+                category: "Sustainability", 
+                parentId: "ch6", 
+                content: `
+                    <h2 id="ch6_s3">6.3 Individual and Community Roles in Energy Conservation</h2>
+                    Success relies heavily on individual/community actions:
+                    <ul>
+                        <li><strong>At Home:</strong> Using energy-efficient appliances/lighting, turning off unused lights/appliances, improving insulation, efficient cooking methods (pressure cookers, improved cookstoves).</li>
+                        <li><strong>In Transport:</strong> Opting for public transport, carpooling, walking/cycling, maintaining vehicles for fuel efficiency, considering fuel efficiency when purchasing.</li>
+                        <li><strong>In Communities:</strong> Tree planting, promoting improved cookstoves/biogas, advocating for better public transport, waste management/recycling.</li>
+                    </ul>
+                ` 
+            },
+            { 
+                id: "ch6_s4", 
+                title: "6.4 Global Best Practices", 
+                breadcrumb: "Global Practices", 
+                category: "Sustainability", 
+                parentId: "ch6", 
+                content: `
+                    <h2 id="ch6_s4">6.4 Global Best Practices in Energy Management</h2>
+                    International experience emphasizes a systematic approach:
+                    <ul>
+                        <li><strong>Measurement and Tracking:</strong> "You can't manage what you don't measure." Monitoring consumption to identify inefficiencies.</li>
+                        <li><strong>Energy Audits:</strong> Detailed assessment of current energy use to pinpoint savings opportunities, especially for large organizations.</li>
+                        <li><strong>Developing Energy Management Plans:</strong> Creating roadmaps with targets, measures, and responsibilities.</li>
+                        <li><strong>Implementing Cost-Saving and Efficiency Practices:</strong> Behavioral changes, technological upgrades, process optimization.</li>
+                        <li><strong>Adopting Standards & Benchmarking:</strong> Implementing energy efficiency standards for appliances, equipment, buildings; benchmarking against best practices.</li>
+                        <li><strong>Role of Energy Service Companies (ESCOs):</strong> Providing technical expertise and financing for efficiency projects.</li>
+                    </ul>
+                ` 
+            },
+
+            // Chapter 7: Conclusion
+            {
+                id: "ch7",
+                title: "7. Conclusion",
+                breadcrumb: "Conclusion",
+                category: "Summary",
+                isChapter: true,
+                content: `<h1 id="ch7">7. Conclusion: The Future of Energy in Kenya</h1><p>This chapter summarizes the key takeaways and looks at the future outlook for energy in Kenya.</p>`
+            },
+            { 
+                id: "ch7_s1", 
+                title: "7.1 The Future of Energy in Kenya", 
+                breadcrumb: "Future Outlook", 
+                category: "Summary", 
+                parentId: "ch7", 
+                content: `
+                    <h2 id="ch7_s1">7.1 Navigating the Path Forward</h2>
+                    <p>Kenya's energy sector is at a dynamic juncture, with a strong renewable base but facing challenges of demand, access, and climate change. Commendable strides have been made in geothermal, hydropower, and off-grid solar. Untapped renewables (solar, wind, geothermal) offer vast potential. Ambition for 100% clean energy by 2030 and nuclear plans signal diversification.</p>
+                    <p>Hurdles include: universal access, clean cooking solutions, grid stability with intermittent renewables, capital mobilization, climate impacts on hydro, balancing development with environment/community interests.</p>
+                    <p>Successfully navigating this requires adaptive policies, R&D, regional cooperation (e.g., East African Power Pool). Managing the "energy trilemma" (security, equity, sustainability) is key.</p>
+                ` 
+            },
+            
+            // Chapter 8: Revision Questions
+            {
+                id: "ch8_rev", 
+                title: "8. Revision Questions",
+                breadcrumb: "Revision",
+                category: "Self-Assessment",
+                isChapter: true, 
+                content: `
+                    <h1 id="ch8_rev">8. Revision Questions</h1>
+                    <p>Test your understanding of the energy topic with these revision questions. Click on a question to reveal the answer.</p>
+                    <div id="revision-questions-container">
+                        </div>
+                `
+            }
+        ];
+
+        const revisionQuestionsData = [
+            { q: "1. Define energy in the context of geographical studies.", a: "In the context of geographical studies, energy is defined as the power or fuel needed to run a machine or assist people in production." },
+            { q: "2. Explain the link between energy availability and a society's technological sophistication according to the sources.", a: "Energy availability inherently establishes a direct link with a society's technological sophistication. If energy is the \"power needed to run a machine,\" then the more advanced the machinery and technological processes, the greater the demand for energy. This dictates the scale, efficiency, and nature of how societies can \"assist people in production\"." },
+            { q: "3. Identify three domestic uses of energy mentioned in the sources.", a: "Three domestic uses of energy are: Cooking, Lighting, Heating." },
+            { q: "4. Explain the importance of energy in the industrial sector according to the sources.", a: "The industrial sector relies heavily on energy to power machinery, illuminate factories, and provide heat for various manufacturing processes. It forms the backbone of industrial output and economic productivity." },
+            { q: "5. Describe the role of energy in transportation as outlined in the sources.", a: "Energy, primarily in the form of fuels like diesel and petrol, is essential for powering vehicles (cars, trucks, trains, airplanes). This enables the movement of people and goods, which is vital for trade, commerce, access to services, and social connectivity." },
+            { q: "6. How is energy crucial for agriculture according to the sources?", a: "In the agricultural sector, energy is used to power tractors and other farm machinery, operate irrigation pumps, and facilitate the drying and processing of grains and other produce. It is, therefore, crucial for enhancing food production, ensuring food security, and supporting rural livelihoods." },
+            { q: "7. Explain how energy supports water supply based on the provided text.", a: "Access to clean and reliable water often depends on energy (derived from sources like windmills, solar power, or diesel engines) to pump water for domestic consumption, agricultural irrigation, and industrial use." },
+            { q: "8. Describe the significance of energy in the medical sector.", a: "The healthcare sector requires energy to power essential diagnostic equipment such as X-Ray machines, provide lighting in hospitals and clinics, and maintain refrigeration for medicines and vaccines, thereby underpinning the delivery of quality healthcare services." },
+            { q: "9. Why do energy costs and reliability have a significant multiplier effect throughout the economy?", a: "The pervasive nature of energy means that energy costs and the reliability of its supply have a significant multiplier effect throughout the entire economy. If energy is a fundamental input to industry, transport, and agriculture, then any substantial increase in energy costs will inevitably translate into higher production costs for goods, increased transport charges for their delivery, and consequently, higher prices for food and other essential commodities." },
+            { q: "10. What is the strategic importance of energy planning for a nation?", a: "The critical role of energy necessitates strategic national planning aimed at developing a diversified, resilient, and sustainable energy mix. Ensuring access to affordable and reliable energy is not merely an economic imperative but also a matter of national security and social equity. Energy planning must be an integral component of broader national development strategies." },
+            { q: "11. How are energy sources broadly classified according to the sources?", a: "Energy sources are broadly classified into two main categories: renewable and non-renewable." },
+            { q: "12. Define renewable energy sources.", a: "Renewable energy sources are those that can be regenerated/ replenished/ reappear/ inexhaustible/ used over a long period of time. They are naturally replenished on a human timescale." },
+            { q: "13. Define non-renewable energy sources.", a: "Non-renewable energy sources are finite and become depleted with use. They are sources which are exhaustible if they are not well managed." },
+            { q: "14. List eight examples of renewable energy sources mentioned in the sources.", a: "Water (HEP), Wind, Solar/sun, Waves/tides, Geothermal steam/underground steam, Biomass, Wood/trees, Draught animals." },
+            { q: "15. List five examples of non-renewable energy sources mentioned in the sources.", a: "Petroleum, Natural gas, Coal, Uranium, Peat." },
+            { q: "16. What is solar energy?", a: "Solar energy is the power from the sun. It is energy derived from the sun's radiation, converted into electricity or heat." },
+            { q: "17. State three advantages of solar energy.", a: "Free; cheap source of energy; inexhaustible/renewable source of energy; clean/environmentally friendly; can be stored for future use; safe to use; found everywhere/it has many uses; easy to use. (Any three)" },
+            { q: "18. State three disadvantages of solar energy.", a: "Solar panels are expensive to manufacture; low energy production; solar batteries are cumbersome to transport; solar energy has limited use; solar technology is new hence used by few people. (Any three)" },
+            { q: "19. Identify three factors that have hindered the development of solar energy in Kenya.", a: "Solar energy has low energy output; the short life span of storage batteries; competition from alternative sources; high cost of purchasing/installation of solar panels/low purchasing power of people; inadequate technology. (Any three)" },
+            { q: "20. What is wind energy?", a: "Wind energy is the power from air in motion (wind). It is the kinetic energy of wind converted into electricity using wind turbines." },
+            { q: "21. State three advantages of wind energy.", a: "It is inexhaustible/ renewable; It is cheap source of energy; It is free; It is clean/ environmentally friendly; It can be produced on a small scale basis; It can be found everywhere/ it has many uses. (Any three)" },
+            { q: "22. State three disadvantages of wind energy.", a: "Not very reliable as the wind may change direction; Wind mills are expensive to establish and maintain; Low energy production; Wind energy has limited use/ cannot run heavy machines; Wind mills may take up land needed for agriculture; Only available in open areas. (Any three)" },
+            { q: "23. What is tidal energy?", a: "Tidal energy is the power from the periodic rise and fall in the level of ocean water due to gravitational pull by the sun and moon (tides). It is energy from the rise and fall of sea levels (tides) driving turbines." },
+            { q: "24. State two advantages of tidal energy.", a: "It is inexhaustible/ renewable; It is cheap as it is freely available; It is clean/ environmentally friendly. (Any two)" },
+            { q: "25. State two disadvantages of tidal energy.", a: "It is expensive to harness tidal energy; It is limited to countries with a sea front; Low energy production. (Any two)" },
+            { q: "26. What is wave energy?", a: "Wave energy is the power from a moving ridge of ocean water caused by the frictional drag of wind over the water surfaces. It is energy from ocean surface waves captured by specialized devices." },
+            { q: "27. State two advantages of wave energy.", a: "It is inexhaustible/ renewable; It is cheap as it is freely available; It is clean/ environmentally friendly. (Any two)" },
+            { q: "28. State two disadvantages of wave energy.", a: "Power stations are expensive to set up; It is not safe in areas with regular incidences of storms, cyclones, hurricanes and tsunamis; Technologically challenging; Harsh marine environment (durability); High costs; Potential navigation/ecosystem impact. (Any two)" },
+            { q: "29. What is hydro-electric power (HEP)?", a: "Hydro-electric power (HEP) is the energy derived from falling water. It is the energy from flowing or falling water rotating turbines to generate electricity." },
+            { q: "30. State three advantages of HEP.", a: "It is inexhaustible/ renewable; It is clean/ environmentally friendly; It can be transmitted over long distances using cables; It can be put into many uses e.g. cooking, lighting; It is relatively easy to use i.e. switching on/ off; Dams for HEP creates lakes used for fishing/ irrigation/ recreation; It is reliable since significant levels of energy are produced. (Any three)" },
+            { q: "31. State three disadvantages of HEP.", a: "Fluctuation of water levels in the reservoirs may lead to shortage of power; It requires high capital for investment; It cannot be stored once generated; Construction of dams may lead to resettlement of people; It causes inconvenience to migratory fish species downstream; Environmental impact (habitat alteration, resettlement); Susceptible to drought/climate change; Siltation. (Any three)" },
+            { q: "32. What is geothermal energy?", a: "Geothermal energy is the power derived from steam flowing from earth’s core to the surface. It is heat energy from the Earth's interior, used to produce steam to drive turbines." },
+            { q: "33. State three advantages of geothermal power as a source of energy.", a: "It is a clean source of energy/ non pollutant; The cost of production is low; It has minimal environmental degradation; It is a renewable source of energy; It is a reliable source of energy; Small land footprint per MW; Indigenous resource for some regions. (Any three)" },
+            { q: "34. State three disadvantages of geothermal energy.", a: "Low energy production; The sites for exploitation are limited; It is expensive to exploit; It causes noise pollution; Site-specific (requires geothermal reservoirs); High exploration/drilling costs; Potential emissions (H2S); Induced seismicity (rare). (Any three)" },
+            { q: "35. What is biomass?", a: "Biomass refers to organic matter derived from plants and animals, which can be used as a source of energy. It is the energy produced from organic matter/ plant and animal waste." },
+            { q: "36. What is biogas?", a: "Biogas is primarily methane produced from the anaerobic digestion (decomposition in the absence of oxygen) of organic wastes." },
+            { q: "37. State three sources of biomass.", a: "Wood; Animal waste; Agricultural waste; Molasses. (Any three)" },
+            { q: "38. State two advantages of biogas.", a: "It is inexhaustible/ renewable; It is cheap as it uses waste products; It is readily available in many places; Simple technology is used in its production. (Any two)" },
+            { q: "39. State two disadvantages of biogas.", a: "It requires a lot of space; It cannot be transported to far places; It contributes to pollution which causes global warming. (Any two)" },
+            { q: "40. What is wood fuel?", a: "Wood fuel is derived from firewood, charcoal and saw dust. It encompasses firewood, charcoal, and sawdust." },
+            { q: "41. State two advantages of wood fuel.", a: "It is readily available; It has no maintenance costs; It is a renewable source. (Any two)" },
+            { q: "42. State two disadvantages of wood fuel.", a: "It leads to environmental degradation; It pollutes the environment; It is bulky/ requires a big storage area; It is dirty due to soot and smoke; A lot of wood is required because of less energy output. (Any two)" },
+            { q: "43. What does draught animal power refer to?", a: "Draught animal power refers to the use of animals such as oxen (bulls), horses, camels, and donkeys to perform mechanical work, primarily in agriculture and transportation." },
+            { q: "44. State two advantages of draught animal power.", a: "They are readily available all over the world; It is cheap to maintain animals; Animals are flexible i.e. can pass over rugged terrain; Some animals can be used in ASALs; It is inexhaustible/ renewable. (Any two)" },
+            { q: "45. State two disadvantages of draught animal power.", a: "Animals are prone to diseases and fatigue; Their use is restricted only to rural areas; They need regular rest as they tire easily; They can die as a result of too much work; They can only do limited work. (Any two)" },
+            { q: "46. What is petroleum?", a: "Petroleum (crude oil) consists of a complex mixture of liquid and gaseous hydrocarbons formed from the remains of ancient marine organisms (plankton and algae) deposited in sedimentary rocks over millions of years under conditions of high pressure and temperature." },
+            { q: "47. State three conditions necessary for the formation of petroleum.", a: "Deposition of remains of flora and fauna/fossils/organic remains over a long period; presence of non-porous rocks underneath; deposition of other layers of rocks/non-porous over the remains; compression of remains due to rock folding; presence of porous rocks between two non-porous rocks; presence of sedimentary rocks. (Any three)" },
+            { q: "48. List three by-products of petroleum.", a: "Lubricants/Grease, Tar/Bitumen/Asphalt, Wax/Paraffin wax, Sulphur, Resin/petro-chemicals. (Any three)" },
+            { q: "49. List three products from refined petroleum.", a: "Motor oil, Diesel, Liquid and petroleum gas, Kerosene, Gasoline/petrol, Jet fuel, Lubricants. (Any three)" },
+            { q: "50. State three advantages of petroleum.", a: "It is convenient for a variety uses; It can be easily transported to far areas; It can be stored in tanks; It can be used to generate thermal electricity; Free of the effects of weather changes; Transport and maintenance costs are low. (Any three)" },
+            { q: "51. State three disadvantages of petroleum.", a: "Crude oil is bulky to transport; It is non-renewable source of energy; It pollutes the environment causing global warming; It is expensive for low income groups; Exploration of petroleum is very expensive; It is highly inflammable and causes fire accidents. (Any three)" },
+            { q: "52. How is coal formed?", a: "Coal is formed from ancient terrestrial plant matter. Plant matter/vegetative matter are buried/compressed into layers. Deposition of sand and mud over the layers prevent decomposition. Layers are subjected to heat and pressure to form peat, which gradually changes to coal." },
+            { q: "53. State two advantages of coal.", a: "It is most suitable in the smelting of iron and steel; It is more efficient in thermal generation of electricity; Abundant reserves globally; Relatively inexpensive in some regions; Established technology. (Any two)" },
+            { q: "54. State three disadvantages of using coal as a form of energy.", a: "Coal is exhaustible/ non-renewable form of energy; Coal is bulky/ costly to transport; Soot/ smoke from coal pollutes environment; Coal has low calorific value/ low heat/ low energy value; Coal excavation lead to degradation of the environment/ pollute land; Coal is dirty/ dusty; It is expensive to mine/ difficult to mine; It is radioactive. (Any three)" },
+            { q: "55. Give three reasons why the use of coal as an industrial fuel has declined.", a: "It is bulky/ costly to transport; It is difficult/ expensive to mine; It is an exhaustible source of energy; It is dirty/ sooty/ dusty/ pollutes environment when used; It produces very little energy when burnt/ low calorific value; Adoption of new technology in steel production; Competition from other efficient sources of energy; The deepening of coal mines. (Any three)" },
+            { q: "56. What is peat?", a: "Peat is young coal consisting of partially decomposed organic matter and inorganic minerals that have accumulated in a water-saturated environment." },
+            { q: "57. In which three countries is peat produced according to the sources?", a: "Russia, Ireland, Finland, USA. (Any three)" },
+            { q: "58. What is uranium/nuclear energy?", a: "Uranium/nuclear energy is derived from the controlled alteration of atomic structures, specifically through nuclear fission, releasing heat to produce steam for electricity." },
+            { q: "59. List three countries where nuclear energy is used.", a: "USA, Russia, Britain, Germany, France, Japan, South Africa, Canada. (Any three)" },
+            { q: "60. State two advantages of nuclear energy.", a: "It occurs in huge reserves; It produces large amounts of energy; It has a longer lifetime; It is relatively cheap; It does not produce greenhouse gases. (Any two)" },
+            { q: "61. State two disadvantages of nuclear energy.", a: "It is expensive to construct a nuclear reactor; Nuclear wastes are highly radioactive; It is exhaustible/ non-renewable; It requires heavy capital investment/ expertise; Safety/proliferation concerns. (Any two)" },
+            { q: "62. What is natural gas composed of?", a: "Natural gas is composed of a mixture of hydrocarbons with methane making the highest percentage." },
+            { q: "63. List three uses of natural gas.", a: "It is used as raw material in the chemical industry; It is used to generate power; It is used as domestic fuel/ lighting/ heating/ cooling; Air conditioning; Making plastics; Used in transport. (Any three)" },
+            { q: "64. State two advantages of natural gas.", a: "Clean; Cheap to transport in pipelines; Free from weather changes. (Any two)" },
+            { q: "65. State two disadvantages of natural gas.", a: "Accidental fires may occur due to gas leakage/ damaged pipes; Pollution of environment through gas leakage; Expensive for low income earners; It is exhaustible/ non-renewable. (Any two)" },
+            { q: "66. Name the river system that produces the highest amount of HEP in Kenya.", a: "The River Tana and its Seven Forks dams." },
+            { q: "67. List four physical factors that favoured the development of the seven forks hydro-electric power projects in Kenya.", a: "Presence of large volume of water from River Tana and its tributaries; Regular/ constant flow of River Tana; Presence of hard basement rock along the site; Availability of enough space for construction of dams/ reservoirs due to low population in the area; Presence of waterfalls/ rapids/ steep gradient; Presence of impervious rock; Presence of a gorge/ deep valley. (Any four)" },
+            { q: "68. List three human factors that favoured the development of the seven forks hydro-electric power projects in Kenya.", a: "Adequate capital for construction and maintenance; High demand for electricity for industrial and domestic use; Sparse population in an area to minimize the cost of relocating people. (Any three)" },
+            { q: "69. State three benefits of the dams along the river Tana.", a: "It provide electric power for both industrial/ domestic use; The reservoirs provide water for domestic use/ industrial use/ irrigation; The dams/ reservoirs are tourist attractions; The reservoirs are fresh water fisheries; The reservoirs modify local climate; The dams act as bridges across the river; The dams and reservoirs control floods downstream. (Any three)" },
+            { q: "70. Explain three problems that affect the production of power along river Tana.", a: "Fluctuations of water levels in the reservoirs leads to the rationing of power; Inadequate capital for maintenance/ high cost of dredging/ expansion; Siltation of the reservoirs reduces its capacity and makes it expensive to desilt; Inadequate skills/ technology in power generation and maintenance; Relocation of people for the construction of dams is expensive. (Any three)" },
+            { q: "71. Name two other HEP projects in Kenya besides the Seven Forks scheme.", a: "Turkwell Gorge on River Turkwel; Sondu–Miriu project on River Sondu." },
+            { q: "72. What is the major power source and HEP project in Uganda mentioned in the sources?", a: "The Owen Falls Dam (Nalubaale Power Station)." },
+            { q: "73. State three physical factors that have favoured high hydro-electric power production in Uganda.", a: "Large volume of water from River Nile/ Lake Victoria; The Owen falls/ natural waterfall for power generation; High rainfall throughout the year; Presence of deep valleys/ gorges; Presence of impervious/ non-porous rocks; Regular supply of water from river Nile/ Lake Victoria; Presence of hard basement rocks. (Any three)" },
+            { q: "74. Give three reasons why HEP projects in Africa are not fully developed.", a: "Inadequate capital to develop and maintain HEP projects; Remoteness of some potential areas limits their exploitation; Low industrial development hence low demand for electricity; Fluctuation of river regime affecting power production; Limited research is carried out slowing the development; Foreign aid sought carries higher interest rates. (Any three)" },
+            { q: "75. List three general physical factors that favour the development of HEP projects in Africa.", a: "Presence of hard basement rocks to provide a firm foundation; Presence of steep rivers/ waterfalls/ rapids; Regular/ large volume of water from rivers; Presence of non-porous rocks to prevent water loss/seepage underground; Presence of a deep narrow valley/gorge. (Any three)" },
+            { q: "76. List four places in Kenya where geothermal energy has potential of being harnessed.", a: "Mt. Longonot/ Suswa; Lake Bogoria; Eburu; Menengai Crater; Lake Turkana; Lake Magadi; Lake Baringo; Olkaria; Homa hills; Mai Mahiu. (Any four)" },
+            { q: "77. Explain three reasons why geothermal power has not been fully exploited in Kenya.", a: "Inadequate capital required for exploitation; There is shortage of skilled personnel; The country faces low level of technology; Most of the potential sites are found in remote/ inaccessible areas; Danger of land subsidence as tectonic fluids is withdrawn. (Any three)" },
+            { q: "78. Give three ways in which Kenya has benefited from the development of geothermal power.", a: "It has provided alternative source of energy; It has increased Kenya’s energy output; It has helped stabilize the cost of electricity for consumers; It has helped in opening up of formely remote areas; It has increased employment opportunities; It has led to the reduction of importation of hydro-electric power from Uganda/ has saved foreign exchange. (Any three)" },
+            { q: "79. Explain three advantages of geothermal power for Kenya, drawing on its specific characteristics.", a: "Alternative to drought-vulnerable hydro and costly imported fossil fuels; enhances energy security as an indigenous resource; provides reliable baseload power (24/7), crucial for grid stability and industrial development; helps stabilize electricity tariffs. (Any three)" },
+            { q: "80. How does Kenya's location within the East African Rift System influence its geothermal potential?", a: "Kenya's location within the EARS provides abundant geothermal resources due to high heat flow from the mantle, volcanism (heat sources), permeable rock formations (reservoirs), and water availability for recharge." },
+            { q: "81. Define energy crisis.", a: "An energy crisis is a situation where the prices of fossil fuel, particularly petroleum, rise sharply as a result of short supply relative to demand." },
+            { q: "82. State three causes of energy crisis according to the sources.", a: "There is a high demand for oil/ over reliance on petroleum; There are embargoes/ controls on oil production by the producing countries; There is de-regulation of oil prices by the suppliers; There is unequal natural pattern of crude oil occurrence; There is political instability/ wars in some of the oil producing countries; Inadequate alternative sources of energy; Improvement in technology resulting into many machines that consume a lot of energy; Prolonged drought lowers production of HEP; Artificial shortages may be created by the oil-producing countries; Rapid depletion of oil reserves. (Any three)" },
+            { q: "83. Explain three effects of energy crisis in Kenya.", a: "Increase in oil prices triggers increase in prices of commodities/ inflation leading to low standards of living/ high cost of living; Increase in oil prices leads to rise in the cost of farm inputs which in turn leads to low agricultural production/ food shortage; Increase in prices of crude oil makes Kenya spend a lot of foreign exchange in importation lowering foreign currency reserves/ brings about imbalance of trade/ slows down the rate of economic growth; Increase in oil prices leads to high cost of production leading to slow industrial growth; Oil scarcity leads to scarcity of by-products of oil leading the scarcity of raw materials in some industries; Increase in fuel prices leads to an increase in transport costs which triggers price increase in price commodities/ inflation/ reduced tourism activities; Increase in oil prices leads to high demand for wood fuel leading to deforestation; Increase in oil prices has led to the development of alternative sources of energy; Increase in oil prices lead to high cost of goods thus lowering their consumption. (Any three)" },
+            { q: "84. Explain how increase in oil prices impacts agricultural production in Kenya during an energy crisis.", a: "Increase in oil prices leads to rise in the cost of farm inputs such as fertilizers and fuel for machinery and irrigation pumps. This increases the cost of agricultural production, potentially leading to reduced output, higher food prices, and threats to food security." },
+            { q: "85. Explain how increase in oil prices affects Kenya's foreign exchange reserves and balance of trade.", a: "As a net oil importer, Kenya has to spend a larger portion of its valuable foreign exchange reserves to purchase petroleum products at inflated prices. This can lead to a depletion of these reserves, and worsen the balance of trade (as import bills rise disproportionately to export earnings)." },
+            { q: "86. State three measures Kenya may take to manage energy crisis.", a: "Developing alternative sources of energy like solar; Encouraging Kenyans to use energy-saving devices; Control the importation of vehicles with high engine capacities; Improve the flow of traffic in urban centres; Encouraging industries to use coal; Developing nuclear energy. (Any three)" },
+            { q: "87. Define management of energy.", a: "Management of energy is the effective planning and control of energy resources." },
+            { q: "88. Define conservation of energy.", a: "Conservation of energy is the careful use and protection of energy resources to ensure little or no wastage." },
+            { q: "89. State three measures the government of Kenya has taken to conserve energy.", a: "Encouraging people to use renewable sources of energy; Developing energy saving technologies; Enforcing the legislation against indiscriminate cutting down of trees for fuel; Educating the public on the careful use of energy; Progressive taxation on energy consumption; Proper planning of road networks in urban areas; Encouraging the use of public transport/ walking/ cycling/ railway; Discouraging importation of high fuel consumption vehicles; Encouraging afforestation/ reafforestation. (Any three)" },
+            { q: "90. Why is protecting forest resources a measure for energy conservation in Kenya?", a: "Protecting forest resources, by enforcing legislation against indiscriminate cutting of trees for fuel, helps conserve wood fuel resources and protects vital ecosystems." },
+            { q: "91. How does proper planning of road networks contribute to energy conservation?", a: "Proper planning of road networks in urban centres aims to reduce traffic congestion, which leads to significant fuel wastage." },
+            { q: "92. Give three reasons for the importance of energy management and conservation.", a: "To ensure effective utilisation of the available resources/ avoid wastage/ depletion; To reduce pollution which causes diseases to animals/ plants; To protect the endangered plant/ animal species/ preserving them for posterity; To preserve the aesthetic value/ beauty of landscape/ wildlife to promote tourism; To protect the water catchment areas/ wetlands; To increase/ maintain source of food/ to maintain soil fertility; For economic value; To sustain sources of raw materials for industries; Sustainability; Economic Efficiency; Environmental Protection; Energy Security. (Any three)" },
+            { q: "93. How does reducing energy waste contribute to economic efficiency?", a: "Reducing energy waste lowers operational costs for businesses/households, freeing up financial resources. Nationally, it can reduce need for expensive imports and new generation capacity." },
+            { q: "94. Explain how energy conservation contributes to environmental protection.", a: "Lower energy consumption generally translates to reduced greenhouse gas emissions and lessens other environmental impacts associated with energy extraction, transportation, and use (e.g., air/water pollution, habitat disruption)." },
+            { q: "95. How can individuals conserve energy at home?", a: "Using energy-efficient appliances/lighting, turning off lights/appliances when not in use, improving insulation, efficient cooking methods." },
+            { q: "96. How can individuals conserve energy in transport?", a: "Opting for public transport, carpooling, walking/cycling, maintaining vehicles, considering fuel efficiency when buying." },
+            { q: "97. Explain why measurement and tracking are fundamental principles in energy management.", a: "Based on \"you can't manage what you don't measure,\" regularly monitoring and tracking energy consumption helps identify patterns, inefficiencies, and opportunities for savings." },
+            { q: "98. What does the concept of \"negawatts\" refer to in energy management?", a: "\"Negawatts\" refers to energy saved through efficiency and conservation. These savings are often achieved at a lower cost than developing new \"megawatts\" of energy supply." }
+        ];
+
+        // --- 2. DOM Elements ---
+        const sidebarNavEl = document.getElementById('sidebar-nav');
+        const contentAreaEl = document.getElementById('content-area');
+        const breadcrumbTrailEl = document.getElementById('breadcrumb-trail');
+        const breadcrumbDesktopEl = document.getElementById('breadcrumb-desktop'); 
+        const prevButtonEl = document.getElementById('prev-button');
+        const nextButtonEl = document.getElementById('next-button');
+        const menuToggleEl = document.getElementById('menu-toggle');
+        const wrapperEl = document.getElementById('wrapper');
+        const mainContentScrollAreaEl = document.getElementById('main-content-scroll-area');
+
+        // --- 3. State Variables ---
+        let currentGuideDataIndex = -1; 
+
+        // --- 4. Core Functions ---
+        function populateSidebar() {
+            if (!sidebarNavEl) {
+                console.error("Sidebar nav element (#sidebar-nav) not found!");
+                return;
+            }
+            sidebarNavEl.innerHTML = '';
+            let currentCategory = "";
+
+            guideData.forEach((item, index) => {
+                if (item.category && item.category !== currentCategory) {
+                    currentCategory = item.category;
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'category-heading';
+                    categoryDiv.textContent = currentCategory;
+                    sidebarNavEl.appendChild(categoryDiv);
+                }
+
+                const link = document.createElement('a');
+                link.href = `#${item.id}`;
+                link.className = 'list-group-item list-group-item-action list-group-item-light p-3';
+                if (!item.isChapter && item.category) { 
+                    link.classList.add('sub-item');
+                } else if (item.isChapter) {
+                    link.classList.add('fw-bold'); 
+                }
+                link.textContent = item.title;
+                link.setAttribute('role', 'button');
+                link.setAttribute('tabindex', '0');
+                link.dataset.index = index; 
+
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContentByIndex(index, 'directClick');
+                    if (window.innerWidth < 992 && wrapperEl.classList.contains('toggled')) {
+                        wrapperEl.classList.remove('toggled');
+                    }
+                });
+                link.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        loadContentByIndex(index, 'directClick');
+                         if (window.innerWidth < 992 && wrapperEl.classList.contains('toggled')) {
+                            wrapperEl.classList.remove('toggled');
+                        }
+                    }
+                });
+                sidebarNavEl.appendChild(link);
+            });
+        }
+        
+        function loadContentByIndex(index, navigationSource = 'directClick') {
+            if (index < 0 || index >= guideData.length) {
+                console.warn("Invalid content index:", index, "Attempting to load default.");
+                if (guideData.length > 0) index = 0; 
+                else {
+                    contentAreaEl.innerHTML = "<p>No content available to display.</p>";
+                    return;
+                }
+            }
+
+            currentGuideDataIndex = index;
+            const sectionData = guideData[index]; 
+
+            if (!sectionData || !contentAreaEl) {
+                console.error("Section data or content area element missing for index:", index);
+                contentAreaEl.innerHTML = "<p>Error loading content.</p>";
+                return;
+            }
+            
+            contentAreaEl.innerHTML = sectionData.content; 
+
+            updateActiveSidebarLink();
+            updateBreadcrumbsUI(sectionData.category, sectionData.breadcrumb);
+            updateNavigationButtons();
+            sessionStorage.setItem('currentEnergySectionIndex', currentGuideDataIndex);
+
+            if (sectionData.id === "ch8_rev") { 
+                renderRevisionQuestions();
+            }
+
+            if (navigationSource !== 'scroll') {
+                mainContentScrollAreaEl.scrollTop = 0; 
+            }
+
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                MathJax.typesetPromise([contentAreaEl]).catch(err => console.error('MathJax typesetting error:', err));
+            }
+        }
+
+        function updateActiveSidebarLink() {
+            if (!sidebarNavEl) return;
+            const links = sidebarNavEl.querySelectorAll('.list-group-item');
+            links.forEach(link => link.classList.remove('active'));
+
+            if (currentGuideDataIndex === -1) return;
+            const activeEntry = guideData[currentGuideDataIndex];
+            if (!activeEntry) return;
+
+            const currentLink = sidebarNavEl.querySelector(`[data-index="${currentGuideDataIndex}"]`);
+            if (currentLink) currentLink.classList.add('active');
+
+            if (activeEntry.parentId) { 
+                const parentChapterEntry = guideData.find(item => item.id === activeEntry.parentId && item.isChapter);
+                if (parentChapterEntry) {
+                    const parentIndex = guideData.indexOf(parentChapterEntry);
+                    const parentChapterLink = sidebarNavEl.querySelector(`[data-index="${parentIndex}"]`);
+                    if (parentChapterLink) parentChapterLink.classList.add('active');
+                }
+            }
+        }
+
+        function updateBreadcrumbsUI(category, breadcrumbText) {
+            const trails = [breadcrumbTrailEl, breadcrumbDesktopEl];
+            trails.forEach(trail => {
+                if (!trail) return;
+                trail.innerHTML = ''; 
+                const homeLi = document.createElement('li');
+                homeLi.classList.add('breadcrumb-item');
+                const homeLink = document.createElement('a');
+                homeLink.href = '#';
+                homeLink.textContent = 'Home';
+                 if (trail === breadcrumbDesktopEl) homeLink.classList.add('text-dark'); 
+                homeLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContentByIndex(0, 'directClick'); 
+                });
+                homeLi.appendChild(homeLink);
+                trail.appendChild(homeLi);
+
+                const currentSectionData = guideData[currentGuideDataIndex];
+                if (!currentSectionData) return;
+
+                const parentEntry = currentSectionData.parentId ? guideData.find(item => item.id === currentSectionData.parentId) : null;
+                
+                if (parentEntry) { 
+                    const parentChapterLi = document.createElement('li');
+                    parentChapterLi.classList.add('breadcrumb-item');
+                    const parentChapterLink = document.createElement('a');
+                    parentChapterLink.href = `#${parentEntry.id}`;
+                    parentChapterLink.textContent = parentEntry.title.replace(/^[0-9]+\.\s*/, ''); 
+                    if (trail === breadcrumbDesktopEl) parentChapterLink.classList.add('text-dark');
+                    parentChapterLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        loadContentByIndex(guideData.indexOf(parentEntry), 'directClick');
+                    });
+                    parentChapterLi.appendChild(parentChapterLink);
+                    trail.appendChild(parentChapterLi);
+                }
+                
+                if (breadcrumbText) {
+                    const activeLi = document.createElement('li');
+                    activeLi.classList.add('breadcrumb-item', 'active');
+                    activeLi.setAttribute('aria-current', 'page');
+                    activeLi.textContent = breadcrumbText; 
+                     if (trail === breadcrumbDesktopEl) activeLi.classList.add('text-muted'); 
+                    trail.appendChild(activeLi);
+                }
+            });
+        }
+        
+        function updateNavigationButtons() {
+            if (prevButtonEl) prevButtonEl.disabled = currentGuideDataIndex <= 0;
+            if (nextButtonEl) nextButtonEl.disabled = currentGuideDataIndex >= guideData.length - 1;
+        }
+
+        function renderRevisionQuestions() {
+            const container = document.getElementById('revision-questions-container');
+            if (!container) {
+                console.warn("Revision questions container not found for rendering.");
+                return;
+            }
+            container.innerHTML = ''; 
+            const accordion = document.createElement('div');
+            accordion.className = 'accordion';
+            accordion.id = 'energyRevisionAccordion'; 
+
+            revisionQuestionsData.forEach((item, index) => {
+                const questionId = `energy-question-${index}`;
+                const answerId = `energy-answer-${index}`;
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('revision-question-item', 'accordion-item'); 
+                const header = document.createElement('h2'); 
+                header.classList.add('accordion-header'); 
+                header.id = `heading-${questionId}`;
+                const button = document.createElement('button'); 
+                button.className = 'accordion-button collapsed revision-question-header'; 
+                button.type = 'button';
+                button.setAttribute('data-bs-toggle', 'collapse');
+                button.setAttribute('data-bs-target', `#${answerId}`);
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-controls', answerId);
+                button.innerHTML = `${item.q ? item.q : 'Question not available'} <span class="arrow-icon ms-auto">&#9662;</span>`;
+                header.appendChild(button);
+                const answerCollapseDiv = document.createElement('div');
+                answerCollapseDiv.id = answerId;
+                answerCollapseDiv.classList.add('revision-answer', 'accordion-collapse', 'collapse');
+                answerCollapseDiv.setAttribute('aria-labelledby', `heading-${questionId}`);
+                answerCollapseDiv.setAttribute('data-bs-parent', '#energyRevisionAccordion');
+                const answerBody = document.createElement('div');
+                answerBody.className = 'accordion-body';
+                answerBody.innerHTML = `<p>${item.a ? item.a : 'Answer not available'}</p>`;
+                answerCollapseDiv.appendChild(answerBody);
+                questionDiv.appendChild(header);
+                questionDiv.appendChild(answerCollapseDiv);
+                accordion.appendChild(questionDiv);
+            });
+            container.appendChild(accordion);
+        }
+
+        // --- 5. Event Listeners ---
+        if (menuToggleEl) {
+            menuToggleEl.addEventListener('click', () => wrapperEl.classList.toggle('toggled'));
+        }
+        if (prevButtonEl) {
+            prevButtonEl.addEventListener('click', () => {
+                if (currentGuideDataIndex > 0) loadContentByIndex(currentGuideDataIndex - 1, 'button');
+            });
+        }
+        if (nextButtonEl) {
+            nextButtonEl.addEventListener('click', () => {
+                if (currentGuideDataIndex < guideData.length - 1) loadContentByIndex(currentGuideDataIndex + 1, 'button');
+            });
+        }
+        
+        if (mainContentScrollAreaEl) {
+            let scrollTimeout;
+            mainContentScrollAreaEl.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    let mostProminentItemId = null;
+                    let minDistanceToViewportTop = Infinity;
+                    const viewportTopEdge = mainContentScrollAreaEl.getBoundingClientRect().top + 70; // Adjusted offset
+
+                    guideData.forEach((item) => {
+                        const element = contentAreaEl.querySelector(`#${item.id}`); 
+                        if (element) {
+                            const rect = element.getBoundingClientRect();
+                            if (rect.top < viewportTopEdge + 100 && rect.bottom > viewportTopEdge - 50) {
+                                const distance = Math.abs(rect.top - viewportTopEdge);
+                                if (distance < minDistanceToViewportTop) {
+                                    minDistanceToViewportTop = distance;
+                                    mostProminentItemId = item.id;
+                                }
+                            }
+                        }
+                    });
+                    
+                    if (!mostProminentItemId) { 
+                        if (mainContentScrollAreaEl.scrollTop <= 5 && guideData.length > 0) {
+                            mostProminentItemId = guideData[0].id;
+                        } else if ((mainContentScrollAreaEl.scrollTop + mainContentScrollAreaEl.clientHeight) >= mainContentScrollAreaEl.scrollHeight - 20 && guideData.length > 0) {
+                            mostProminentItemId = guideData[guideData.length - 1].id;
+                        }
+                    }
+
+                    if (mostProminentItemId && mostProminentItemId !== (guideData[currentGuideDataIndex] ? guideData[currentGuideDataIndex].id : null)) {
+                        const newIndex = guideData.findIndex(item => item.id === mostProminentItemId);
+                        if (newIndex !== -1) {
+                            currentGuideDataIndex = newIndex; 
+                            sessionStorage.setItem('currentEnergySectionIndex', currentGuideDataIndex);
+                            updateActiveSidebarLink();
+                            const currentSectionData = guideData[currentGuideDataIndex];
+                            updateBreadcrumbsUI(currentSectionData.category, currentSectionData.breadcrumb);
+                            updateNavigationButtons();
+                        }
+                    }
+                }, 150);
+            });
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            populateSidebar(); 
+            
+            const savedIndexStr = sessionStorage.getItem('currentEnergySectionIndex');
+            let initialIndex = 0; 
+
+            if (savedIndexStr !== null) {
+                const savedIdx = parseInt(savedIndexStr, 10);
+                if (savedIdx >= 0 && savedIdx < guideData.length) {
+                    initialIndex = savedIdx;
+                }
+            }
+            
+            const hash = window.location.hash.substring(1); 
+            if (hash) {
+                const itemFromHash = guideData.find(item => item.id === hash);
+                if (itemFromHash) {
+                    initialIndex = guideData.indexOf(itemFromHash);
+                }
+            }
+            
+            if (guideData.length > 0) {
+                 setTimeout(() => { 
+                    loadContentByIndex(initialIndex, 'initialLoad');
+                 }, 50); 
+            } else {
+                console.error("guideData is empty. Cannot load initial content.");
+                if(contentAreaEl) contentAreaEl.innerHTML = "<p>Error: No content available to display.</p>";
+            }
+        });
+    </script>
+</body>
+</html>

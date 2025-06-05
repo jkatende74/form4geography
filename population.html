@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // MathJax v3 configuration (included for consistency, though less critical for population)
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #333; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+
+        #sidebar-wrapper {
+            min-height: 100vh;
+            width: 280px; 
+            background-color: #ffffff; 
+            border-right: 1px solid #d1d9e6; /* Softer border */
+            transition: margin-left 0.25s ease-out;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1030; 
+            overflow-y: auto; 
+            padding-top: 10px; 
+            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-heading {
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            color: #004085; /* Darker blue for heading */
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #e0e6ed; 
+        }
+        .sidebar-heading img {
+            width: 32px; 
+            height: 32px;
+            margin-right: 0.75rem;
+            border-radius: 50%; /* Circular logo */
+        }
+
+        #sidebar-nav .list-group-item {
+            border: none; 
+            padding: 0.8rem 1.25rem; 
+            font-size: 0.95rem;
+            color: #495057; 
+            background-color: transparent; 
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-left-color 0.2s ease-in-out;
+            border-left: 4px solid transparent; 
+        }
+
+        #sidebar-nav .list-group-item:hover,
+        #sidebar-nav .list-group-item:focus {
+            background-color: #e9ecef; 
+            color: #0056b3; 
+            text-decoration: none;
+            border-left-color: #007bff; 
+        }
+
+        #sidebar-nav .list-group-item.active {
+            background-color: #007bff; 
+            color: white;
+            font-weight: 500;
+            border-left-color: #0056b3; 
+        }
+        #sidebar-nav .list-group-item.active:hover {
+             background-color: #0069d9; /* Slightly darker blue on hover for active item */
+        }
+
+
+        #sidebar-nav .category-heading {
+            font-size: 0.85rem; 
+            font-weight: bold;
+            color: #5a6268; /* Slightly darker gray for category */
+            padding: 1rem 1.25rem 0.3rem; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.75rem; 
+        }
+         #sidebar-nav .sub-item { 
+            padding-left: 2.5rem; 
+            font-size: 0.9rem;
+        }
+
+        #page-content-wrapper {
+            flex: 1;
+            padding-left: 280px; 
+            transition: padding-left 0.25s ease-out;
+            display: flex;
+            flex-direction: column;
+            min-width: 0; 
+            background-color: #f0f4f8; /* Consistent background */
+        }
+
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: -280px; 
+        }
+
+        #wrapper.toggled #page-content-wrapper {
+            padding-left: 0; 
+        }
+
+        @media (max-width: 991.98px) { 
+            #sidebar-wrapper {
+                margin-left: -280px; 
+                position: fixed; 
+                height: 100%;
+                z-index: 1040; 
+            }
+            #wrapper.toggled #sidebar-wrapper { margin-left: 0; }
+            #page-content-wrapper { padding-left: 0; }
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+            background-color: #ffffff !important; 
+        }
+        .navbar .navbar-brand, .navbar .breadcrumb-item a, .navbar .breadcrumb-item.active {
+             color: #343a40 !important; 
+        }
+         .navbar .breadcrumb-item a:hover { color: #0056b3 !important; }
+
+        #menu-toggle {
+            border: 1px solid #007bff;
+            color: #007bff;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        #menu-toggle:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            margin-bottom: 0; 
+        }
+        .breadcrumb-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .breadcrumb-item a:hover { text-decoration: underline; }
+        .breadcrumb-item.active { color: #6c757d; }
+
+        #content-area {
+            background-color: #ffffff; 
+            border-radius: 0.5rem; /* Slightly more rounded corners */
+            min-height: calc(100vh - 160px); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07); /* Softer shadow */
+        }
+
+        #content-area h1, #content-area h2, #content-area h3, #content-area h4, #content-area h5 {
+            color: #0056b3; /* Consistent heading color */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        #content-area h1 { font-size: 2rem; border-bottom: 2px solid #e0e6ed; padding-bottom: 0.5rem;}
+        #content-area h2 { font-size: 1.75rem; }
+        #content-area h3 { font-size: 1.5rem; margin-top: 1.75rem; }
+        #content-area h4 { font-size: 1.25rem; margin-top: 1.5rem; }
+        #content-area h5 { font-size: 1.1rem; font-weight: bold; margin-top: 1.25rem;}
+
+
+        #content-area p, #content-area ul, #content-area ol, #content-area table {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+        #content-area ul, #content-area ol { padding-left: 1.5rem; }
+        #content-area li { margin-bottom: 0.5rem; }
+        #content-area ul ul, #content-area ol ol { 
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+        }
+         #content-area .table {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            border: 1px solid #dee2e6; /* Add border to table */
+        }
+        #content-area .table th {
+            background-color: #e9ecef; 
+            color: #343a40;
+            font-weight: 600;
+        }
+         #content-area .table td, #content-area .table th {
+            vertical-align: middle;
+            border: 1px solid #dee2e6; /* Add border to cells */
+        }
+        #content-area strong { color: #0056b3; } /* Emphasize strong text */
+
+        .diagram-placeholder {
+            border: 2px dashed #adb5bd; /* Softer dashed border */
+            background-color: #f8f9fa; 
+            padding: 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+            color: #6c757d;
+        }
+        .diagram-placeholder img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+        .pyramid-description {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #007bff;
+        }
+
+        .revision-question-item {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .revision-question-header { /* Applied to the button inside accordion-header */
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #0056b3; /* Dark blue for question text */
+            background-color: #f8f9fa; /* Light gray background for header */
+            border: none; /* Remove default button border */
+            width: 100%; /* Make button full width */
+            text-align: left; /* Align text to left */
+        }
+        .revision-question-header:hover { background-color: #e9ecef; }
+        .revision-question-header .arrow-icon { 
+            transition: transform 0.2s ease-in-out; 
+            font-size: 0.8em; /* Smaller arrow */
+        }
+        .revision-question-header[aria-expanded="true"] .arrow-icon { transform: rotate(180deg); }
+
+        .revision-answer { /* Applied to accordion-collapse */
+            border-top: 1px solid #dee2e6;
+            background-color: #fff;
+        }
+        .revision-answer .accordion-body { /* Style the inner body of the accordion */
+             padding: 1.25rem;
+        }
+        .revision-answer ul, .revision-answer ol { padding-left: 1.25rem; margin-top: 0.5rem;}
+        .revision-answer li { margin-bottom: 0.3rem; }
+
+
+        .MathJax_Display, mjx-container[jax="CHTML"][display="true"] {
+            display: block;
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+        }
+
+        #navigation-buttons button { min-width: 100px; }
+
+        footer {
+            font-size: 0.9rem;
+            background-color: #ffffff; 
+            border-top: 1px solid #e0e6ed;
+        }
+
+        /* Accessibility Focus Styles */
+        :focus-visible {
+          outline: 3px solid #007bff !important; /* More prominent focus */
+          outline-offset: 2px;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.35) !important;
+        }
+        /* Ensure buttons and list items also get this strong focus */
+        .btn:focus-visible, .list-group-item:focus-visible, .accordion-button:focus-visible {
+          outline: 3px solid #007bff !important; 
+          outline-offset: 2px !important;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.35) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <nav class="border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading">
+                <img src="https://placehold.co/32x32/007bff/white?text=P" alt="Population Guide Logo" class="me-2"> Population Guide
+            </div>
+            <div class="list-group list-group-flush" id="sidebar-nav">
+                <!-- Sidebar items will be populated by JavaScript -->
+            </div>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top">
+                <div class="container-fluid">
+                    <button class="btn btn-outline-primary btn-sm" id="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
+                    <nav aria-label="breadcrumb" class="ms-3 flex-grow-1">
+                        <ol class="breadcrumb mb-0" id="breadcrumb-trail"></ol>
+                    </nav>
+                </div>
+            </nav>
+
+            <main class="container-fluid p-4" id="main-content-scroll-area">
+                <div id="content-area" class="p-md-4 p-3">
+                    <!-- Welcome message or initial content -->
+                    <h1 id="main-title-placeholder">Welcome to the Population Guide</h1>
+                    <p>Please select a topic from the menu on the left to begin your learning journey on Population studies.</p>
+                </div>
+                <div class="d-flex justify-content-between mt-4" id="navigation-buttons">
+                    <button class="btn btn-outline-secondary" id="prev-button" disabled>&laquo; Previous</button>
+                    <button class="btn btn-outline-primary" id="next-button" disabled>Next &raquo;</button>
+                </div>
+            </main>
+
+            <footer class="text-center text-muted p-3 mt-auto">
+                <p class="mb-0">&copy; <span id="currentYear"></span> KCSE Population Guide. All rights reserved.</p>
+            </footer>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // --- 1. GUIDE CONTENT DATA ---
+        const guideData = [
+            // Chapter 1: Introduction to Population
+            {
+                id: "pop_ch1",
+                title: "1. Introduction to Population",
+                breadcrumb: "Introduction",
+                category: "Fundamentals",
+                isChapter: true, 
+                content: `
+                    <h1 id="pop_ch1">1. Introduction to Population</h1>
+                    <p>The study of population, also known as <strong>demography</strong>, is a significant branch of Human Geography. It involves examining the characteristics of human populations, including their <strong>size, distribution, composition, growth, and movement</strong>. This field also investigates the factors that influence these demographic aspects. Understanding population dynamics is crucial for <strong>national planning, resource allocation</strong>, and addressing various socio-economic and environmental challenges.</p>
+                `
+            },
+            {
+                id: "pop_ch1_s1",
+                title: "1.1 Definition of Population Terms",
+                breadcrumb: "Definitions",
+                category: "Fundamentals",
+                parentId: "pop_ch1",
+                content: `
+                    <h2 id="pop_ch1_s1">1.1 Definition of Population Terms</h2>
+                    <p><strong>Human Population:</strong> This term refers to the total number of people occupying or living in a given area at a particular time.</p>
+                    <p><strong>Demography:</strong> This is the statistical study of human populations. It includes their size, structure, distribution, and changes over time. The syllabus also defines demography as the study of statistical data on human population.</p>
+                    <p><strong>Population Distribution:</strong> This describes the way people are spread out over an area of land.</p>
+                    <p><strong>Population Density:</strong> This is defined as the number of persons per unit area. It is typically measured in persons per square kilometer. Population density is calculated as: <blockquote>Population Density = Total Population / Total Land Area</blockquote></p>
+                `
+            },
+            // Chapter 2: Sources of Population Data
+            {
+                id: "pop_ch2",
+                title: "2. Sources of Population Data",
+                breadcrumb: "Data Sources",
+                category: "Fundamentals",
+                isChapter: true,
+                content: `
+                    <h1 id="pop_ch2">2. Sources of Population Data</h1>
+                    <p>Reliable population data is essential for planning and analysis. Sources of this data are categorized as primary and secondary.</p>
+                `
+            },
+            {
+                id: "pop_ch2_s1",
+                title: "2.1 Primary Sources",
+                breadcrumb: "Primary Sources",
+                category: "Fundamentals",
+                parentId: "pop_ch2",
+                content: `
+                    <h2 id="pop_ch2_s1">2.1 Primary Sources</h2>
+                    <p>These are the main sources of population data.</p>
+                    <h4 id="pop_ch2_s1_1">2.1.1 National Census (Head Count)</h4>
+                    <p>This is a physical counting of all people in every household within a country. It is typically conducted at regular intervals, such as every 10 years in Kenya. Census gathers a wide variety of information relating to the physical (sex, race, birth place, tribe), social (marital status, religion, education, housing, language), and economic (occupation, income) characteristics of the population.</p>
+                    <h5>Importance of Census:</h5>
+                    <ul>
+                        <li>Helps in the <strong>distribution of resources</strong>.</li>
+                        <li>Essential for <strong>planning purposes and policymaking</strong>.</li>
+                        <li>Aids in <strong>creating administrative units/boundaries</strong>.</li>
+                        <li>Helps to identify the <strong>rates of birth/death</strong>.</li>
+                        <li>Useful in <strong>estimating population growth</strong>.</li>
+                        <li>Determines the <strong>total number of people</strong>.</li>
+                        <li>Reveals trends of fertility and mortality, migration trends, marital status, age-sex composition, occupation, ethnicity/nationality, level of literacy, size of families, and dependency ratio.</li>
+                    </ul>
+                    <h4 id="pop_ch2_s1_2">2.1.2 Registration of Persons</h4>
+                    <p>This involves the continuous recording of vital events such as births, deaths, marriages, and migration.</p>
+                    <h4 id="pop_ch2_s1_3">2.1.3 Sample Surveys</h4>
+                    <p>This method involves collecting data from a representative sample of the population to infer characteristics of the whole population.</p>
+                    <h4 id="pop_ch2_s1_4">2.1.4 Content Analysis/Publications</h4>
+                    <p>This involves analyzing existing documents and official publications.</p>
+                `
+            },
+            {
+                id: "pop_ch2_s2",
+                title: "2.2 Secondary Sources",
+                breadcrumb: "Secondary Sources",
+                category: "Fundamentals",
+                parentId: "pop_ch2",
+                content: `
+                    <h2 id="pop_ch2_s2">2.2 Secondary Sources</h2>
+                    <p>These are sources that compile or analyze primary data. They include:</p>
+                    <ul>
+                        <li>Statistical Abstracts</li>
+                        <li>Textbooks</li>
+                        <li>Magazines</li>
+                        <li>Journals/Periodicals</li>
+                        <li>Published National Census Reports</li>
+                        <li>Internet resources (official statistics websites)</li>
+                    </ul>
+                `
+            },
+            {
+                id: "pop_ch2_s3",
+                title: "2.3 Challenges in Census Taking",
+                breadcrumb: "Census Challenges",
+                category: "Fundamentals",
+                parentId: "pop_ch2",
+                content: `
+                    <h2 id="pop_ch2_s3">2.3 Challenges in Census Taking</h2>
+                    <p>Conducting an effective census can face several challenges. These include:</p>
+                    <ul>
+                        <li><strong>Shortage of funds</strong> for personnel and equipment.</li>
+                        <li><strong>Insufficient or inaccurate census area maps and questionnaires</strong>.</li>
+                        <li><strong>Illiteracy</strong> leading to incorrect information being given.</li>
+                        <li><strong>Language barriers and accessibility issues</strong> in remote areas.</li>
+                        <li><strong>Inadequacies or poor training of enumerators</strong>.</li>
+                        <li><strong>Double counting or omission</strong> of individuals.</li>
+                        <li><strong>Fear, suspicion, or superstition</strong> leading to misinformation.</li>
+                        <li><strong>Lack of documents</strong> for vital data like birth and death certificates.</li>
+                        <li><strong>Political interference</strong>.</li>
+                        <li><strong>Insecurity</strong> in some areas making the exercise difficult.</li>
+                        <li><strong>Inadequate time</strong> allocated for the exercise.</li>
+                    </ul>
+                `
+            },
+            // Chapter 3: Factors Influencing Population Distribution
+            {
+                id: "pop_ch3",
+                title: "3. Factors Influencing Population Distribution",
+                breadcrumb: "Population Distribution",
+                category: "Dynamics & Distribution",
+                isChapter: true,
+                content: `
+                    <h1 id="pop_ch3">3. Factors Influencing Population Distribution in East Africa</h1>
+                    <p>Population distribution is uneven across East Africa, influenced by a combination of physical, human, and economic factors.</p>
+                `
+            },
+            {
+                id: "pop_ch3_s1",
+                title: "3.1 Physical Factors",
+                breadcrumb: "Physical Factors",
+                category: "Dynamics & Distribution",
+                parentId: "pop_ch3",
+                content: `
+                    <h2 id="pop_ch3_s1">3.1 Physical Factors</h2>
+                    <h4 id="pop_ch3_s1_1">3.1.1 Climate</h4>
+                    <p>Different climates influence settlement. Areas with <strong>high and reliable rainfall</strong> (cool and wet, or hot and wet climates) tend to be densely populated as they are suitable for agriculture. Hot and dry areas (arid/semi-arid) are sparsely populated due to limited agricultural potential. Extreme temperatures (very hot or very cold) discourage settlement. Areas prone to strong winds are often not settled. Low to high temperatures encourage dense settlements as they are conducive for human habitation.</p>
+                    <h4 id="pop_ch3_s1_2">3.1.2 Relief (Topography)</h4>
+                    <p>Varied relief influences population distribution. <strong>Gently sloping plains and lowlands</strong> are often densely populated as they are conducive to agriculture, settlement, and transport network development. Steep, rugged mountainous areas discourage settlement due to thin soils, difficulty in cultivation and construction, and inaccessibility. High mountain tops are usually uninhabited due to cold temperatures. The leeward sides of mountains are often sparsely populated due to dryness. Some hilly areas might be densely populated for defensive purposes or due to fertile volcanic soils.</p>
+                    <h4 id="pop_ch3_s1_3">3.1.3 Soils</h4>
+                    <p>Different soil types influence farming and thus population distribution. Areas with <strong>deep, fertile, and well-drained soils</strong> (e.g., volcanic soils in the Kenyan Highlands) support intensive agriculture and attract dense populations. Areas with thin, infertile, or waterlogged soils discourage settlement.</p>
+                    <h4 id="pop_ch3_s1_4">3.1.4 Drainage</h4>
+                    <p>Drainage influences human activities and population distribution. <strong>Well-drained areas</strong> are suitable for agriculture and settlement, attracting higher population densities. Low-lying, swampy, or flood-prone areas discourage settlement due to risks of flooding, waterborne diseases, and difficulty in construction. Availability of <strong>fresh water</strong> from rivers and springs attracts settlement. Some rivers/lakes discourage settlement due to fear of floods, animal attacks, or disease outbreaks.</p>
+                    <h4 id="pop_ch3_s1_5">3.1.5 Incidences of Pests and Diseases</h4>
+                    <p>Areas infested with pests (e.g., tsetse flies, locusts) or disease vectors (e.g., mosquitoes) tend to have sparse populations as they are unhealthy and economically challenging.</p>
+                    <h4 id="pop_ch3_s1_6">3.1.6 Vegetation</h4>
+                    <p>Different vegetation types influence population distribution. Dense forests may discourage settlement due to difficulty in clearing land, presence of wild animals, and disease vectors. However, forest edges might attract settlement due to access to resources. Open savanna grasslands might support pastoral communities, leading to sparse but widespread population distribution. Desert and semi-desert vegetation supports very low population densities.</p>
+                `
+            },
+            {
+                id: "pop_ch3_s2",
+                title: "3.2 Human Factors",
+                breadcrumb: "Human Factors",
+                category: "Dynamics & Distribution",
+                parentId: "pop_ch3",
+                content: `
+                    <h2 id="pop_ch3_s2">3.2 Human Factors</h2>
+                    <h4 id="pop_ch3_s2_1">3.2.1 Historical Factors</h4>
+                    <p>Past events like slave trade depopulated certain regions. Early settlement patterns were influenced by migration routes, tribal conflicts, and the establishment of kingdoms. Colonial policies also significantly shaped current distribution.</p>
+                    <h4 id="pop_ch3_s2_2">3.2.2 Security</h4>
+                    <p>Areas with a history of peace and security tend to be more densely populated, unlike regions prone to conflict, tribal clashes, or general insecurity.</p>
+                    <h4 id="pop_ch3_s2_3">3.2.3 Government Policy</h4>
+                    <p>Establishment of <strong>settlement schemes</strong> can lead to increased population density in formerly sparsely populated areas. Gazettement of areas as national parks, game reserves, or forest reserves restricts human settlement. Policies promoting decentralization can also influence population shifts. The government may also displace people for projects or attract settlements with new projects.</p>
+                    <h4 id="pop_ch3_s2_4">3.2.4 Land Ownership Systems</h4>
+                    <p>Areas with individual land tenure might encourage more permanent and intensive settlement compared to communally owned lands. Land disputes can lead to displacement. Cultural practices like land inheritance may lead to fragmentation and dense settlements.</p>
+                `
+            },
+            {
+                id: "pop_ch3_s3",
+                title: "3.3 Economic Factors",
+                breadcrumb: "Economic Factors",
+                category: "Dynamics & Distribution",
+                parentId: "pop_ch3",
+                content: `
+                    <h2 id="pop_ch3_s3">3.3 Economic Factors</h2>
+                    <h4 id="pop_ch3_s3_1">3.3.1 Employment Opportunities (Urbanization)</h4>
+                    <p>Urban centers with diverse employment opportunities (industries, commerce, services) attract migrants from rural areas, leading to <strong>high population densities in towns and cities</strong>.</p>
+                    <h4 id="pop_ch3_s3_2">3.3.2 Industrialization</h4>
+                    <p>Areas with established industries attract labor, leading to dense settlements.</p>
+                    <h4 id="pop_ch3_s3_3">3.3.3 Transport and Communication Networks</h4>
+                    <p>Areas well-served by roads, railways, and communication infrastructure tend to attract more people and businesses, leading to higher population densities. Poor networks lead to sparse population.</p>
+                    <h4 id="pop_ch3_s3_4">3.3.4 Mining Activities</h4>
+                    <p>Discovery and exploitation of minerals can attract a large influx of workers, leading to rapid population growth around mining centers (e.g., Magadi for soda ash). Mining can also displace people.</p>
+                    <h4 id="pop_ch3_s3_5">3.3.5 Agricultural Potential and Practices</h4>
+                    <p>Areas suitable for productive cash crop farming or intensive subsistence farming tend to support higher population densities. Irrigation schemes also concentrate populations.</p>
+                    <h4 id="pop_ch3_s3_6">3.3.6 Trade and Commerce</h4>
+                    <p>Development of market centers and trading routes attracts population due to economic opportunities.</p>
+                `
+            },
+            // Chapter 4: Factors Influencing Population Growth
+            {
+                id: "pop_ch4",
+                title: "4. Factors Influencing Population Growth",
+                breadcrumb: "Population Growth",
+                category: "Dynamics & Distribution",
+                isChapter: true,
+                content: `
+                    <h1 id="pop_ch4">4. Factors Influencing Population Growth</h1>
+                    <p>Population growth is the change (increase or decrease) in the number of people in an area over a period. It is primarily influenced by <strong>fertility, mortality, and migration</strong>. Population Growth Rate (PGR) is the rate of increase or decrease due to natural increase and net migration. Natural population growth is the change due to the difference between births and deaths, excluding migration.</p>
+                `
+            },
+            {
+                id: "pop_ch4_s1",
+                title: "4.1 Fertility",
+                breadcrumb: "Fertility",
+                category: "Dynamics & Distribution",
+                parentId: "pop_ch4",
+                content: `
+                    <h2 id="pop_ch4_s1">4.1 Fertility</h2>
+                    <p><strong>Fertility:</strong> The ability to conceive or produce children.</p>
+                    <p><strong>Fecundity:</strong> The physiological ability to give birth to many children.</p>
+                    <p><strong>Infertility:</strong> The inability to conceive or produce children.</p>
+                    <p><strong>Infecundity/Sterility:</strong> The inability to give birth to many children.</p>
+                    <p><strong>Fertility Rate (Crude Birth Rate - CBR):</strong> The number of live births per 1,000 persons in a population in a given year. CBR = (Total Number of Live Births in a Year / Total Population in that Year) x 1000. CBR and CDR are called "crude" as age and sex are not considered. <strong>High fertility rate leads to high/positive population growth</strong>. Low fertility rate leads to slow/negative population growth.</p>
+                    <h4 id="pop_ch4_s1_1">Causes of High Fertility/Birth Rates:</h4>
+                    <ul>
+                        <li><strong>Cultural Beliefs:</strong> Sex preference (e.g., for sons), polygamy, early marriages, naming of relatives, belief in large families as a source of prestige, labor, and old-age security, and cultural discouragement of contraceptive use.</li>
+                        <li><strong>Economic Factors:</strong> Need for a large pool of family labor, security in old age and defence.</li>
+                        <li><strong>Lack of effective family planning practices</strong> due to ignorance, inaccessibility, or ineffective traditional methods.</li>
+                        <li><strong>Improved medical facilities/healthcare</strong> reduces mortality, leading to more surviving children.</li>
+                        <li><strong>Improved nutrition/diet</strong> reduces mortality.</li>
+                        <li><strong>Modernisation</strong> can paradoxically lead to a decline in traditional values, potentially increasing fertility initially.</li>
+                        <li><strong>Immigration</strong> (e.g., refugees) can increase population and contribute to births.</li>
+                    </ul>
+                    <h4 id="pop_ch4_s1_2">Causes of Reduced Fertility Rate/Decline in Population Growth:</h4>
+                    <ul>
+                        <li><strong>High cost of raising and educating children</strong>.</li>
+                        <li><strong>Increased use and availability of effective birth control methods</strong>.</li>
+                        <li><strong>Focus on careers</strong>, especially among women, leading to delayed childbearing or fewer children.</li>
+                        <li>Increase in the number of women opting for smaller families or remaining single.</li>
+                        <li><strong>Delayed marriage</strong>, often due to longer periods in education.</li>
+                        <li>Adoption of modern lifestyles favoring smaller family sizes.</li>
+                        <li>Increasing alcoholism/drug/substance abuse can lower fertility.</li>
+                        <li>Limited maternity/paternity leave policies making childbearing challenging for working women.</li>
+                        <li>Higher levels of female education and empowerment.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "pop_ch4_s2",
+                title: "4.2 Mortality",
+                breadcrumb: "Mortality",
+                category: "Dynamics & Distribution",
+                parentId: "pop_ch4",
+                content: `
+                    <h2 id="pop_ch4_s2">4.2 Mortality</h2>
+                    <p><strong>Mortality:</strong> Refers to deaths among members of a population.</p>
+                    <p><strong>Crude Death Rate (CDR):</strong> The number of deaths per 1,000 persons in a population in a given year. CDR = (Total Number of Deaths in a Year / Total Population in that Year) x 1000. <strong>High mortality rates slow down population growth</strong>. Low mortality rates contribute to population growth.</p>
+                    <h4 id="pop_ch4_s2_1">Causes of High Mortality:</h4>
+                    <ul>
+                        <li>Low nutritional standards causing deficiency diseases.</li>
+                        <li>Low hygiene standards leading to spread of diseases like cholera.</li>
+                        <li>Prevalence of <strong>natural calamities</strong> like droughts, floods, earthquakes.</li>
+                        <li><strong>Epidemics/disease outbreaks</strong> (e.g., HIV/AIDS, Corona).</li>
+                        <li>Outbreak of war/warfare.</li>
+                        <li>High rates of accidents (e.g., road accidents).</li>
+                        <li>Inadequate medical facilities/lack of access to healthcare.</li>
+                        <li>Emigration reduces population at the area of origin (this is a migration factor, but listed under mortality causes in source, perhaps referring to its impact on local population numbers).</li>
+                    </ul>
+                    <h4 id="pop_ch4_s2_2">Measures to Reduce Mortality Rates (especially Infant Mortality Rate - IMR):</h4>
+                    <ul>
+                        <li>Improving/increasing medical facilities/enhancing immunization programmes for children.</li>
+                        <li>Educating/creating awareness on better care of children.</li>
+                        <li>Granting longer maternity leave.</li>
+                        <li>Encouraging use of family planning techniques.</li>
+                        <li>Encourage provision of homes for orphans.</li>
+                        <li>Carrying out research on infant related diseases.</li>
+                        <li>Encouraging parents to feed children on balanced diet.</li>
+                        <li>Providing free medical services for infants.</li>
+                        <li>Training traditional midwives.</li>
+                    </ul>
+                    <h4 id="pop_ch4_s2_3">Impact of Diseases (e.g., HIV/AIDS, COVID-19) on Economic Development:</h4>
+                    <ul>
+                        <li>Sickness leads to <strong>absenteeism from work/reduced productivity</strong>.</li>
+                        <li>Money spent on treating the sick could be used for other economic activities.</li>
+                        <li>Death leads to <strong>loss of economically productive population</strong>.</li>
+                        <li>Caregivers spend time caring for the sick instead of engaging in economic activities.</li>
+                        <li>Leads to <strong>high dependency ratio</strong>.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "pop_ch4_s3",
+                title: "4.3 Migration",
+                breadcrumb: "Migration",
+                category: "Dynamics & Distribution",
+                parentId: "pop_ch4",
+                content: `
+                    <h2 id="pop_ch4_s3">4.3 Migration</h2>
+                    <p><strong>Migration:</strong> The movement of people from one place of residence to another.</p>
+                    <h4 id="pop_ch4_s3_1">Types of Migration:</h4>
+                    <h5>Internal Migration:</h5> Movement within a country.
+                    <ul>
+                        <li><strong>Rural-Urban Migration:</strong> Movement from rural areas to towns/cities.
+                            <ul>
+                                <li><em>Pull Factors (to urban):</em> Better job opportunities, higher wages, better education/health facilities, attractions of urban life, transfers.</li>
+                                <li><em>Push Factors (from rural):</em> Lack of land, unemployment, poverty, insecurity, inadequate social amenities, diminishing returns from agriculture.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Urban-Rural Migration:</strong> Movement from towns to rural areas.
+                            <ul><li><em>Causes:</em> Insecurity/high crime rate in urban centres, seeking employment in rural industries/county governments/job transfer, shortage of urban housing facilities, retirement for settlement, investing in rural areas, pollution-related diseases in urban centres, and high cost of living in urban centres.</li></ul>
+                        </li>
+                        <li><strong>Urban-Urban Migration:</strong> Movement from town to town.
+                            <ul><li><em>Causes:</em> Change of profession, job transfers, better employment, business opportunities, affordable housing, leisure, search of higher education, better healthcare.</li></ul>
+                        </li>
+                        <li><strong>Rural-Rural Migration:</strong> Movement from one rural area to another.
+                            <ul><li><em>Causes:</em> Search of employment, insecurity, pressure on land, setting up of government development projects causing displacement or attraction, pastoral communities searching for pasture/water, changes in land tenure system/inheritance/land disputes, natural calamities, and transfers of services/Retirement/Retrenchment.</li></ul>
+                        </li>
+                    </ul>
+                    <h5>External/International Migration:</h5> Movement from one country to another.
+                    <ul>
+                        <li><strong>Immigration:</strong> Movement into a country (people are immigrants).</li>
+                        <li><strong>Emigration:</strong> Movement out of a country (people are emigrants).</li>
+                        <li><em>Reasons:</em> Pursuit of higher education, international job offers, warfare/refugees/political unrest, tourism, visiting relatives overseas, attending international conferences, and political persecution/asylum.</li>
+                    </ul>
+                    <h4 id="pop_ch4_s3_2">General Causes of Migration (Push and Pull Factors):</h4>
+                    <p>These can be economic (employment, income, business), social (education, healthcare, social amenities, family, escaping constraints), political (instability, wars, persecution, asylum), environmental/physical (natural disasters, climate, fertile land), and government policies (projects, displacement).</p>
+                    <h4 id="pop_ch4_s3_3">Effects of Migration:</h4>
+                    <ul>
+                        <li><strong>At the Place of Origin (Area of Out-Migration):</strong>
+                            <ul>
+                                <li><em>Negative effects:</em> Shortage of labour, family break ups, under development, depopulation, lower rate of industrialisation, lowering fertility rate, and underemployment.</li>
+                                <li><em>Positive effects:</em> Reduced pressure on land and social amenities, and remittances boosting the local economy.</li>
+                            </ul>
+                        </li>
+                        <li><strong>At the Place of Destination (Area of In-Migration):</strong>
+                            <ul>
+                                <li><em>Positive effects:</em> Increased labor supply and economic development.</li>
+                                <li><em>Negative effects:</em> Increased pressure on housing, social amenities, and infrastructure, potential for unemployment, development of slums, increased crime rates, potential for social friction, environmental degradation, drain on resources and insecurity (from refugees), and shortage of housing/expansion of slums.</li>
+                            </ul>
+                        </li>
+                        <li><strong>On the Individual Migrant:</strong>
+                            <ul>
+                                <li><em>Positive effects:</em> Improved living standards, acquisition of new skills, and exposure to different cultures.</li>
+                                <li><em>Negative effects:</em> Challenges of adaptation, potential for discrimination, loneliness, exploitation, and separation from family. Immorality and marriage break ups may also arise.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            {
+                id: "pop_ch4_s4",
+                title: "4.4 Calculating Population Growth",
+                breadcrumb: "Calculating Growth",
+                category: "Dynamics & Distribution",
+                parentId: "pop_ch4",
+                content: `
+                    <h2 id="pop_ch4_s4">4.4 Calculating Population Growth</h2>
+                    <p>Population growth is the increase or decrease in the number of people.</p>
+                    <p>It can be calculated as <strong>Natural population growth</strong> or <strong>Numerical population growth</strong>.</p>
+                    <h4 id="pop_ch4_s4_1">Natural Population Growth:</h4>
+                    <p>The natural increase or decrease in population. Calculated using Crude Birth Rate (CBR) and Crude Death Rate (CDR).</p>
+                    <blockquote>CBR = (Total Number of Births in a year / Total Population recorded in the year) x 1000.</blockquote>
+                    <blockquote>CDR = (Total Number of Deaths in a year / Total Population recorded in the year) x 1000.</blockquote>
+                    <p>Natural population growth (NPG) / Population Growth Rate (PGR) is the difference between CBR, CDR, and migration. Formula: NPG/PGR = CBR - CDR - MIGRATION. (Note: Often PGR is (CBR-CDR)/10 if expressed per 100, or (CBR-CDR) if expressed per 1000, then net migration is added/subtracted separately. The provided formula seems to combine these. An example calculation for Kenya in 2019 is given as PGR of 2.96% based on CBR 41.3 and CDR 11.7, which is (41.3-11.7)/1000 * 100 = 2.96% assuming migration is negligible or incorporated).</p>
+                    <h4 id="pop_ch4_s4_2">Numerical Population Growth:</h4>
+                    <p>The actual/absolute increase in the number of people within a given period. Calculated every 10 years as the difference between two census counts. Formula: NPG = (Inter-censal increase / Population of the former census) x 100.</p>
+                `
+            },
+            {
+                id: "pop_ch4_s5",
+                title: "4.5 Demographic Transition Theory",
+                breadcrumb: "Demographic Transition",
+                category: "Dynamics & Distribution",
+                parentId: "pop_ch4",
+                content: `
+                    <h2 id="pop_ch4_s5">4.5 Demographic Transition Theory</h2>
+                    <p>Demographic transition refers to the <strong>historical change in birth and death rates from high to low</strong>.</p>
+                    <p>The theory states that a population's mortality and fertility decline from high to low levels as a result of economic and social development.</p>
+                    <p>There are four demographic transition phases/stages (sometimes five are described, but the source mentions four):</p>
+                    <h4 id="pop_ch4_s5_1">Stage 1: High Stationary</h4>
+                    <p>Experienced in Europe before the 19th century. Characterized by <strong>high birth rate and high death rate</strong>. Little or no increase in population. High death rates caused by inadequate food supply, wars, diseases, insufficient medical facilities.</p>
+                    <div class="diagram-placeholder my-3">
+                        <p><strong>Stage 1: High Stationary</strong><br>
+                        Birth Rate: High<br>
+                        Death Rate: High<br>
+                        Natural Increase: Stable or Slow Increase</p>
+                        <p class="small">(Imagine a graph with both birth and death rates high and fluctuating, resulting in a low and stable population line)</p>
+                    </div>
+                    <h4 id="pop_ch4_s5_2">Stage 2: Early Expanding</h4>
+                    <p>Kenya is in this stage. Characterized by <strong>high birth rate and a decline in death rate</strong>. High population growth rate due to improved food supplies and improved medical facilities.</p>
+                    <div class="diagram-placeholder my-3">
+                        <p><strong>Stage 2: Early Expanding</strong><br>
+                        Birth Rate: High<br>
+                        Death Rate: Rapidly Falling<br>
+                        Natural Increase: Very Rapid Increase</p>
+                        <p class="small">(Imagine a graph where the death rate line drops sharply while the birth rate line remains high, creating a widening gap and thus rapid population growth)</p>
+                    </div>
+                    <h4 id="pop_ch4_s5_3">Stage 3: Late Expanding</h4>
+                    <p>Characterized by a <strong>declining birth rate and relatively low death rates</strong>. Moderate population growth due to the need for small families and increased use of birth control methods.</p>
+                     <div class="diagram-placeholder my-3">
+                        <p><strong>Stage 3: Late Expanding</strong><br>
+                        Birth Rate: Falling<br>
+                        Death Rate: Falls more slowly<br>
+                        Natural Increase: Increase slows down</p>
+                        <p class="small">(Imagine a graph where the birth rate line starts to fall, approaching the already low death rate line, narrowing the gap and slowing population growth)</p>
+                    </div>
+                    <h4 id="pop_ch4_s5_4">Stage 4: Low Stationary</h4>
+                    <p>Characterized by <strong>low birth and death rates</strong>. Low population growth rate. The population becomes static and reproduces only to replace the dying ones (population replacement level). Experienced in industrialized countries like Germany and Sweden where the birth rate is falling below the death rate (can lead to Stage 5 - Declining).</p>
+                    <div class="diagram-placeholder my-3">
+                        <p><strong>Stage 4: Low Stationary</strong><br>
+                        Birth Rate: Low<br>
+                        Death Rate: Low<br>
+                        Natural Increase: Stable or Slow Increase</p>
+                        <p class="small">(Imagine a graph with both birth and death rates low and stable, resulting in a high but stable population line)</p>
+                    </div>
+                    <p class="mt-3"><em>Note: Some models include a Stage 5 where death rates may exceed birth rates, leading to population decline.</em></p>
+                `
+            },
+            // Chapter 5: Population Structure
+            {
+                id: "pop_ch5",
+                title: "5. Population Structure (Age and Sex)",
+                breadcrumb: "Population Structure",
+                category: "Structure & Consequences",
+                isChapter: true,
+                content: `
+                    <h1 id="pop_ch5">5. Population Structure (Age and Sex)</h1>
+                    <p><strong>Population Structure:</strong> The composition of the population in terms of age and sex/gender.</p>
+                `
+            },
+            {
+                id: "pop_ch5_s1",
+                title: "5.1 Age-Sex Pyramid (Population Pyramid)",
+                breadcrumb: "Population Pyramids",
+                category: "Structure & Consequences",
+                parentId: "pop_ch5",
+                content: `
+                    <h2 id="pop_ch5_s1">5.1 Age-Sex Pyramid (Population Pyramid)</h2>
+                    <p>An <strong>Age-Sex Pyramid</strong> (or Population Pyramid) is a graph used to present population data showing the different age groups for males and females. It consists of horizontal bars. The length of each bar indicates the number of persons in each age-group or the percentage of the total population. The vertical axis represents age ranges, the horizontal axis represents the percentage or number of total population, the right side represents the female proportion, and the left side represents the male proportion.</p>
+                    <p><strong>Sex Ratio:</strong> The population of males to females at different age-groups.</p>
+                    <h4 id="pop_ch5_s1_1">Information Derived from a Population Pyramid:</h4>
+                    <ul>
+                        <li>The <strong>size of population</strong> (can be estimated).</li>
+                        <li>The <strong>proportion of males and females</strong>.</li>
+                        <li>The <strong>proportion of youthful, working, or ageing population</strong>.</li>
+                        <li>The <strong>composition of population by sex</strong>.</li>
+                        <li>The <strong>dependency ratio</strong>.</li>
+                        <li>The <strong>birth/death rate</strong> (inferred from the shape).</li>
+                        <li><strong>Life expectancy</strong> (inferred from the proportion in older age groups).</li>
+                        <li>Evidence of past events (baby booms, wars, migration).</li>
+                    </ul>
+                    <h4 id="pop_ch5_s1_2">Population Structure of a Developing Country (e.g., Kenya)</h4>
+                    <p><strong>Shape:</strong> Typically triangular or pyramidal with a <strong>wide base</strong> and a narrow top. (An example is the 1999 census data for Kenya pyramid).</p>
+                    <div class="pyramid-description">
+                        <p><strong>Typical Pyramid for a Developing Country (e.g., Kenya):</strong></p>
+                        <ul>
+                            <li><strong>Base:</strong> Very wide, indicating a high number of births (high birth rate).</li>
+                            <li><strong>Sides:</strong> Concave and rapidly sloping inwards, indicating high death rates in younger and middle age groups.</li>
+                            <li><strong>Top:</strong> Very narrow, indicating few elderly people (low life expectancy).</li>
+                        </ul>
+                        <p>Example: Kenya (1999 Census Data shows this pattern)</p>
+                        <pre>
+    Age Group | Males (%) | Females (%)
+    -----------------------------------
+    80+       |   ----    |   ----
+    75-79     |  ------   |  ------
+    ...       |   ....    |   ....
+    15-19     |###########|###########
+    10-14     |#############|#############
+    5-9       |###############|###############
+    0-4       |#################|#################
+              &lt;-- Males --|-- Females --&gt;
+                        </pre>
+                        <p>(This is a textual representation. A proper pyramid would have horizontal bars.)</p>
+                    </div>
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li><strong>High birth rate</strong> (wide base).</li>
+                        <li>High fertility rate.</li>
+                        <li>High death rate (though often declining).</li>
+                        <li><strong>Low life expectancy</strong> (narrow top, few old people).</li>
+                        <li><strong>High proportion of youthful population</strong> (large number of children and youth).</li>
+                        <li>Relatively smaller proportion of working-age population compared to dependents.</li>
+                        <li><strong>High dependency ratio</strong> (many young dependents).</li>
+                        <li>Number of male and female is almost equal at all ages, but slightly more older females than males.</li>
+                        <li>Number of infants from age 0 to 4 years is high.</li>
+                    </ul>
+                    <h4 id="pop_ch5_s1_3">Population Structure of a Developed Country (e.g., Sweden)</h4>
+                    <p><strong>Shape:</strong> More rectangular or barrel-shaped, with a <strong>narrow base</strong>, wider middle, and a relatively wide top.</p>
+                     <div class="pyramid-description">
+                        <p><strong>Typical Pyramid for a Developed Country (e.g., Sweden):</strong></p>
+                        <ul>
+                            <li><strong>Base:</strong> Narrow, indicating a low number of births (low birth rate).</li>
+                            <li><strong>Sides:</strong> More convex or straight, indicating low death rates across most age groups.</li>
+                            <li><strong>Top:</strong> Wider, indicating a significant proportion of elderly people (high life expectancy).</li>
+                        </ul>
+                        <pre>
+    Age Group | Males (%) | Females (%)
+    -----------------------------------
+    80+       |  #######  |  ########
+    75-79     | ######### | ##########
+    ...       |   ....    |   ....
+    15-19     | ########  | ########
+    10-14     | ########  | ########
+    5-9       | ########  | ########
+    0-4       | #######   | #######
+              &lt;-- Males --|-- Females --&gt;
+                        </pre>
+                         <p>(This is a textual representation. A proper pyramid would have horizontal bars.)</p>
+                    </div>
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li><strong>Low birth rate</strong> (narrow base).</li>
+                        <li>Low fertility rate.</li>
+                        <li>Low death rate.</li>
+                        <li><strong>High life expectancy</strong> (wide top, significant proportion of elderly people).</li>
+                        <li>Smaller proportion of youthful population.</li>
+                        <li>Large proportion of working-age population.</li>
+                        <li><strong>Low dependency ratio</strong> (though old-age dependency can be increasing).</li>
+                        <li>Number of male and female is almost equal at all ages, with females significantly outnumbering males in the oldest cohorts.</li>
+                        <li>Number of infants from age 0 to 4 years is low.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "pop_ch5_s2",
+                title: "5.2 Dependency Ratio",
+                breadcrumb: "Dependency Ratio",
+                category: "Structure & Consequences",
+                parentId: "pop_ch5",
+                content: `
+                    <h2 id="pop_ch5_s2">5.2 Dependency Ratio</h2>
+                    <p>This is the proportion of the population considered economically unproductive (dependents: typically children below 15/20 years and elderly people above 60/65 years) in relation to the economically productive population (working-age: typically 15/20 - 59/64 years).</p>
+                    <blockquote>Calculation: Dependency Ratio = ((Population <15/20 years) + (Population >60/65 years)) / (Population 15/20 - 59/64 years) x 100</blockquote>
+                    <p>A <strong>high dependency ratio</strong> means each working person supports a larger number of dependents, straining economic resources and limiting savings/investment. Developing countries often have high youth dependency ratios.</p>
+                `
+            },
+            // Chapter 6: Consequences of Population Growth and Structure
+            {
+                id: "pop_ch6",
+                title: "6. Consequences of Population Growth & Structure",
+                breadcrumb: "Consequences",
+                category: "Structure & Consequences",
+                isChapter: true,
+                content: `
+                    <h1 id="pop_ch6">6. Consequences of Population Growth and Structure</h1>
+                    <p>Population dynamics have significant impacts on a country's development.</p>
+                `
+            },
+            {
+                id: "pop_ch6_s1",
+                title: "6.1 Consequences of Rapid Population Growth/Overpopulation",
+                breadcrumb: "Rapid Growth",
+                category: "Structure & Consequences",
+                parentId: "pop_ch6",
+                content: `
+                    <h2 id="pop_ch6_s1">6.1 Consequences of Rapid Population Growth/Overpopulation</h2>
+                    <p>Overpopulation is when an area has more people than available resources can support.</p>
+                    <h4 id="pop_ch6_s1_1">Causes of Kenya's rapid population growth include:</h4>
+                    <ul>
+                        <li>Immigration of refugees</li>
+                        <li>Polygamy</li>
+                        <li>Improved health services</li>
+                        <li>Early marriages</li>
+                        <li>Improved nutrition</li>
+                        <li>Sex preference for boys</li>
+                        <li>Low acceptance of family planning</li>
+                        <li>Unplanned births</li>
+                        <li>Improved security reducing warfare</li>
+                    </ul>
+                    <h4 id="pop_ch6_s1_2">Problems of high population growth:</h4>
+                    <ul>
+                        <li><strong>High unemployment rate</strong>.</li>
+                        <li><strong>High dependency ratio</strong>.</li>
+                        <li>Pressure on land causing <strong>land fragmentation</strong> and landlessness/destruction of forests.</li>
+                        <li>Increased demand for food leading to <strong>food shortages</strong>.</li>
+                        <li>Increased expenditure on social amenities slowing economic growth.</li>
+                        <li><strong>Increased crime rates</strong>.</li>
+                        <li>Development of <strong>slums</strong>.</li>
+                        <li>Scramble for few resources leading to tribal clashes.</li>
+                        <li><strong>Congestion in towns/traffic jams</strong> due to rural-urban migration.</li>
+                        <li>More land used for food crops at the expense of cash crops, reducing foreign exchange.</li>
+                        <li>Transport becomes inadequate and expensive.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "pop_ch6_s2",
+                title: "6.2 Consequences of Slow Population Growth/Underpopulation",
+                breadcrumb: "Slow Growth",
+                category: "Structure & Consequences",
+                parentId: "pop_ch6",
+                content: `
+                    <h2 id="pop_ch6_s2">6.2 Consequences of Slow Population Growth/Underpopulation</h2>
+                    <p>Underpopulation is when an area has too few people to fully utilize available resources.</p>
+                    <h4 id="pop_ch6_s2_1">Benefits/positive effects of low population growth:</h4>
+                    <ul>
+                        <li><strong>Reduced pressure on land</strong>.</li>
+                        <li>Low crime rate.</li>
+                        <li><strong>Low dependency ratio</strong> allowing for investment/savings/high living standards.</li>
+                        <li>Provision of adequate social amenities.</li>
+                        <li>Government saves funds for investment.</li>
+                        <li>Reduced congestion in towns/traffic jams.</li>
+                    </ul>
+                    <h4 id="pop_ch6_s2_2">Consequences/problems/negative effects of slow population growth:</h4>
+                    <ul>
+                        <li><strong>Underutilization of social amenities</strong>.</li>
+                        <li><strong>Inadequate labour supply/manpower</strong>.</li>
+                        <li><strong>High dependency ratio in old age</strong>.</li>
+                        <li>Reduction in revenue collection.</li>
+                        <li>Underutilization/under exploitation of resources.</li>
+                        <li><strong>Inadequate local market</strong> for goods/decline of industries.</li>
+                        <li>Limited defence.</li>
+                        <li>Limited investment.</li>
+                        <li>High cost of transport/services.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "pop_ch6_s3",
+                title: "6.3 Implications of a Young Population",
+                breadcrumb: "Young Population",
+                category: "Structure & Consequences",
+                parentId: "pop_ch6",
+                content: `
+                    <h2 id="pop_ch6_s3">6.3 Implications of a Young Population</h2>
+                    <ul>
+                        <li>High demands for unproductive goods.</li>
+                        <li>Increased demands for social amenities like schools and hospitals.</li>
+                        <li><strong>High dependency ratio</strong>.</li>
+                        <li>High cases of juvenile delinquency.</li>
+                        <li>Increase in large numbers of unemployed people.</li>
+                        <li>Large future labor force (potential demographic dividend if jobs are created).</li>
+                        <li>Potential for social/political dynamism, but risk of youth unemployment/unrest.</li>
+                        <li>High demand for goods and services consumed by young people.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "pop_ch6_s4",
+                title: "6.4 Effects of High Ageing Population",
+                breadcrumb: "Ageing Population",
+                category: "Structure & Consequences",
+                parentId: "pop_ch6",
+                content: `
+                    <h2 id="pop_ch6_s4">6.4 Effects of High Ageing Population</h2>
+                    <ul>
+                        <li><strong>Increased cost of health care</strong>.</li>
+                        <li>Increased dependency ratio (old age).</li>
+                        <li><strong>Shortage of labour force</strong>.</li>
+                        <li>Slow economic growth/low revenue collection.</li>
+                        <li>Underutilization of social amenities (if not adapted).</li>
+                        <li>Inadequate local market for certain goods (shift in demand).</li>
+                        <li>Strain on pension systems.</li>
+                        <li>Shift in consumption patterns towards goods/services for the elderly.</li>
+                        <li>Accumulated wisdom and experience.</li>
+                    </ul>
+                `
+            },
+            // Chapter 7: Comparative Studies: Kenya and Sweden
+            {
+                id: "pop_ch7",
+                title: "7. Comparative Studies: Kenya and Sweden",
+                breadcrumb: "Kenya vs Sweden",
+                category: "Comparative Study & Revision",
+                isChapter: true,
+                content: `
+                    <h1 id="pop_ch7">7. Comparative Studies of Population Trends: Kenya and Sweden</h1>
+                    <p>Comparing population trends between a developing country like Kenya and a developed country like Sweden highlights different demographic stages and challenges.</p>
+                `
+            },
+            {
+                id: "pop_ch7_s1",
+                title: "7.1 Factors Influencing Population Distribution in Sweden",
+                breadcrumb: "Sweden: Distribution",
+                category: "Comparative Study & Revision",
+                parentId: "pop_ch7",
+                content: `
+                    <h2 id="pop_ch7_s1">7.1 Factors Influencing Population Distribution in Sweden</h2>
+                    <ul>
+                        <li><strong>Relief:</strong> Low population in highlands (mountainous, steep slopes, thin soils, permafrost). Plains are more populated.</li>
+                        <li><strong>Climate:</strong> Chilly climate with cold winters and snow in the north leads to low population densities. Milder southern climates are more populated.</li>
+                        <li><strong>Forests:</strong> Historically, forested areas supported settlement. Cleared areas in the south are more populated due to better agriculture.</li>
+                        <li><strong>Drainage:</strong> Population concentrated away from numerous small lakes and marshy areas, but along larger navigable rivers or coastal areas.</li>
+                        <li><strong>Mining Centers:</strong> Areas with mineral resources have attracted population.</li>
+                        <li><strong>Urbanization:</strong> The vast majority of Sweden's population lives in urban areas, particularly in the southern and central parts (e.g., Stockholm).</li>
+                    </ul>
+                `
+            },
+            {
+                id: "pop_ch7_s2",
+                title: "7.2 Factors Contributing to Slow Population Growth in Sweden",
+                breadcrumb: "Sweden: Slow Growth",
+                category: "Comparative Study & Revision",
+                parentId: "pop_ch7",
+                content: `
+                    <h2 id="pop_ch7_s2">7.2 Factors Contributing to Slow Population Growth in Sweden</h2>
+                    <ul>
+                        <li><strong>High number of females in employment</strong> and pursuing higher education.</li>
+                        <li>Extensive non-marital cohabitations.</li>
+                        <li>High rate of divorce and separation.</li>
+                        <li><strong>Widespread knowledge and use of modern contraceptives</strong>.</li>
+                        <li>Highly literate population understanding the need for small population.</li>
+                        <li>Improved medical facilities leading to very low mortality rates.</li>
+                        <li>High cost of raising children.</li>
+                        <li>Strong social welfare system reducing reliance on children for old-age security.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "pop_ch7_s3",
+                title: "7.3 Similarities Between Population Trends in Kenya and Sweden",
+                breadcrumb: "Similarities",
+                category: "Comparative Study & Revision",
+                parentId: "pop_ch7",
+                content: `
+                    <h2 id="pop_ch7_s3">7.3 Similarities Between Population Trends in Kenya and Sweden</h2>
+                    <ul>
+                        <li>Both countries have <strong>uneven distribution of population</strong> influenced by factors like relief, climate, and economic activities.</li>
+                        <li>Both countries have experienced declines in mortality rates due to improved medical care (relatively low).</li>
+                        <li>In both countries, there is a trend of <strong>population concentration in urban areas</strong>.</li>
+                        <li>Both countries have <strong>population policies</strong> aimed at influencing demographic trends.</li>
+                        <li>Use of family planning methods is present in both.</li>
+                        <li>Both countries experience internal and international migration.</li>
+                        <li>Both have largely uninhabited or very sparsely populated regions due to harsh environmental conditions.</li>
+                        <li>Both countries have dependent populations, though the structure of dependency differs.</li>
+                        <li>Both countries have health spas with mineral water which people consider to cure certain ailments.</li>
+                        <li>Both countries have national parks which attract tourists.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "pop_ch7_s4",
+                title: "7.4 Differences Between Population Trends in Kenya and Sweden",
+                breadcrumb: "Differences",
+                category: "Comparative Study & Revision",
+                parentId: "pop_ch7",
+                content: `
+                    <h2 id="pop_ch7_s4">7.4 Differences Between Population Trends in Kenya and Sweden</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Kenya (Developing Country)</th>
+                                    <th>Sweden (Developed Country)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Overall Population Growth Rate</td>
+                                    <td><strong>High</strong> (though declining)</td>
+                                    <td><strong>Very low</strong> (sometimes near zero or negative)</td>
+                                </tr>
+                                <tr>
+                                    <td>Birth Rate</td>
+                                    <td>High</td>
+                                    <td>Low</td>
+                                </tr>
+                                <tr>
+                                    <td>Fertility Rate</td>
+                                    <td>Relatively high</td>
+                                    <td>Low (often below replacement level)</td>
+                                </tr>
+                                <tr>
+                                    <td>Death Rate</td>
+                                    <td>Relatively high (but declined)</td>
+                                    <td>Very low</td>
+                                </tr>
+                                <tr>
+                                    <td>Life Expectancy</td>
+                                    <td>Relatively low (around 60s)</td>
+                                    <td>High (around 80s)</td>
+                                </tr>
+                                <tr>
+                                    <td>Population Structure (Pyramid Shape)</td>
+                                    <td><strong>Broad-based pyramid</strong> (many young people)</td>
+                                    <td>More rectangular or beehive-shaped (aging population)</td>
+                                </tr>
+                                <tr>
+                                    <td>Proportion of Youthful Population (&lt;15 or &lt;20)</td>
+                                    <td>Very high (e.g., over 40%)</td>
+                                    <td>Low (e.g., around 15-20%)</td>
+                                </tr>
+                                <tr>
+                                    <td>Proportion of Elderly Population (65+)</td>
+                                    <td>Low (e.g., around 3-5%)</td>
+                                    <td>High and increasing (e.g., over 20%)</td>
+                                </tr>
+                                <tr>
+                                    <td>Dependency Ratio</td>
+                                    <td><strong>High</strong> (mainly youth dependency)</td>
+                                    <td>Lower overall, but with increasing old-age dependency</td>
+                                </tr>
+                                <tr>
+                                    <td>Urbanization Level</td>
+                                    <td>Lower, but rapidly urbanizing (majority still rural)</td>
+                                    <td>Very high (majority live in urban areas)</td>
+                                </tr>
+                                <tr>
+                                    <td>Migration Pattern</td>
+                                    <td>Significant rural-urban migration and refugee influxes</td>
+                                    <td>Net immigration and some internal migration</td>
+                                </tr>
+                                <tr>
+                                    <td>Median Age</td>
+                                    <td>Low (young population)</td>
+                                    <td>High (older population)</td>
+                                </tr>
+                                 <tr><td>Climate</td><td>Tropical (warm/sunny)</td><td>Temperate (cold winters, hot summers)</td></tr>
+                                <tr><td>Scenery</td><td>Coastal scenery, Rift Valley, volcanic mountains</td><td>Snow-capped mountains, glaciated landscape</td></tr>
+                                <tr><td>Location</td><td>Far from Europe</td><td>Centrally located in Europe</td></tr>
+                                <tr><td>Security (for tourism)</td><td>Reports of insecurity sometimes scare away tourists</td><td>Peaceful atmosphere encourages tourists</td></tr>
+                                <tr><td>Transport Network</td><td>Inefficient in some areas</td><td>Efficient</td></tr>
+                                <tr><td>Languages (for tourism)</td><td>Limited ability to speak international languages</td><td>Diversity of languages spoken makes communication easy</td></tr>
+                                <tr><td>Training Personnel (tourism)</td><td>Less advanced</td><td>More advanced</td></tr>
+                                <tr><td>Financial Facilities Access</td><td>Limited</td><td>Widespread</td></tr>
+                                <tr><td>Purchasing Power (for travel)</td><td>Low purchasing power limits travel</td><td>High purchasing power enables travel</td></tr>
+                                <tr><td>Beaches</td><td>Coastal beaches</td><td>Lakeside beaches</td></tr>
+                                <tr><td>Wild Animals (tourism)</td><td>In natural habitat</td><td>Kept in zoos</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            // Chapter 8: Revision Questions
+            {
+                id: "pop_ch8_rev", 
+                title: "8. Population Revision Questions",
+                breadcrumb: "Revision Questions",
+                category: "Comparative Study & Revision", // Keep in the last category
+                isChapter: true, 
+                content: `
+                    <h1 id="pop_ch8_rev">8. Population Revision Questions</h1>
+                    <p>Test your understanding of the Population topic with these revision questions. Click on a question to reveal the answer.</p>
+                    <div id="population-revision-questions-container">
+                        <!-- Revision questions will be rendered here by JavaScript -->
+                    </div>
+                `
+            }
+        ];
+
+        const populationRevisionQuestionsData = [
+            // Definitions and Concepts
+            { q: "1. Define the term 'Human Population'.", a: "<strong>Human Population</strong> refers to the total number of people occupying or living in a given area at a particular time. It is the total number of people occupying/living in a given area." },
+            { q: "2. What is 'Demography'?", a: "<strong>Demography</strong> is the statistical study of human populations, including their size, structure, distribution, and changes over time. It is also defined as the study of statistical data on human population." },
+            { q: "3. Define 'Population Distribution'.", a: "<strong>Population Distribution</strong> is the way people are spread out over an area of land." },
+            { q: "4. What is 'Population Density'?", a: "<strong>Population Density</strong> is the number of persons per unit area, typically measured in persons per square kilometer." },
+            { q: "5. How is 'Population Density' calculated?", a: "<strong>Population Density</strong> is calculated as: <blockquote>Total Population / Total Land Area.</blockquote> For example, if an area of 100 km² has 15,000 people, the population density is 150 persons per km²." },
+            { q: "6. Define 'Fertility'.", a: "<strong>Fertility</strong> is the ability of individuals or populations to conceive and produce offspring. It is the ability to conceive or produce children." },
+            { q: "7. Define 'Mortality'.", a: "<strong>Mortality</strong> refers to deaths among members of a population." },
+            { q: "8. What is 'Migration'?", a: "<strong>Migration</strong> is the movement of people from one place of residence to another, involving a change in usual place of residence." },
+            { q: "9. Define 'Urbanization'.", a: "<strong>Urbanization</strong> is the process by which a population is transformed from rural-based agricultural lifestyles to urban-based non-agricultural lifestyles. It is also the process whereby an increasing proportion of the total population in a country settles in towns, or the process through which towns/cities grow in numbers and size." },
+            { q: "10. Define 'Crude Birth Rate (CBR)'.", a: "<strong>Crude Birth Rate (CBR)</strong> refers to the number of live births per 1,000 persons in a population in a given year." },
+            { q: "11. Define 'Crude Death Rate (CDR)'.", a: "<strong>Crude Death Rate (CDR)</strong> refers to the number of deaths per 1,000 persons in a population in a given year." },
+            { q: "12. What is 'Population Structure'?", a: "<strong>Population Structure</strong> is the composition of a population in terms of age and sex or gender." },
+            { q: "13. What is an 'Age-Sex Pyramid'?", a: "An <strong>Age-Sex Pyramid</strong> (or Population Pyramid) is a graph used to present population data showing the different age groups for males and females. It consists of horizontal bars representing the number or percentage of males and females in each age group, with males typically on the left, females on the right, and age groups on the vertical axis." },
+            { q: "14. What is 'Dependency Ratio'?", a: "<strong>Dependency Ratio</strong> is the proportion of the population considered economically unproductive (typically children below 15/20 years and elderly people above 60/65 years) in relation to the economically productive population (working-age: typically 15/20 - 59/64 years)." },
+            { q: "15. Define 'Overpopulation' or 'Rapid Population Growth'.", a: "<strong>Overpopulation</strong> or Rapid Population Growth refers to a situation where an area has a higher number of people than its available resources can sustainably support." },
+            { q: "16. Define 'Underpopulation' or 'Slow Population Growth'.", a: "<strong>Underpopulation</strong> or Slow Population Growth is a situation where an area has too few people to fully utilize its available resources and potential." },
+            // Sources of Data
+            { q: "17. Identify three primary sources of population data.", a: "Three primary sources of population data are: <ol><li><strong>National Census (Head Count)</strong></li><li><strong>Registration of Persons</strong> (vital events like births, deaths)</li><li><strong>Sample Surveys</strong></li></ol> Content Analysis/Publications of original data are also considered primary." },
+            { q: "18. Name three secondary sources of population data.", a: "Three secondary sources of population data are: <ol><li><strong>Statistical Abstracts</strong></li><li><strong>Textbooks</strong></li><li><strong>Magazines</strong></li></ol> Others include Journals/Periodicals, published National Census Reports, and Internet resources (official statistics websites)." },
+            { q: "19. What is a 'National Census'?", a: "A <strong>National Census</strong> (or Head Count) is a physical counting of all people in every household within a country, typically conducted at regular intervals (e.g., every 10 years in Kenya). It gathers a wide variety of information relating to physical, social, and economic characteristics of the population." },
+            { q: "20. State three reasons why it is necessary for a country to carry out a population census.", a: "It is necessary for a country to carry out a population census for several reasons, including: <ol><li>To help in the <strong>distribution of resources</strong> effectively.</li><li>For <strong>planning purposes and policymaking</strong> across various sectors.</li><li>To help in <strong>creating or revising administrative units/boundaries</strong>.</li></ol> Other reasons include identifying birth/death rates, estimating population growth, and determining the total number of people." },
+            { q: "21. List three challenges faced during population census taking.", a: "Three common challenges faced during population census taking are: <ol><li><strong>Shortage of funds</strong> for personnel, training, and equipment.</li><li><strong>Insufficient or inaccurate census area maps and questionnaires</strong>, leading to coverage issues.</li><li><strong>Illiteracy</strong> among some respondents, which may lead to incorrect information being provided.</li></ol> Other challenges include language barriers, accessibility in remote areas, poor training of enumerators, double counting or omission, fear/suspicion, lack of documents, political interference, insecurity, and inadequate time." },
+            // Factors Influencing Population Distribution
+            { q: "22. Explain how climate influences population distribution in East Africa.", a: "<strong>Climate</strong> significantly influences population distribution in East Africa: <ul><li>Areas with <strong>high and reliable rainfall</strong> and moderate temperatures (e.g., highlands) tend to be <strong>densely populated</strong> as they support diverse agricultural activities, which are the mainstay for many.</li><li><strong>Hot and dry areas</strong> (arid and semi-arid lands like Northern Kenya) are <strong>sparsely populated</strong> because limited rainfall and high temperatures restrict agriculture and water availability.</li><li>Extreme temperatures (very hot or very cold) and areas prone to strong winds generally discourage settlement.</li></ul>" },
+            { q: "23. Discuss the influence of relief on population distribution in East Africa.", a: "<strong>Relief (Topography)</strong> has a strong influence: <ul><li><strong>Gently sloping plains and lowlands</strong> are often <strong>densely populated</strong> because they are conducive to agriculture, easier for settlement construction, and facilitate the development of transport networks.</li><li><strong>Steep, rugged mountainous areas</strong> tend to be <strong>sparsely populated</strong> due to thin soils, difficulty in cultivation and construction, and inaccessibility.</li><li>High mountain tops are usually uninhabited due to cold temperatures and thin air.</li><li>The <strong>leeward sides of mountains</strong>, often in rain shadow areas, are typically dry and thus sparsely populated.</li><li>However, some hilly areas might be densely populated historically for defensive purposes or if they possess fertile volcanic soils.</li></ul>" },
+            { q: "24. How does soil type affect population distribution in East Africa?", a: "<strong>Soil type</strong> is a key factor, especially in agrarian societies: <ul><li>Areas with <strong>deep, fertile, and well-drained soils</strong> (e.g., volcanic soils in the Kenyan Highlands, parts of Uganda) support intensive agriculture and attract <strong>dense populations</strong>.</li><li>Areas with <strong>thin, infertile, sandy, or waterlogged soils</strong> discourage settlement and agriculture, leading to <strong>sparse populations</strong>.</li></ul>" },
+            { q: "25. Explain the influence of drainage on population distribution in East Africa.", a: "<strong>Drainage</strong> patterns and water availability are crucial: <ul><li><strong>Well-drained areas</strong> are suitable for agriculture and settlement, attracting <strong>higher population densities</strong>.</li><li>Proximity to reliable sources of <strong>fresh water</strong> (rivers, springs, lakes) attracts settlement for domestic, agricultural, and sometimes industrial use.</li><li>Conversely, <strong>low-lying, swampy, or flood-prone areas</strong> (e.g., river floodplains, swampy valleys) <strong>discourage settlement</strong> due to risks of flooding, waterborne diseases (like malaria and bilharzia), and difficulties in construction.</li><li>Some large water bodies might also discourage dense settlement along immediate banks due to dangers like wild animals (crocodiles, hippos) or tsetse flies.</li></ul>" },
+            { q: "26. How do incidences of pests and diseases influence population distribution in East Africa?", a: "<strong>Incidences of pests and diseases</strong> significantly impact habitability: <ul><li>Areas infested with pests like <strong>tsetse flies</strong> (causing sleeping sickness in livestock and humans) or disease vectors like <strong>mosquitoes</strong> (causing malaria) tend to have <strong>sparse populations</strong>.</li><li>These conditions make areas unhealthy for humans and livestock, and economically challenging for agriculture, thus repelling settlement.</li><li>Historically, epidemics have also led to depopulation or avoidance of certain areas.</li></ul>" },
+            { q: "27. Explain how vegetation influences population distribution in East Africa.", a: "<strong>Vegetation type</strong> affects land use and habitability: <ul><li><strong>Dense forests</strong> may discourage dense settlement due to difficulty in clearing land for agriculture, presence of wild animals, and potential for disease vectors. However, forest edges might attract some settlement due to access to forest resources (timber, fuel, medicinal plants).</li><li><strong>Open savanna grasslands</strong> might support pastoral communities, often leading to <strong>sparse but widespread</strong> population distribution, adapted to livestock herding.</li><li><strong>Desert and semi-desert vegetation</strong> (scrubland) supports very <strong>low population densities</strong>, typically nomadic pastoralists, due to limited resources.</li></ul>" },
+            { q: "28. Discuss the role of historical factors in influencing population distribution in East Africa.", a: "<strong>Historical factors</strong> have left a lasting imprint: <ul><li><strong>Past events like the slave trade</strong> led to depopulation in some coastal and inland regions.</li><li><strong>Early migration routes and settlement patterns</strong> of different ethnic groups established initial population clusters.</li><li><strong>Tribal conflicts and wars</strong> historically influenced where people settled, often choosing defensive locations or avoiding insecure areas.</li><li>The establishment of ancient <strong>kingdoms and administrative centers</strong> created nodes of higher population density.</li><li><strong>Colonial policies</strong> significantly reshaped population distribution, for example, through the creation of 'native reserves', establishment of 'white highlands' for European settlers in Kenya, and the development of administrative towns and transport lines which attracted populations.</li></ul>" },
+            { q: "29. How does security influence population distribution in East Africa?", a: "<strong>Security</strong> is a fundamental determinant: <ul><li>Areas with a history of <strong>peace and stability</strong> tend to be <strong>more densely populated</strong> as people feel safe to live, invest, and carry out economic activities.</li><li>Regions prone to <strong>conflict, tribal clashes, cattle rustling, or general insecurity</strong> are often <strong>sparsely populated</strong> or experience significant out-migration as people flee to safer areas.</li><li>Government efforts to establish security in previously insecure regions can lead to increased settlement over time.</li></ul>" },
+            { q: "30. Explain the influence of government policy on population distribution in East Africa.", a: "<strong>Government policy</strong> can directly and indirectly shape population distribution: <ul><li>Establishment of <strong>settlement schemes</strong> (e.g., Mwea in Kenya) can lead to increased population density in formerly sparsely populated areas by relocating people.</li><li><strong>Gazettement of areas as national parks, game reserves, or forest reserves</strong> restricts human settlement, leading to these areas being sparsely populated or uninhabited.</li><li>Policies promoting <strong>decentralization</strong> of industries, administrative functions, or educational institutions can influence population shifts towards new growth centers.</li><li>Development of <strong>infrastructure</strong> like roads, railways, and irrigation projects can attract population to specific areas.</li><li>Forced displacement for large-scale development projects can also alter local population distribution.</li></ul>" },
+            { q: "31. How does the land ownership system affect population distribution?", a: "<strong>Land ownership systems</strong> influence settlement patterns and density: <ul><li>Areas with <strong>individual land tenure</strong> might encourage more permanent and intensive settlement, potentially leading to higher densities if land is productive and subdivided. However, large private estates can also result in sparse settlement over wide areas.</li><li><strong>Communally owned lands</strong>, common in pastoral areas, often support sparse and mobile populations. However, if communal land is used for settled agriculture, it can lead to dense, clustered settlements.</li><li><strong>Land disputes and insecure tenure</strong> can lead to displacement and discourage permanent settlement, affecting distribution.</li><li>Cultural practices like <strong>land inheritance</strong> can lead to fragmentation of land holdings over generations, resulting in very high population densities in some agricultural areas.</li></ul>" },
+            { q: "32. Explain three economic factors that influence population distribution in East Africa.", a: "Three key economic factors are: <ol><li><strong>Employment Opportunities (Urbanization):</strong> Urban centers with diverse job opportunities in industries, commerce, and services act as magnets, attracting migrants from rural areas. This leads to high population densities in towns and cities.</li><li><strong>Industrialization:</strong> Areas with established industries attract a labor force and associated service providers, resulting in dense settlements around these industrial zones.</li><li><strong>Transport and Communication Networks:</strong> Areas well-served by roads, railways, ports, and communication infrastructure tend to attract more people and businesses. This leads to higher population densities along transport corridors and in well-connected urban centers, as accessibility facilitates economic activity. Poor networks often correlate with sparse populations.</li></ol> Other economic factors include mining activities, agricultural potential and practices, and trade/commerce." },
+            { q: "33. Give two examples of physical factors that influence population distribution in East Africa.", a: "Two examples of physical factors are: <ol><li><strong>Climate:</strong> Availability of rainfall and suitable temperatures directly impacts agriculture and habitability.</li><li><strong>Relief (Topography):</strong> The steepness and altitude of land affect ease of cultivation, construction, and accessibility.</li></ol> Other physical factors include soils, drainage, incidence of pests and diseases, and vegetation." },
+            { q: "34. Give two examples of human factors that influence population distribution in East Africa.", a: "Two examples of human factors are: <ol><li><strong>Historical Factors:</strong> Past events like migrations, conflicts, and colonial policies have shaped current patterns.</li><li><strong>Security:</strong> The level of peace and safety in an area makes it attractive or unattractive for settlement.</li></ol> Other human factors include government policy and land ownership systems." },
+            // Factors Influencing Population Growth
+            { q: "35. What are the three primary demographic processes that influence population growth?", a: "The three primary demographic processes that influence population growth are: <ol><li><strong>Fertility</strong> (births)</li><li><strong>Mortality</strong> (deaths)</li><li><strong>Migration</strong> (movement of people in or out of an area)</li></ol>" },
+            { q: "36. How is the Natural Population Growth (NPG) or Population Growth Rate (PGR) calculated using CBR, CDR, and migration?", a: "The Natural Population Growth Rate (PGR) is primarily the difference between the Crude Birth Rate (CBR) and the Crude Death Rate (CDR). Net migration (Immigration - Emigration) is then factored in to get the overall population growth rate. A common formula provided in the source is: <blockquote>NPG/PGR = CBR - CDR - MIGRATION</blockquote> (Note: This formula might imply migration is subtracted; typically, net immigration adds to growth, and net emigration subtracts. CBR and CDR are usually expressed per 1000 people. The result is often converted to a percentage.)" },
+            { q: "37. Explain two cultural beliefs that lead to high fertility rates.", a: "Two cultural beliefs that can lead to high fertility rates are: <ol><li><strong>Preference for sons:</strong> In some cultures, there's a strong preference for male children for reasons like carrying on the family name, inheritance, or performing certain rituals. This can lead couples to continue having children until they have a desired number of sons, increasing overall family size.</li><li><strong>Polygamy:</strong> The practice of a man having multiple wives can lead to a higher number of children per man, contributing to higher overall fertility in the community. Each wife may aim to have several children.</li></ol> Other cultural beliefs include early marriages, the desire to have children named after relatives, viewing large families as a source of prestige, labor, or old-age security, and cultural discouragement of contraceptive use." },
+            { q: "38. Give two economic factors that contribute to high fertility rates.", a: "Two economic factors contributing to high fertility rates, especially in traditional or agrarian societies, are: <ol><li><strong>Children as a source of family labor:</strong> In agricultural economies, children often contribute to farm work from a young age, making larger families economically beneficial.</li><li><strong>Children as security in old age:</strong> In societies lacking formal social security systems, parents may rely on their children for support in their old age. Having more children can be seen as ensuring this support.</li></ol>" },
+            { q: "39. Explain how lack of effective family planning can lead to high fertility rates.", a: "Lack of effective family planning contributes to high fertility rates in several ways: <ul><li><strong>Ignorance:</strong> Lack of knowledge about available contraceptive methods, their proper use, and benefits prevents individuals from making informed choices about family size.</li><li><strong>Inaccessibility:</strong> Family planning services and contraceptives may not be readily available or affordable, especially in rural or remote areas.</li><li><strong>Ineffective traditional methods:</strong> Reliance on traditional birth control methods that have low efficacy can result in unintended pregnancies.</li><li>Cultural or religious objections to modern contraception can also limit uptake.</li></ul>" },
+            { q: "40. Discuss how improved medical facilities influence population growth.", a: "Improved medical facilities and healthcare significantly influence population growth, primarily by: <ul><li><strong>Reducing mortality rates:</strong> Better access to doctors, hospitals, medicines, and sanitation leads to lower Crude Death Rates (CDR), especially Infant Mortality Rate (IMR) and Child Mortality Rate (CMR). More children survive to adulthood.</li><li><strong>Increasing life expectancy:</strong> People live longer due to better treatment of diseases and improved public health.</li><li><strong>Reducing maternal mortality:</strong> Safer childbirth practices and prenatal/postnatal care mean fewer mothers die during childbirth, allowing them to potentially have more children.</li></ul> When death rates fall while birth rates remain high (as in Stage 2 of the Demographic Transition Model), the result is rapid population growth." },
+            { q: "41. State three causes of reduced fertility rate in a country.", a: "Three causes of reduced fertility rate in a country are: <ol><li><strong>Increased use and availability of effective birth control methods/family planning services:</strong> This allows couples to better control the number and spacing of their children.</li><li><strong>Higher levels of female education and empowerment:</strong> Educated women often marry later, desire smaller families, have better knowledge of family planning, and have more opportunities outside childbearing.</li><li><strong>High cost of raising and educating children:</strong> In modern economies, the financial burden of bringing up children (education, healthcare, general upkeep) can lead couples to opt for smaller families.</li></ol>" },
+            { q: "42. Give two reasons why the high cost of bringing up children leads to reduced fertility.", a: "The high cost of bringing up children leads to reduced fertility because: <ol><li><strong>Direct Financial Strain:</strong> Modern societies often involve significant expenses for education, healthcare, childcare, food, clothing, and other necessities for children. As these costs rise, parents may feel they can only afford to provide adequately for a smaller number of children.</li><li><strong>Opportunity Cost for Parents (especially women):</strong> Raising children often requires significant time and energy, which can mean sacrificing career advancements, income, or personal pursuits. This opportunity cost can lead individuals or couples to decide to have fewer children to balance family life with other goals.</li></ol>" },
+            { q: "43. List three causes of high mortality rates in a population.", a: "Three causes of high mortality rates are: <ol><li><strong>Inadequate medical facilities and lack of access to healthcare:</strong> This includes insufficient hospitals, clinics, trained medical personnel, and essential medicines, leading to untreated illnesses and higher death tolls.</li><li><strong>Prevalence of epidemics and disease outbreaks:</strong> Diseases like HIV/AIDS, malaria, tuberculosis, cholera, and pandemics like COVID-19 can cause widespread deaths if not effectively controlled.</li><li><strong>Low nutritional standards and food insecurity:</strong> Malnutrition weakens the immune system, making people more susceptible to diseases, and severe food shortages (famine) can lead directly to starvation and death, especially among vulnerable groups like children and the elderly.</li></ol>" },
+            { q: "44. Explain how epidemics and disease outbreaks influence mortality rates.", a: "Epidemics and disease outbreaks significantly increase mortality rates by: <ul><li><strong>Causing widespread illness and death:</strong> Infectious diseases can spread rapidly through a population, overwhelming healthcare systems and leading to a large number of fatalities in a short period.</li><li><strong>Particularly affecting vulnerable populations:</strong> Infants, young children, the elderly, and individuals with pre-existing health conditions are often more susceptible to severe illness and death from epidemics.</li><li><strong>Disrupting essential services:</strong> Outbreaks can disrupt food supply chains, access to clean water, and routine healthcare, indirectly contributing to higher mortality.</li><li><strong>Long-term health consequences:</strong> Some diseases can have long-term debilitating effects that may lead to premature death even after the initial outbreak subsides.</li></ul>" },
+            { q: "45. State three measures taken by the government of Kenya to reduce infant mortality rate.", a: "Three measures taken by the Kenyan government to reduce Infant Mortality Rate (IMR) include: <ol><li><strong>Improving and increasing medical facilities, including enhancing immunization programs for children:</strong> This ensures more children are protected against common childhood diseases like measles, polio, and tetanus.</li><li><strong>Educating communities, especially mothers, on better child care, nutrition, and hygiene:</strong> This empowers parents with knowledge to prevent illness and promote healthy child development.</li><li><strong>Providing free or subsidized medical services for infants and pregnant mothers:</strong> This removes financial barriers to accessing essential healthcare, such as antenatal care, skilled birth attendance, and postnatal care.</li></ol>" },
+            { q: "46. Explain two ways in which diseases like HIV/AIDS or COVID-19 slow down economic development.", a: "Diseases like HIV/AIDS or COVID-19 slow down economic development in several ways, including: <ol><li><strong>Reduced labor productivity and supply:</strong> Sickness leads to increased absenteeism from work and reduced efficiency among those who are ill. High mortality rates, especially among the working-age population, lead to a loss of skilled and experienced labor, shrinking the workforce.</li><li><strong>Increased healthcare expenditure and diversion of resources:</strong> Governments and households spend significant amounts of money on treating the sick, purchasing medicines, and managing public health responses. These resources could otherwise be invested in education, infrastructure, or other development projects. Caregivers may also have to leave work to care for sick family members, further reducing economic output.</li></ol>" },
+            // Migration
+            { q: "47. What is 'Internal Migration'?", a: "<strong>Internal Migration</strong> is the movement of people from one place to another <strong>within the boundaries of the same country</strong>. It does not involve crossing international borders." },
+            { q: "48. Name four types of internal migration.", a: "Four types of internal migration are: <ol><li><strong>Rural-Urban Migration</strong> (movement from countryside to towns/cities)</li><li><strong>Urban-Rural Migration</strong> (movement from towns/cities to countryside)</li><li><strong>Urban-Urban Migration</strong> (movement from one town/city to another)</li><li><strong>Rural-Rural Migration</strong> (movement from one rural area to another)</li></ol>" },
+            { q: "49. What is 'Rural to Urban migration'?", a: "<strong>Rural-Urban Migration</strong> is the movement of people from rural (countryside) areas to urban (towns and cities) areas, usually in search of better economic and social opportunities." },
+            { q: "50. Identify three pull factors for rural to urban migration.", a: "Three pull factors attracting people to urban areas are: <ol><li><strong>Better job opportunities and higher wages:</strong> Cities often offer a wider range of employment options and potentially higher income levels compared to rural areas.</li><li><strong>Better education and health facilities:</strong> Urban centers typically have more and better-quality schools, colleges, universities, hospitals, and specialized healthcare services.</li><li><strong>Attractions of urban life (the 'bright lights' syndrome):</strong> Cities offer more entertainment, social amenities, modern lifestyles, and a perception of greater opportunities, which can be appealing, especially to younger people.</li></ol>" },
+            { q: "51. Identify three push factors for rural to urban migration.", a: "Three push factors compelling people to leave rural areas are: <ol><li><strong>Lack of adequate land or landlessness:</strong> Population pressure in rural areas can lead to land fragmentation, small uneconomical holdings, or complete lack of land for farming or settlement.</li><li><strong>Unemployment and underemployment:</strong> Limited job opportunities outside of agriculture, and seasonal nature of farm work can lead to widespread unemployment or underemployment in rural areas.</li><li><strong>Poverty and low income from agriculture:</strong> Diminishing returns from agriculture, low prices for farm produce, and general lack of economic diversification can result in poverty, pushing people to seek better livelihoods elsewhere.</li></ol>" },
+            { q: "52. What is 'Urban to Rural migration'?", a: "<strong>Urban-Rural Migration</strong> is the movement of people from urban (towns and cities) areas back to rural (countryside) areas." },
+            { q: "53. State three causes of urban-rural migration in Kenya.", a: "Three causes of urban-rural migration in Kenya include: <ol><li><strong>Retirement:</strong> Many people who worked in urban areas return to their rural homes upon retirement for a quieter life or to engage in farming.</li><li><strong>High cost of living in urban centers:</strong> Expenses for housing, food, transport, and other essentials are often much higher in cities, prompting some to move to rural areas where living costs may be lower.</li><li><strong>Insecurity and high crime rates in some urban centers:</strong> Concerns about safety and security in cities can push individuals and families to relocate to what they perceive as safer rural environments.</li></ol> Other reasons include seeking employment in rural industries/county governments, shortage of urban housing, desire to invest in rural areas, and pollution/congestion in cities." },
+            { q: "54. What is 'Urban to Urban migration'?", a: "<strong>Urban-Urban Migration</strong> is the movement of people from one urban center (town or city) to another urban center." },
+            { q: "55. Give two causes of urban to urban migration.", a: "Two causes of urban-urban migration are: <ol><li><strong>Job transfers or better employment opportunities:</strong> Individuals may move from one city to another due to a company transfer, or in search of a better-paying job or career advancement in a different urban area.</li><li><strong>Access to higher education or specialized services:</strong> People might move to a city that offers specific educational programs (e.g., universities, specialized colleges) or specialized services (e.g., advanced medical facilities) not available in their current urban location.</li></ol> Other causes include change of profession, business opportunities, affordable housing, and lifestyle preferences." },
+            { q: "56. What is 'Rural to Rural migration'?", a: "<strong>Rural-Rural Migration</strong> is the movement of people from one rural area to another rural area." },
+            { q: "57. Explain two causes of rural-rural migration in Kenya.", a: "Two causes of rural-rural migration in Kenya are: <ol><li><strong>Search for new agricultural land or pasture/water for livestock:</strong> People may move from densely populated rural areas with land shortages to less populated rural areas with available land for farming. Pastoral communities frequently move in search of fresh pasture and water for their animals, especially during dry seasons.</li><li><strong>Displacement by development projects or natural calamities:</strong> Large-scale government projects (like dam construction or irrigation schemes) can displace people who are then resettled in other rural areas. Natural disasters like floods or droughts can also force people to move from one rural location to another.</li></ol> Other causes include search for employment in rural enterprises (e.g., plantations), insecurity, changes in land tenure, or marriage." },
+            { q: "58. What is 'External/International Migration'?", a: "<strong>External/International Migration</strong> is the movement of people from one country to another, involving crossing an international border with the intention of changing their country of usual residence." },
+            { q: "59. Distinguish between 'Immigration' and 'Emigration'.", a: "<strong>Immigration</strong> is the movement of people <strong>into</strong> a country to live there. The people involved are called immigrants.<br><strong>Emigration</strong> is the movement of people <strong>out of</strong> a country to live elsewhere. The people involved are called emigrants." },
+            { q: "60. State three reasons for external migration.", a: "Three common reasons for external migration are: <ol><li><strong>Pursuit of higher education or specialized training:</strong> Individuals may move to another country to attend universities or institutions offering courses or skills not available or of a higher quality than in their home country.</li><li><strong>International job offers or better economic prospects:</strong> The lure of higher salaries, better working conditions, or specific job opportunities can drive people to emigrate.</li><li><strong>Warfare, civil conflict, or political persecution:</strong> People may flee their home countries as refugees or asylum seekers to escape violence, instability, or persecution based on their political beliefs, ethnicity, or religion.</li></ol>" },
+            { q: "61. Give two general causes of migration (either push or pull).", a: "Two general categories of causes for migration are: <ol><li><strong>Economic Factors (Push/Pull):</strong> These include lack of employment or low income in the origin area (push), and availability of jobs, higher wages, or business opportunities in the destination area (pull).</li><li><strong>Social Factors (Push/Pull):</strong> These can involve inadequate social amenities like education and healthcare in the origin area (push), and access to better facilities, joining family members, or seeking a preferred lifestyle in the destination area (pull).</li></ol>" },
+            { q: "62. Explain two negative effects of migration at the place of origin.", a: "Two negative effects of migration at the place of origin (area of out-migration) are: <ol><li><strong>Shortage of labor ('Brain Drain' or 'Brawn Drain'):</strong> The departure of young, able-bodied, and often skilled or educated individuals can lead to a shortage of labor, hindering agricultural productivity, local businesses, and overall development. This is particularly detrimental if the most dynamic segment of the population leaves.</li><li><strong>Family break-ups and social disruption:</strong> Migration, especially of one or more adult members, can lead to separation of families, emotional distress, and changes in family structures and social support systems. This can particularly affect children and the elderly left behind.</li></ol>" },
+            { q: "63. Explain two negative effects of migration at the place of destination.", a: "Two negative effects of migration at the place of destination (area of in-migration) are: <ol><li><strong>Increased pressure on housing, social amenities, and infrastructure:</strong> A large influx of migrants can strain existing resources such as housing (leading to overcrowding and slums), schools, hospitals, water supply, sanitation, and transport systems, especially if planning and investment do not keep pace.</li><li><strong>Potential for unemployment and increased crime rates:</strong> If the number of migrants exceeds available job opportunities, unemployment can rise. This, coupled with social adjustment difficulties, can sometimes lead to an increase in crime rates and social tension.</li></ol>" },
+            { q: "64. State one positive effect of migration on the individual migrant.", a: "One significant positive effect of migration on the individual migrant is often <strong>improved living standards</strong>. This can result from securing a better-paying job, accessing better education or healthcare, or living in a safer or more stable environment than their place of origin." },
+            // Population Structure
+            { q: "65. State three pieces of information that can be derived from a population pyramid.", a: "Three pieces of information that can be derived from a population pyramid are: <ol><li><strong>The proportion of males and females in different age groups:</strong> The pyramid visually shows the number or percentage of males and females in each age cohort.</li><li><strong>The age composition of the population:</strong> It clearly indicates the proportion of the population that is youthful (children/adolescents), working-age adults, and elderly.</li><li><strong>Birth rates and death rates (inferred):</strong> A wide base suggests a high birth rate. A rapidly narrowing pyramid suggests high death rates or low life expectancy, while a more rectangular shape suggests low death rates.</li></ol>" },
+            { q: "66. Describe the shape of a population pyramid for a developing country like Kenya.", a: "The population pyramid for a developing country like Kenya is typically <strong>triangular or pyramidal in shape</strong>. It has a <strong>very wide base</strong>, indicating a high birth rate and a large number of young children. The sides of the pyramid slope inwards steeply (concave shape), showing that the number of people in each successive older age group decreases rapidly due to relatively high death rates. The <strong>top of the pyramid is narrow</strong>, indicating a small proportion of elderly people and thus a lower life expectancy." },
+            { q: "67. State three characteristics of the population structure of a developing country like Kenya.", a: "Three characteristics of the population structure of a developing country like Kenya are: <ol><li><strong>High birth rate and high fertility rate:</strong> This is reflected in the wide base of the population pyramid.</li><li><strong>High proportion of youthful population:</strong> A large percentage of the population is typically under 15 or 20 years old.</li><li><strong>High dependency ratio:</strong> Due to the large number of young dependents relative to the working-age population.</li></ol> Other characteristics include a relatively low life expectancy and often a declining, but still significant, death rate." },
+            { q: "68. Describe the shape of a population pyramid for a developed country like Sweden.", a: "The population pyramid for a developed country like Sweden is typically more <strong>rectangular or barrel-shaped</strong>, or in some cases, may even appear somewhat like an inverted pyramid if the population is declining. It has a <strong>narrower base</strong> compared to developing countries, indicating a low birth rate. The sides are more vertical or bulge outwards in the middle age groups, showing a larger proportion of working-age adults and lower death rates. The <strong>top of the pyramid is relatively wide</strong>, indicating a significant proportion of elderly people and high life expectancy." },
+            { q: "69. State three characteristics of the population structure of a developed country like Sweden.", a: "Three characteristics of the population structure of a developed country like Sweden are: <ol><li><strong>Low birth rate and low fertility rate:</strong> This results in a smaller proportion of young people and a narrower base of the pyramid.</li><li><strong>High life expectancy:</strong> A significant proportion of the population survives into old age, leading to a wider top of the pyramid.</li><li><strong>Large proportion of working-age population and an increasing proportion of elderly population:</strong> This often leads to a lower youth dependency ratio but a potentially rising old-age dependency ratio.</li></ol> Other characteristics include low death rates across most age groups." },
+            { q: "70. How is the 'Dependency Ratio' calculated?", a: "The <strong>Dependency Ratio</strong> is calculated as the sum of the population considered economically unproductive (dependents: typically children below a certain age, e.g., 15 or 20 years, and elderly people above a certain age, e.g., 60 or 65 years) divided by the economically productive population (working-age: typically between the child and elderly age thresholds), all multiplied by 100. <blockquote>Dependency Ratio = ((Population &lt;15/20 years) + (Population &gt;60/65 years)) / (Population 15/20 - 59/64 years) x 100</blockquote>" },
+            { q: "71. What is the main implication of a high dependency ratio for a country's economy?", a: "The main implication of a <strong>high dependency ratio</strong> for a country's economy is that <strong>each working person has to support a larger number of dependents</strong> (children and/or elderly). This places a significant strain on economic resources, as a larger proportion of national income must be allocated to social services like education, healthcare, and pensions, rather than to savings and investment that could fuel economic growth. It can also mean a heavy burden on individual families." },
+            // Consequences of Population Growth
+            { q: "72. State three causes of rapid population growth in Kenya.", a: "Three causes of rapid population growth in Kenya include: <ol><li><strong>Improved health services and medical facilities:</strong> This has led to a significant reduction in death rates, especially infant and child mortality, while birth rates have remained relatively high or declined more slowly.</li><li><strong>Cultural beliefs and practices:</strong> Practices such as polygamy, early marriages (which extend a woman's reproductive period), and a preference for large families (for labor, prestige, or old-age security) contribute to high fertility.</li><li><strong>Improved nutrition:</strong> Better food availability and nutritional standards contribute to better health, lower mortality, and potentially higher fertility.</li></ol>" },
+            { q: "73. Explain two consequences of rapid population growth in Kenya.", a: "Two significant consequences of rapid population growth in Kenya are: <ol><li><strong>High unemployment rate:</strong> A rapidly growing population, especially a youthful one, means a large number of new entrants into the job market each year. If economic growth and job creation do not keep pace, it leads to high levels of unemployment and underemployment, contributing to poverty and social problems.</li><li><strong>Pressure on land and resources:</strong> More people require more land for settlement and agriculture. This leads to land fragmentation (plots becoming too small for viable farming), landlessness, encroachment into forests and marginal lands (causing deforestation and environmental degradation), and increased competition for resources like water.</li></ol>" },
+            { q: "74. Give two ways rapid population growth puts pressure on land.", a: "Rapid population growth puts pressure on land in ways such as: <ol><li><strong>Land Fragmentation:</strong> As population increases in agricultural areas, land inherited by successive generations is subdivided into smaller and smaller plots. These small plots can become uneconomical to farm efficiently, leading to reduced productivity and increased poverty.</li><li><strong>Encroachment into Marginal Lands and Forests:</strong> The demand for more agricultural land and land for settlement pushes people to cultivate ecologically fragile marginal lands (e.g., semi-arid areas, steep slopes) or to clear forests. This can lead to soil erosion, deforestation, loss of biodiversity, and desertification.</li></ol>" },
+            { q: "75. How does rapid population growth affect the provision of social amenities?", a: "Rapid population growth places a significant <strong>strain on the provision of social amenities</strong> such as schools, hospitals, housing, clean water, and sanitation. The demand for these services increases faster than the government or private sector can supply them, leading to: <ul><li>Overcrowding in schools and hospitals.</li><li>Shortages of teachers, medical personnel, and equipment.</li><li>Inadequate housing, leading to the growth of slums and informal settlements.</li><li>Insufficient clean water supply and sanitation facilities, increasing health risks.</li><li>Overall decline in the quality of services provided.</li></ul>" },
+            { q: "76. State two benefits of slow population growth.", a: "Two benefits of slow population growth (or a stable population) are: <ol><li><strong>Reduced pressure on land and natural resources:</strong> With fewer people, there is less demand for land for agriculture and settlement, and less strain on resources like water, forests, and minerals, making sustainable management easier.</li><li><strong>Lower dependency ratio and potential for higher savings and investment:</strong> A smaller proportion of dependents (especially young ones) means that families and the government can potentially save more and invest in economic development, education quality, and healthcare, leading to higher standards of living.</li></ol>" },
+            { q: "77. Explain two negative effects of slow population growth (or underpopulation).", a: "Two negative effects of slow population growth or underpopulation can be: <ol><li><strong>Inadequate labor supply and manpower shortage:</strong> A small or shrinking working-age population can lead to labor shortages, hindering economic growth and development. Industries may struggle to find workers, and the country might become reliant on immigrant labor.</li><li><strong>Underutilization of resources and social amenities:</strong> Existing infrastructure, social services (like schools and hospitals), and natural resources may be underused if the population is too small to support them effectively. This can lead to high per capita costs for maintaining these services and missed opportunities for economic development.</li></ol> An aging population, often associated with slow growth, can also lead to a high old-age dependency ratio and strain on pension and healthcare systems." },
+            { q: "78. What are the implications of a country having a young population?", a: "A country with a young population (a high proportion of children and youth) faces several implications: <ul><li><strong>High demand for social services:</strong> There is increased demand for schools, pediatric healthcare, maternal health services, and recreational facilities.</li><li><strong>High youth dependency ratio:</strong> A large number of young people depend on a relatively smaller working-age population for support, straining family and national budgets.</li><li><strong>Large future labor force:</strong> This presents a potential 'demographic dividend' if these young people can be educated, skilled, and find productive employment. However, it also means a significant challenge in creating enough jobs.</li><li><strong>Potential for social and political dynamism:</strong> Young populations can be a source of innovation, energy, and social change.</li><li><strong>Risk of youth unemployment and unrest:</strong> If economic opportunities are lacking, high youth unemployment can lead to frustration, social instability, and increased crime.</li><li><strong>High demand for goods and services consumed by young people:</strong> This influences market patterns (e.g., for education materials, certain foods, fashion, entertainment).</li></ul>" },
+            { q: "79. Explain two effects of a high ageing population in a country.", a: "Two significant effects of a high ageing population (a large proportion of elderly people) are: <ol><li><strong>Increased cost of healthcare and social care:</strong> Elderly people generally require more medical attention and long-term care services. This places a growing financial burden on healthcare systems, social security programs, and families.</li><li><strong>Strain on pension systems and potential labor shortages:</strong> A larger number of retirees relative to the working-age population puts pressure on pension funds. It can also lead to a shortage of labor in certain sectors if not enough younger workers are available to replace those retiring, potentially slowing economic growth.</li></ol>" },
+            // Comparative Studies: Kenya and Sweden
+            { q: "80. State two similarities between population trends in Kenya and Sweden.", a: "Two similarities between population trends in Kenya and Sweden are: <ol><li><strong>Uneven Population Distribution:</strong> Both countries exhibit uneven population distribution, with concentrations in certain areas (e.g., fertile highlands and urban centers in Kenya; southern and central urban areas in Sweden) and sparsely populated regions (e.g., arid north in Kenya; arctic north in Sweden), influenced by factors like climate, relief, and economic opportunities.</li><li><strong>Trend of Urbanization:</strong> In both countries, there is an ongoing trend of population concentration in urban areas, although the overall level of urbanization is much higher in Sweden than in Kenya.</li></ol>" },
+            { q: "81. State two differences between population structure characteristics of Kenya and Sweden.", a: "Two key differences in population structure characteristics are: <ol><li><strong>Proportion of Youthful Population:</strong> Kenya has a very high proportion of youthful population (e.g., over 40% under 15/20 years), resulting in a broad-based population pyramid. Sweden has a low proportion of youthful population (e.g., around 15-20%), leading to a narrower pyramid base.</li><li><strong>Life Expectancy and Proportion of Elderly:</strong> Kenya has a relatively low life expectancy (around 60s) and a small proportion of elderly people (e.g., around 3-5% aged 65+). Sweden has a high life expectancy (around 80s) and a large and increasing proportion of elderly people (e.g., over 20% aged 65+).</li></ol>" },
+            { q: "82. Give two reasons for the slow population growth in Sweden.", a: "Two reasons for the slow population growth in Sweden are: <ol><li><strong>Widespread knowledge and use of modern contraceptives and family planning services:</strong> This allows individuals and couples to effectively control family size according to their preferences, generally leading to smaller families.</li><li><strong>High levels of female education and participation in the workforce:</strong> Women in Sweden have high educational attainment and labor force participation rates. This often leads to delayed marriage, delayed childbearing, and a preference for fewer children as women balance careers and family life.</li></ol> Other factors include the high cost of raising children and a strong social welfare system reducing reliance on children for old-age security." },
+            { q: "83. Explain why urban areas in Sweden are more densely populated relative to its overall national density, compared to Kenya.", a: "While both countries are urbanizing, Sweden has a much higher overall level of urbanization. The vast majority of Sweden's population lives in urban areas, particularly in the southern and central regions. This concentration is due to: <ul><li><strong>Economic Structure:</strong> Sweden has a highly developed, post-industrial economy where most employment is in services and manufacturing, which are concentrated in cities.</li><li><strong>Harsh Climate in Rural North:</strong> Large parts of northern Sweden have a very cold climate and are sparsely populated, pushing population towards milder, more economically viable urban centers in the south.</li><li><strong>Efficient Infrastructure:</strong> Well-developed infrastructure and amenities in Swedish cities make them attractive.</li></ul>In Kenya, while urban areas are growing rapidly and are densely populated, a larger proportion of the total population still resides in rural areas engaged in agriculture. Thus, the contrast between urban density and overall national density might appear less stark than in Sweden where rural areas are exceptionally sparse." },
+            { q: "84. What is 'Sex Ratio'?", a: "<strong>Sex Ratio</strong> is the proportion of males to females in a population. It is often expressed as the number of males per 100 females. For example, a sex ratio of 95 means there are 95 males for every 100 females." },
+            // Demographic Transition Theory
+            { q: "85. Explain the concept of 'Demographic Transition Theory'.", a: "The <strong>Demographic Transition Theory (DTT)</strong> describes the historical shift in population dynamics that countries typically experience as they undergo social and economic development. It outlines a progression from a state of high birth rates and high death rates (resulting in slow population growth) to a state of low birth rates and low death rates (also resulting in slow or stable population growth). The 'transition' period between these two states is often characterized by a rapid decline in death rates followed by a later decline in birth rates, leading to a period of significant population increase." },
+            { q: "86. Briefly describe Stage 1 of the Demographic Transition Theory.", a: "<strong>Stage 1 (High Stationary/Pre-Industrial):</strong> This stage is characterized by: <ul><li><strong>High and fluctuating birth rates:</strong> Due to factors like lack of family planning, high infant mortality (leading to more births to ensure some survive), and cultural norms favoring large families.</li><li><strong>High and fluctuating death rates:</strong> Due to factors like prevalent diseases, poor sanitation, famine, and inadequate medical care.</li><li>Result: <strong>Little or no long-term population growth</strong>, as high births are largely offset by high deaths. Population size remains relatively stable but low. This stage was typical of most societies before the 18th/19th century.</li></ul>" },
+            { q: "87. Briefly describe Stage 2 of the Demographic Transition Theory.", a: "<strong>Stage 2 (Early Expanding/Early Industrial):</strong> This stage is characterized by: <ul><li><strong>High and stable birth rates:</strong> Cultural norms favoring large families persist.</li><li><strong>Rapidly declining death rates:</strong> Due to improvements in public health, sanitation, food supply, and medical advancements (e.g., vaccinations, antibiotics). Infant and child mortality rates fall significantly.</li><li>Result: A <strong>very rapid increase in population growth</strong> (population explosion) because the gap between high births and falling deaths widens considerably. Many developing countries, like Kenya, are often considered to be in this stage or moving through it.</li></ul>" },
+            { q: "88. Which stage of the Demographic Transition Theory is Kenya currently in, according to the provided sources?", a: "According to the provided sources, Kenya is currently in <strong>Stage 2 (Early Expanding)</strong> of the Demographic Transition Theory. This is characterized by a high birth rate and a declining death rate, leading to a high population growth rate." },
+            { q: "89. Briefly describe Stage 3 of the Demographic Transition Theory.", a: "<strong>Stage 3 (Late Expanding/Late Industrial):</strong> This stage is characterized by: <ul><li><strong>Declining birth rates:</strong> This occurs due to factors like increased access to education (especially for women), urbanization (children become more of an economic liability than an asset), increased use of contraception, changing social norms towards smaller families, and lower infant mortality (less need for 'replacement' births).</li><li><strong>Death rates continue to decline but at a slower pace</strong>, or stabilize at low levels.</li><li>Result: <strong>Population growth continues, but the rate of increase begins to slow down</strong> as the gap between birth and death rates narrows.</li></ul>" },
+            { q: "90. Briefly describe Stage 4 of the Demographic Transition Theory.", a: "<strong>Stage 4 (Low Stationary/Post-Industrial):</strong> This stage is characterized by: <ul><li><strong>Low birth rates:</strong> Birth rates fall to a level close to or even below the death rate. Family sizes are small, and contraception is widely used.</li><li><strong>Low death rates:</strong> Death rates are low and stable, with high life expectancy.</li><li>Result: <strong>Very low or zero population growth</strong>. The population size becomes relatively stable at a high level. Many developed countries, like Sweden, are in this stage. Some may even enter a Stage 5 where birth rates fall below death rates, leading to population decline.</li></ul>" },
+            { q: "91. Which stage of the Demographic Transition Theory is Sweden currently in, according to the sources?", a: "According to the provided sources, Sweden is currently in <strong>Stage 4 (Low Stationary)</strong> of the Demographic Transition Theory. This is characterized by low birth and death rates, leading to a low population growth rate, with the population being relatively static or growing very slowly, mainly due to immigration." },
+            { q: "92. Explain the difference between natural population growth and numerical population growth.", a: "<strong>Natural Population Growth</strong> refers to the change in population size due solely to the difference between the number of births and the number of deaths in a specific period, usually a year. It is calculated as: <blockquote>Natural Population Growth = Births - Deaths</blockquote> or as a rate: <blockquote>Natural Population Growth Rate = (Crude Birth Rate - Crude Death Rate) / 10 (expressed as a percentage)</blockquote> It does not account for migration.<br><br><strong>Numerical Population Growth</strong> (or Absolute Population Growth) refers to the actual change in the total number of people in an area over a given period. It considers all factors affecting population size: births, deaths, and net migration (immigration minus emigration). It is calculated as: <blockquote>Numerical Population Growth = (Population at end of period) - (Population at beginning of period)</blockquote> Or, it can be expressed as: <blockquote>Numerical Population Growth = (Births - Deaths) + (Immigrants - Emigrants)</blockquote>" },
+            // Population and Other Geographical Themes
+            { q: "93. Identify one way land reclamation relates to population studies.", a: "Land reclamation, such as draining swamps or reclaiming land from the sea, can <strong>create new areas for human settlement and agriculture</strong>. This directly impacts population distribution by allowing people to move into and inhabit previously unusable areas, potentially relieving population pressure elsewhere or supporting a larger overall population." },
+            { q: "94. Identify one way fishing relates to population studies.", a: "Fishing can be a significant economic activity that <strong>supports the livelihoods of coastal or lakeside populations</strong>. The availability of fish resources can influence population density in these areas. Overfishing, driven by population pressure or market demand, can deplete fish stocks, impacting the food security and economic well-being of these communities, potentially leading to out-migration or a decline in population health." },
+            { q: "95. Identify one way tourism relates to population studies.", a: "Tourism can lead to <strong>seasonal or permanent migration of people to tourist destinations</strong> in search of employment in hotels, restaurants, and other service industries. This influx can significantly increase the local population density, put pressure on resources and social amenities, and sometimes lead to cultural changes in the host communities." },
+            { q: "96. Identify one way the study of energy relates to population studies.", a: "The size, growth, and lifestyle of a population heavily influence the <strong>demand for energy resources</strong>. Rapid population growth and increasing affluence often lead to higher energy consumption for domestic, industrial, and transport purposes. This, in turn, impacts the environment through resource depletion and pollution, and can be a factor in national and international policy related to energy security and sustainability." },
+            { q: "97. Identify one way industry relates to population studies.", a: "Industrialization often acts as a major <strong>pull factor for migration</strong>, leading to the growth of urban populations around industrial centers. Industries provide employment opportunities, which attract people from rural areas or other regions. This concentration of population in industrial areas has significant demographic consequences, including changes in population density, structure, and social dynamics." },
+            { q: "98. Identify one way transport relates to population studies.", a: "The development of transport networks (roads, railways, ports, airports) significantly influences <strong>population distribution and mobility</strong>. Accessible areas with good transport links tend to attract more settlement and economic activity, leading to higher population densities. Transport also facilitates migration, both internal and international, and connects populations, enabling the flow of goods, services, and ideas." },
+            { q: "99. Identify one way trade relates to population studies.", a: "Trade patterns and opportunities can influence population distribution and economic well-being. Areas that are centers of trade (e.g., port cities, market towns) often attract large populations due to employment and business prospects. The size and purchasing power of a population also constitute the <strong>market for traded goods and services</strong>, influencing the scale and nature of trade." },
+            { q: "100. How does the syllabus suggest population data can be presented using graphical methods, apart from age-sex pyramids?", a: "Apart from age-sex pyramids (population pyramids), the syllabus suggests that population data can be presented using various other graphical methods. According to the provided notes on statistical methods, these can include: <ul><li><strong>Dot maps:</strong> To show population distribution.</li><li><strong>Choropleth maps:</strong> To show population density or other demographic rates by administrative areas.</li><li><strong>Line graphs:</strong> To show trends in population growth, birth rates, or death rates over time.</li><li><strong>Bar graphs (simple, comparative, cumulative):</strong> To compare population figures across regions or groups, or to show components of population change.</li><li><strong>Pie charts or Divided bars/rectangles:</strong> To show population composition (e.g., by ethnicity, occupation, or rural/urban).</li></ul>" }
+        ];
+
+
+        // --- 2. DOM Elements ---
+        const sidebarNavEl = document.getElementById('sidebar-nav');
+        const contentAreaEl = document.getElementById('content-area');
+        const breadcrumbTrailEl = document.getElementById('breadcrumb-trail');
+        // const breadcrumbDesktopEl = document.getElementById('breadcrumb-desktop'); // If you have a separate one for desktop
+        const prevButtonEl = document.getElementById('prev-button');
+        const nextButtonEl = document.getElementById('next-button');
+        const menuToggleEl = document.getElementById('menu-toggle');
+        const wrapperEl = document.getElementById('wrapper');
+        const mainContentScrollAreaEl = document.getElementById('main-content-scroll-area'); // Main scrollable area
+
+        // --- 3. State Variables ---
+        let currentGuideDataIndex = -1; 
+
+        // --- 4. Core Functions ---
+        function populateSidebar() {
+            if (!sidebarNavEl) {
+                console.error("Sidebar nav element (#sidebar-nav) not found!");
+                return;
+            }
+            sidebarNavEl.innerHTML = ''; // Clear existing items
+            let currentCategory = "";
+
+            guideData.forEach((item, index) => {
+                if (item.category && item.category !== currentCategory) {
+                    currentCategory = item.category;
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'category-heading';
+                    categoryDiv.textContent = currentCategory;
+                    sidebarNavEl.appendChild(categoryDiv);
+                }
+
+                const link = document.createElement('a');
+                link.href = `#${item.id}`; // Use ID for href
+                link.className = 'list-group-item list-group-item-action'; // Removed p-3 for consistency with hover
+                if (!item.isChapter && item.parentId) { 
+                    link.classList.add('sub-item');
+                } else if (item.isChapter) {
+                    link.classList.add('fw-bold'); 
+                }
+                link.textContent = item.title;
+                link.setAttribute('role', 'button');
+                link.setAttribute('tabindex', '0'); // Make it focusable
+                link.dataset.index = index; // Store index for easy loading
+
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContentByIndex(index, 'directClick');
+                    // For mobile, close sidebar after click
+                    if (window.innerWidth < 992 && wrapperEl.classList.contains('toggled')) {
+                        wrapperEl.classList.remove('toggled');
+                    }
+                });
+                link.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        loadContentByIndex(index, 'directClick');
+                         if (window.innerWidth < 992 && wrapperEl.classList.contains('toggled')) {
+                            wrapperEl.classList.remove('toggled');
+                        }
+                    }
+                });
+                sidebarNavEl.appendChild(link);
+            });
+        }
+        
+        function loadContentByIndex(index, navigationSource = 'directClick') {
+            if (index < 0 || index >= guideData.length) {
+                console.warn("Invalid content index:", index);
+                if (guideData.length > 0) index = 0; 
+                else {
+                    contentAreaEl.innerHTML = "<p>No content available to display.</p>";
+                    return;
+                }
+            }
+
+            currentGuideDataIndex = index;
+            const sectionData = guideData[index]; 
+
+            if (!sectionData || !contentAreaEl) {
+                console.error("Section data or content area element missing for index:", index);
+                contentAreaEl.innerHTML = "<p>Error loading content.</p>";
+                return;
+            }
+            
+            contentAreaEl.innerHTML = sectionData.content; 
+
+            updateActiveSidebarLink();
+            updateBreadcrumbsUI(sectionData);
+            updateNavigationButtons();
+            sessionStorage.setItem('currentPopulationSectionIndex', currentGuideDataIndex); 
+            window.location.hash = sectionData.id;
+
+
+            // If the loaded content is the revision questions chapter
+            if (sectionData.id === "pop_ch8_rev") { 
+                renderRevisionQuestions();
+            }
+
+            // Scroll to top of content area, unless navigation was by scroll
+            if (navigationSource !== 'scroll' && mainContentScrollAreaEl) {
+                mainContentScrollAreaEl.scrollTop = 0; 
+            }
+            
+            // Typeset MathJax if available
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                MathJax.typesetPromise([contentAreaEl]).catch(err => console.error('MathJax typesetting error:', err));
+            }
+        }
+
+        function updateActiveSidebarLink() {
+            if (!sidebarNavEl) return;
+            const links = sidebarNavEl.querySelectorAll('.list-group-item');
+            links.forEach(link => link.classList.remove('active'));
+
+            if (currentGuideDataIndex === -1 || currentGuideDataIndex >= guideData.length) return;
+            
+            const activeEntry = guideData[currentGuideDataIndex];
+            if (!activeEntry) return;
+
+            // Highlight current section
+            const currentLink = sidebarNavEl.querySelector(`[data-index="${currentGuideDataIndex}"]`);
+            if (currentLink) {
+                currentLink.classList.add('active');
+            }
+
+            // If it's a sub-item, also highlight its parent chapter if not already active
+            if (activeEntry.parentId) { 
+                const parentEntry = guideData.find(item => item.id === activeEntry.parentId && item.isChapter);
+                if (parentEntry) {
+                    const parentIndex = guideData.indexOf(parentEntry);
+                    const parentChapterLink = sidebarNavEl.querySelector(`[data-index="${parentIndex}"]`);
+                    // Add active only if it's not the same as the current link (i.e. don't double-active a chapter page)
+                    if (parentChapterLink && parentIndex !== currentGuideDataIndex) {
+                         // parentChapterLink.classList.add('active'); // Decided against making parent also look fully active
+                    }
+                }
+            }
+        }
+
+        function updateBreadcrumbsUI(currentSectionData) {
+            const trails = [breadcrumbTrailEl]; // Assuming one breadcrumb trail
+            trails.forEach(trail => {
+                if (!trail) return;
+                trail.innerHTML = ''; // Clear existing breadcrumbs
+
+                // Home breadcrumb
+                const homeLi = document.createElement('li');
+                homeLi.classList.add('breadcrumb-item');
+                const homeLink = document.createElement('a');
+                homeLink.href = '#'; // Or link to the first section
+                homeLink.textContent = 'Home';
+                homeLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContentByIndex(0, 'directClick'); 
+                });
+                homeLi.appendChild(homeLink);
+                trail.appendChild(homeLi);
+
+                if (!currentSectionData) return;
+
+                // Parent chapter breadcrumb (if exists)
+                const parentEntry = currentSectionData.parentId ? guideData.find(item => item.id === currentSectionData.parentId && item.isChapter) : null;
+                
+                if (parentEntry) { 
+                    const parentChapterLi = document.createElement('li');
+                    parentChapterLi.classList.add('breadcrumb-item');
+                    const parentChapterLink = document.createElement('a');
+                    parentChapterLink.href = `#${parentEntry.id}`;
+                    parentChapterLink.textContent = parentEntry.breadcrumb || parentEntry.title.replace(/^[0-9]+\.\s*/, ''); 
+                    parentChapterLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        loadContentByIndex(guideData.indexOf(parentEntry), 'directClick');
+                    });
+                    parentChapterLi.appendChild(parentChapterLink);
+                    trail.appendChild(parentChapterLi);
+                }
+                
+                // Current section breadcrumb (active)
+                if (currentSectionData.breadcrumb) {
+                    const activeLi = document.createElement('li');
+                    activeLi.classList.add('breadcrumb-item', 'active');
+                    activeLi.setAttribute('aria-current', 'page');
+                    activeLi.textContent = currentSectionData.breadcrumb; 
+                    trail.appendChild(activeLi);
+                }
+            });
+        }
+        
+        function updateNavigationButtons() {
+            if (prevButtonEl) prevButtonEl.disabled = currentGuideDataIndex <= 0;
+            if (nextButtonEl) nextButtonEl.disabled = currentGuideDataIndex >= guideData.length - 1;
+        }
+
+        function renderRevisionQuestions() {
+            const container = document.getElementById('population-revision-questions-container'); 
+            if (!container) {
+                console.error("Revision questions container 'population-revision-questions-container' not found.");
+                return;
+            }
+            container.innerHTML = ''; // Clear previous questions
+            const accordion = document.createElement('div');
+            accordion.className = 'accordion'; // Bootstrap accordion class
+            accordion.id = 'populationRevisionAccordion'; 
+
+            populationRevisionQuestionsData.forEach((item, index) => { 
+                const questionId = `pop-question-${index}`; // Corrected template literal
+                const answerId = `pop-answer-${index}`;   // Corrected template literal
+
+                const accordionItem = document.createElement('div');
+                accordionItem.className = 'accordion-item revision-question-item';
+
+                const header = document.createElement('h2'); 
+                header.className = 'accordion-header'; 
+                header.id = `heading-${questionId}`; // Corrected template literal
+
+                const button = document.createElement('button'); 
+                button.className = 'accordion-button collapsed revision-question-header'; 
+                button.type = 'button';
+                button.setAttribute('data-bs-toggle', 'collapse');
+                button.setAttribute('data-bs-target', `#${answerId}`); // Corrected template literal
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-controls', answerId);
+                // Sanitize question text before setting innerHTML if it could come from unsafe sources
+                button.innerHTML = `${item.q ? item.q : 'Question not available'} <span class="arrow-icon ms-auto">&#9660;</span>`; // Corrected template literal
+                
+                header.appendChild(button);
+
+                const answerCollapseDiv = document.createElement('div');
+                answerCollapseDiv.id = answerId;
+                answerCollapseDiv.className = 'accordion-collapse collapse revision-answer';
+                answerCollapseDiv.setAttribute('aria-labelledby', `heading-${questionId}`); // Corrected template literal
+                answerCollapseDiv.setAttribute('data-bs-parent', '#populationRevisionAccordion'); // Link to parent accordion
+
+                const answerBody = document.createElement('div');
+                answerBody.className = 'accordion-body';
+                // Sanitize answer HTML if it could come from unsafe sources
+                answerBody.innerHTML = item.a ? item.a : '<p>Answer not available</p>';
+                
+                answerCollapseDiv.appendChild(answerBody);
+                accordionItem.appendChild(header);
+                accordionItem.appendChild(answerCollapseDiv);
+                accordion.appendChild(accordionItem);
+            });
+            container.appendChild(accordion);
+        }
+
+
+        // --- 5. Event Listeners ---
+        if (menuToggleEl) {
+            menuToggleEl.addEventListener('click', () => wrapperEl.classList.toggle('toggled'));
+        }
+
+        if (prevButtonEl) {
+            prevButtonEl.addEventListener('click', () => {
+                if (currentGuideDataIndex > 0) loadContentByIndex(currentGuideDataIndex - 1, 'button');
+            });
+        }
+
+        if (nextButtonEl) {
+            nextButtonEl.addEventListener('click', () => {
+                if (currentGuideDataIndex < guideData.length - 1) loadContentByIndex(currentGuideDataIndex + 1, 'button');
+            });
+        }
+        
+        // Scrollspy-like functionality
+        if (mainContentScrollAreaEl && contentAreaEl) {
+            let scrollTimeout;
+            mainContentScrollAreaEl.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    let mostProminentItemId = null;
+                    let minDistanceToViewportTop = Infinity;
+                    // Adjust viewportTopEdge to be slightly lower to catch headings earlier
+                    const viewportTopEdge = mainContentScrollAreaEl.getBoundingClientRect().top + (window.innerHeight * 0.2); 
+
+                    guideData.forEach((item) => {
+                        const element = contentAreaEl.querySelector(`#${item.id}`); 
+                        if (element) {
+                            const rect = element.getBoundingClientRect();
+                            // Check if element is within a reasonable range of the viewport top
+                            if (rect.top < viewportTopEdge + 100 && rect.bottom > viewportTopEdge - 100) { 
+                                const distance = Math.abs(rect.top - viewportTopEdge);
+                                if (distance < minDistanceToViewportTop) {
+                                    minDistanceToViewportTop = distance;
+                                    mostProminentItemId = item.id;
+                                }
+                            }
+                        }
+                    });
+                    
+                    // Fallbacks for top/bottom of scroll
+                    if (!mostProminentItemId) { 
+                        if (mainContentScrollAreaEl.scrollTop <= 50 && guideData.length > 0) { // Increased threshold for top
+                            mostProminentItemId = guideData[0].id;
+                        } else if ((mainContentScrollAreaEl.scrollTop + mainContentScrollAreaEl.clientHeight) >= mainContentScrollAreaEl.scrollHeight - 50 && guideData.length > 0) { // Increased threshold for bottom
+                            mostProminentItemId = guideData[guideData.length - 1].id;
+                        }
+                    }
+
+                    if (mostProminentItemId && mostProminentItemId !== (guideData[currentGuideDataIndex] ? guideData[currentGuideDataIndex].id : null)) {
+                        const newIndex = guideData.findIndex(item => item.id === mostProminentItemId);
+                        if (newIndex !== -1 && newIndex !== currentGuideDataIndex) {
+                            // Update UI based on scroll, but don't reload content or trigger scroll to top
+                            currentGuideDataIndex = newIndex; 
+                            sessionStorage.setItem('currentPopulationSectionIndex', currentGuideDataIndex); 
+                            updateActiveSidebarLink();
+                            const currentSectionData = guideData[currentGuideDataIndex];
+                            updateBreadcrumbsUI(currentSectionData);
+                            updateNavigationButtons();
+                            window.history.replaceState(null, '', `#${currentSectionData.id}`); // Update hash without adding to history
+                        }
+                    }
+                }, 150); // Debounce scroll event
+            });
+        }
+
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set current year in footer
+            const currentYearEl = document.getElementById('currentYear');
+            if (currentYearEl) {
+                currentYearEl.textContent = new Date().getFullYear();
+            }
+
+            populateSidebar(); 
+            
+            const savedIndexStr = sessionStorage.getItem('currentPopulationSectionIndex'); 
+            let initialIndex = 0; 
+
+            // Check for hash in URL first
+            const hash = window.location.hash.substring(1); 
+            if (hash) {
+                const itemFromHash = guideData.find(item => item.id === hash);
+                if (itemFromHash) {
+                    initialIndex = guideData.indexOf(itemFromHash);
+                }
+            } else if (savedIndexStr !== null) { // Then check session storage
+                const savedIdx = parseInt(savedIndexStr, 10);
+                if (!isNaN(savedIdx) && savedIdx >= 0 && savedIdx < guideData.length) {
+                    initialIndex = savedIdx;
+                }
+            }
+            
+            if (guideData.length > 0) {
+                 // Use a small timeout to ensure DOM is fully ready, especially for scrolling to hash
+                 setTimeout(() => { 
+                    loadContentByIndex(initialIndex, 'initialLoad');
+                    // If loaded by hash, try to scroll to the element
+                    if (hash && initialIndex > 0) { // Avoid scrolling for the very first item
+                        const targetElement = document.getElementById(hash);
+                        if (targetElement && mainContentScrollAreaEl) {
+                           // Calculate position relative to the scroll container
+                           const scrollContainerTop = mainContentScrollAreaEl.getBoundingClientRect().top;
+                           const targetElementTop = targetElement.getBoundingClientRect().top;
+                           const offset = targetElementTop - scrollContainerTop - 60; // 60px for sticky navbar
+                           mainContentScrollAreaEl.scrollTop += offset;
+                        }
+                    }
+                 }, 50); 
+            } else {
+                console.error("guideData is empty. Cannot load initial content.");
+                if(contentAreaEl) contentAreaEl.innerHTML = "<p>No content available to display.</p>";
+            }
+        });
+    </script>
+</body>
+</html>

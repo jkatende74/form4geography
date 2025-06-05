@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCSE Geography - Trade Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // MathJax v3 configuration
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f6f9; 
+            color: #343a40; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+
+        #sidebar-wrapper {
+            min-height: 100vh;
+            width: 280px; 
+            background-color: #ffffff; 
+            border-right: 1px solid #dee2e6; 
+            transition: margin-left 0.25s ease-out;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1030; 
+            overflow-y: auto; 
+            padding-top: 10px; 
+        }
+
+        .sidebar-heading {
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            color: #0056b3; 
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #e9ecef; 
+        }
+        .sidebar-heading img {
+            width: 32px; 
+            height: 32px;
+            margin-right: 0.75rem;
+        }
+
+        #sidebar-nav .list-group-item {
+            border: none; 
+            padding: 0.8rem 1.25rem; 
+            font-size: 0.95rem;
+            color: #495057; 
+            background-color: transparent; 
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-left-color 0.2s ease-in-out;
+            border-left: 4px solid transparent; 
+        }
+
+        #sidebar-nav .list-group-item:hover,
+        #sidebar-nav .list-group-item:focus {
+            background-color: #eef2f7; 
+            color: #0056b3; 
+            text-decoration: none;
+            border-left-color: #007bff; 
+        }
+
+        #sidebar-nav .list-group-item.active {
+            background-color: #007bff; 
+            color: white;
+            font-weight: 500;
+            border-left-color: #0056b3; 
+        }
+
+        #sidebar-nav .category-heading {
+            font-size: 0.85rem; 
+            font-weight: bold;
+            color: #6c757d;
+            padding: 1rem 1.25rem 0.3rem; 
+            text-transform: uppercase;
+            margin-top: 0.75rem; 
+        }
+         #sidebar-nav .sub-item { 
+            padding-left: 2.5rem; 
+            font-size: 0.9rem;
+        }
+
+        #page-content-wrapper {
+            flex: 1;
+            padding-left: 280px; 
+            transition: padding-left 0.25s ease-out;
+            display: flex;
+            flex-direction: column;
+            min-width: 0; 
+            background-color: #f4f6f9; 
+        }
+
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: -280px; 
+        }
+
+        #wrapper.toggled #page-content-wrapper {
+            padding-left: 0; 
+        }
+
+        @media (max-width: 991.98px) { 
+            #sidebar-wrapper {
+                margin-left: -280px; 
+                position: fixed; 
+                height: 100%;
+                z-index: 1040; 
+            }
+            #wrapper.toggled #sidebar-wrapper { margin-left: 0; }
+            #page-content-wrapper { padding-left: 0; }
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+            background-color: #ffffff !important; 
+        }
+        .navbar .navbar-brand, .navbar .breadcrumb-item a, .navbar .breadcrumb-item.active {
+             color: #343a40 !important; 
+        }
+         .navbar .breadcrumb-item a:hover { color: #0056b3 !important; }
+
+        #menu-toggle {
+            border: 1px solid #007bff;
+            color: #007bff;
+        }
+        #menu-toggle:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            margin-bottom: 0; 
+        }
+        .breadcrumb-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .breadcrumb-item a:hover { text-decoration: underline; }
+        .breadcrumb-item.active { color: #6c757d; }
+
+        #content-area {
+            background-color: #ffffff; 
+            border-radius: 0.375rem; 
+            min-height: calc(100vh - 160px); 
+            box-shadow: 0 0 15px rgba(0,0,0,0.05); 
+        }
+
+        #content-area h1, #content-area h2, #content-area h3, #content-area h4, #content-area h5 {
+            color: #0056b3; 
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        #content-area h1 { font-size: 2rem; border-bottom: 2px solid #e9ecef; padding-bottom: 0.5rem;}
+        #content-area h2 { font-size: 1.75rem; }
+        #content-area h3 { font-size: 1.5rem; margin-top: 1.75rem; }
+        #content-area h4 { font-size: 1.25rem; margin-top: 1.5rem; }
+
+        #content-area p, #content-area ul, #content-area ol, #content-area table {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+        #content-area ul, #content-area ol { padding-left: 1.5rem; }
+        #content-area li { margin-bottom: 0.5rem; }
+        #content-area ul ul, #content-area ol ol { 
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+        }
+         #content-area .table {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        #content-area .table th {
+            background-color: #e9ecef; 
+            color: #343a40;
+            font-weight: 600;
+        }
+         #content-area .table td, #content-area .table th {
+            vertical-align: middle;
+        }
+
+        .diagram-placeholder {
+            border: 2px dashed #6c757d; 
+            background-color: #f8f9fa; 
+            padding: 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+            color: #6c757d;
+        }
+        .diagram-placeholder img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .revision-question-item {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .revision-question-header {
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #0056b3;
+        }
+        .revision-question-header:hover { background-color: #e9ecef; }
+        .revision-question-header .arrow-icon { transition: transform 0.2s ease-in-out; }
+        .revision-question-header[aria-expanded="true"] .arrow-icon { transform: rotate(180deg); }
+
+        .revision-answer {
+            padding: 1.25rem;
+            border-top: 1px solid #dee2e6;
+            background-color: #fff;
+        }
+        .revision-answer ul, .revision-answer ol { padding-left: 1.25rem; }
+
+        .MathJax_Display, mjx-container[jax="CHTML"][display="true"] {
+            display: block;
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+        }
+
+        #navigation-buttons button { min-width: 100px; }
+
+        footer {
+            font-size: 0.9rem;
+            background-color: #ffffff; 
+            border-top: 1px solid #e9ecef;
+        }
+
+        :focus-visible {
+          outline: 2px solid #007bff;
+          outline-offset: 2px;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25);
+        }
+        .btn:focus-visible, .list-group-item:focus-visible {
+          outline: 2px solid #007bff !important; 
+          outline-offset: 2px !important;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.25) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <nav class="border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading bg-light p-3">
+                <img src="https://placehold.co/32x32/28a745/white?text=Tr" alt="Trade Guide Logo" class="me-2 rounded-circle"> Trade Guide
+            </div>
+            <div class="list-group list-group-flush" id="sidebar-nav"></div>
+        </nav>
+
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top">
+                <div class="container-fluid">
+                    <button class="btn btn-outline-primary btn-sm" id="menu-toggle">☰ Menu</button>
+                    <nav aria-label="breadcrumb" class="ms-3 flex-grow-1">
+                        <ol class="breadcrumb mb-0" id="breadcrumb-trail"></ol>
+                    </nav>
+                </div>
+            </nav>
+
+            <main class="container-fluid p-4" id="main-content-scroll-area">
+                <div id="content-area" class="bg-white p-md-4 p-3 rounded shadow-sm">
+                    <h1 id="main-title-placeholder">Welcome to the Trade Guide</h1>
+                    <p>Please select a topic from the menu on the left to begin your learning journey.</p>
+                </div>
+                <div class="d-flex justify-content-between mt-4" id="navigation-buttons">
+                    <button class="btn btn-outline-secondary" id="prev-button" disabled>&laquo; Previous</button>
+                    <button class="btn btn-outline-primary" id="next-button" disabled>Next &raquo;</button>
+                </div>
+            </main>
+
+            <footer class="text-center text-muted p-3 mt-auto">
+                <p class="mb-0">&copy; <span id="currentYear"></span> KCSE Trade Guide</p>
+            </footer>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // --- 1. GUIDE CONTENT DATA ---
+        const guideData = [
+            // Chapter 1: Introduction to Trade
+            {
+                id: "trade_ch1",
+                title: "1. Introduction to Trade",
+                breadcrumb: "Introduction",
+                category: "General Concepts",
+                isChapter: true, 
+                content: `
+                    <h1 id="trade_ch1">1. Introduction to Trade</h1>
+                    <p>Trade, the exchange of goods and services, is a fundamental economic activity that has shaped human societies and global interactions for millennia. It is a critical component of economic development, influencing everything from local livelihoods to international relations. In the context of KCSE Geography, understanding the principles, patterns, and impacts of trade is essential for analyzing economic systems and development processes at various scales.</p>
+                `
+            },
+            {
+                id: "trade_ch1_s1",
+                title: "1.1 Definitions and Types of Trade",
+                breadcrumb: "Definitions & Types",
+                category: "General Concepts",
+                parentId: "trade_ch1",
+                content: `
+                    <h2 id="trade_ch1_s1">1.1 Definitions and Types of Trade</h2>
+                    <p><strong>Trade</strong> is defined as the exchange of goods and services. This exchange can occur between individuals, businesses, regions within a country, or between different countries.</p>
+                    <h4>Types of Trade:</h4>
+                    <ul>
+                        <li><strong>Internal/Domestic/Home/Local Trade:</strong> Exchange of goods and services within a single country.
+                            <ul>
+                                <li><strong>Wholesale Trade:</strong> Buying in bulk from producers and selling to retailers. Characteristics: requires significant capital, large premises, mainly in urban centers.</li>
+                                <li><strong>Retail Trade:</strong> Buying from wholesalers and selling in smaller quantities to consumers. Characteristics: stocks variety, sells small quantities.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Regional Trade:</strong> Exchange between countries within a specific economic region (e.g., EAC, COMESA).</li>
+                        <li><strong>International/External/Foreign Trade:</strong> Exchange between two or more countries globally.
+                            <ul>
+                                <li><strong>Export Trade:</strong> Selling goods/services to foreign countries.</li>
+                                <li><strong>Import Trade:</strong> Buying goods/services from other countries.</li>
+                                <li><strong>Bilateral Trade:</strong> Exchange between two countries.</li>
+                                <li><strong>Multilateral Trade:</strong> Exchange involving many countries.</li>
+                                <li><strong>Visible Trade:</strong> Exchange of tangible goods.</li>
+                                <li><strong>Invisible Trade:</strong> Exchange of services (e.g., tourism, banking).</li>
+                            </ul>
+                        </li>
+                    </ul>
+                `
+            },
+            // Chapter 2: Factors Influencing Trade
+            {
+                id: "trade_ch2",
+                title: "2. Factors Influencing Trade",
+                breadcrumb: "Influencing Factors",
+                category: "Core Concepts",
+                isChapter: true,
+                content: `<h1 id="trade_ch2">2. Factors Influencing Trade</h1><p>The volume, nature, and direction of trade are influenced by a multitude of interconnected factors.</p>`
+            },
+            {
+                id: "trade_ch2_s1",
+                title: "2.1 Factors Encouraging Trade",
+                breadcrumb: "Encouraging Factors",
+                category: "Core Concepts",
+                parentId: "trade_ch2",
+                content: `
+                    <h2 id="trade_ch2_s1">2.1 Factors Encouraging Trade</h2>
+                    <ul>
+                        <li><strong>Availability of Capital:</strong> Crucial for initiating and sustaining trade ventures.</li>
+                        <li><strong>Transport and Communication Networks:</strong> Efficient systems reduce costs and enhance trade.</li>
+                        <li><strong>Demand and Supply of Goods:</strong> Fundamental drivers of trade.</li>
+                        <li><strong>Differences in Natural Resources/Resource Endowment:</strong> Leads to specialization and the need to trade.</li>
+                        <li><strong>Availability of Market:</strong> Large population with purchasing power promotes trade.</li>
+                        <li><strong>Trading Blocs/Economic Unions:</strong> Reduce trade barriers among member states.</li>
+                        <li><strong>Good Political Relationship & Stability:</strong> Encourages trade between partners.</li>
+                        <li><strong>Security:</strong> Essential for the safe movement of goods.</li>
+                        <li><strong>Existence of Aids to Trade:</strong> Services like banking, insurance, warehousing.</li>
+                        <li><strong>Government Initiatives/Policies:</strong> Loans, trade promotion, agreements.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "trade_ch2_s2",
+                title: "2.2 Factors Discouraging Trade",
+                breadcrumb: "Discouraging Factors",
+                category: "Core Concepts",
+                parentId: "trade_ch2",
+                content: `
+                    <h2 id="trade_ch2_s2">2.2 Factors Discouraging Trade (Trade Restrictions)</h2>
+                    <ul>
+                        <li><strong>Trade Restrictions:</strong>
+                            <ul>
+                                <li><strong>Tariffs:</strong> Taxes on imports to protect local industries.</li>
+                                <li><strong>Quotas:</strong> Limits on the amount of goods imported/exported.</li>
+                                <li><strong>Restrictive Trade Agreements:</strong> Clauses limiting trade with non-signatories.</li>
+                                <li><strong>Total Bans (Embargoes):</strong> Prohibition of trade in certain goods or with specific countries.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Use of Different Currencies:</strong> Exchange rate fluctuations can make imports expensive.</li>
+                        <li><strong>Poor Means of Transport:</strong> Delays movement, increases costs.</li>
+                        <li><strong>Poor Communication Networks:</strong> Delays information, limits transactions.</li>
+                        <li><strong>Poor Political Relations:</strong> Leads to trade bans/restrictions.</li>
+                        <li><strong>Difference in Technological Level:</strong> Can lead to adverse balance of trade for developing countries.</li>
+                    </ul>
+                `
+            },
+            // Chapter 3: Kenya's International Trade
+            {
+                id: "trade_ch3",
+                title: "3. Kenya's International Trade",
+                breadcrumb: "Kenya's Int'l Trade",
+                category: "Kenyan Context",
+                isChapter: true,
+                content: `<h1 id="trade_ch3">3. Kenya's International Trade</h1><p>Understanding Kenya's major exports, imports, and factors influencing its trade patterns.</p>`
+            },
+            {
+                id: "trade_ch3_s1",
+                title: "3.1 Major Exports & Imports",
+                breadcrumb: "Exports & Imports",
+                category: "Kenyan Context",
+                parentId: "trade_ch3",
+                content: `
+                    <h2 id="trade_ch3_s1">3.1 Major Exports and Imports of Kenya</h2>
+                    <h4>Major Visible Exports:</h4>
+                    <ul>
+                        <li>Agricultural: Coffee, Tea, Horticultural products (flowers, fruits, vegetables), Pyrethrum, Miraa.</li>
+                        <li>Industrial/Mineral: Fluorspar, Soda ash, Cement, Timber products, Fish.</li>
+                    </ul>
+                    <h4>Major Invisible Exports:</h4>
+                    <ul><li>Tourism, Banking, Insurance, Expertise.</li></ul>
+                    <h4>Major Visible Imports:</h4>
+                    <ul>
+                        <li>Crude oil & Petroleum products, Machinery & transport equipment (vehicles), Iron & steel, Pharmaceuticals, Fertilizers & chemicals, Footwear, Paper, Furniture, Foodstuffs (wheat, rice), Textiles, Electronics.</li>
+                    </ul>
+                    <h4>Major Invisible Imports:</h4>
+                    <ul><li>Skilled labour/Expertise, Foreign banking/insurance services, Shipping & freight services.</li></ul>
+                `
+            },
+            {
+                id: "trade_ch3_s2",
+                title: "3.2 Factors Influencing Internal Trade",
+                breadcrumb: "Internal Trade Factors",
+                category: "Kenyan Context",
+                parentId: "trade_ch3",
+                content: `
+                    <h2 id="trade_ch3_s2">3.2 Factors Influencing Internal Trade in Kenya</h2>
+                    <ul>
+                        <li>Production of different goods in various regions.</li>
+                        <li>Security situation.</li>
+                        <li>Purchasing power of the population.</li>
+                        <li>Demand for a variety of locally produced goods.</li>
+                        <li>Cultural differences leading to specialized production.</li>
+                        <li>Development level of transport and communication networks.</li>
+                        <li>Availability of capital for traders.</li>
+                        <li>Government policies affecting trade.</li>
+                        <li>Existence of aids to trade (banking, insurance).</li>
+                    </ul>
+                `
+            },
+            {
+                id: "trade_ch3_s3",
+                title: "3.3 Problems Facing Internal Trade",
+                breadcrumb: "Internal Trade Problems",
+                category: "Kenyan Context",
+                parentId: "trade_ch3",
+                content: `
+                    <h2 id="trade_ch3_s3">3.3 Problems Facing Internal Trade in Kenya</h2>
+                    <ul>
+                        <li>Poor transport making movement slow and expensive.</li>
+                        <li>Illegal importation and smuggling creating unfair competition.</li>
+                        <li>Insecurity in some parts discouraging investment.</li>
+                        <li>High tariffs (local government levies) reducing profits.</li>
+                        <li>Inadequate capital for traders.</li>
+                        <li>Scarcity of goods due to weather (droughts).</li>
+                        <li>Preference for imported goods by some consumers.</li>
+                        <li>Tribal clashes or general insecurity hampering trade.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "trade_ch3_s4",
+                title: "3.4 Government Promotion of Internal Trade",
+                breadcrumb: "Govt. Promotion (Internal)",
+                category: "Kenyan Context",
+                parentId: "trade_ch3",
+                content: `
+                    <h2 id="trade_ch3_s4">3.4 How the Kenyan Government Promotes Internal Trade</h2>
+                    <ul>
+                        <li>Improving transport and communication networks.</li>
+                        <li>Facilitating trade fairs and exhibitions.</li>
+                        <li>Removing restrictions on movement of goods; fixing market days.</li>
+                        <li>Removing price controls on local products.</li>
+                        <li>Imposing tariffs on imports to support local goods.</li>
+                        <li>Facilitating conferences for the business community.</li>
+                        <li>Maintaining standards via Kenya Bureau of Standards (KEBS).</li>
+                        <li>Providing credit facilities through banks.</li>
+                        <li>Facilitating distribution via bodies like KNTC.</li>
+                    </ul>
+                `
+            },
+             {
+                id: "trade_ch3_s5",
+                title: "3.5 Factors Influencing External Trade",
+                breadcrumb: "External Trade Factors",
+                category: "Kenyan Context",
+                parentId: "trade_ch3",
+                content: `
+                    <h2 id="trade_ch3_s5">3.5 Factors Influencing External Trade in Kenya</h2>
+                    <ul>
+                        <li>Demand for goods and services in international markets.</li>
+                        <li>Similarities or differences in goods produced by Kenya and its trading partners.</li>
+                        <li>Purchasing power of people in export markets and Kenya's ability to finance imports.</li>
+                        <li>Availability and efficiency of international transport and communication links.</li>
+                        <li>Political stability and relationships with trading partners.</li>
+                        <li>International trade agreements, tariffs, and non-tariff barriers.</li>
+                        <li>Kenya's level of technology in production and ability to meet international standards.</li>
+                        <li>Fluctuations in currency exchange rates.</li>
+                        <li>Availability of international trade finance and insurance.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "trade_ch3_s6",
+                title: "3.6 Negative Effects of International Trade",
+                breadcrumb: "Negative Effects (Int'l)",
+                category: "Kenyan Context",
+                parentId: "trade_ch3",
+                content: `
+                    <h2 id="trade_ch3_s6">3.6 Negative Effects of International Trade</h2>
+                    <ul>
+                        <li>Overexploitation of natural resources for export, leading to depletion.</li>
+                        <li>Overspecialization in a few export commodities, making the economy vulnerable to price falls.</li>
+                        <li>Competition from imported items threatening local industries, potentially leading to closures.</li>
+                        <li>Importation of substandard or harmful goods.</li>
+                        <li>Economic or political dependence on dominant trading partners.</li>
+                    </ul>
+                `
+            },
+            // Chapter 4: Significance of Trade
+            {
+                id: "trade_ch4",
+                title: "4. Significance of Trade to Kenya",
+                breadcrumb: "Significance of Trade",
+                category: "Kenyan Context",
+                isChapter: true,
+                content: `<h1 id="trade_ch4">4. Significance of Trade to Kenya</h1><p>Trade is immensely important for Kenya's economic and social development.</p>`
+            },
+            {
+                id: "trade_ch4_s1",
+                title: "4.1 Overview of Significance",
+                breadcrumb: "Overview",
+                category: "Kenyan Context",
+                parentId: "trade_ch4",
+                content: `
+                    <h2 id="trade_ch4_s1">4.1 Overview of Significance</h2>
+                    <ul>
+                        <li><strong>Revenue Generation:</strong> Government earns revenue through taxes on trade.</li>
+                        <li><strong>Employment Creation:</strong> Supports jobs in trade, logistics, and related industries.</li>
+                        <li><strong>Stimulates Growth:</strong> Demand from trade encourages industrial and agricultural production.</li>
+                        <li><strong>Foreign Exchange Earnings:</strong> Exports are a key source of foreign currency.</li>
+                        <li><strong>Infrastructure Development:</strong> Drives improvements in transport and communication.</li>
+                        <li><strong>Urban Development:</strong> Contributes to the growth of towns and cities.</li>
+                        <li><strong>Promotes Specialization:</strong> Allows focus on areas of comparative advantage.</li>
+                        <li><strong>Enhances International Cooperation:</strong> Fosters diplomatic and economic ties.</li>
+                        <li><strong>Development of Ancillary Services:</strong> Stimulates banking, insurance, warehousing.</li>
+                        <li><strong>Availability of Goods:</strong> Imports provide variety for consumers and industries.</li>
+                    </ul>
+                `
+            },
+            // Chapter 5: Problems Facing Trade
+            {
+                id: "trade_ch5",
+                title: "5. Problems Facing Trade in Kenya",
+                breadcrumb: "Problems in Trade",
+                category: "Kenyan Context",
+                isChapter: true,
+                content: `<h1 id="trade_ch5">5. Problems Facing Trade in Kenya</h1><p>Despite its importance, trade in Kenya faces several challenges.</p>`
+            },
+            {
+                id: "trade_ch5_s1",
+                title: "5.1 Overview of Problems",
+                breadcrumb: "Overview",
+                category: "Kenyan Context",
+                parentId: "trade_ch5",
+                content: `
+                    <h2 id="trade_ch5_s1">5.1 Overview of Problems</h2>
+                    <ul>
+                        <li>Competition from cheap imports.</li>
+                        <li>Export of low-value raw materials.</li>
+                        <li>Price fluctuations in the world market.</li>
+                        <li>Trade restrictions by other countries.</li>
+                        <li>Inadequate transport/communication infrastructure.</li>
+                        <li>Inefficiencies at ports (e.g., Mombasa).</li>
+                        <li>Smuggling and illicit trade.</li>
+                        <li>Inadequate capital for traders.</li>
+                        <li>High fuel prices increasing costs.</li>
+                        <li>Insecurity affecting trade routes and investment.</li>
+                        <li>Poverty/low purchasing power limiting domestic market.</li>
+                        <li>Over-reliance on a few export commodities/markets.</li>
+                    </ul>
+                `
+            },
+            // Chapter 6: Future of International Trade
+            {
+                id: "trade_ch6",
+                title: "6. Future of International Trade in Kenya",
+                breadcrumb: "Future of Int'l Trade",
+                category: "Kenyan Context",
+                isChapter: true,
+                content: `<h1 id="trade_ch6">6. The Future of International Trade in Kenya</h1><p>Measures to promote and enhance Kenya's international trade performance.</p>`
+            },
+            {
+                id: "trade_ch6_s1",
+                title: "6.1 Promotional Measures",
+                breadcrumb: "Promotional Measures",
+                category: "Kenyan Context",
+                parentId: "trade_ch6",
+                content: `
+                    <h2 id="trade_ch6_s1">6.1 Measures to Promote International Trade</h2>
+                    <ul>
+                        <li>Improving international transport and communication links.</li>
+                        <li>Exploring new markets (market diversification).</li>
+                        <li>Signing and utilizing favorable trade agreements.</li>
+                        <li>Promoting value addition (e.g., through EPZs).</li>
+                        <li>Supporting Kenyan investment abroad.</li>
+                        <li>Intensifying international marketing and branding (KEPROBA).</li>
+                        <li>Diversifying exports beyond traditional commodities.</li>
+                        <li>Implementing national development plans like Vision 2030.</li>
+                        <li>Strengthening participation in regional trading blocs (EAC, COMESA).</li>
+                        <li>Attracting export-oriented Foreign Direct Investment (FDI).</li>
+                        <li>Enhancing product quality and standards (KEBS).</li>
+                        <li>Streamlining export procedures and licensing.</li>
+                        <li>Promoting invisible exports (tourism, ICT, financial services).</li>
+                        <li>Improving national and regional security.</li>
+                    </ul>
+                `
+            },
+            // Chapter 7: Balance of Trade/Payments
+            {
+                id: "trade_ch7",
+                title: "7. Balance of Trade & Payments",
+                breadcrumb: "BOT & BOP",
+                category: "Economic Concepts",
+                isChapter: true,
+                content: `<h1 id="trade_ch7">7. Balance of Trade and Balance of Payments</h1><p>Key indicators of a country's international economic transactions.</p>`
+            },
+            {
+                id: "trade_ch7_s1",
+                title: "7.1 Definitions",
+                breadcrumb: "Definitions",
+                category: "Economic Concepts",
+                parentId: "trade_ch7",
+                content: `
+                    <h2 id="trade_ch7_s1">7.1 Definitions</h2>
+                    <p><strong>Balance of Trade (BOT):</strong> The difference in value between a country’s visible exports and visible imports.</p>
+                    <ul>
+                        <li><strong>Favorable BOT (Trade Surplus):</strong> Value of visible exports > visible imports.</li>
+                        <li><strong>Adverse/Unfavorable BOT (Trade Deficit):</strong> Value of visible imports > visible exports.</li>
+                    </ul>
+                    <p><strong>Balance of Payments (BOP):</strong> The difference in value between total exports (visible and invisible) and total imports (visible and invisible).</p>
+                `
+            },
+            {
+                id: "trade_ch7_s2",
+                title: "7.2 Kenya's Unfavorable BOT",
+                breadcrumb: "Kenya's Unfavorable BOT",
+                category: "Economic Concepts",
+                parentId: "trade_ch7",
+                content: `
+                    <h2 id="trade_ch7_s2">7.2 Reasons for Kenya's Unfavorable Balance of Trade</h2>
+                    <ul>
+                        <li>Exports mainly low-value agricultural raw materials; imports high-value manufactured goods.</li>
+                        <li>Agricultural exports face stiff competition.</li>
+                        <li>Some exported goods are of low quality.</li>
+                        <li>Exports are often semi-processed.</li>
+                        <li>Imposed quota systems by other countries.</li>
+                        <li>High import bill for petroleum.</li>
+                        <li>Limited industrial base for high-value exports.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "trade_ch7_s3",
+                title: "7.3 Reducing Unfavorable BOT",
+                breadcrumb: "Reducing Trade Deficit",
+                category: "Economic Concepts",
+                parentId: "trade_ch7",
+                content: `
+                    <h2 id="trade_ch7_s3">7.3 Measures Kenya May Take to Reduce Unfavorable Balance of Trade</h2>
+                    <ul>
+                        <li>Promoting value addition to local raw materials.</li>
+                        <li>Diversifying agricultural and other exports.</li>
+                        <li>Seeking and developing new export markets.</li>
+                        <li>Boosting invisible exports like tourism and services.</li>
+                        <li>Restricting importation of non-essential luxury items.</li>
+                        <li>Establishing import substitution industries.</li>
+                        <li>Encouraging production of high-quality export products.</li>
+                        <li>Developing alternative energy sources to reduce fuel importation.</li>
+                    </ul>
+                `
+            },
+            // Chapter 8: Regional Trading Blocs
+            {
+                id: "trade_ch8",
+                title: "8. Regional Trading Blocs",
+                breadcrumb: "Trading Blocs",
+                category: "Global Context",
+                isChapter: true,
+                content: `<h1 id="trade_ch8">8. Regional Trading Blocs</h1><p>Economic associations among countries in a region to promote trade.</p>`
+            },
+            { id: "trade_ch8_s1", title: "8.1 EAC", breadcrumb: "EAC", category: "Global Context", parentId: "trade_ch8", content: `
+                <h2 id="trade_ch8_s1">8.1 East African Community (EAC)</h2>
+                <p><strong>Member States:</strong> Kenya, Uganda, Tanzania, Rwanda, Burundi, South Sudan, DR Congo, Somalia.</p>
+                <p><strong>Objectives:</strong> Regional integration, sustainable economic growth, common market, free movement of labor, peace, trade liberalization.</p>
+                <p><strong>Benefits for Kenya:</strong> Access to raw materials, political understanding, expanded market, research exchange, negotiating power, improved transport, cheaper goods.</p>
+                <p><strong>Limiting Factors:</strong> Political instability, differences/suspicion, similar goods production, movement restrictions, poor infrastructure, no common currency, overlapping bloc memberships.</p>
+            `},
+            { id: "trade_ch8_s2", title: "8.2 COMESA", breadcrumb: "COMESA", category: "Global Context", parentId: "trade_ch8", content: `
+                <h2 id="trade_ch8_s2">8.2 Common Market for Eastern and Southern Africa (COMESA)</h2>
+                <p><strong>HQ:</strong> Lusaka, Zambia.</p>
+                <p><strong>Objectives:</strong> Reduce duties, promote trade, monetary/financial/political cooperation, regional specialization, remove trade barriers, large market, economic strength.</p>
+                <p><strong>Benefits:</strong> Large market, variety of goods, common tariff, revenue, expanded trade, financial aid (PTA Bank).</p>
+                <p><strong>Challenges:</strong> Similar goods, poor infrastructure, different industrialization levels, insecurity, non-payment of subscriptions, primary commodity exports, poverty, currency differences.</p>
+            `},
+            { id: "trade_ch8_s3", title: "8.3 SADC", breadcrumb: "SADC", category: "Global Context", parentId: "trade_ch8", content: `
+                <h2 id="trade_ch8_s3">8.3 Southern African Development Community (SADC)</h2>
+                <p><strong>HQ:</strong> Gaborone, Botswana.</p>
+                <p><strong>Objectives:</strong> Regional integration, sustainable growth, common market, trade liberalization, bargaining power, peace, poverty eradication, free labor movement.</p>
+                <p><strong>Benefits:</strong> Variety of goods, easier movement of labor/capital/tech, large market, common tariff, aid/capital, employment, trade expansion.</p>
+            `},
+            { id: "trade_ch8_s4", title: "8.4 ECOWAS", breadcrumb: "ECOWAS", category: "Global Context", parentId: "trade_ch8", content: `
+                <h2 id="trade_ch8_s4">8.4 Economic Community of West African States (ECOWAS)</h2>
+                <p><strong>HQ:</strong> Abuja, Nigeria.</p>
+                <p><strong>Objectives:</strong> Promote trade, economic/monetary union, social/political interactions, cooperation, harmonize policies, eliminate barriers, improve infrastructure, free movement, encourage agri/industrial development.</p>
+                <p><strong>Benefits:</strong> Boosted trade, more transport, removal of barriers, tech/capital transfer, cooperation, peace, reduced energy prices.</p>
+            `},
+            { id: "trade_ch8_s5", title: "8.5 EU", breadcrumb: "EU", category: "Global Context", parentId: "trade_ch8", content: `
+                <h2 id="trade_ch8_s5">8.5 European Union (EU)</h2>
+                <p><strong>HQ:</strong> Brussels, Belgium.</p>
+                <p><strong>Objectives:</strong> Common market, economic/monetary union, cooperation, negotiate trade agreements, common currency (Euro), financial aid to members/developing countries.</p>
+                <p><strong>Benefits to Members:</strong> No tariffs, free movement, integration, loans/grants, expanded market, Euro, agricultural promotion, jobs.</p>
+            `},
+            { id: "trade_ch8_s6", title: "8.6 General Benefits & Problems of Blocs", breadcrumb: "Blocs Overview", category: "Global Context", parentId: "trade_ch8", content: `
+                <h2 id="trade_ch8_s6">8.6 General Benefits and Problems of Regional Trading Blocs</h2>
+                <h4>General Benefits:</h4>
+                <ul><li>Expanded markets, reduced tariffs, harmony, stimulated agriculture/industry, employment, pooled resources, reduced external reliance, variety of goods, better infrastructure.</li></ul>
+                <h4>Problems Facing Blocs:</h4>
+                <ul><li>Civil wars, political differences, unequal industrialization, similar goods, low demand/quality, poverty, non-payment of dues, poor infrastructure, revenue loss from free trade, impact on local industries, dependency, negative publicity, weak frameworks, ideological differences, colonial ties.</li></ul>
+            `},
+            // Chapter 9: Conclusion (Trade)
+            {
+                id: "trade_ch9",
+                title: "9. Conclusion (Trade)",
+                breadcrumb: "Conclusion",
+                category: "Summary",
+                isChapter: true,
+                content: `
+                    <h1 id="trade_ch9">9. Conclusion (Trade)</h1>
+                    <p>Trade is an intricate and indispensable aspect of economic geography, profoundly influencing development at all scales. For Kenya, optimizing its trade performance by addressing internal challenges, strategically engaging with regional and international partners, diversifying its export base, and adding value to its products are crucial for achieving its Vision 2030 goals and improving the livelihoods of its citizens. Understanding the dynamics of global trade, the role of trading blocs, and the persistent issue of trade imbalances provides a critical lens through which to analyze Kenya's economic trajectory and its place in the global economy.</p>
+                `
+            },
+            // Chapter 10: Revision Questions
+            {
+                id: "trade_ch10_rev", 
+                title: "10. Trade Revision Questions",
+                breadcrumb: "Trade Revision",
+                category: "Self-Assessment",
+                isChapter: true, 
+                content: `
+                    <h1 id="trade_ch10_rev">10. Trade Revision Questions</h1>
+                    <p>Test your understanding of the Trade topic with these revision questions. Click on a question to reveal the answer.</p>
+                    <div id="trade-revision-questions-container">
+                        <!-- Revision questions for Trade will be rendered here by JS -->
+                    </div>
+                `
+            }
+        ];
+
+        const tradeRevisionQuestionsData = [
+            { q: "1. Define the term Trade.", a: "Trade is the exchange of goods and services." },
+            { q: "2. Name the main categories of trade based on geographical scope.", a: "Internal Trade, Regional Trade, and International Trade." },
+            { q: "3. Define Internal Trade.", a: "It is the exchange of goods and services within a country." },
+            { q: "4. State the two main divisions of Internal Trade.", a: "Wholesale trade and Retail trade." },
+            { q: "5. Define Wholesale Trade.", a: "It involves buying goods in bulk from producers and selling them to retailers." },
+            { q: "6. State two characteristics of wholesalers.", a: "Require a lot of capital and operate from large premises." },
+            { q: "7. Define Retail Trade.", a: "It involves buying of goods from wholesalers and selling them to individual consumers." },
+            { q: "8. State two characteristics of retailers.", a: "Stocks a variety of goods and goods are sold in small quantities." },
+            { q: "9. Define Regional Trade.", a: "It is the exchange of goods and services between countries within a given economic region." },
+            { q: "10. Define International Trade.", a: "It is the exchange of goods and services between two or more countries/ at the global level." },
+            { q: "11. Name two types of International Trade based on the direction of exchange.", a: "Export trade and Import trade." },
+            { q: "12. Define Export Trade.", a: "The selling of goods and services to foreign countries." },
+            { q: "13. Define Import Trade.", a: "The buying of goods and services from other countries." },
+            { q: "14. Distinguish between Bilateral and Multilateral Trade.", a: "Bilateral trade is the exchange of goods and services between two countries, while Multilateral trade is the exchange of goods and services between many countries." },
+            { q: "15. Define Visible Trade.", a: "The exchange of goods within a nation/ between countries/ exports and imports of goods. These are tangible goods." },
+            { q: "16. Define Invisible Trade.", a: "Involves the exchange of services. These are intangible services." },
+            { q: "17. Name two services considered as Invisible Trade.", a: "Tourism, Banking, Insurance, Expertise." },
+            { q: "18. State four factors that influence trade.", a: "Availability of capital, Availability of well-developed transport/ communication networks, Demand and supply of goods, Differences in natural resources." },
+            { q: "19. Explain how the availability of capital influences trade.", a: "Sufficient capital is needed to start trade/business venture, purchase goods, manage logistics, and extend credit." },
+            { q: "20. Explain how transport and communication networks influence trade.", a: "Well-developed networks enhance efficiency of trade by facilitating movement of goods/information and reducing costs. Poor networks delay movement and limit transactions." },
+            { q: "21. Explain how demand and supply of goods influence trade.", a: "The more the demand in one area and the ability to supply from another, the higher the volume of trade." },
+            { q: "22. Explain how differences in natural resources influence trade.", a: "Variations in resources lead to specialization in production and the need to trade for goods not available locally." },
+            { q: "23. Explain how the availability of market influences trade.", a: "A high population with high purchasing power promotes trade by creating demand." },
+            { q: "24. Explain how trading blocs influence trade.", a: "Trading blocs/economic unions among countries promote regional trade among member states by reducing trade barriers." },
+            { q: "25. Explain how political relationships influence trade.", a: "Good political relationships encourage trade, while poor relations lead to trade bans/restrictions." },
+            { q: "26. Explain how security influences trade.", a: "Security is essential for the safe movement of goods and conduct of trade; insecurity discourages trade and increases costs." },
+            { q: "27. Name two 'aids to trade'.", a: "Banking, insurance, warehousing." },
+            { q: "28. State two ways government initiatives can influence trade.", a: "Providing loans/grants to people, and legislating industrial laws that restrict/promote certain trade activities." },
+            { q: "29. Name two types of trade restrictions that can discourage trade.", a: "Tariffs and Quotas. (Also: Restrictive trade agreements, Total bans/Embargoes)." },
+            { q: "30. Define Tariffs as a trade restriction.", a: "Tariffs are taxes charged on imports to restrict importation of certain goods thus protecting local industries." },
+            { q: "31. Define Quotas as a trade restriction.", a: "Quotas are restrictions on the amount of goods to be exported or imported." },
+            { q: "32. How can trade agreements discourage trade?", a: "Some trade agreements might include clauses that restrict trade with non-signatory countries or in specific goods." },
+            { q: "33. Define Total Bans (Embargoes) as a trade restriction.", a: "Total bans are restrictions imposed on certain imports to protect local industries or for political reasons." },
+            { q: "34. Explain how the use of different currencies can be an obstacle to trade.", a: "Different exchange rates may make imported goods expensive, creating uncertainty and complexity in transactions." },
+            { q: "35. Explain how the level of technology can influence trade.", a: "Differences in technological level can lead to adverse balance of trade, especially in developing countries that may import high-tech goods and export low-tech primary products." },
+            { q: "36. Name four major visible exports from Kenya.", a: "Coffee, Tea, Horticultural products, Fluorspar. (Also: Pyrethrum, Soda ash, Cement, Miraa, Fish, Timber)." },
+            { q: "37. Name two types of horticultural products exported from Kenya.", a: "Flowers, fruits, vegetables." },
+            { q: "38. Name two industrial/mineral products exported from Kenya.", a: "Fluorspar, Soda ash, Cement." },
+            { q: "39. Name four major visible imports to Kenya.", a: "Crude oil, Machinery/machines, Iron and steel, Pharmaceuticals/medicine. (Also: Fertilizers, Motor vehicles, Foodstuffs, Textiles, Electronics)." },
+            { q: "40. Name two types of machinery/transport equipment imported to Kenya.", a: "Machinery/machines and Motor vehicles." },
+            { q: "41. State four factors influencing internal trade in Kenya.", a: "Production of different goods, Security, Low purchasing power, Demand for variety of local goods. (Also: Cultural differences, Transport networks, Capital, Government policy, Aids to trade)." },
+            { q: "42. Explain how the production of different goods influences internal trade in Kenya.", a: "Production of different goods enhances trade in different areas, while production of similar goods by different regions limits the market potential." },
+            { q: "43. Explain how insecurity affects internal trade in Kenya.", a: "Insecurity discourages expansion of trading activities and makes traders unwilling to risk their investments." },
+            { q: "44. Explain how low purchasing power affects internal trade in Kenya.", a: "Low purchasing power by most Kenyans limits the markets for goods produced." },
+            { q: "45. State two problems facing internal trade in Kenya.", a: "Poor means of transport and Illegal importation/smuggling. (Also: Insecurity, High tariffs, Inadequate capital, Scarcity of goods, Craze for imported goods)." },
+            { q: "46. Explain how poor transport affects internal trade in Kenya.", a: "Poor transport makes the movement of goods slow and expensive, discouraging trade and leading to spoilage." },
+            { q: "47. Explain how illegal importation affects internal trade in Kenya.", a: "Illegal importation and smuggling of goods into the country gives locally produced goods unfair competition due to the fact that smuggled goods do not pay duty and are hence cheaper." },
+            { q: "48. State two ways the Kenyan government promotes internal trade.", a: "Improving transport and communication networks, and Facilitating the organization of trade fairs/exhibitions/shows." },
+            { q: "49. How do trade fairs promote internal trade in Kenya?", a: "Trade fairs enable people and businesses to advertise their products, network, and find new markets within the country." },
+            { q: "50. How does the Kenya Bureau of Standards (KEBS) promote internal trade?", a: "KEBS promotes internal trade by maintaining standards and quality of goods produced locally and imported, which builds consumer confidence." },
+            { q: "51. State two factors influencing external trade in Kenya.", a: "Demand for goods and services, and Similarities/differences in the goods produced by trading partners. (Also: Purchasing power, Transport/communication, Political stability, Trade agreements, Technology, Exchange rates)." },
+            { q: "52. Explain how political stability influences external trade.", a: "Good political relationships and stability between trading partners encourage trade, while instability can disrupt it." },
+            { q: "53. State two negative effects of international trade.", a: "Overexploitation of natural resources, and Imported items may threaten local industries. (Also: Overspecialization risks, Harmful imported goods, Undesirable political influence)." },
+            { q: "54. Explain how international trade can lead to overexploitation of natural resources.", a: "High demand from international markets can encourage intensive extraction of resources like minerals or timber, leading to their depletion if not managed sustainably." },
+            { q: "55. Explain how international trade can threaten local industries.", a: "Imported items, especially if cheaper or perceived as higher quality, can outcompete locally produced goods, potentially leading to the decline or closure of domestic industries." },
+            { q: "56. State four ways trade is significant to the economy of Kenya.", a: "Generates revenue through taxation, Creates employment opportunities, Stimulates industrial/agricultural growth, Earns foreign exchange." },
+            { q: "57. How does trade generate revenue for the government?", a: "Through taxation of traded goods and services, such as import duties, export duties, and VAT." },
+            { q: "58. How does trade create employment opportunities in Kenya?", a: "Directly in import/export businesses, retail, wholesale, logistics, and indirectly in industries producing goods for trade." },
+            { q: "59. How does trade stimulate industrial and agricultural growth in Kenya?", a: "Demand for goods in local and international markets encourages increased production in both sectors." },
+            { q: "60. How does trade lead to foreign exchange earnings for Kenya?", a: "The export of goods (like tea, coffee, horticulture) and services (like tourism) earns Kenya valuable foreign currency." },
+            { q: "61. How does trade contribute to infrastructure development in Kenya?", a: "The need to facilitate trade often drives improvements in transport (roads, ports, railways) and communication networks." },
+            { q: "62. How does trade promote specialization?", a: "Trade allows regions and countries to specialize in producing goods and services where they have a comparative advantage, leading to greater efficiency." },
+            { q: "63. Name four problems facing trade in Kenya.", a: "Competition from cheap imports, Export of low-value raw materials, Price fluctuations in the world market, Trade restrictions by other countries." },
+            { q: "64. Explain how the export of low-value raw materials affects trade in Kenya.", a: "Kenya earns less foreign exchange because raw agricultural products are lowly priced compared to manufactured goods." },
+            { q: "65. Explain how price fluctuations in the world market affect Kenya's export earnings.", a: "Fluctuations in prices of primary commodities make export earnings unpredictable and difficult to plan around." },
+            { q: "66. How do inefficiencies at ports affect trade in Kenya?", a: "Slow clearance of goods at the port of Mombasa delays delivery of goods and increases the cost of imports." },
+            { q: "67. State four measures undertaken by the Kenyan government to promote international trade in the future.", a: "Improving international transport and communication links, Exploring new markets, Signing trade agreements, Processing agricultural products before export (value addition)." },
+            { q: "68. How does market diversification promote the future of Kenya's international trade?", a: "It reduces over-reliance on traditional partners and helps access better prices and more stable demand." },
+            { q: "69. How does value addition promote the future of Kenya's international trade?", a: "Processing raw materials before export increases their value, leading to higher income from exports." },
+            { q: "70. Define Balance of Trade (BOT).", a: "Balance of Trade is the difference in value between a country’s visible exports and visible imports." },
+            { q: "71. Distinguish between Favorable Balance of Trade and Adverse Balance of Trade.", a: "Favorable Balance of Trade (trade surplus) is when visible exports exceed visible imports. Adverse Balance of Trade (trade deficit) is when visible imports exceed visible exports." },
+            { q: "72. Define Balance of Payments (BOP).", a: "Balance of Payments is the difference in value between total exports (visible and invisible) and total imports (visible and invisible) of a country." },
+            { q: "73. State two reasons why Kenya experiences an unfavorable balance of trade.", a: "Kenya exports mainly agricultural raw materials which are of low value and imports manufactured goods which are of high value. Also, agricultural goods exported face stiff competition." },
+            { q: "74. State two measures Kenya may take to reduce unfavorable balance of trade.", a: "Encouraging development of Jua Kali industries (less reliance on imported machinery) and Diversifying agricultural exports." },
+            { q: "75. Name three regional trading blocs relevant to Africa.", a: "EAC (East African Community), COMESA (Common Market for Eastern and Southern Africa), SADC (Southern African Development Community), ECOWAS (Economic Community of West African States)." },
+            { q: "76. What was a major reason for the revival of the EAC in 2001?", a: "To promote regional integration among the member states and establish a common market." },
+            { q: "77. State two benefits Kenya derives from its membership in the EAC.", a: "Improved access to raw materials and an expanded market for its goods, attracting investment." },
+            { q: "78. Identify one factor limiting trade within the EAC.", a: "Production of similar goods by member states, or poor transport and communication networks between them." },
+            { q: "79. What is a primary objective of COMESA?", a: "To reduce duties/taxes on goods produced within the member states and promote trade among them." },
+            { q: "80. Mention one economic benefit of COMESA to its member states.", a: "It has created a large market for goods produced in member states and led to the availability of a variety of goods." },
+            { q: "81. State one challenge facing COMESA.", a: "Production of similar goods by member states, or poor transport/communication networks between member states." },
+            { q: "82. What is a key objective of SADC?", a: "To promote regional integration and sustainable economic growth, and to establish a common market." },
+            { q: "83. What is a primary objective of ECOWAS?", a: "To promote trade and expand the market among member states, and to create an economic/monetary union." },
+            { q: "84. Name one objective of the European Union (EU) concerning trade.", a: "To establish a common market for member states and to negotiate trade agreements internationally." },
+            { q: "85. State two general benefits of regional trading blocs.", a: "Promotion of expanded markets, enhancing industrial/agricultural development, and reduction of tariffs, making goods cheaper." },
+            { q: "86. Identify two problems commonly facing regional trading blocs in Africa.", a: "Civil wars/insecurity in some member countries, and political differences among leaders. (Also: production of similar goods, poor infrastructure)." },
+            { q: "87. How can the production of similar goods by member states limit trade within a trading bloc?", a: "It reduces the scope for complementary trade, as countries produce goods that their neighbors also produce, thus limiting demand for each other's products." }
+        ];
+
+        // --- 2. DOM Elements ---
+        const sidebarNavEl = document.getElementById('sidebar-nav');
+        const contentAreaEl = document.getElementById('content-area');
+        const breadcrumbTrailEl = document.getElementById('breadcrumb-trail');
+        const breadcrumbDesktopEl = document.getElementById('breadcrumb-desktop'); 
+        const prevButtonEl = document.getElementById('prev-button');
+        const nextButtonEl = document.getElementById('next-button');
+        const menuToggleEl = document.getElementById('menu-toggle');
+        const wrapperEl = document.getElementById('wrapper');
+        const mainContentScrollAreaEl = document.getElementById('main-content-scroll-area');
+
+        // --- 3. State Variables ---
+        let currentGuideDataIndex = -1; 
+
+        // --- 4. Core Functions ---
+        function populateSidebar() {
+            if (!sidebarNavEl) {
+                console.error("Sidebar nav element (#sidebar-nav) not found!");
+                return;
+            }
+            sidebarNavEl.innerHTML = '';
+            let currentCategory = "";
+
+            guideData.forEach((item, index) => {
+                if (item.category && item.category !== currentCategory) {
+                    currentCategory = item.category;
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'category-heading';
+                    categoryDiv.textContent = currentCategory;
+                    sidebarNavEl.appendChild(categoryDiv);
+                }
+
+                const link = document.createElement('a');
+                link.href = `#${item.id}`;
+                link.className = 'list-group-item list-group-item-action list-group-item-light p-3';
+                if (!item.isChapter && item.category) { 
+                    link.classList.add('sub-item');
+                } else if (item.isChapter) {
+                    link.classList.add('fw-bold'); 
+                }
+                link.textContent = item.title;
+                link.setAttribute('role', 'button');
+                link.setAttribute('tabindex', '0');
+                link.dataset.index = index; 
+
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContentByIndex(index, 'directClick');
+                    if (window.innerWidth < 992 && wrapperEl.classList.contains('toggled')) {
+                        wrapperEl.classList.remove('toggled');
+                    }
+                });
+                link.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        loadContentByIndex(index, 'directClick');
+                         if (window.innerWidth < 992 && wrapperEl.classList.contains('toggled')) {
+                            wrapperEl.classList.remove('toggled');
+                        }
+                    }
+                });
+                sidebarNavEl.appendChild(link);
+            });
+        }
+        
+        function loadContentByIndex(index, navigationSource = 'directClick') {
+            if (index < 0 || index >= guideData.length) {
+                console.warn("Invalid content index:", index, "Attempting to load default.");
+                if (guideData.length > 0) index = 0; 
+                else {
+                    if(contentAreaEl) contentAreaEl.innerHTML = "<p>No content available to display.</p>";
+                    return;
+                }
+            }
+
+            currentGuideDataIndex = index;
+            const sectionData = guideData[index]; 
+
+            if (!sectionData || !contentAreaEl) {
+                console.error("Section data or content area element missing for index:", index);
+                if(contentAreaEl) contentAreaEl.innerHTML = "<p>Error loading content.</p>";
+                return;
+            }
+            
+            const placeholderTitle = document.getElementById('main-title-placeholder');
+            if(placeholderTitle && contentAreaEl.contains(placeholderTitle)) {
+                contentAreaEl.innerHTML = ''; 
+            }
+            contentAreaEl.innerHTML = sectionData.content; 
+
+            updateActiveSidebarLink();
+            updateBreadcrumbsUI(sectionData.category, sectionData.breadcrumb);
+            updateNavigationButtons();
+            sessionStorage.setItem('currentTradeSectionIndex', currentGuideDataIndex); // Specific key for trade
+
+            if (sectionData.id === "trade_ch10_rev") { 
+                renderRevisionQuestions();
+            }
+
+            if (navigationSource !== 'scroll') {
+                if(mainContentScrollAreaEl) mainContentScrollAreaEl.scrollTop = 0; 
+            }
+
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                MathJax.typesetPromise([contentAreaEl]).catch(err => console.error('MathJax typesetting error:', err));
+            }
+        }
+
+        function updateActiveSidebarLink() {
+            if (!sidebarNavEl) return;
+            const links = sidebarNavEl.querySelectorAll('.list-group-item');
+            links.forEach(link => link.classList.remove('active'));
+
+            if (currentGuideDataIndex === -1) return;
+            const activeEntry = guideData[currentGuideDataIndex];
+            if (!activeEntry) return;
+
+            const currentLink = sidebarNavEl.querySelector(`[data-index="${currentGuideDataIndex}"]`);
+            if (currentLink) currentLink.classList.add('active');
+
+            if (activeEntry.parentId) { 
+                const parentChapterEntry = guideData.find(item => item.id === activeEntry.parentId && item.isChapter);
+                if (parentChapterEntry) {
+                    const parentIndex = guideData.indexOf(parentChapterEntry);
+                    const parentChapterLink = sidebarNavEl.querySelector(`[data-index="${parentIndex}"]`);
+                    if (parentChapterLink) parentChapterLink.classList.add('active');
+                }
+            }
+        }
+
+        function updateBreadcrumbsUI(category, breadcrumbText) {
+            const trails = [breadcrumbTrailEl, breadcrumbDesktopEl];
+            trails.forEach(trail => {
+                if (!trail) return;
+                trail.innerHTML = ''; 
+                const homeLi = document.createElement('li');
+                homeLi.classList.add('breadcrumb-item');
+                const homeLink = document.createElement('a');
+                homeLink.href = '#';
+                homeLink.textContent = 'Home';
+                 if (trail === breadcrumbDesktopEl) homeLink.classList.add('text-dark'); 
+                homeLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContentByIndex(0, 'directClick'); 
+                });
+                homeLi.appendChild(homeLink);
+                trail.appendChild(homeLi);
+
+                const currentSectionData = guideData[currentGuideDataIndex];
+                if (!currentSectionData) return;
+
+                const parentEntry = currentSectionData.parentId ? guideData.find(item => item.id === currentSectionData.parentId) : null;
+                
+                if (parentEntry) { 
+                    const parentChapterLi = document.createElement('li');
+                    parentChapterLi.classList.add('breadcrumb-item');
+                    const parentChapterLink = document.createElement('a');
+                    parentChapterLink.href = `#${parentEntry.id}`;
+                    parentChapterLink.textContent = parentEntry.title.replace(/^[0-9]+\.\s*/, ''); 
+                    if (trail === breadcrumbDesktopEl) parentChapterLink.classList.add('text-dark');
+                    parentChapterLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        loadContentByIndex(guideData.indexOf(parentEntry), 'directClick');
+                    });
+                    parentChapterLi.appendChild(parentChapterLink);
+                    trail.appendChild(parentChapterLi);
+                }
+                
+                if (breadcrumbText) {
+                    const activeLi = document.createElement('li');
+                    activeLi.classList.add('breadcrumb-item', 'active');
+                    activeLi.setAttribute('aria-current', 'page');
+                    activeLi.textContent = breadcrumbText; 
+                     if (trail === breadcrumbDesktopEl) activeLi.classList.add('text-muted'); 
+                    trail.appendChild(activeLi);
+                }
+            });
+        }
+        
+        function updateNavigationButtons() {
+            if (prevButtonEl) prevButtonEl.disabled = currentGuideDataIndex <= 0;
+            if (nextButtonEl) nextButtonEl.disabled = currentGuideDataIndex >= guideData.length - 1;
+        }
+
+        function renderRevisionQuestions() {
+            const container = document.getElementById('trade-revision-questions-container'); 
+            if (!container) {
+                console.warn("Revision questions container 'trade-revision-questions-container' not found.");
+                return;
+            }
+            container.innerHTML = ''; 
+            const accordion = document.createElement('div');
+            accordion.className = 'accordion';
+            accordion.id = 'tradeRevisionAccordion'; 
+
+            tradeRevisionQuestionsData.forEach((item, index) => { 
+                const questionId = `trade-question-${index}`;
+                const answerId = `trade-answer-${index}`;
+                const questionDiv = document.createElement('div');
+                questionDiv.classList.add('revision-question-item', 'accordion-item'); 
+                const header = document.createElement('h2'); 
+                header.classList.add('accordion-header'); 
+                header.id = `heading-${questionId}`;
+                const button = document.createElement('button'); 
+                button.className = 'accordion-button collapsed revision-question-header'; 
+                button.type = 'button';
+                button.setAttribute('data-bs-toggle', 'collapse');
+                button.setAttribute('data-bs-target', `#${answerId}`);
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-controls', answerId);
+                button.innerHTML = `${item.q ? item.q : 'Question not available'} <span class="arrow-icon ms-auto">&#9662;</span>`;
+                header.appendChild(button);
+                const answerCollapseDiv = document.createElement('div');
+                answerCollapseDiv.id = answerId;
+                answerCollapseDiv.classList.add('revision-answer', 'accordion-collapse', 'collapse');
+                answerCollapseDiv.setAttribute('aria-labelledby', `heading-${questionId}`);
+                answerCollapseDiv.setAttribute('data-bs-parent', '#tradeRevisionAccordion');
+                const answerBody = document.createElement('div');
+                answerBody.className = 'accordion-body';
+                answerBody.innerHTML = `<p>${item.a ? item.a : 'Answer not available'}</p>`;
+                answerCollapseDiv.appendChild(answerBody);
+                questionDiv.appendChild(header);
+                questionDiv.appendChild(answerCollapseDiv);
+                accordion.appendChild(questionDiv);
+            });
+            container.appendChild(accordion);
+        }
+
+        // --- 5. Event Listeners ---
+        if (menuToggleEl) {
+            menuToggleEl.addEventListener('click', () => wrapperEl.classList.toggle('toggled'));
+        }
+        if (prevButtonEl) {
+            prevButtonEl.addEventListener('click', () => {
+                if (currentGuideDataIndex > 0) loadContentByIndex(currentGuideDataIndex - 1, 'button');
+            });
+        }
+        if (nextButtonEl) {
+            nextButtonEl.addEventListener('click', () => {
+                if (currentGuideDataIndex < guideData.length - 1) loadContentByIndex(currentGuideDataIndex + 1, 'button');
+            });
+        }
+        
+        if (mainContentScrollAreaEl) {
+            let scrollTimeout;
+            mainContentScrollAreaEl.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    let mostProminentItemId = null;
+                    let minDistanceToViewportTop = Infinity;
+                    const viewportTopEdge = mainContentScrollAreaEl.getBoundingClientRect().top + 70; 
+
+                    guideData.forEach((item) => {
+                        const element = contentAreaEl.querySelector(`#${item.id}`); 
+                        if (element) {
+                            const rect = element.getBoundingClientRect();
+                            if (rect.top < viewportTopEdge + 100 && rect.bottom > viewportTopEdge - 50) {
+                                const distance = Math.abs(rect.top - viewportTopEdge);
+                                if (distance < minDistanceToViewportTop) {
+                                    minDistanceToViewportTop = distance;
+                                    mostProminentItemId = item.id;
+                                }
+                            }
+                        }
+                    });
+                    
+                    if (!mostProminentItemId) { 
+                        if (mainContentScrollAreaEl.scrollTop <= 20 && guideData.length > 0) { 
+                            mostProminentItemId = guideData[0].id;
+                        } else if ((mainContentScrollAreaEl.scrollTop + mainContentScrollAreaEl.clientHeight) >= mainContentScrollAreaEl.scrollHeight - 20 && guideData.length > 0) { 
+                            mostProminentItemId = guideData[guideData.length - 1].id;
+                        }
+                    }
+
+                    if (mostProminentItemId && mostProminentItemId !== (guideData[currentGuideDataIndex] ? guideData[currentGuideDataIndex].id : null)) {
+                        const newIndex = guideData.findIndex(item => item.id === mostProminentItemId);
+                        if (newIndex !== -1) {
+                            currentGuideDataIndex = newIndex; 
+                            sessionStorage.setItem('currentTradeSectionIndex', currentGuideDataIndex); 
+                            updateActiveSidebarLink();
+                            const currentSectionData = guideData[currentGuideDataIndex];
+                            updateBreadcrumbsUI(currentSectionData.category, currentSectionData.breadcrumb);
+                            updateNavigationButtons();
+                        }
+                    }
+                }, 200); 
+            });
+        }
+
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            populateSidebar(); 
+            
+            const savedIndexStr = sessionStorage.getItem('currentTradeSectionIndex'); 
+            let initialIndex = 0; 
+
+            if (savedIndexStr !== null) {
+                const savedIdx = parseInt(savedIndexStr, 10);
+                if (savedIdx >= 0 && savedIdx < guideData.length) {
+                    initialIndex = savedIdx;
+                }
+            }
+            
+            const hash = window.location.hash.substring(1); 
+            if (hash) {
+                const itemFromHash = guideData.find(item => item.id === hash);
+                if (itemFromHash) {
+                    initialIndex = guideData.indexOf(itemFromHash);
+                }
+            }
+            
+            if (guideData.length > 0) {
+                 setTimeout(() => { 
+                    loadContentByIndex(initialIndex, 'initialLoad');
+                 }, 100); 
+            } else {
+                console.error("guideData is empty. Cannot load initial content.");
+                if(contentAreaEl) contentAreaEl.innerHTML = "<p>Error: No content available to display.</p>";
+            }
+        });
+    </script>
+</body>
+</html>

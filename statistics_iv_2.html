@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCSE Geography - Statistics IV Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overscroll-behavior-y: contain; /* Prevents pull-to-refresh on mobile when scrolling sidebar */
+        }
+        /* Sidebar custom scrollbar (optional) */
+        .sidebar-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        .sidebar-content::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1; /* cool-gray-300 */
+            border-radius: 3px;
+        }
+        .sidebar-content::-webkit-scrollbar-track {
+            background-color: #f1f5f9; /* cool-gray-100 */
+        }
+        .content-container h3 {
+            font-size: 1.75rem; /* text-2xl */
+            font-weight: 600; /* semibold */
+            margin-top: 1.5rem; /* mt-6 */
+            margin-bottom: 0.75rem; /* mb-3 */
+            color: #1e3a8a; /* blue-800 */
+            border-bottom: 2px solid #dbeafe; /* blue-200 */
+            padding-bottom: 0.5rem; /* pb-2 */
+        }
+        .content-container h4 {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 600; /* semibold */
+            margin-top: 1.25rem; /* mt-5 */
+            margin-bottom: 0.5rem; /* mb-2 */
+            color: #1d4ed8; /* blue-700 */
+        }
+        .content-container p, .content-container li {
+            margin-bottom: 0.75rem; /* mb-3 */
+            line-height: 1.6;
+            color: #374151; /* gray-700 */
+        }
+        .content-container ul {
+            list-style-type: disc;
+            margin-left: 1.5rem; /* ml-6 */
+            margin-bottom: 0.75rem; /* mb-3 */
+        }
+         .content-container ol {
+            list-style-type: decimal;
+            margin-left: 1.5rem; /* ml-6 */
+            margin-bottom: 0.75rem; /* mb-3 */
+        }
+        .content-container strong {
+            color: #111827; /* gray-900 */
+        }
+        .content-container table {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border-collapse: collapse;
+            width: 100%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 0.5rem; /* rounded-lg */
+            overflow: hidden; /* Ensures border-radius applies to child elements */
+        }
+        .content-container th, .content-container td {
+            border: 1px solid #e5e7eb; /* gray-200 */
+            padding: 0.75rem; /* p-3 */
+            text-align: left;
+            font-size: 0.875rem; /* text-sm */
+        }
+        .content-container th {
+            background-color: #f9fafb; /* gray-50 */
+            font-weight: 600; /* semibold */
+            color: #1f2937; /* gray-800 */
+        }
+        .content-container td {
+            background-color: #ffffff; /* white */
+        }
+        .diagram-placeholder {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            padding: 1.5rem;
+            border: 2px dashed #9ca3af; /* gray-400 */
+            border-radius: 0.5rem; /* rounded-lg */
+            text-align: center;
+            background-color: #f9fafb; /* gray-50 */
+            color: #4b5563; /* gray-600 */
+        }
+        .diagram-placeholder p {
+            font-size: 0.875rem; /* text-sm */
+            margin-top: 0.25rem; /* mt-1 */
+            color: #6b7280; /* gray-500 */
+        }
+        .revision-question {
+            background-color: #f9fafb; /* gray-50 */
+            border: 1px solid #e5e7eb; /* gray-200 */
+            border-radius: 0.375rem; /* rounded-md */
+            margin-bottom: 0.75rem; /* mb-3 */
+        }
+        .revision-question button {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0.75rem 1rem; /* p-3 px-4 */
+            text-align: left;
+            font-weight: 500; /* medium */
+            color: #1e3a8a; /* blue-800 */
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        .revision-question button:hover {
+            background-color: #eff6ff; /* blue-100 */
+        }
+        .revision-answer {
+            padding: 0 1rem 0.75rem 1rem; /* px-4 pb-3 */
+            border-top: 1px solid #e5e7eb; /* gray-200 */
+            background-color: #ffffff; /* white */
+            color: #374151; /* gray-700 */
+        }
+        .nav-button {
+            background-color: #2563eb; /* blue-600 */
+            color: white;
+            padding: 0.5rem 1rem; /* py-2 px-4 */
+            border-radius: 0.375rem; /* rounded-md */
+            font-weight: 500; /* medium */
+            transition: background-color 0.2s;
+        }
+        .nav-button:hover {
+            background-color: #1d4ed8; /* blue-700 */
+        }
+        .nav-button:disabled {
+            background-color: #9ca3af; /* gray-400 */
+            cursor: not-allowed;
+        }
+        .sidebar-link.active {
+            background-color: #dbeafe; /* blue-200 */
+            color: #1e3a8a; /* blue-800 */
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="flex h-screen overflow-hidden">
+        <aside id="sidebar" class="fixed inset-y-0 left-0 z-30 w-64 bg-white shadow-lg transform -translate-x-full md:relative md:translate-x-0 transition-transform duration-300 ease-in-out">
+            <div class="p-4">
+                <h1 class="text-xl font-bold text-blue-700">Statistics IV Guide</h1>
+            </div>
+            <nav id="sidebar-nav" class="mt-4 sidebar-content overflow-y-auto h-[calc(100vh-80px)]">
+                </nav>
+        </aside>
+
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <header class="md:hidden bg-white shadow-md p-4 flex justify-between items-center">
+                <h1 class="text-lg font-semibold text-blue-700">Statistics IV Guide</h1>
+                <button id="hamburger-menu" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </header>
+
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50 p-4 md:p-8">
+                <div id="content-container" class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-xl">
+                    </div>
+            </main>
+
+            <footer class="p-4 bg-white border-t border-gray-200 shadow-sm">
+                <div class="max-w-4xl mx-auto flex justify-between items-center">
+                    <button id="prev-button" class="nav-button">Previous</button>
+                    <span id="page-indicator" class="text-sm text-gray-600"></span>
+                    <button id="next-button" class="nav-button">Next</button>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const guideContent = [
+            // Introduction
+            {
+                id: "introduction",
+                title: "Introduction",
+                content: `
+                    <h3>Introduction</h3>
+                    <p>Statistical Methods IV represents a crucial component of the Kenya Certificate of Secondary Education (KCSE) Geography syllabus, focusing on the graphical presentation and interpretation of geographical data. These methods are indispensable tools for geographers, enabling them to analyze spatial patterns, demographic structures, and regional variations effectively. The transformation of raw data into visual formats, such as graphs and maps, simplifies complex information, making it easier to understand, compare, and interpret. This visual approach is fundamental to comprehending population dynamics, resource distribution, and various socio-economic and environmental phenomena.</p>
+                    <p>The significance of these methods lies in their ability to clearly communicate findings and support evidence-based decision-making in planning and resource management. By mastering these techniques, one develops critical analytical skills essential for both academic pursuits and real-world applications.</p>
+                    <p>According to the syllabus outline, Statistics IV covers specifically:</p>
+                    <ul>
+                        <li>Analysis, interpretation, and presentation of statistical data using population pyramids and Age-Sex pyramids.</li>
+                        <li>Analysis and interpretation of dot maps and choropleth maps.</li>
+                    </ul>
+                    <p>Let's delve into each of these methods in detail.</p>
+                    <h4>Table 1: Overview of Statistical Methods IV</h4>
+                    <div class='overflow-x-auto'>
+                        <table class='min-w-full'>
+                            <thead>
+                                <tr>
+                                    <th>Method</th>
+                                    <th>Primary Use</th>
+                                    <th>Typical Data Type</th>
+                                    <th>Key Visual Cue</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Age-Sex Pyramid</td>
+                                    <td>Showing population structure by age and sex</td>
+                                    <td>Population counts or percentages by age/sex</td>
+                                    <td>Two back-to-back horizontal bar graphs (pyramid shape)</td>
+                                </tr>
+                                <tr>
+                                    <td>Dot Map</td>
+                                    <td>Showing geographical distribution and density</td>
+                                    <td>Discrete counts, occurrences of phenomena</td>
+                                    <td>Clusters or dispersion of dots</td>
+                                </tr>
+                                <tr>
+                                    <td>Choropleth Map</td>
+                                    <td>Showing density or rates over predefined areas</td>
+                                    <td>Areal averages, ratios, densities, percentages</td>
+                                    <td>Shaded/colored administrative or areal units</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class='text-xs text-gray-500 mt-1'>This table offers an initial comparison, helping to differentiate the core purpose and visual characteristics of each method before a more detailed exploration.</p>
+                `
+            },
+            // Section 1: Age-Sex Pyramids
+            {
+                id: "ageSexPyramids_definition",
+                title: "1.1 Definition, Purpose, and Basic Characteristics",
+                category: "1. Age-Sex Pyramids",
+                content: `
+                    <h3>1. Age-Sex Pyramids</h3>
+                    <h4>1.1 Definition, Purpose, and Basic Characteristics</h4>
+                    <p>An <strong>age-sex pyramid</strong> is a specialized bar graph used to present population data, visually illustrating the distribution of different age groups for both males and females within a specific population. It is essentially composed of two horizontal bar graphs placed back-to-back, one for males and the other for females.</p>
+                    <p>The <strong>primary purpose</strong> of an age-sex pyramid is to graphically represent the age and sex structure of a population at a particular point in time. This representation allows for the analysis of demographic trends like birth rates, death rates, life expectancy, and dependency ratios. Governments and planners use this information for resource allocation and forecasting future needs in areas like education and healthcare.</p>
+                    <p><strong>Basic Characteristics:</strong></p>
+                    <ul>
+                        <li><strong>Horizontal Bars:</strong> Each bar represents a specific age cohort, typically in 5-year intervals (e.g., 0-4, 5-9). The length of each bar is proportional to the number of persons or the percentage of the total population within that specific age-sex group.</li>
+                        <li><strong>Gender Representation:</strong> Males are conventionally depicted on the left side of the central vertical axis, and females are shown on the right.</li>
+                        <li><strong>Vertical Axis (Y-axis):</strong> This axis represents the age groups, arranged from the youngest cohort at the bottom to the oldest at the top.</li>
+                        <li><strong>Horizontal Axis (X-axis):</strong> This axis represents the number or percentage of the population, with zero at the center, extending outwards. The scale must be the same for both males and females.</li>
+                    </ul>
+                    <div class='diagram-placeholder'>
+                        [Placeholder for a generic Age-Sex Pyramid diagram showing vertical age axis, horizontal percentage/number axis, and distinct sides for male and female populations.]
+                        <p>Diagram: Basic Structure of an Age-Sex Pyramid</p>
+                    </div>
+                `
+            },
+            {
+                id: "ageSexPyramids_construction",
+                title: "1.2 Construction",
+                category: "1. Age-Sex Pyramids",
+                content: `
+                    <h4>1.2 Construction of Age-Sex Pyramids</h4>
+                    <p>Construction requires population figures disaggregated by age and sex. Census data is a common source.</p>
+                    <p><strong>Percentage Calculation:</strong> A crucial step involves expressing the number of individuals in each age-sex group as a percentage. According to the provided notes using the 1999 Kenya census data, this is done by calculating the percentage of the total male population for each male age group, and the percentage of the total female population for each female age group.</p>
+                    <ul>
+                        <li>Example for 0-4 males (Kenya 1999): \\( \\left(\\frac{2,291,936}{14,205,589}\\right) \\times 100 = 16.13\\% \\)</li>
+                        <li>Example for 0-4 females (Kenya 1999): \\( \\left(\\frac{2,242,966}{14,481,081}\\right) \\times 100 = 15.49\\% \\)</li>
+                    </ul>
+                    <p>Converting raw numbers to percentages standardizes data for comparison.</p>
+                    <p><strong>Drawing the Pyramid:</strong></p>
+                    <ol>
+                        <li><strong>Axes:</strong> Establish a central vertical axis for the age groups (youngest at the bottom, oldest at the top). Draw a horizontal axis for the percentages (or absolute numbers), with zero at the center, extending outwards for males (left) and females (right). Ensure the scale on the horizontal axis is identical for both sexes.</li>
+                        <li><strong>Bars:</strong> For each age group, draw a horizontal bar for males to the left and for females to the right. The length of each bar should correspond to the calculated percentage (or absolute number) for that specific age-sex group.</li>
+                        <li><strong>Labeling:</strong> Clearly label both axes. The vertical axis should show age groups, and the horizontal axis should indicate percentages or numbers. Provide a clear title for the pyramid, including the name of the population (e.g., "Population of Kenya"), the year of the data, and the source of the data.</li>
+                    </ol>
+                    <h4>Table 2: Age-Sex Pyramid Construction - Kenya 1999 Census Data Example (Selected Age Groups)</h4>
+                    <div class='overflow-x-auto'>
+                        <table>
+                            <thead>
+                                <tr><th>Age-group</th><th>Males (Absolute)</th><th>Females (Absolute)</th><th>Total Males (1999)</th><th>Total Females (1999)</th><th>% Males (of total males)</th><th>% Females (of total females)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>0-4</td><td class='text-right'>2,291,936</td><td class='text-right'>2,242,966</td><td class='text-right'>14,205,589</td><td class='text-right'>14,481,081</td><td class='text-right'>16.13%</td><td class='text-right'>15.49%</td></tr>
+                                <tr><td>15-19</td><td class='text-right'>1,681,984</td><td class='text-right'>1,721,194</td><td class='text-right'>14,205,589</td><td class='text-right'>14,481,081</td><td class='text-right'>11.84%</td><td class='text-right'>11.83%</td></tr>
+                                <tr><td>30-34</td><td class='text-right'>840,692</td><td class='text-right'>845,230</td><td class='text-right'>14,205,589</td><td class='text-right'>14,481,081</td><td class='text-right'>5.91%</td><td class='text-right'>5.83%</td></tr>
+                                <tr><td>60-64</td><td class='text-right'>194,513</td><td class='text-right'>214,715</td><td class='text-right'>14,205,589</td><td class='text-right'>14,481,081</td><td class='text-right'>1.36%</td><td class='text-right'>1.48%</td></tr>
+                                <tr><td>80+</td><td class='text-right'>103,487</td><td class='text-right'>86,956</td><td class='text-right'>14,205,589</td><td class='text-right'>14,481,081</td><td class='text-right'>0.72%</td><td class='text-right'>0.60%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class='text-xs text-gray-500 mt-1'>Source: Adapted from [1]</p>
+                `
+            },
+            {
+                id: "ageSexPyramids_interpretation",
+                title: "1.3 Interpreting Age-Sex Pyramids",
+                category: "1. Age-Sex Pyramids",
+                content: `
+                    <h4>1.3 Interpreting Age-Sex Pyramids</h4>
+                    <p>Interpreting an age-sex pyramid involves analyzing its shape and specific features:</p>
+                    <ul>
+                        <li><strong>Overall Shape:</strong>
+                            <ul>
+                                <li><em>Triangular Shape:</em> Suggests a young and growing population, indicative of rapid growth.</li>
+                                <li><em>Rectangular or Beehive Shape:</em> Indicates a stable population with slow or zero growth.</li>
+                                <li><em>Narrow Base and Wider Upper Cohorts:</em> Suggests an aging or shrinking population.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Base Width:</strong>
+                            <ul>
+                                <li>A <em>wide base</em> signifies a high birth rate and a large cohort of young children. Characteristic of populations with high fertility.</li>
+                                <li>A <em>narrow base</em> indicates a low birth rate and fewer young children. Often seen in developed countries.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Apex (Top):</strong>
+                            <ul>
+                                <li>A <em>narrow, sharply tapering top</em> suggests high death rates across older age groups and/or a lower life expectancy.</li>
+                                <li>A <em>broader top</em> indicates a larger proportion of the population surviving into old age, reflecting lower death rates and a higher life expectancy.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Sides (Slope):</strong>
+                            <ul>
+                                <li><em>Concave sides</em> typically indicate high death rates throughout age cohorts or significant age-specific emigration.</li>
+                                <li><em>Straight or convex sides</em> suggest low death rates or net in-migration in those age groups.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Dependency Ratio:</strong> Inferred by comparing young (0-14/19) and old (65+) dependents to the working-age population (15/20-64). A wide base and/or broad top relative to the middle indicates a high dependency ratio.</li>
+                        <li><strong>Gender Balance (Sex Ratio):</strong> Comparing bar lengths per cohort reveals sex ratio. Differences can point to sex-selective migration or mortality differences.</li>
+                        <li><strong>Bulges and Indentations:</strong>
+                            <ul>
+                                <li><em>Bulges</em> can indicate a past "baby boom" or significant in-migration.</li>
+                                <li><em>Indentations</em> can suggest past events leading to reduced births or increased deaths for that cohort (e.g., wars, famines, epidemics) or significant emigration.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><strong>Kenyan Example Interpretation (1999 Census):</strong> The age-sex pyramid for Kenya based on the 1999 census data exhibits a very wide base and a sharply narrowing top. This classic triangular shape is characteristic of a youthful and rapidly growing population. The wide base indicates high birth rates and a large proportion of children. The progressively shorter bars for older age groups and the narrow apex point to relatively high death rates and a lower life expectancy compared to more developed nations.</p>
+                    <div class='diagram-placeholder'>
+                        [Placeholder for an Age-Sex Pyramid of Kenya (1999 Census) showing a wide base (e.g., 0-4 age group bars are longest) and a sharply tapering top (e.g., 80+ age group bars are very short). Male side (left) and Female side (right) should be depicted.]
+                        <p>Diagram: Kenyan Population Pyramid (1999 Census Example)</p>
+                    </div>
+                `
+            },
+            {
+                id: "ageSexPyramids_types",
+                title: "1.4 Types of Population Pyramids",
+                category: "1. Age-Sex Pyramids",
+                content: `
+                    <h4>1.4 Types of Population Pyramids</h4>
+                    <ul>
+                        <li><strong>Expansive (Youthful/Growing):</strong>
+                            <ul>
+                                <li>Characteristics: Wide base, narrow top. High birth rates. Rapid population growth.</li>
+                                <li>Example: Kenya (1999).</li>
+                                <li>Implications: Pressure on resources for education/jobs, potential demographic dividend if fertility declines.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Stationary (Stable/Slow Growth):</strong>
+                            <ul>
+                                <li>Characteristics: Rectangular or beehive shape. Birth rates close to death rates. Low death rates, longer life expectancy. Slow/stable growth.</li>
+                                <li>Implications: Balanced age distribution, manageable dependency.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Constrictive (Aging/Shrinking):</strong>
+                            <ul>
+                                <li>Characteristics: Narrow base, wider middle/top. Low birth rates (often below replacement). Low death rates, very long life expectancy. Negative or very slow growth.</li>
+                                <li>Example: Japan, Germany.</li>
+                                <li>Implications: Pressure on healthcare/pensions, potential labor shortages, high elderly dependency.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class='grid md:grid-cols-3 gap-4 my-4'>
+                        <div class='diagram-placeholder'>
+                            [Placeholder: Expansive Pyramid Diagram - Broad base, concave sides, narrow top.]
+                            <p>Expansive Pyramid</p>
+                        </div>
+                        <div class='diagram-placeholder'>
+                            [Placeholder: Stationary Pyramid Diagram - Roughly rectangular/beehive shape, base similar width to middle cohorts.]
+                            <p>Stationary Pyramid</p>
+                        </div>
+                        <div class='diagram-placeholder'>
+                            [Placeholder: Constrictive Pyramid Diagram - Narrow base, wider middle/top cohorts, convex sides.]
+                            <p>Constrictive Pyramid</p>
+                        </div>
+                    </div>
+                    <h4>Table 3: Comparative Summary of Population Pyramid Types</h4>
+                    <div class='overflow-x-auto'>
+                        <table>
+                            <thead>
+                                <tr><th>Feature</th><th>Expansive (Youthful/Growing)</th><th>Stationary (Stable/Slow Growth)</th><th>Constrictive (Aging/Shrinking)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Shape Description</td><td>Broad base, narrow top (classic pyramid)</td><td>Rectangular/Beehive/Bell-shaped, base similar to middle cohorts</td><td>Narrow base, wider middle/top cohorts (inverted pyramid/tapered bottom)</td></tr>
+                                <tr><td>Birth Rate</td><td>High</td><td>Low / Declining</td><td>Very Low (often below replacement)</td></tr>
+                                <tr><td>Death Rate</td><td>Relatively High (but can be declining)</td><td>Low</td><td>Very Low</td></tr>
+                                <tr><td>Life Expectancy</td><td>Short to Moderate</td><td>Moderate to Long</td><td>Long to Very Long</td></tr>
+                                <tr><td>Population Growth</td><td>Rapid</td><td>Slow / Stable / Zero</td><td>Negative / Very Slow</td></tr>
+                                <tr><td>Dependency Ratio</td><td>High (predominantly youth dependency)</td><td>Moderate / Balanced</td><td>Increasing (predominantly elderly dependency)</td></tr>
+                                <tr><td>Example Country</td><td>Niger, Afghanistan, Kenya (historically)</td><td>USA (approaching), Ecuador</td><td>Japan, Germany, Italy</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                     <p class='text-xs text-gray-500 mt-1'>Source: Synthesized from [2, 5, 9, 11]</p>
+                `
+            },
+            {
+                id: "ageSexPyramids_advantagesDisadvantages",
+                title: "1.5 Advantages and Disadvantages",
+                category: "1. Age-Sex Pyramids",
+                content: `
+                    <h4>1.5 Advantages and Disadvantages</h4>
+                    <p><strong>Advantages:</strong></p>
+                    <ul>
+                        <li>Gives a clear visual impression of population data.</li>
+                        <li>Relatively easy to construct/draw and read/interpret (at a basic level).</li>
+                        <li>Provides useful information for planning purposes by the government.</li>
+                        <li>Enables easy comparisons of population structures for various countries or times.</li>
+                        <li>Indicates demographic rates like birth and death rates.</li>
+                    </ul>
+                    <p><strong>Disadvantages:</strong></p>
+                    <ul>
+                        <li>Can be tedious and time-consuming to construct manually.</li>
+                        <li>Represents few variables (primarily age and sex).</li>
+                        <li>Difficult to choose a suitable horizontal scale, especially with absolute numbers.</li>
+                        <li>Difficult to tell the exact values for each bar at a glance.</li>
+                        <li>Reasons for differences (e.g., historical events, policies) are not gotten directly from the pyramid; they must be inferred.</li>
+                        <li>Can take up much space if age-groups are many.</li>
+                        <li>Migration is not explicitly shown; its effects (bulges/indentations) must be inferred.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "ageSexPyramids_kcseFocus",
+                title: "1.6 KCSE Application and Focus",
+                category: "1. Age-Sex Pyramids",
+                content: `
+                    <h4>1.6 KCSE Application and Focus</h4>
+                    <p>For the KCSE Geography examination, students are expected to demonstrate a comprehensive understanding of age-sex pyramids. Key areas of focus include:</p>
+                    <ul>
+                        <li><strong>Definition and Characteristics:</strong> Students must be able to define an age-sex pyramid and accurately describe its key features and components.</li>
+                        <li><strong>Construction:</strong> A critical skill is the ability to construct an age-sex pyramid from given raw population data. This includes performing correct percentage calculations, choosing appropriate scales, labeling axes correctly, and presenting a neat and accurate diagram.</li>
+                        <li><strong>Description of Population Structure:</strong> Given a population pyramid, students should be able to describe the population structure it represents.</li>
+                        <li><strong>Interpretation of Features:</strong> Students need to interpret specific features of a pyramid (wide base, narrow apex, bulges, indentations) in terms of their demographic significance.</li>
+                        <li><strong>Comparative Analysis:</strong> The ability to compare population structures of different countries or the same country over different time periods is important.</li>
+                        <li><strong>Identification of Pyramid Types:</strong> Students should be able to identify whether a pyramid is expansive, stationary, or constrictive, and explain the demographic implications.</li>
+                        <li><strong>Advantages and Disadvantages:</strong> A clear understanding of the strengths and limitations of age-sex pyramids.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "ageSexPyramids_advanced",
+                title: "1.7 Advanced Considerations and Challenges",
+                category: "1. Age-Sex Pyramids",
+                content: `
+                    <h4>1.7 Advanced Considerations and Challenges</h4>
+                    <ul>
+                        <li><strong>Data Accuracy and Census Errors:</strong> Pyramids rely on census data, which is prone to errors like age misreporting (age heaping) and under/over-enumeration, potentially distorting the shape.</li>
+                        <li><strong>Impact of Migration:</strong> Migration significantly alters structure (bulges/constrictions) but is not explicitly quantified, making it hard to disentangle from birth/death effects without supplementary data.</li>
+                        <li><strong>Static Nature:</strong> A single pyramid is a "snapshot" at one time point. To understand dynamics, compare a series of pyramids over time (cohort analysis).</li>
+                    </ul>
+                `
+            },
+            // Section 2: Dot Maps
+            {
+                id: "dotMaps_definition",
+                title: "2.1 Definition, Purpose, and Basic Characteristics",
+                category: "2. Dot Maps",
+                content: `
+                    <h3>2. Dot Maps (Distribution Maps)</h3>
+                    <h4>2.1 Definition, Purpose, and Basic Characteristics</h4>
+                    <p>A <strong>dot map</strong>, also known as a dot distribution map, is a map that uses dots to describe the distribution of phenomena across an area. Each dot represents a specific, predetermined quantity of the item being mapped (in "one-to-many" maps) or, in some cases, a single occurrence ("one-to-one" maps). The KCSE syllabus primarily focuses on "one-to-many" maps where dots are quantitative symbols each having a specific or fixed value.</p>
+                    <p>The <strong>primary purpose</strong> of a dot map is to provide a clear visual impression of the <strong>spatial pattern of a distribution</strong>. It effectively shows where the mapped phenomenon is concentrated (dense clusters of dots) and where it is sparse or absent (few or no dots).</p>
+                    <p><strong>Basic Characteristics:</strong></p>
+                    <ul>
+                        <li><strong>Quantitative Symbols:</strong> Dots have a specific, fixed value in one-to-many maps.</li>
+                        <li><strong>Density Representation:</strong> The visual density (clustering) of the dots reflects the actual density of the mapped phenomenon in that area.</li>
+                        <li><strong>Data Type:</strong> Well-suited for displaying raw data or simple counts of discrete phenomena.</li>
+                    </ul>
+                    <div class='diagram-placeholder'>
+                        [Placeholder for a simple Dot Map. Should show a hypothetical area with some regions having densely clustered dots and other regions with sparsely distributed dots, illustrating varying densities.]
+                        <p>Diagram: Basic Principles of a Dot Map</p>
+                    </div>
+                `
+            },
+            {
+                id: "dotMaps_construction",
+                title: "2.2 Constructing Dot Maps",
+                category: "2. Dot Maps",
+                content: `
+                    <h4>2.2 Constructing Dot Maps</h4>
+                    <p>Constructing an effective dot map involves critical decisions and steps. Factors taken into consideration include:</p>
+                    <ul>
+                        <li><strong>The value of each dot:</strong> Represents the actual number of items or phenomena. Choosing the dot value is crucial; if too small, dots coalesce; if too large, areas appear empty. A common guideline is to have 2-3 dots in the least dense areas and some coalescence in the densest.</li>
+                        <li><strong>The size of each dot:</strong> Must be considered alongside dot value and location. Dots need to be visible but not obscure details or coalesce too quickly. All dots on a map must be of a <strong>uniform size</strong>.</li>
+                        <li><strong>The location of each dot:</strong> Calculating and placing dots can be time-consuming. Dot placement can reflect a personal, subjective decision. Placement may not always take into account the reality on the ground (e.g., placing dots in lakes when mapping livestock). A more accurate approach uses ancillary data to guide placement to areas where the phenomenon logically exists.</li>
+                    </ul>
+                    <p><strong>Calculation:</strong> Determine the number of dots per area by dividing the total quantity in the area by the dot value. Rounding fractions leads to minor inaccuracies. For example, if a sub-county has 50,000 livestock and the dot value is 1,000 livestock per dot, then \\( \\frac{50,000}{1,000} = 50 \\) dots would be placed.</p>
+                    <p><strong>Example: Bungoma County Livestock Distribution</strong></p>
+                    <div class='diagram-placeholder'>
+                        [Placeholder for a hypothetical Dot Map of Bungoma County showing sub-county boundaries. Dots representing livestock would be placed within these sub-counties, with varying densities to reflect hypothetical data (e.g., Kanduyi more dense, Sirisia less dense).]
+                        <p>Diagram: Hypothetical Dot Map - Bungoma County Livestock</p>
+                    </div>
+                    <h4>Table 4: Dot Map Construction - Key Decision Factors</h4>
+                    <div class='overflow-x-auto'>
+                        <table>
+                            <thead>
+                                <tr><th>Factor</th><th>Key Considerations/Best Practices</th><th>Potential Pitfalls</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Dot Value</td><td>Balance detail in sparse areas with clarity in dense areas. Aim for 2-3 dots in least dense units, coalescence in densest.</td><td>Too small: excessive dots, coalescence. Too large: loss of detail, false impression of absence.</td></tr>
+                                <tr><td>Dot Size</td><td>Large enough for visibility, small enough to avoid premature coalescence and obscuring map details. Uniformity is essential.</td><td>Too small: difficult to see, map appears sparse. Too large: rapid coalescence, coarse appearance.</td></tr>
+                                <tr><td>Dot Placement Method</td><td>Prefer placement guided by ancillary data (where phenomenon exists) over purely random placement within units.</td><td>Random placement can be misleading if actual distribution is uneven within units (e.g., dots in lakes).</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            {
+                id: "dotMaps_interpretation",
+                title: "2.3 Interpreting Dot Maps",
+                category: "2. Dot Maps",
+                content: `
+                    <h4>2.3 Interpreting Dot Maps</h4>
+                    <p>Interpreting a dot map involves observing the arrangement and concentration of dots to:</p>
+                    <ul>
+                        <li>Identify <strong>distribution patterns</strong> (clustered, dispersed, linear).</li>
+                        <li>Compare <strong>comparative densities</strong> by visually assessing dot concentration.</li>
+                        <li>Estimate <strong>total quantity</strong> in a region by multiplying the number of dots by the dot value (often tedious or impossible in dense areas).</li>
+                        <li>Relate observed patterns to other geographical factors (correlation).</li>
+                    </ul>
+                `
+            },
+            {
+                id: "dotMaps_applications",
+                title: "2.4 Applications in KCSE Geography",
+                category: "2. Dot Maps",
+                content: `
+                    <h4>2.4 Applications in KCSE Geography</h4>
+                    <p>Dot maps can be used for:</p>
+                    <ul>
+                        <li>Showing <strong>population distribution</strong>.</li>
+                        <li>Mapping <strong>agricultural distribution</strong> of crops or livestock.</li>
+                        <li>Illustrating <strong>resource distribution</strong> (e.g., mineral deposits, forests).</li>
+                        <li>Showing <strong>rainfall patterns</strong> (less common).</li>
+                        <li>Distribution of services or infrastructure.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "dotMaps_advantagesDisadvantages",
+                title: "2.5 Advantages and Disadvantages",
+                category: "2. Dot Maps",
+                content: `
+                    <h4>2.5 Advantages and Disadvantages</h4>
+                    <p><strong>Advantages:</strong></p>
+                    <ul>
+                        <li>Gives a clear visual impression of comparative densities and distribution.</li>
+                        <li>If the key (dot value) is given, it is possible to calculate the total population (or quantity).</li>
+                        <li>Has a wide use (e.g., showing rainfall, population, livestock).</li>
+                        <li>Can be used to show the distribution of different phenomena on the same map (with different symbols).</li>
+                        <li>Generally easy to interpret/read and draw/construct (at a basic level).</li>
+                        <li>Can effectively represent raw data counts.</li>
+                    </ul>
+                    <p><strong>Disadvantages:</strong></p>
+                    <ul>
+                        <li>Can be tedious to draw uniform dot sizes and shape.</li>
+                        <li>Location of dots reflects to a certain extent a personal, subjective decision, potentially not reflecting reality on the ground.</li>
+                        <li>When dots overcrowd (coalesce), they give the impression that the distribution is dense but hide variations within that dense area.</li>
+                        <li>Placing of dots may not take into account the reality on the ground (e.g., uninhabitable areas).</li>
+                        <li>Calculating and placement of dots is time-consuming.</li>
+                        <li>Miscounting of dots can lead to wrong data totals.</li>
+                        <li>Rounding off of fractions leads to wrong numbers of dots plotted.</li>
+                        <li>Difficult to retrieve exact numerical data for specific areas.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "dotMaps_kcseFocus",
+                title: "2.6 KCSE Application and Focus",
+                category: "2. Dot Maps",
+                content: `
+                    <h4>2.6 KCSE Application and Focus</h4>
+                    <p>For KCSE Geography, students need to be proficient in several aspects related to dot maps:</p>
+                     <ul>
+                        <li><strong>Definition and Characteristics:</strong> Understand and be able to state the definition, purpose, and key characteristics of dot maps.</li>
+                        <li><strong>Construction:</strong> Be able to construct a simple dot map when provided with relevant data, a base map, and a specific dot value.</li>
+                        <li><strong>Interpretation and Description:</strong> Accurately describe the distribution pattern shown on a given dot map.</li>
+                        <li><strong>Calculation:</strong> Be able to calculate total quantities for a region if the dot value and a countable number of dots are provided.</li>
+                        <li><strong>Evaluation:</strong> State the advantages and disadvantages of dot maps.</li>
+                        <li><strong>Critical Analysis:</strong> Potentially, critically evaluate a given dot map.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "dotMaps_advanced",
+                title: "2.7 Advanced Considerations and Challenges",
+                category: "2. Dot Maps",
+                content: `
+                    <h4>2.7 Advanced Considerations and Challenges</h4>
+                    <ul>
+                        <li><strong>Placement Subjectivity:</strong> Random placement within administrative units can be misleading; using ancillary data (e.g., land use maps) for geographically weighted placement is more accurate but complex.</li>
+                        <li><strong>Coalescence:</strong> Limits effectiveness in very dense areas, as variations within the dense mass are hidden.</li>
+                        <li><strong>Map Scale Impact:</strong> Dot size and value must be calibrated to the map scale; what works for a national map won't work for a city map.</li>
+                        <li><strong>Ecological Fallacy:</strong> Risk of incorrectly assuming each dot represents the precise location of an individual item, rather than a portion of an aggregated quantity within a unit.</li>
+                    </ul>
+                `
+            },
+            // Section 3: Choropleth Maps
+            {
+                id: "choroplethMaps_definition",
+                title: "3.1 Definition, Purpose, and Basic Characteristics",
+                category: "3. Choropleth Maps",
+                content: `
+                    <h3>3. Choropleth Maps (Density or Shaded Maps)</h3>
+                    <h4>3.1 Definition, Purpose, and Basic Characteristics</h4>
+                    <p>A <strong>choropleth map</strong>, also called a density or shaded map, shows the relationship between quantities and area. It represents statistical data for predefined geographical areas (like counties or districts) by <strong>shading or coloring</strong> these areas according to the value of the mapped variable. The intensity of the shade or the specific color corresponds to a data range or class.</p>
+                    <p>The <strong>primary purpose</strong> of a choropleth map is to illustrate the <strong>spatial variation</strong> of a phenomenon across a region. It allows for easy visual comparison of how a particular rate, density, ratio, or percentage differs from one administrative unit to another.</p>
+                    <p><strong>Basic Characteristics:</strong></p>
+                    <ul>
+                        <li><strong>Areal Units:</strong> Data is presented for discrete geographical units with defined boundaries.</li>
+                        <li><strong>Shading/Coloring:</strong> Each unit is filled with a uniform shade, color, or pattern corresponding to its data value or class.</li>
+                        <li><strong>Legend (Key):</strong> An essential component linking shades/colors to specific data ranges/classes.</li>
+                        <li><strong>Data Type:</strong> Most appropriate for <strong>derived data</strong> like densities, percentages, or ratios. Using absolute counts can be misleading because larger units might have higher totals simply due to size, not concentration.</li>
+                    </ul>
+                    <div class='diagram-placeholder'>
+                        [Placeholder for a simple Choropleth Map. Should show a few distinct administrative areas, each shaded with a different intensity (e.g., light, medium, dark). A legend should be present linking these shades to data ranges (e.g., Low, Medium, High density).]
+                        <p>Diagram: Basic Principles of a Choropleth Map</p>
+                    </div>
+                `
+            },
+            {
+                id: "choroplethMaps_construction",
+                title: "3.2 Constructing Choropleth Maps",
+                category: "3. Choropleth Maps",
+                content: `
+                    <h4>3.2 Constructing Choropleth Maps</h4>
+                    <p>Construction involves data preparation, calculation, and classification.</p>
+                    <p><strong>Density Calculation:</strong> If mapping density, calculate using the formula: $$ Density = \\frac{\\text{Total quantity}}{\\text{Area of unit}} $$</p>
+                    <p><strong>Data Classification:</strong> Grouping data values into a limited number of classes (typically 3 to 7). This is a critical decision affecting the visual pattern and interpretation. Common methods include:</p>
+                    <ul>
+                        <li><strong>Equal Interval:</strong> Divides the data range into classes of equal size. Simple, but sensitive to outliers.</li>
+                        <li><strong>Quantiles:</strong> Each class contains an approximately equal number of areal units. Ensures all shades are used, but can group dissimilar values.</li>
+                        <li><strong>Natural Breaks (Jenks Optimization):</strong> Uses an algorithm to identify natural groupings in data. Highlights inherent patterns, but class limits are data-specific, making comparison difficult.</li>
+                        <li><strong>Manual:</strong> Cartographer manually defines breaks. Offers flexibility, but requires understanding and justification.</li>
+                    </ul>
+                    <p><strong>Shading/Coloring:</strong> Assign a unique shade/color to each class. For quantitative data, use a sequential scheme (light to dark for low to high values).</p>
+                    <div class='diagram-placeholder'>
+                        [Placeholder: Three small side-by-side maps of the same hypothetical region. Map 1: Data classified by Equal Interval. Map 2: Same data classified by Quantiles. Map 3: Same data classified by Natural Breaks. The shading patterns should look different to illustrate the impact of classification.]
+                        <p>Diagram: Impact of Different Data Classification Methods</p>
+                    </div>
+                    <h4>Table 5: Choropleth Map Construction - Common Data Classification Methods</h4>
+                    <div class='overflow-x-auto'>
+                        <table>
+                            <thead>
+                                <tr><th>Method</th><th>Description</th><th>Advantage</th><th>Disadvantage</th><th>Impact on Visualization</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Equal Interval</td><td>Divides the data range into classes of equal size.</td><td>Simple to calculate and understand.</td><td>Outliers can distort classification, leading to many units in few classes or empty classes.</td><td>May not effectively show variation if data is skewed; some shades might dominate or be absent.</td></tr>
+                                <tr><td>Quantiles</td><td>Places an equal number of areal units in each class.</td><td>Ensures all colors/shades are used; good for ranked data.</td><td>Can group dissimilar values or separate similar ones if data is not evenly distributed.</td><td>Creates a visually balanced map but may not reflect natural groupings in the data.</td></tr>
+                                <tr><td>Natural Breaks (Jenks)</td><td>Identifies natural groupings in the data by minimizing within-class variance.</td><td>Often best reflects the inherent structure of the data; good for uneven distributions.</td><td>Class limits are data-specific, making comparisons across different maps difficult.</td><td>Highlights clusters and gaps in the data distribution effectively.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            {
+                id: "choroplethMaps_interpretation",
+                title: "3.3 Interpreting Choropleth Maps",
+                category: "3. Choropleth Maps",
+                content: `
+                    <h4>3.3 Interpreting Choropleth Maps</h4>
+                    <p>Interpretation involves examining spatial patterns revealed by shading:</p>
+                    <ul>
+                        <li>Use the <strong>legend</strong> to understand value ranges.</li>
+                        <li>Identify areas of <strong>high, medium, and low values</strong>.</li>
+                        <li><strong>Compare regions</strong> to understand relative differences.</li>
+                        <li>Look for <strong>spatial patterns</strong> (clustering, trends).</li>
+                        <li>Be mindful of potential misinterpretations (illusion of uniformity, abrupt changes at boundaries).</li>
+                    </ul>
+                `
+            },
+            {
+                id: "choroplethMaps_applications",
+                title: "3.4 Applications in KCSE Geography",
+                category: "3. Choropleth Maps",
+                content: `
+                    <h4>3.4 Applications in KCSE Geography</h4>
+                    <p>Choropleth maps are widely used for:</p>
+                    <ul>
+                        <li>Mapping <strong>population density</strong>. For example, a choropleth map of Kenya based on the 2019 census data would show Nairobi and Mombasa counties with very high population densities (e.g., >1000 people/km²), while counties in arid and semi-arid lands (ASALs) like Marsabit or Turkana would show very low densities (e.g., <20 people/km²).</li>
+                        <li>Showing variations in <strong>agricultural production or yield</strong>. A choropleth map could illustrate that tea production per hectare is highest in counties like Kericho and Nyeri.</li>
+                        <li>Illustrating regional disparities in <strong>economic indicators</strong> (e.g., poverty rates).</li>
+                        <li>Representing <strong>disease prevalence or health indicators</strong>.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "choroplethMaps_advantagesDisadvantages",
+                title: "3.5 Advantages and Disadvantages",
+                category: "3. Choropleth Maps",
+                content: `
+                    <h4>3.5 Advantages and Disadvantages</h4>
+                    <p><strong>Advantages:</strong></p>
+                    <ul>
+                        <li>Gives a clear visual impression of spatial patterns of density or variation.</li>
+                        <li>Makes it easy to compare densities or values at a glance between regions.</li>
+                        <li>Relatively easy to construct.</li>
+                        <li>Generally easy to read/interpret if well-designed.</li>
+                        <li>Effective for displaying data for defined administrative units.</li>
+                    </ul>
+                    <p><strong>Disadvantages:</strong></p>
+                    <ul>
+                        <li>Gives a wrong impression that density changes abruptly at the boundaries. Many phenomena transition gradually.</li>
+                        <li>Gives the impression that densities are uniform within each region, masking internal variation.</li>
+                        <li>Calculations and shading can be laborious and time consuming (if manual).</li>
+                        <li>Represents few variables (typically one).</li>
+                        <li>Can be confusing if boundaries are not clearly marked or if poorly designed.</li>
+                        <li>Unsuitable for showing absolute values or totals.</li>
+                        <li>Area size bias: Larger areas visually dominate, regardless of the value.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "choroplethMaps_kcseFocus",
+                title: "3.6 KCSE Application and Focus",
+                category: "3. Choropleth Maps",
+                content: `
+                    <h4>3.6 KCSE Application and Focus</h4>
+                    <p>In the context of KCSE Geography, students should be prepared to engage with choropleth maps in several ways:</p>
+                     <ul>
+                        <li><strong>Definition and Characteristics:</strong> Clearly define what a choropleth map is and describe its main features and purpose.</li>
+                        <li><strong>Density Calculation:</strong> Be able to calculate density if provided with the necessary raw data.</li>
+                        <li><strong>Construction (Simplified):</strong> Students might be expected to construct a simple choropleth map.</li>
+                        <li><strong>Interpretation and Description:</strong> Analyze a given choropleth map to describe the patterns of density or variation shown.</li>
+                        <li><strong>Comparison of Values:</strong> Compare the values represented by different shades.</li>
+                        <li><strong>Evaluation:</strong> State the advantages and disadvantages.</li>
+                        <li><strong>Critical Analysis:</strong> Critically evaluate a given choropleth map.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "choroplethMaps_advanced",
+                title: "3.7 Advanced Considerations and Challenges",
+                category: "3. Choropleth Maps",
+                content: `
+                    <h4>3.7 Advanced Considerations and Challenges</h4>
+                    <ul>
+                        <li><strong>Modifiable Areal Unit Problem (MAUP):</strong> Patterns observed are influenced by the size (scale problem) and configuration (zoning problem) of the administrative units used, not just the phenomenon itself.</li>
+                        <li><strong>Area Size Bias:</strong> Larger units on the map have more visual weight, potentially distorting perception of importance.</li>
+                        <li><strong>Hiding Internal Variations:</strong> A single shade for a unit masks any sub-regional differences within that unit.</li>
+                        <li><strong>Choice of Classification:</strong> The method used to group data into classes significantly affects the visual appearance and perceived patterns.</li>
+                    </ul>
+                `
+            },
+            // Section 4: Comparative Analysis
+            {
+                id: "comparativeAnalysis_choosingMethod",
+                title: "4.1 Choosing the Appropriate Statistical Method",
+                category: "4. Comparative Analysis & Best Practices",
+                content: `
+                    <h3>4. Comparative Analysis and Best Practices for KCSE</h3>
+                    <h4>4.1 Choosing the Appropriate Statistical Method</h4>
+                    <p>Selecting the correct statistical method for data presentation is crucial for effective geographical communication. The choice depends primarily on the nature of the data and the specific purpose of the map or graph.</p>
+                    <p><strong>Nature of Data:</strong></p>
+                    <ul>
+                        <li><strong>Age-Sex Pyramids:</strong> Specifically designed for population data disaggregated by age groups and sex. Purpose is to show population structure.</li>
+                        <li><strong>Dot Maps:</strong> Best suited for showing geographical distribution of discrete phenomena where actual counts or occurrences are important. Works well with raw data.</li>
+                        <li><strong>Choropleth Maps:</strong> Most appropriate for displaying rates, densities, percentages, or ratios calculated for predefined areal units. Generally not suitable for raw counts.</li>
+                    </ul>
+                    <p><strong>Purpose of the Map/Graph:</strong></p>
+                    <ul>
+                        <li><strong>To show composition or structure (especially of a population):</strong> An age-sex pyramid is ideal.</li>
+                        <li><strong>To show where things are located and their pattern of clustering or dispersion:</strong> A dot map is most effective.</li>
+                        <li><strong>To show regional variation in intensity, density, or proportion:</strong> A choropleth map is standard.</li>
+                    </ul>
+                    <p>The decision is guided by data type and the geographical question. For example, showing total schools per county via choropleth map is misleading; a dot map (one dot per school) or a choropleth map of schools per 1,000 children (normalized rate) is better.</p>
+                `
+            },
+            {
+                id: "comparativeAnalysis_criticalEvaluation",
+                title: "4.2 Critical Evaluation of Statistical Maps and Graphs in KCSE",
+                category: "4. Comparative Analysis & Best Practices",
+                content: `
+                    <h4>4.2 Critical Evaluation of Statistical Maps and Graphs in KCSE</h4>
+                    <p>KCSE Geography students should develop a critical eye. Key questions for evaluation:</p>
+                    <ul>
+                        <li><strong>Data Source and Type:</strong> What data is shown? Is it appropriate for the method?</li>
+                        <li><strong>For Age-Sex Pyramids:</strong> What does the shape indicate (birth/death rates, dependency)? Any anomalies (bulges, indentations) and their meaning?</li>
+                        <li><strong>For Dot Maps:</strong> What is the dot value/size? How do these affect interpretation? Is placement realistic? Is coalescence an issue?</li>
+                        <li><strong>For Choropleth Maps:</strong> How is data classified? How does this influence the pattern? Are units different in size (area size bias)? Does it create an illusion of uniformity?</li>
+                        <li><strong>Method-Specific Limitations:</strong> What are the inherent pros and cons for this specific information?</li>
+                        <li><strong>Conclusions and Further Inquiry:</strong> What valid conclusions can be drawn? What remains unclear or needs more analysis?</li>
+                    </ul>
+                    <p>These visualizations are tools for active inquiry. KCSE questions might present flawed maps for students to critique, requiring understanding of principles and pitfalls.</p>
+                `
+            },
+            {
+                id: "comparativeAnalysis_tips",
+                title: "4.3 Tips for Tackling KCSE Questions on Statistical Methods",
+                category: "4. Comparative Analysis & Best Practices",
+                content: `
+                    <h4>4.3 Tips for Tackling KCSE Questions on Statistical Methods</h4>
+                    <p>Success hinges on accuracy, clarity, and geographical understanding.</p>
+                    <p><strong>Construction:</strong></p>
+                    <ul>
+                        <li><strong>Accuracy:</strong> Meticulous calculations (percentages for pyramids, densities for choropleths).</li>
+                        <li><strong>Labeling:</strong> Clear axes, titles, keys/legends, sources.</li>
+                        <li><strong>Neatness:</strong> Easy to read; use a ruler, consistent shading/dot size.</li>
+                        <li><strong>Scale and Key:</strong> Proper scale, accurate key/legend.</li>
+                        <li><em>Specifics for Age-Sex Pyramids:</em> Correct denominator for percentages.</li>
+                        <li><em>Specifics for Dot Maps:</em> Uniform dot size, logical placement.</li>
+                        <li><em>Specifics for Choropleth Maps:</em> Clear, progressive, distinguishable shading.</li>
+                    </ul>
+                    <p><strong>Interpretation:</strong></p>
+                    <ul>
+                        <li><strong>Geographical Language:</strong> Precise terms (e.g., "densely populated," "youthful structure").</li>
+                        <li><strong>Describe Patterns:</strong> Clearly identify main spatial/structural patterns.</li>
+                        <li><strong>Relate to Factors:</strong> If required, link patterns to influencing geographical factors.</li>
+                    </ul>
+                    <p><strong>Evaluation (Advantages/Disadvantages/Limitations):</strong></p>
+                    <ul>
+                        <li><strong>Specificity:</strong> Tailor your points to the specific map/graph type and question context.</li>
+                        <li><strong>Geographical Context:</strong> Explain *why* a feature is an advantage/disadvantage geographically.</li>
+                    </ul>
+                    <p><strong>Use of Examples:</strong></p>
+                    <ul>
+                        <li>Refer to specific examples (especially Kenyan) to illustrate points.</li>
+                    </ul>
+                `
+            },
+            // Conclusion
+            {
+                id: "conclusion",
+                title: "Conclusion",
+                content: `
+                    <h3>Conclusion</h3>
+                    <p>This comprehensive analysis has delved into the three core statistical methods pertinent to "Statistical Methods IV" within the KCSE Geography syllabus: age-sex pyramids, dot maps, and choropleth maps. Each method serves a unique purpose in transforming raw geographical data into comprehensible visual formats, enabling the analysis of population structures, spatial distributions, and regional densities.</p>
+                    <p><strong>Age-sex pyramids</strong> offer a powerful snapshot of a population's demographic composition. <strong>Dot maps</strong> excel at illustrating the precise distribution and clustering of discrete phenomena. <strong>Choropleth maps</strong> are indispensable for comparing rates, densities, or percentages across defined units.</p>
+                    <p>The effective use and interpretation of these statistical tools are fundamental to geographical inquiry. For KCSE Geography students, a thorough grasp of the definition, construction, interpretation, applications, advantages, and disadvantages—as well as the more advanced considerations and potential pitfalls—of each method is essential. This knowledge not only prepares them for examination success but also equips them with valuable skills for lifelong learning and critical engagement with geographical information.</p>
+                    <p>Continued practice in constructing these representations from raw data, interpreting diverse examples, and critically evaluating their strengths and weaknesses will solidify understanding and foster the analytical acumen expected of a proficient geographer.</p>
+                `
+            },
+            // Revision Questions
+            {
+                id: "revisionQuestions",
+                title: "Revision Questions",
+                content: `<h3>Revision Questions</h3><div id="revision-questions-container"></div>`
+            }
+        ];
+
+        const revisionQuestions = [
+            // Age-Sex Pyramids
+            { q: "1. Define the term Age-Sex Pyramid as used in Geography.", a: "An Age-Sex Pyramid is a graph used to present population data showing the different age groups for males and females. It is a specialized bar graph, visually illustrating the distribution of different age groups for both males and females within a specific population. It is composed of bars which are drawn horizontally." },
+            { q: "2. State the primary purpose of an age-sex pyramid.", a: "The primary purpose of an age-sex pyramid is to graphically represent the age and sex structure of a population at a particular point in time. This visual representation allows for the analysis of various demographic trends and characteristics, such as birth rates, death rates, life expectancy, dependency ratios, and the overall growth pattern of the population." },
+            { q: "3. Describe three basic characteristics of an age-sex pyramid.", a: "Three basic characteristics are: <br>1. <strong>Horizontal Bars:</strong> Each bar represents a specific age cohort (e.g., 0-4 years), and its length is proportional to the number or percentage of people in that age-sex group.<br>2. <strong>Gender Representation:</strong> Males are conventionally shown on the left, females on the right of a central vertical axis.<br>3. <strong>Vertical Axis (Y-axis):</strong> Represents age groups, youngest at the bottom, oldest at the top." },
+            { q: "4. Explain what the length of each horizontal bar on an age-sex pyramid represents.", a: "The length of each horizontal bar represents the number of persons in each age-group in a population, or the percentage of the total population (or total male/female population) within that specific age-sex group." },
+            { q: "5. Explain what is represented on the vertical axis (Y-axis) of an age-sex pyramid.", a: "The age groups, arranged from the youngest cohort at the bottom to the oldest cohort at the top, are represented on the vertical axis (Y-axis)." },
+            { q: "6. Explain what is represented on the horizontal axis (X-axis) of an age-sex pyramid.", a: "The number or percentage of the population is represented on the horizontal axis (X-axis). The scale must be the same for both males and females." },
+            { q: "7. State the fundamental data required to construct an age-sex pyramid.", a: "Raw population figures disaggregated by specific age groups and by sex (male and female) for a particular geographical area and time period. Census data is a common source." },
+            { q: "8. Explain the process of calculating percentages for an age-sex pyramid based on the method shown in the Kenya 1999 census data.", a: "The process involves calculating the number of individuals in each age group as a percentage of the total male population for each male age group, and percentage of the total female population for each female age group. Formula: (Number in specific age-sex group / Total population for that sex) × 100." },
+            { q: "9. Describe the typical shape of an expansive population pyramid.", a: "An expansive population pyramid has a classic triangular shape with a very wide base and sharply tapering sides leading to a narrow apex." },
+            { q: "10. State three characteristics of a stationary population pyramid.", a: "1. It has a more rectangular or beehive/bell shape. <br>2. The base is not significantly wider than the middle cohorts. <br>3. Birth rates are close to death rates, and death rates are low." },
+            { q: "11. Describe the shape of a constrictive population pyramid.", a: "A constrictive population pyramid has a narrow base. The middle and upper cohorts are proportionally larger, and the top can be relatively wide. It may appear as an inverted pyramid or a beehive tapering at the bottom." },
+            { q: "12. Explain what a wide base on an age-sex pyramid indicates about the population.", a: "A wide base indicates a high birth rate and a large cohort of young children, characteristic of populations with high fertility." },
+            { q: "13. What does a narrow top (apex) on an age-sex pyramid suggest about a population?", a: "A narrow top suggests high death rates across older age groups and/or a lower life expectancy." },
+            { q: "14. How does the slope of the sides of an age-sex pyramid provide information about death rates or migration?", a: "Concave sides (bars becoming significantly shorter with age) typically indicate high death rates or significant age-specific emigration. Straight or convex sides suggest low death rates or net in-migration in those age groups." },
+            { q: "15. Explain what an outward bulge in a specific age cohort on an age-sex pyramid might indicate.", a: "An outward bulge might indicate a past 'baby boom' (a period of unusually high birth rates) or significant in-migration into those age groups." },
+            { q: "16. What might an inward indentation or constriction in specific age cohorts on an age-sex pyramid suggest?", a: "An inward indentation might suggest past events that led to reduced births or increased deaths for that cohort (e.g., wars, famines, epidemics) or periods of significant emigration." },
+            { q: "17. Explain how the dependency ratio can be visually estimated from an age-sex pyramid.", a: "By comparing the proportion of the population in the young dependent ages (0-14/19 years) and old dependent ages (65+ years) to the economically productive working-age population (15/20-64 years). A wide base and/or broad top relative to the middle indicates a high dependency ratio." },
+            { q: "18. Identify the type of population pyramid that represents a rapidly growing population.", a: "The Expansive (Youthful/Growing) Population Pyramid." },
+            { q: "19. Name a country from the sources that is cited as having a constrictive population pyramid.", a: "Japan, Germany, or Italy." },
+            { q: "20. State two advantages of using age-sex pyramids for presenting population data.", a: "1. Gives a clear visual impression of population data. <br>2. Relatively easy to construct and interpret at a basic level. (Also: useful for planning, enables comparisons)." },
+            { q: "21. State two disadvantages of age-sex pyramids.", a: "1. Can be tedious and time-consuming to construct manually. <br>2. Represents few variables (primarily age and sex). (Also: scale issues, difficulty reading exact values, migration not explicit)." },
+            { q: "22. Explain how census errors, such as age misreporting, can affect the shape of an age-sex pyramid.", a: "Age misreporting (e.g., age heaping) can create artificial bulges or dips in specific age cohorts. Under-enumeration (especially of infants) can make the base appear narrower than it truly is." },
+            { q: "23. Describe one limitation of using a single age-sex pyramid to understand population dynamics over time.", a: "A single pyramid offers a static 'snapshot' and doesn't inherently show historical evolution or directly forecast how cohorts will age. Cohort analysis using a series of pyramids is needed for dynamic understanding." },
+            // Dot Maps
+            { q: "24. Define the term Dot Map.", a: "A dot map is a map that uses dots to describe the distribution of phenomena. It's a cartographic method illustrating geographical distribution and density using dots, where each dot represents a specific quantity or a single occurrence." },
+            { q: "25. State the primary purpose of a dot map.", a: "To provide a clear visual impression of the spatial pattern of a distribution, showing where a phenomenon is concentrated or sparse." },
+            { q: "26. Explain what the dots represent in a 'one-to-many' dot map.", a: "In a 'one-to-many' dot map, each dot represents a specific, predetermined quantity of the item being mapped (e.g., 1 dot = 1000 people)." },
+            { q: "27. How does a dot map visually represent the density of a phenomenon?", a: "Through the visual density of the dots. More dots clustered together indicate higher density; fewer, dispersed dots indicate lower density." },
+            { q: "28. State the type of data for which dot maps are particularly well-suited.", a: "Raw data or simple counts of discrete phenomena." },
+            { q: "29. Explain the critical role of choosing the correct 'dot value' when constructing a dot map.", a: "The dot value represents the actual number of items per dot. If too small, dots coalesce, obscuring detail. If too large, areas may appear falsely empty, losing detail in sparse areas." },
+            { q: "30. Describe the consequence of selecting a dot value that is too small for a dot map.", a: "Areas with high concentrations will have too many dots, leading to coalescence (dots merging into a solid mass), making it impossible to discern individual dots or variations in high density." },
+            { q: "31. Describe the consequence of selecting a dot value that is too large for a dot map.", a: "Areas with low concentrations will have very few or even no dots, potentially misrepresenting the presence of the phenomenon or exaggerating its absence." },
+            { q: "32. Explain the importance of maintaining a uniform 'dot size' throughout a dot map.", a: "Uniform dot size is essential to ensure that density is perceived correctly. Variations in dot size would imply different values, which is not the principle of dot maps." },
+            { q: "33. Discuss the challenge of 'dot placement' in dot map construction.", a: "Dot placement can be subjective and may not accurately reflect true micro-distribution if not guided by ancillary data (e.g., placing dots in uninhabitable areas). Random placement within units can be misleading if the phenomenon is unevenly distributed." },
+            { q: "34. Explain why random dot placement within an administrative unit can be misleading.", a: "It can be misleading if the actual phenomenon is not uniformly distributed within that unit (e.g., placing population dots randomly across a district that includes large uninhabited areas like lakes or mountains)." },
+            { q: "35. Suggest a method for dot placement that can improve the accuracy of a dot map.", a: "Geographically weighted placement using ancillary data (dasymetric principle), such as placing crop dots only in agricultural land identified from a land-use map." },
+            { q: "36. How is the required number of dots calculated for an administrative unit when constructing a dot map?", a: "By dividing the total quantity of the phenomenon in that unit by the chosen dot value." },
+            { q: "37. State three advantages of using dot maps to show geographical distribution.", a: "1. Gives a clear visual impression of comparative densities and distribution. <br>2. Generally easy to interpret/read. <br>3. Can effectively represent raw data counts. (Also: potential for total calculation, wide range of use)." },
+            { q: "38. State three disadvantages of using dot maps.", a: "1. Tedious to draw uniform dot sizes manually. <br>2. Subjectivity in dot placement. <br>3. Dot coalescence in dense areas obscures detail. (Also: time-consuming calculation, risk of miscounting, inaccuracies from rounding)." },
+            { q: "39. Explain the phenomenon of 'dot coalescence' and its impact on interpreting dot maps.", a: "Dot coalescence occurs in high-density areas where dots merge into a solid mass. This makes it impossible to distinguish individual dots, count them, or accurately perceive variations in density within these concentrated zones." },
+            { q: "40. Why are dot maps generally poor for retrieving precise numerical values for specific areas?", a: "Because counting dots, especially in dense or coalesced areas, is tedious and prone to error. They are better for showing overall patterns than exact values." },
+            { q: "41. Name two geographical phenomena, other than population, that can be represented by dot maps based on the sources.", a: "Livestock distribution and rainfall patterns (though isolines are more common for rainfall). Also mentioned: agricultural crops, mineral deposits, forests." },
+            { q: "42. Explain how the scale of the map influences the appropriate choice of dot size and dot value.", a: "Dot size and value must be calibrated to the map scale. What works for a national map (large dot value, perhaps smaller dots) won't work for a local map (smaller dot value, appropriately sized dots). Small scales may require very large dot values, losing detail." },
+            { q: "43. Describe the ecological fallacy in the context of interpreting 'one-to-many' dot maps.", a: "The ecological fallacy is incorrectly assuming that each dot represents the precise location of an individual item or person. In 'one-to-many' maps, dots represent an aggregate quantity within a unit, and their placement is often a cartographic convention for overall density, not exact locations." },
+            // Choropleth Maps
+            { q: "44. Define the term Choropleth Map.", a: "A choropleth map (also density or shaded map) shows the relationship between quantities and area. It represents statistical data for predefined geographical areas by shading or coloring these areas according to the value of the mapped variable." },
+            { q: "45. State the primary purpose of a choropleth map.", a: "To illustrate the spatial variation of a phenomenon across a region, allowing easy visual comparison of how a rate, density, ratio, or percentage differs between administrative units." },
+            { q: "46. Explain the visual method used in choropleth maps to represent data for predefined areas.", a: "Each areal unit is filled with a uniform shade, color, or pattern. The intensity of the shade or the specific color corresponds to a particular range or class within the data distribution." },
+            { q: "47. What type of statistical data are choropleth maps most suitable for?", a: "Derived data, such as densities (e.g., population per square kilometer), percentages (e.g., literacy rate), or ratios (e.g., doctors per 1000 people)." },
+            { q: "48. Explain why using absolute counts (e.g., total population) on a choropleth map can be misleading.", a: "Because larger areal units will often have higher totals simply due to their size, not necessarily because they have a higher concentration. This gives larger areas undue visual emphasis." },
+            { q: "49. State the formula for calculating density according to the sources.", a: "Density = Total quantity / Area of unit." },
+            { q: "50. Explain the critical importance of 'data classification' when constructing a choropleth map.", a: "Data classification is critical because it directly influences the visual patterns that emerge and how the map is interpreted. It involves grouping data values into a limited number of categories or classes." },
+            { q: "51. Name three common methods used for data classification in choropleth mapping.", a: "Equal Interval, Quantiles, and Natural Breaks (Jenks Optimization). (Manual is also a method)." },
+            { q: "52. State one advantage and one disadvantage of using the 'Equal Interval' classification method.", a: "Advantage: Simple to calculate and understand. Disadvantage: Outliers can distort classification, leading to many units in few classes or empty classes, obscuring variation." },
+            { q: "53. State one advantage and one disadvantage of using the 'Quantiles' classification method.", a: "Advantage: Ensures all colors/shades are used roughly equally, good for ranked data. Disadvantage: Can group dissimilar values or separate similar ones if data is not evenly distributed." },
+            { q: "54. State one advantage and one disadvantage of using the 'Natural Breaks (Jenks)' classification method.", a: "Advantage: Often best reflects the inherent structure and natural groupings in the data. Disadvantage: Class limits are data-specific, making comparisons across different maps difficult." },
+            { q: "55. Explain the 'Modifiable Areal Unit Problem (MAUP)' and how it affects the patterns shown on a choropleth map.", a: "MAUP refers to how the statistical results and visual patterns on a choropleth map can change based on the size (scale problem) or configuration (zoning problem) of the areal units used. Patterns are thus boundary-dependent, not solely reflecting the phenomenon." },
+            { q: "56. Describe 'Area Size Bias' in choropleth maps and how it can lead to misinterpretation.", a: "Larger areal units on a choropleth map tend to dominate visually and attract more attention, regardless of their actual data value relative to smaller units. This can lead to misinterpreting the importance or prevalence of the phenomenon in larger areas." },
+            { q: "57. Explain what is meant by the 'illusion of uniformity' within the units on a choropleth map.", a: "Each areal unit is depicted with a single, uniform shade, implying the data value is consistent throughout that unit. This masks any internal variations or sub-regional differences that might exist." },
+            { q: "58. Name two applications of choropleth maps in KCSE Geography as mentioned in the sources.", a: "Mapping population density and showing variations in agricultural production/yield. (Also: economic indicators, disease prevalence)." },
+            { q: "59. State two advantages of using choropleth maps.", a: "1. Gives a clear visual impression of spatial patterns. <br>2. Makes it easy to compare densities/values between regions. (Also: relatively easy to construct, easy to read if well-designed)." },
+            { q: "60. State two disadvantages of using choropleth maps.", a: "1. Gives a false impression of abrupt change at boundaries. <br>2. Creates an illusion of uniformity within units. (Also: laborious manual work, area size bias, unsuitable for absolute values)." },
+            { q: "61. Explain one way in which the choice of data classification method can influence the visual message of a choropleth map.", a: "The classification method profoundly affects the visual appearance and perceived patterns. For example, an Equal Interval classification on skewed data might put most units in one or two classes, obscuring variation that a Natural Breaks method might reveal by identifying inherent groupings." },
+            { q: "62. According to the sources, what essential component must a choropleth map have to be interpretable?", a: "A Legend (Key), which clearly links the different shades, colors, or patterns used on the map to the specific data ranges or classes they represent." },
+            { q: "63. Explain why choropleth maps are effective for showing regional variations and disparities.", a: "They are effective because their primary purpose is to illustrate spatial variation. By using different shades/colors for predefined areas based on data values (like rates or densities), they allow for easy visual comparison of how a phenomenon differs from one region to another, thus highlighting these disparities." }
+        ];
+
+        let currentPageIndex = 0;
+        const contentContainer = document.getElementById('content-container');
+        const sidebarNav = document.getElementById('sidebar-nav');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+        const pageIndicator = document.getElementById('page-indicator');
+        const sidebar = document.getElementById('sidebar');
+        const hamburgerMenu = document.getElementById('hamburger-menu');
+
+        function renderSidebar() {
+            let currentCategory = "";
+            guideContent.forEach((page, index) => {
+                if (page.category && page.category !== currentCategory) {
+                    currentCategory = page.category;
+                    const categoryHeader = document.createElement('h5');
+                    categoryHeader.className = 'px-4 pt-3 pb-1 text-sm font-semibold text-gray-500 uppercase tracking-wider';
+                    categoryHeader.textContent = currentCategory;
+                    sidebarNav.appendChild(categoryHeader);
+                }
+                const link = document.createElement('a');
+                link.href = '#';
+                link.textContent = page.title;
+                link.className = 'block py-2 px-4 text-sm text-gray-700 hover:bg-blue-100 hover:text-blue-700 rounded-md sidebar-link';
+                if (page.category) {
+                    link.classList.add('ml-3'); // Indent sub-category links
+                }
+                link.dataset.pageIndex = index;
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContent(index);
+                    if (window.innerWidth < 768) { // md breakpoint
+                        sidebar.classList.add('-translate-x-full');
+                    }
+                });
+                sidebarNav.appendChild(link);
+            });
+        }
+
+        function updateActiveSidebarLink(index) {
+            document.querySelectorAll('.sidebar-link').forEach(link => {
+                link.classList.remove('active');
+                if (parseInt(link.dataset.pageIndex) === index) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        function loadContent(index) {
+            currentPageIndex = index;
+            contentContainer.innerHTML = guideContent[index].content;
+            
+            // Ensure MathJax is ready before attempting to typeset
+            if (typeof MathJax !== "undefined" && MathJax.startup && MathJax.startup.ready) {
+                MathJax.startup.ready.then(() => {
+                    MathJax.typesetPromise([contentContainer]);
+                }).catch(err => console.error('MathJax typesetting error:', err));
+            } else {
+                // Fallback or log if MathJax is not available as expected
+                console.warn('MathJax not ready or not defined when loadContent was called.');
+            }
+
+            if (guideContent[index].id === "revisionQuestions") {
+                renderRevisionQuestions();
+            }
+
+            updateNavigationButtons();
+            updateActiveSidebarLink(index);
+            contentContainer.scrollTop = 0; // Scroll to top of content
+            document.querySelector('main').scrollTop = 0; // Scroll main area to top
+        }
+
+        function updateNavigationButtons() {
+            prevButton.disabled = currentPageIndex === 0;
+            nextButton.disabled = currentPageIndex === guideContent.length - 1;
+            pageIndicator.textContent = `Page ${currentPageIndex + 1} of ${guideContent.length}`;
+        }
+
+        function navigatePage(direction) {
+            const newIndex = currentPageIndex + direction;
+            if (newIndex >= 0 && newIndex < guideContent.length) {
+                loadContent(newIndex);
+            }
+        }
+
+        function renderRevisionQuestions() {
+            const container = document.getElementById('revision-questions-container');
+            if (!container) return;
+            container.innerHTML = ''; // Clear previous questions
+            revisionQuestions.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'revision-question';
+                div.innerHTML = `
+                    <button onclick="toggleAnswer(this)">
+                        <span>${item.q}</span>
+                        <svg class="w-5 h-5 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="revision-answer hidden">
+                        <p>${item.a}</p>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        window.toggleAnswer = function(buttonElement) {
+            const answerDiv = buttonElement.nextElementSibling;
+            const icon = buttonElement.querySelector('svg');
+            answerDiv.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Event Listeners
+        prevButton.addEventListener('click', () => navigatePage(-1));
+        nextButton.addEventListener('click', () => navigatePage(1));
+        hamburgerMenu.addEventListener('click', () => {
+            sidebar.classList.toggle('-translate-x-full');
+        });
+        
+        // Close sidebar if clicking outside on mobile
+        document.addEventListener('click', function(event) {
+            const isClickInsideSidebar = sidebar.contains(event.target);
+            const isClickOnHamburger = hamburgerMenu.contains(event.target);
+            if (!isClickInsideSidebar && !isClickOnHamburger && window.innerWidth < 768) {
+                sidebar.classList.add('-translate-x-full');
+            }
+        });
+
+
+        // Initial load
+        renderSidebar();
+        loadContent(0);
+    </script>
+</body>
+</html>

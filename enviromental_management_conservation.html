@@ -1,0 +1,1442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCSE Geography - Environmental Management & Conservation Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // MathJax v3 configuration (included for consistency)
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #eef7f0; /* Light green-ish background */
+            color: #333; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+
+        #sidebar-wrapper {
+            min-height: 100vh;
+            width: 280px; 
+            background-color: #ffffff; 
+            border-right: 1px solid #d1e7dd; /* Softer green border */
+            transition: margin-left 0.25s ease-out;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1030; 
+            overflow-y: auto; 
+            padding-top: 10px; 
+            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-heading {
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            color: #198754; /* Bootstrap success green */
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #d1e7dd; 
+        }
+        .sidebar-heading img {
+            width: 32px; 
+            height: 32px;
+            margin-right: 0.75rem;
+            border-radius: 50%; 
+        }
+
+        #sidebar-nav .list-group-item {
+            border: none; 
+            padding: 0.8rem 1.25rem; 
+            font-size: 0.95rem;
+            color: #495057; 
+            background-color: transparent; 
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-left-color 0.2s ease-in-out;
+            border-left: 4px solid transparent; 
+        }
+
+        #sidebar-nav .list-group-item:hover,
+        #sidebar-nav .list-group-item:focus {
+            background-color: #e9f5ee; /* Lighter green for hover */
+            color: #0f5132; /* Darker green for hover text */
+            text-decoration: none;
+            border-left-color: #198754; 
+        }
+
+        #sidebar-nav .list-group-item.active {
+            background-color: #198754; 
+            color: white;
+            font-weight: 500;
+            border-left-color: #146c43; /* Darker green for active border */
+        }
+        #sidebar-nav .list-group-item.active:hover {
+             background-color: #157347; 
+        }
+
+
+        #sidebar-nav .category-heading {
+            font-size: 0.85rem; 
+            font-weight: bold;
+            color: #52856d; /* Muted green for category */
+            padding: 1rem 1.25rem 0.3rem; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.75rem; 
+        }
+         #sidebar-nav .sub-item { 
+            padding-left: 2.5rem; 
+            font-size: 0.9rem;
+        }
+
+        #page-content-wrapper {
+            flex: 1;
+            padding-left: 280px; 
+            transition: padding-left 0.25s ease-out;
+            display: flex;
+            flex-direction: column;
+            min-width: 0; 
+            background-color: #eef7f0; 
+        }
+
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: -280px; 
+        }
+
+        #wrapper.toggled #page-content-wrapper {
+            padding-left: 0; 
+        }
+
+        @media (max-width: 991.98px) { 
+            #sidebar-wrapper {
+                margin-left: -280px; 
+                position: fixed; 
+                height: 100%;
+                z-index: 1040; 
+            }
+            #wrapper.toggled #sidebar-wrapper { margin-left: 0; }
+            #page-content-wrapper { padding-left: 0; }
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+            background-color: #ffffff !important; 
+        }
+        .navbar .navbar-brand, .navbar .breadcrumb-item a, .navbar .breadcrumb-item.active {
+             color: #343a40 !important; 
+        }
+         .navbar .breadcrumb-item a:hover { color: #146c43 !important; }
+
+        #menu-toggle {
+            border: 1px solid #198754;
+            color: #198754;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        #menu-toggle:hover {
+            background-color: #198754;
+            color: white;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            margin-bottom: 0; 
+        }
+        .breadcrumb-item a {
+            color: #198754;
+            text-decoration: none;
+        }
+        .breadcrumb-item a:hover { text-decoration: underline; }
+        .breadcrumb-item.active { color: #6c757d; }
+
+        #content-area {
+            background-color: #ffffff; 
+            border-radius: 0.5rem; 
+            min-height: calc(100vh - 160px); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07); 
+        }
+
+        #content-area h1, #content-area h2, #content-area h3, #content-area h4, #content-area h5 {
+            color: #146c43; /* Darker green for headings */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        #content-area h1 { font-size: 2rem; border-bottom: 2px solid #d1e7dd; padding-bottom: 0.5rem;}
+        #content-area h2 { font-size: 1.75rem; }
+        #content-area h3 { font-size: 1.5rem; margin-top: 1.75rem; }
+        #content-area h4 { font-size: 1.25rem; margin-top: 1.5rem; }
+        #content-area h5 { font-size: 1.1rem; font-weight: bold; margin-top: 1.25rem;}
+
+
+        #content-area p, #content-area ul, #content-area ol, #content-area table {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+        #content-area ul, #content-area ol { padding-left: 1.5rem; }
+        #content-area li { margin-bottom: 0.5rem; }
+        #content-area ul ul, #content-area ol ol { 
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+        }
+         #content-area .table {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            border: 1px solid #dee2e6; 
+        }
+        #content-area .table th {
+            background-color: #e9f5ee; 
+            color: #146c43;
+            font-weight: 600;
+        }
+         #content-area .table td, #content-area .table th {
+            vertical-align: middle;
+            border: 1px solid #dee2e6; 
+        }
+        #content-area strong { color: #146c43; } 
+        #content-area blockquote {
+            border-left: 4px solid #198754;
+            padding-left: 1rem;
+            margin-left: 0;
+            font-style: italic;
+            color: #555;
+        }
+      
+        .revision-question-item {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .revision-question-header { 
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #0f5132; 
+            background-color: #e9f5ee; 
+            border: none; 
+            width: 100%; 
+            text-align: left; 
+        }
+        .revision-question-header:hover { background-color: #d1e7dd; }
+        .revision-question-header .arrow-icon { 
+            transition: transform 0.2s ease-in-out; 
+            font-size: 0.8em; 
+        }
+        .revision-question-header[aria-expanded="true"] .arrow-icon { transform: rotate(180deg); }
+
+        .revision-answer { 
+            border-top: 1px solid #d1e7dd;
+            background-color: #fff;
+        }
+        .revision-answer .accordion-body { 
+             padding: 1.25rem;
+        }
+        .revision-answer ul, .revision-answer ol { padding-left: 1.25rem; margin-top: 0.5rem;}
+        .revision-answer li { margin-bottom: 0.3rem; }
+
+        .MathJax_Display, mjx-container[jax="CHTML"][display="true"] {
+            display: block;
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+        }
+
+        #navigation-buttons button { min-width: 100px; }
+
+        footer {
+            font-size: 0.9rem;
+            background-color: #ffffff; 
+            border-top: 1px solid #d1e7dd;
+        }
+
+        /* Accessibility Focus Styles */
+        :focus-visible {
+          outline: 3px solid #198754 !important; 
+          outline-offset: 2px;
+          box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.35) !important;
+        }
+        .btn:focus-visible, .list-group-item:focus-visible, .accordion-button:focus-visible {
+          outline: 3px solid #198754 !important; 
+          outline-offset: 2px !important;
+          box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.35) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <nav class="border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading">
+                <img src="https://placehold.co/32x32/198754/ffffff?text=EMC" alt="Env. Mgt. Guide Logo" class="me-2"> Env. Management
+            </div>
+            <div class="list-group list-group-flush" id="sidebar-nav">
+                <!-- Sidebar items will be populated by JavaScript -->
+            </div>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top">
+                <div class="container-fluid">
+                    <button class="btn btn-outline-success btn-sm" id="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
+                    <nav aria-label="breadcrumb" class="ms-3 flex-grow-1">
+                        <ol class="breadcrumb mb-0" id="breadcrumb-trail"></ol>
+                    </nav>
+                </div>
+            </nav>
+
+            <main class="container-fluid p-4" id="main-content-scroll-area">
+                <div id="content-area" class="p-md-4 p-3">
+                    <!-- Welcome message or initial content -->
+                    <h1 id="main-title-placeholder">Welcome to the Environmental Management & Conservation Guide</h1>
+                    <p>Please select a topic from the menu on the left to begin your learning journey.</p>
+                </div>
+                <div class="d-flex justify-content-between mt-4" id="navigation-buttons">
+                    <button class="btn btn-outline-secondary" id="prev-button" disabled>&laquo; Previous</button>
+                    <button class="btn btn-outline-success" id="next-button" disabled>Next &raquo;</button>
+                </div>
+            </main>
+
+            <footer class="text-center text-muted p-3 mt-auto">
+                <p class="mb-0">&copy; <span id="currentYear"></span> KCSE Env. Management & Conservation Guide. All rights reserved.</p>
+            </footer>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Script execution started log
+    console.log("Env Mgt Guide App Script: Execution started.");
+
+    try {
+        // --- 1. GUIDE CONTENT DATA ---
+        // CRITICAL DEBUGGING NOTE: Ensure all HTML content within JavaScript strings (backticks `...` or quotes "...")
+        // is correctly formatted. Unescaped backticks inside backtick-strings, or unescaped double quotes
+        // inside double-quoted strings, will cause a "SyntaxError: Invalid or unexpected token".
+        // Also check for missing commas between array elements or object properties.
+        // Use the browser's Developer Console (F12) for line numbers of errors.
+        const guideData = [
+            // Category: Core Concepts & Importance
+            {
+                id: "env_ch1",
+                title: "1. Defining the Scope",
+                breadcrumb: "Definitions",
+                category: "Core Concepts & Importance",
+                isChapter: true, 
+                content: `
+                    <h1 id="env_ch1">1. Defining the Scope: Environment, Management, and Conservation</h1>
+                    <p>A lucid understanding of fundamental terminology is paramount to any substantive discussion on environmental stewardship. The terms "environment," "environmental management," and "environmental conservation" carry specific connotations that collectively frame the scope and objectives of efforts to protect and sustain the natural world.</p>
+                `
+            },
+            {
+                id: "env_ch1_s1",
+                title: "1.1 Defining \"Environment\"",
+                breadcrumb: "Environment",
+                category: "Core Concepts & Importance",
+                parentId: "env_ch1",
+                content: `
+                    <h2 id="env_ch1_s1">1.1 Defining "Environment"</h2>
+                    <p>The term "environment" is broadly conceptualized as encompassing "all the external conditions surrounding an organism and which have influence over its behaviour/ activities". This definition is critical as it establishes an inclusive understanding of the domain of concern. It extends beyond merely physical landscapes or natural ecosystems to include the entirety of external factors—biotic and abiotic—that interact with and influence living organisms, including human beings. Such a perspective acknowledges the intricate web of relationships and interdependencies that characterize ecological systems. Consequently, environmental concerns are not limited to pristine wilderness areas but also encompass human-modified landscapes, urban settings, and the myriad ways in which human actions alter these external conditions. This holistic view is fundamental for appreciating the complexity of environmental issues and the necessity for integrated approaches to address them.</p>
+                `
+            },
+            {
+                id: "env_ch1_s2",
+                title: "1.2 Understanding \"Environmental Management\"",
+                breadcrumb: "Env. Management",
+                category: "Core Concepts & Importance",
+                parentId: "env_ch1",
+                content: `
+                    <h2 id="env_ch1_s2">1.2 Understanding "Environmental Management"</h2>
+                    <p>Environmental management refers to the "effective planning and control of the processes and activities that could cause the deterioration of the environment/ improving resources in the environment". This definition, as stipulated in educational syllabi, emphasizes a proactive and regulatory stance. It involves not only reacting to existing environmental problems but, more importantly, engaging in foresight, systematic planning, and the implementation of control measures to prevent environmental degradation and enhance the quality and availability of environmental resources. The dual focus on preventing deterioration <em>and</em> actively improving resources highlights a restorative and enhancement-oriented dimension to management. This proactive approach is particularly crucial in contexts of rapid socio-economic change, such as increasing population density and urbanization, where human activities and their potential environmental impacts are intensifying. Effective environmental management, therefore, necessitates robust governance structures, clear policy frameworks, and mechanisms for monitoring and enforcement.</p>
+                `
+            },
+            {
+                id: "env_ch1_s3",
+                title: "1.3 The Imperative of \"Environmental Conservation\"",
+                breadcrumb: "Env. Conservation",
+                category: "Core Concepts & Importance",
+                parentId: "env_ch1",
+                content: `
+                    <h2 id="env_ch1_s3">1.3 The Imperative of "Environmental Conservation"</h2>
+                    <p>Environmental conservation is defined as "the protection, preservation and proper utilization of natural resources from destruction/ wastage/ loss". This definition, also a core component of educational curricula, outlines a tripartite strategy. "Protection" involves shielding resources from harm and adverse impacts. "Preservation" focuses on maintaining resources, particularly biodiversity and unique ecosystems, in their existing state, often with minimal human interference. Crucially, "proper utilization" acknowledges that human societies depend on natural resources and allows for their use, but in a manner that is sustainable, efficient, and avoids depletion, wastage, or irreversible loss. This distinguishes conservation from pure preservation by integrating the concept of sustainable use, which is vital for meeting human needs while ensuring the long-term viability of resources for future generations.</p>
+                    <p>The concepts of environmental management and conservation, while distinct in their precise definitions, are intrinsically linked and complementary. Environmental management provides the overarching framework, including the necessary planning, policies, and control mechanisms, that enables the effective implementation of conservation actions. Without a structured management system, efforts to protect, preserve, and sustainably utilize resources would likely be fragmented and less effective. Conversely, the goals of conservation—safeguarding resources from destruction, wastage, and loss—provide the substantive objectives that environmental management strategies aim to achieve.</p>
+                `
+            },
+            {
+                id: "env_ch2",
+                title: "2. The Critical Need for Environmental Stewardship",
+                breadcrumb: "Need for Stewardship",
+                category: "Core Concepts & Importance",
+                isChapter: true,
+                content: `
+                    <h1 id="env_ch2">2. The Critical Need for Environmental Stewardship</h1>
+                    <p>The imperative for diligent environmental management and comprehensive conservation strategies stems from a confluence of ecological, social, and economic necessities. Human societies are fundamentally dependent on the environment for resources, health, and overall well-being. Failure to act as responsible stewards of the environment leads to a cascade of negative consequences that can undermine development and threaten the quality of life for current and future generations.</p>
+                `
+            },
+            {
+                id: "env_ch2_s1",
+                title: "2.1 Sustaining Resource Availability",
+                breadcrumb: "Resource Availability",
+                category: "Core Concepts & Importance",
+                parentId: "env_ch2",
+                content: `
+                    <h2 id="env_ch2_s1">2.1 Sustaining Resource Availability</h2>
+                    <p>A primary driver is the need "To ensure effective utilisation of the available resources/ avoid wastage/ depletion". Natural resources (forests, fisheries, minerals, water, land) are the bedrock of economic activity. Unchecked exploitation, driven by population growth and economic activities, can lead to resource degradation and scarcity, jeopardizing industries, livelihoods, and future generations' needs. Conservation practices like sustainable harvesting and waste minimization are crucial.</p>
+                `
+            },
+            {
+                id: "env_ch2_s2",
+                title: "2.2 Mitigating Pollution and Protecting Health",
+                breadcrumb: "Pollution & Health",
+                category: "Core Concepts & Importance",
+                parentId: "env_ch2",
+                content: `
+                    <h2 id="env_ch2_s2">2.2 Mitigating Pollution and Protecting Health</h2>
+                    <p>Stewardship is vital "To reduce pollution which causes diseases to animals/ plants resulting into good health/ prolonged life/ reduce global warming". Pollution (air, water, land, noise) from human activities impacts health (respiratory illnesses, waterborne diseases), degrades ecosystems, harms wildlife, and contributes to climate change. The economic costs (healthcare, lost productivity) are substantial.</p>
+                `
+            },
+            {
+                id: "env_ch2_s3",
+                title: "2.3 Preserving Biodiversity and Ecosystems",
+                breadcrumb: "Biodiversity",
+                category: "Core Concepts & Importance",
+                parentId: "env_ch2",
+                content: `
+                    <h2 id="env_ch2_s3">2.3 Preserving Biodiversity and Ecosystems</h2>
+                    <p>A crucial aspect is "To protect the endangered plant/ animal species/ preserving them for posterity". Biodiversity is essential for ecosystem stability and services (pollination, climate regulation, water purification). Human activities (habitat destruction, pollution, overexploitation) drive biodiversity loss, disrupting ecological balances. Conservation includes species protection and habitat restoration (e.g., national parks).</p>
+                `
+            },
+            {
+                id: "env_ch2_s4",
+                title: "2.4 Maintaining Aesthetic and Economic Value",
+                breadcrumb: "Aesthetic & Economic Value",
+                category: "Core Concepts & Importance",
+                parentId: "env_ch2",
+                content: `
+                    <h2 id="env_ch2_s4">2.4 Maintaining Aesthetic and Economic Value</h2>
+                    <p>Conservation aims "To preserve the aesthetic value/ beauty of landscape/ wildlife to promote tourism". Natural beauty and wildlife attract tourism, a major economic driver. Many resources also have direct "economic value" (timber, minerals). Degradation undermines these benefits, making conservation an economic incentive, promoting sustainable tourism and resource extraction.</p>
+                `
+            },
+            {
+                id: "env_ch2_s5",
+                title: "2.5 Safeguarding Water Resources",
+                breadcrumb: "Water Resources",
+                category: "Core Concepts & Importance",
+                parentId: "env_ch2",
+                content: `
+                    <h2 id="env_ch2_s5">2.5 Safeguarding Water Resources</h2>
+                    <p>Stewardship is essential "To protect the water catchment areas/ wetlands in order to preserve water sources/ maintain water cycle". Catchment areas (forests, mountains) regulate water flow, prevent erosion, and recharge groundwater. Wetlands filter water and buffer floods. Degradation leads to water scarcity, floods, droughts, and poor water quality. Protecting these areas is key to water security.</p>
+                `
+            },
+            {
+                id: "env_ch2_s6",
+                title: "2.6 Ensuring Food Security",
+                breadcrumb: "Food Security",
+                category: "Core Concepts & Importance",
+                parentId: "env_ch2",
+                content: `
+                    <h2 id="env_ch2_s6">2.6 Ensuring Food Security</h2>
+                    <p>A key reason is "To increase/ maintain source of food/ to maintain soil fertility because soil is the source of food". Healthy soils are vital for agriculture. Degradation (erosion, pollution, desertification) reduces soil fertility and productivity, threatening food security, especially with growing populations. Sustainable land management and soil conservation are critical.</p>
+                `
+            },
+            {
+                id: "env_ch2_s7",
+                title: "2.7 Sustaining Industrial Raw Materials",
+                breadcrumb: "Industrial Raw Materials",
+                category: "Core Concepts & Importance",
+                parentId: "env_ch2",
+                content: `
+                    <h2 id="env_ch2_s7">2.7 Sustaining Industrial Raw Materials</h2>
+                    <p>Management is needed "To sustain sources of raw materials for industries e.g. forests and mineral reserves need to be managed well". Unsustainable exploitation (indiscriminate logging, exhaustive mining) can deplete resources, undermining dependent industries. Responsible sourcing, efficient use, recycling, and sustainable alternatives are necessary.</p>
+                `
+            },
+            // Category: Hazards & Pollution
+            {
+                id: "env_ch3",
+                title: "3. Navigating Environmental Hazards",
+                breadcrumb: "Environmental Hazards",
+                category: "Hazards & Pollution",
+                isChapter: true,
+                content: `
+                    <h1 id="env_ch3">3. Navigating Environmental Hazards</h1>
+                    <p>Environmental hazards are "dangers or disasters within the environment due to natural causes or human activities". Understanding these is crucial for environmental management and safeguarding lives and livelihoods.</p>
+                `
+            },
+            {
+                id: "env_ch3_s1",
+                title: "3.1 Overview of Environmental Hazards",
+                breadcrumb: "Hazards Overview",
+                category: "Hazards & Pollution",
+                parentId: "env_ch3",
+                content: `
+                    <h2 id="env_ch3_s1">3.1 Overview of Environmental Hazards</h2>
+                    <p>Hazards include floods, lightning, windstorms, pests and diseases, pollution, volcanic eruptions, drought, desertification, earthquakes, and heatwaves/fires. Some are natural (earthquakes), others human-exacerbated (floods due to deforestation). Climate change is increasing many weather-related hazards.</p>
+                `
+            },
+            {
+                id: "env_ch3_s2",
+                title: "3.2 Floods",
+                breadcrumb: "Floods",
+                category: "Hazards & Pollution",
+                parentId: "env_ch3",
+                content: `
+                    <h2 id="env_ch3_s2">3.2 Floods</h2>
+                    <p>Floods are "an overflow of large amount of water over dry land".</p>
+                    <h4 id="env_ch3_s2_c">Causes:</h4>
+                    <p>High/prolonged rainfall, blocked urban drainage, deforestation, river/lake siltation, landslides, impermeable soils, dam failure, tsunamis, storm surges, low-lying topography.</p>
+                    <h4 id="env_ch3_s2_a">Areas Prone in Kenya & Key Rivers:</h4>
+                    <p>Budalangi (Busia), Nyando/Kano plains (Kisumu), Tana River areas, Baringo, Narok. Rivers: Yala, Nyando, Nzoia, Kuja, Tana, Ewaso Nyiro, Sondu Miriu.</p>
+                    <h4 id="env_ch3_s2_e">Effects in Kenya:</h4>
+                    <p>Crop loss, food shortages, disease spread (malaria, cholera), infrastructure damage, loss of life/property, displacement, economic costs, habitat destruction.</p>
+                    <h4 id="env_ch3_s2_m">Control Measures:</h4>
+                    <p>Afforestation, dykes/levees, dams/canals, dredging drainage systems, river channel improvement, land-use zoning, integrated catchment management.</p>
+                `
+            },
+            {
+                id: "env_ch3_s3",
+                title: "3.3 Lightning",
+                breadcrumb: "Lightning",
+                category: "Hazards & Pollution",
+                parentId: "env_ch3",
+                content: `
+                    <h2 id="env_ch3_s3">3.3 Lightning</h2>
+                    <p>A natural atmospheric electrical discharge.</p>
+                    <h4 id="env_ch3_s3_o">Occurrence:</h4>
+                    <p>Intense solar heating, air mass movements, cumulo-nimbus cloud formation, electrical charge separation (Earth negative, atmosphere positive), breakdown of air insulation leading to discharge.</p>
+                    <h4 id="env_ch3_s3_a">Areas Prone in Kenya:</h4>
+                    <p>Lake Victoria region, areas west of Rift Valley, Kisii, Kericho, Nandi highlands.</p>
+                    <h4 id="env_ch3_s3_e">Effects:</h4>
+                    <p>Deaths/injuries (human/animal), property/tree damage, fires, power/communication disruption.</p>
+                    <h4 id="env_ch3_s3_m">Control Measures:</h4>
+                    <p>Public education (avoid tall trees/open fields), lightning arrestors on buildings, proper earthing, early warning systems (radar), experimental cloud seeding.</p>
+                `
+            },
+            {
+                id: "env_ch3_s4",
+                title: "3.4 Windstorms",
+                breadcrumb: "Windstorms",
+                category: "Hazards & Pollution",
+                parentId: "env_ch3",
+                content: `
+                    <h2 id="env_ch3_s4">3.4 Windstorms</h2>
+                    <p>Strong destructive winds from significant atmospheric pressure differences.</p>
+                    <h4 id="env_ch3_s4_t">Types:</h4>
+                    <p>Tropical cyclones (hurricanes, typhoons), willy-willies, tornadoes.</p>
+                    <h4 id="env_ch3_s4_e">Effects:</h4>
+                    <p>Uprooting trees, destroying crops, building damage, transport/communication disruption, spreading fires, sea storms, soil erosion.</p>
+                    <h4 id="env_ch3_s4_m">Control Measures:</h4>
+                    <p>Planting tree windbreaks, weather monitoring/warnings, wind-resistant building codes, storm shelters, land-use planning.</p>
+                `
+            },
+            {
+                id: "env_ch3_s5",
+                title: "3.5 Pests and Diseases",
+                breadcrumb: "Pests & Diseases",
+                category: "Hazards & Pollution",
+                parentId: "env_ch3",
+                content: `
+                    <h2 id="env_ch3_s5">3.5 Pests and Diseases</h2>
+                    <p>Significant biological hazards impacting agriculture, livestock, humans, and ecosystems.</p>
+                    <h4 id="env_ch3_s5_e">Effects:</h4>
+                    <p>Crop destruction (locusts, armyworms, aphids), livestock diseases from ectoparasites (ticks, fleas), human illnesses (jiggers, malaria, sleeping sickness, HIV/AIDS, COVID-19), economic losses.</p>
+                    <h4 id="env_ch3_s5_m">Control Measures:</h4>
+                    <p>Chemicals (herbicides, fungicides, pesticides), resistant plant species, biological control (natural predators, sterile insect technique), cultural practices (clearing habitats, crop rotation), public education (safe chemical use, disease prevention), research.</p>
+                `
+            },
+            {
+                id: "env_ch3_s6",
+                title: "3.6 Summary Table of Hazards",
+                breadcrumb: "Hazards Summary",
+                category: "Hazards & Pollution",
+                parentId: "env_ch3",
+                content: `
+                    <h2 id="env_ch3_s6">Table 1: Summary of Key Environmental Hazards and Management</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Hazard</th>
+                                    <th>Primary Causes (Examples)</th>
+                                    <th>Key Effects (Examples)</th>
+                                    <th>Principal Control/Management Measures (Examples)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Floods</strong></td>
+                                    <td>High rainfall, blocked urban drainage, deforestation, siltation, low-lying land, dam breakage</td>
+                                    <td>Property/crop loss, loss of life, displacement, disease spread, infrastructure damage, water pollution</td>
+                                    <td>Afforestation, dykes, dredging, dams/canals, river realignment, land-use zoning</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lightning</strong></td>
+                                    <td>Intense heating, air mass movement, cumulo-nimbus clouds, atmospheric charge separation</td>
+                                    <td>Fatalities (human/animal), property/tree destruction, fires, power/communication interruption</td>
+                                    <td>Public education on precautions, lightning arrestors, proper earthing, early warning systems, cloud seeding (experimental)</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Windstorms</strong></td>
+                                    <td>Significant atmospheric pressure differences (Includes cyclones, tornadoes, etc.)</td>
+                                    <td>Destruction of trees/crops, building damage (roofs), transport/communication disruption, spread of fires, sea storms, soil erosion</td>
+                                    <td>Planting windbreaks (trees), weather monitoring and warnings, storm shelters, building codes</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Pests & Diseases</strong></td>
+                                    <td>Biological organisms (insects, pathogens, parasites), often thriving in specific environmental conditions or due to ecological imbalances</td>
+                                    <td>Crop/livestock losses, human illness/death, vegetation destruction, economic impacts</td>
+                                    <td>Chemical controls (pesticides, etc.), development of resistant species, biological control, habitat management, public health awareness and prevention</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            {
+                id: "env_ch4",
+                title: "4. Addressing Environmental Pollution",
+                breadcrumb: "Environmental Pollution",
+                category: "Hazards & Pollution",
+                isChapter: true,
+                content: `
+                    <h1 id="env_ch4">4. Addressing the Challenge of Environmental Pollution</h1>
+                    <p>Environmental pollution, "the introduction of harmful/ poisonous substances into the environment which interferes with its quality", is a pervasive threat.</p>
+                `
+            },
+            {
+                id: "env_ch4_s1",
+                title: "4.1 Defining Pollution",
+                breadcrumb: "Defining Pollution",
+                category: "Hazards & Pollution",
+                parentId: "env_ch4",
+                content: `
+                    <h2 id="env_ch4_s1">4.1 Defining Pollution</h2>
+                    <p>Pollution involves contamination of air, water, or land by substances or energy causing adverse effects, disrupting natural balances.</p>
+                `
+            },
+            {
+                id: "env_ch4_s2",
+                title: "4.2 Air Pollution",
+                breadcrumb: "Air Pollution",
+                category: "Hazards & Pollution",
+                parentId: "env_ch4",
+                content: `
+                    <h2 id="env_ch4_s2">4.2 Air Pollution</h2>
+                    <p>The "introduction of toxic/ harmful substances into the atmosphere which destroy its purity".</p>
+                    <h4 id="env_ch4_s2_c">Causes:</h4>
+                    <p>Natural (volcanic eruptions) and anthropogenic: fossil fuel burning (power plants, industry, vehicles - SO2, NOx, CO2, particulates), industrial emissions, smoking, dust (quarrying, construction), vehicle exhaust, burning agricultural residues, methane (rice paddies), charcoal burning.</p>
+                    <h4 id="env_ch4_s2_e">Effects:</h4>
+                    <p>Acid rain, global warming/climate change (CO2), ozone depletion contribution, reduced oxygen, inhibited photosynthesis, respiratory problems, foul odors, smog/haze.</p>
+                    <h4 id="env_ch4_s2_m">Control Measures:</h4>
+                    <p>Cleaner fuels (unleaded petrol, low-sulfur coal), industrial emission controls (scrubbers, filters), regular inspections, anti-smoking campaigns, afforestation (CO2 sinks), renewable energy, energy efficiency.</p>
+                `
+            },
+            {
+                id: "env_ch4_s3",
+                title: "4.3 Water Pollution",
+                breadcrumb: "Water Pollution",
+                category: "Hazards & Pollution",
+                parentId: "env_ch4",
+                content: `
+                    <h2 id="env_ch4_s3">4.3 Water Pollution</h2>
+                    <p>The "introduction of harmful/ poisonous substances in water interfering with its quality".</p>
+                    <h4 id="env_ch4_s3_c">Causes:</h4>
+                    <p>Untreated industrial/domestic wastewater, agricultural runoff (fertilizers, pesticides), surface runoff (silt, debris), direct human activities (washing), oil spills, solid waste dumping, poor farming near rivers.</p>
+                    <h4 id="env_ch4_s3_e">Effects:</h4>
+                    <p>Death of aquatic life, reduced aesthetic value, spread of waterborne diseases (cholera, typhoid), eutrophication, foul smells.</p>
+                    <h4 id="env_ch4_s3_m">Control Measures:</h4>
+                    <p>Wastewater treatment, recycling industrial water, organic farming/IPM, soil conservation (riparian buffers, contour ploughing), enforcing laws, public education, clean-up campaigns.</p>
+                `
+            },
+            {
+                id: "env_ch4_s4",
+                title: "4.4 Sound/Noise Pollution",
+                breadcrumb: "Noise Pollution",
+                category: "Hazards & Pollution",
+                parentId: "env_ch4",
+                content: `
+                    <h2 id="env_ch4_s4">4.4 Sound/Noise Pollution</h2>
+                    <p>A "discordant sound which is excessive, unwanted and of a disturbing nature".</p>
+                    <h4 id="env_ch4_s4_c">Causes:</h4>
+                    <p>Vehicle hooting, loud music (venues, transport), aircraft, factory/construction machinery, mining blasts, "Jua Kali" artisans, loud PA systems, religious gatherings, fireworks, thunder.</p>
+                    <h4 id="env_ch4_s4_e">Effects:</h4>
+                    <p>Headaches, stress, mental/physical illness (neurosis), irritability, reduced concentration, raised blood pressure, hearing impairment.</p>
+                    <h4 id="env_ch4_s4_m">Control Measures:</h4>
+                    <p>Vehicle/machine silencers, ear protection, soundproofing buildings, zoning, law enforcement (e.g., by NEMA), punitive legislation.</p>
+                `
+            },
+            {
+                id: "env_ch4_s5",
+                title: "4.5 Land Pollution",
+                breadcrumb: "Land Pollution",
+                category: "Hazards & Pollution",
+                parentId: "env_ch4",
+                content: `
+                    <h2 id="env_ch4_s5">4.5 Land Pollution</h2>
+                    <p>The "introduction of harmful/ poisonous substances in the soil/ land leading to deterioration of their state".</p>
+                    <h4 id="env_ch4_s5_c">Causes:</h4>
+                    <p>Improper waste disposal (municipal, industrial), untreated human/animal waste, mining/quarrying, burning vegetation, excessive agrochemicals, oil spills, nuclear testing.</p>
+                     <h4 id="env_ch4_s5_e">Effects:</h4>
+                    <p>Aesthetic displeasure, foul odors, soil/groundwater contamination from leachate, breeding grounds for pests, blocked drainage (flooding), reduced soil fertility/crop production, food chain contamination, injuries from sharp objects, road obstruction.</p>
+                    <h4 id="env_ch4_s5_w">Types of Urban Waste:</h4>
+                    <p>Household, industrial, biomedical/clinical, commercial, agricultural, construction/demolition, sewage/sludge, e-waste.</p>
+                    <h4 id="env_ch4_s5_m">Control Measures:</h4>
+                    <p>Waste reduction, proper collection/disposal (sanitary landfills, rubbish pits), controlled incineration, organic manure, minimizing harmful agrochemicals, public awareness, 3Rs (Reduce, Reuse, Recycle), recycling facilities, treating industrial waste, legislation against illegal dumping.</p>
+                `
+            },
+            {
+                id: "env_ch4_s6",
+                title: "4.6 Summary Table of Pollution",
+                breadcrumb: "Pollution Summary",
+                category: "Hazards & Pollution",
+                parentId: "env_ch4",
+                content: `
+                    <h2 id="env_ch4_s6">Table 2: Overview of Major Pollution Types and Management</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Pollution Type</th>
+                                    <th>Key Causes/Sources (Examples)</th>
+                                    <th>Significant Environmental & Health Effects (Examples)</th>
+                                    <th>Principal Control & Management Measures (Examples)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Air Pollution</strong></td>
+                                    <td>Fossil fuel burning, industrial emissions (SO2, CO2), vehicle exhaust, burning waste/biomass, volcanic eruptions, dust from quarrying/construction</td>
+                                    <td>Acid rain, global warming, respiratory diseases, reduced visibility (smog), damage to plants, ozone depletion contribution</td>
+                                    <td>Use of unleaded/cleaner fuels, industrial emission controls (scrubbers, filters), afforestation, anti-smoking campaigns, regular vehicle/factory inspections</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Water Pollution</strong></td>
+                                    <td>Untreated industrial/domestic sewage, agricultural runoff (pesticides, fertilizers), oil spills, solid waste dumping, siltation from erosion</td>
+                                    <td>Death of aquatic life, spread of waterborne diseases (cholera, typhoid), eutrophication, loss of aesthetic value, contamination of drinking water sources</td>
+                                    <td>Wastewater treatment (industrial & municipal), promoting organic farming, soil conservation, proper solid waste disposal, public education, enforcement of anti-pollution laws, clean-up campaigns</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Land Pollution</strong></td>
+                                    <td>Improper disposal of solid waste (garbage), industrial waste dumping, excessive use of agrochemicals, mining/quarrying, oil spills, burning vegetation</td>
+                                    <td>Soil contamination, reduced crop yields, health hazards from decomposing waste, breeding grounds for pests/vectors, aesthetic degradation, groundwater pollution from leachate</td>
+                                    <td>Proper garbage collection & disposal (sanitary landfills), waste reduction (3Rs: Reduce, Reuse, Recycle), treatment of industrial waste, minimizing agrochemical use, land reclamation, legislation against dumping</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sound/Noise Pollution</strong></td>
+                                    <td>Vehicle hooting, loud music, aircraft, factory machinery, construction, mine blasts, loud public address systems</td>
+                                    <td>Headaches, stress, hearing impairment/loss, increased blood pressure, irritability, sleep disturbance</td>
+                                    <td>Vehicle/machine silencers, use of ear protection in noisy environments, soundproofing buildings, zoning of industrial areas, enforcement of noise regulations (e.g., by NEMA), public awareness</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+             // Category: Management Strategies & Future Outlook
+            {
+                id: "env_ch5",
+                title: "5. Environmental Management Strategies in Kenya",
+                breadcrumb: "Kenyan Strategies",
+                category: "Management Strategies & Future Outlook",
+                isChapter: true,
+                content: `
+                    <h1 id="env_ch5">5. Strategies for Environmental Management and Conservation in Kenya</h1>
+                    <p>Kenya employs a range of strategies to manage its environment and conserve natural resources, addressing challenges from population growth, economic development, and resource use.</p>
+                `
+            },
+            {
+                id: "env_ch5_s1",
+                title: "5.1 Legislative & Institutional Frameworks",
+                breadcrumb: "Legislation & Institutions",
+                category: "Management Strategies & Future Outlook",
+                parentId: "env_ch5",
+                content: `
+                    <h2 id="env_ch5_s1">5.1 Legislative and Institutional Frameworks</h2>
+                    <p>A cornerstone is "legislative laws that govern environmental management and conservation". This is complemented by bodies like "ministries to deal with various aspects of environment" and the National Environment Management Authority (NEMA), crucial for policy, EIA, and enforcement (e.g., noise control). "Presidential decrees and directives" (e.g., protecting 'kayas' or aloe plants) also show high-level commitment.</p>
+                `
+            },
+            {
+                id: "env_ch5_s2",
+                title: "5.2 Public Awareness, Education & Participation",
+                breadcrumb: "Public Engagement",
+                category: "Management Strategies & Future Outlook",
+                parentId: "env_ch5",
+                content: `
+                    <h2 id="env_ch5_s2">5.2 Public Awareness, Education, and Participation</h2>
+                    <p>Kenya focuses on "creating public awareness through mass media/ seminars education on the need to conserve the environment". Environmental education fosters responsibility. NGOs like the "Green Belt Movement" mobilize grassroots action (e.g., afforestation). Public participation (e.g., "tree planting during environmental day") builds collective ownership.</p>
+                `
+            },
+            {
+                id: "env_ch5_s3",
+                title: "5.3 Research & Technological Applications",
+                breadcrumb: "Research & Technology",
+                category: "Management Strategies & Future Outlook",
+                parentId: "env_ch5",
+                content: `
+                    <h2 id="env_ch5_s3">5.3 Research and Technological Applications</h2>
+                    <p>Kenya invests in "Research on various aspects of conserving/ managing the environment in institutions like KARI/ ACIPG". This can lead to improved agricultural practices, pest control solutions, better ecosystem understanding, and pollution abatement technologies.</p>
+                `
+            },
+            {
+                id: "env_ch5_s4",
+                title: "5.4 Waste Management & Recycling",
+                breadcrumb: "Waste Management",
+                category: "Management Strategies & Future Outlook",
+                parentId: "env_ch5",
+                content: `
+                    <h2 id="env_ch5_s4">5.4 Waste Management and Recycling Efforts</h2>
+                    <p>Strategies include "Setting up of recycling plants to recycle waste materials". Recycling reduces landfill waste, conserves resources, and can create jobs. Proper garbage collection, designated rubbish pits, and controlled burning are also employed.</p>
+                `
+            },
+            {
+                id: "env_ch5_s5",
+                title: "5.5 International Cooperation",
+                breadcrumb: "International Cooperation",
+                category: "Management Strategies & Future Outlook",
+                parentId: "env_ch5",
+                content: `
+                    <h2 id="env_ch5_s5">5.5 International Cooperation and Agreements</h2>
+                    <p>Kenya participates by "Signing international agreement to reduce greenhouse gases emission". This facilitates access to shared knowledge, funds, and collaborative action on global environmental issues.</p>
+                `
+            },
+            {
+                id: "env_ch5_s6",
+                title: "5.6 Land Rehabilitation & Afforestation",
+                breadcrumb: "Land Rehabilitation",
+                category: "Management Strategies & Future Outlook",
+                parentId: "env_ch5",
+                content: `
+                    <h2 id="env_ch5_s6">5.6 Land Rehabilitation and Afforestation Programs</h2>
+                    <p>Kenya undertakes "Rehabilitation of derelict land by filling pits with rocks/ soils then planting vegetation", important in mining areas or those with severe erosion. Afforestation/reforestation controls air pollution (CO2 sequestration), prevents soil erosion, protects water catchments, and controls floods.</p>
+                `
+            },
+            {
+                id: "env_ch6",
+                title: "6. Synthesis and Future Directions",
+                breadcrumb: "Synthesis & Future",
+                category: "Management Strategies & Future Outlook",
+                isChapter: true,
+                content: `
+                    <h1 id="env_ch6">6. Synthesis and Future Directions in Environmental Management</h1>
+                    <p>This section synthesizes discussions on environmental challenges, human impacts, and considers future directions for environmental stewardship.</p>
+                `
+            },
+            {
+                id: "env_ch6_s1",
+                title: "6.1 Recap of Challenges & Successes",
+                breadcrumb: "Challenges & Successes",
+                category: "Management Strategies & Future Outlook",
+                parentId: "env_ch6",
+                content: `
+                    <h2 id="env_ch6_s1">6.1 Recap of Key Challenges and Successes</h2>
+                    <p>Primary challenges include sustainable resource management, mitigating environmental hazards, and controlling pollution. These impact health, economy, biodiversity, and ecosystems. Kenya has responded with legal frameworks, public engagement, research, waste management, international cooperation, and rehabilitation projects, signifying a multi-pronged approach.</p>
+                `
+            },
+            {
+                id: "env_ch6_s2",
+                title: "6.2 Interplay of Human Activities & Environment",
+                breadcrumb: "Human-Environment Interplay",
+                category: "Management Strategies & Future Outlook",
+                parentId: "env_ch6",
+                content: `
+                    <h2 id="env_ch6_s2">6.2 The Interplay of Human Activities and Environmental Health</h2>
+                    <p>Human activities profoundly impact environmental health. Population growth increases resource demand (land, water, food, energy), leading to unsustainable practices (deforestation, over-extraction, waste generation), exacerbating degradation and hazard vulnerability. Urbanization concentrates populations and economic activities, intensifying pollution (air, water, land, noise) and straining infrastructure. Settlement patterns also influence risk; unplanned development can lead to inadequate infrastructure and increased pollution.</p>
+                `
+            },
+            {
+                id: "env_ch6_s3",
+                title: "6.3 Considerations for Enhanced Sustainability",
+                breadcrumb: "Enhanced Sustainability",
+                category: "Management Strategies & Future Outlook",
+                parentId: "env_ch6",
+                content: `
+                    <h2 id="env_ch6_s3">6.3 Considerations for Enhanced Environmental Sustainability</h2>
+                    <p>Future focus areas include:</p>
+                    <ul>
+                        <li><strong>Strengthening Governance and Enforcement:</strong> Rigorous enforcement of environmental laws and monitoring compliance.</li>
+                        <li><strong>Investing in Green and Circular Economies:</strong> Prioritizing resource efficiency, renewable energy, waste minimization, recycling, and reuse.</li>
+                        <li><strong>Integrating Climate Change Adaptation and Mitigation:</strong> Incorporating climate measures (drought-resistant crops, better water management, renewable energy, afforestation) into all development planning.</li>
+                        <li><strong>Empowering Local Communities:</strong> Enhancing community-based natural resource management (CBNRM) to foster local ownership and ensure communities benefit from conservation.</li>
+                        <li><strong>Sustainable Urban Planning and Development:</strong> Promoting compact, mixed-use development, sustainable transport, green spaces, and robust water, sanitation, and waste management systems in cities.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "env_ch6_s4",
+                title: "6.4 Concluding Remarks",
+                breadcrumb: "Concluding Remarks",
+                category: "Management Strategies & Future Outlook",
+                parentId: "env_ch6",
+                content: `
+                    <h2 id="env_ch6_s4">6.4 Concluding Remarks on the Future of Environmental Stewardship</h2>
+                    <p>Environmental management and conservation are ongoing, adaptive processes. Challenges are dynamic, influenced by demographics, economic development, technology, and climate change. Kenya demonstrates awareness and a multifaceted approach, but comprehensive sustainability requires unwavering commitment, continuous learning, and adaptive strategies.</p>
+                    <p>Effective stewardship hinges on collective responsibility (governments, private sector, civil society, communities, individuals). It requires a perspective shift, recognizing human well-being and prosperity are linked to environmental health. Fostering an ethic of care, supported by robust policies, science, and empowered communities, is essential for a healthy planet. Educational curricula play a vital role in cultivating this long-term vision.</p>
+                `
+            },
+             // Category: Revision
+            {
+                id: "env_ch7_rev", 
+                title: "7. Revision Questions",
+                breadcrumb: "Revision Questions",
+                category: "Management Strategies & Future Outlook", // Keep in the last category for flow
+                isChapter: true, 
+                content: `
+                    <h1 id="env_ch7_rev">7. Environmental Management & Conservation Revision Questions</h1>
+                    <p>Test your understanding with these revision questions. Click on a question to reveal the answer.</p>
+                    <div id="environmental-revision-questions-container">
+                        <!-- Revision questions will be rendered here by JavaScript -->
+                    </div>
+                `
+            }
+        ];
+
+        // Data for the 112 revision questions
+        // Note: Ensure all double quotes within the HTML of 'a' properties are escaped as \\\"
+        const environmentalRevisionQuestionsData = [
+            { q: "1. Define the term \"Environment\" as broadly conceptualized in discussions on environmental stewardship.", a: "The term <strong>\"environment\"</strong> is broadly conceptualized as encompassing \"all the external conditions surrounding an organism and which have influence over its behaviour/ activities\". This includes both biotic and abiotic factors interacting with living organisms, including humans. It encompasses not just natural ecosystems but also human-modified landscapes and urban settings." },
+            { q: "2. According to the educational syllabi referenced, what is the definition of \"Environmental Management\"?", a: "According to the educational syllabi referenced, <strong>Environmental Management</strong> refers to the \"effective planning and control of the processes and activities that could cause the deterioration of the environment/ improving resources in the environment\". This definition emphasizes a proactive and regulatory stance." },
+            { q: "3. How is \"Environmental Conservation\" defined in the sources, outlining a tripartite strategy?", a: "<strong>Environmental Conservation</strong> is defined as \"the protection, preservation and proper utilization of natural resources from destruction/ wastage/ loss\". This definition outlines a tripartite strategy: \"protection,\" \"preservation,\" and \"proper utilization\"." },
+            { q: "4. Explain how environmental management and conservation are described as intrinsically linked and complementary.", a: "The concepts of environmental management and conservation are described as intrinsically linked and complementary. Environmental management provides the overarching framework, including planning, policies, and control mechanisms, that enables the effective implementation of conservation actions. Conversely, the goals of conservation—safeguarding resources from destruction, wastage, and loss—provide the substantive objectives that environmental management strategies aim to achieve." },
+            { q: "5. Why is a lucid understanding of fundamental terminology considered paramount to any substantive discussion on environmental stewardship?", a: "A lucid understanding of fundamental terminology is considered paramount to any substantive discussion on environmental stewardship because the terms collectively frame the scope and objectives of efforts to protect and sustain the natural world." },
+            { q: "6. Beyond physical landscapes, state two domains that the inclusive understanding of the environment encompasses.", a: "Beyond physical landscapes or natural ecosystems, the inclusive understanding of the environment encompasses: <ol><li>The entirety of external factors—<strong>biotic and abiotic</strong>—that interact with and influence living organisms.</li><li><strong>Human-modified landscapes and urban settings</strong>.</li></ol>" },
+            { q: "7. Identify one reason why a proactive approach to environmental management is particularly crucial in contexts of rapid socio-economic change.", a: "A proactive approach to environmental management is particularly crucial in contexts of rapid socio-economic change, such as increasing population density and urbanization, because <strong>human activities and their potential environmental impacts are intensifying</strong> under such conditions." },
+            { q: "8. According to the sources, what concept is vital for meeting human needs while ensuring the long-term viability of resources for future generations, distinguishing conservation from pure preservation?", a: "According to the sources, the concept of <strong>\"proper utilization\" or sustainable use</strong> is vital for meeting human needs while ensuring the long-term viability of resources for future generations. This integrates the concept of sustainable use, distinguishing conservation from pure preservation." },
+            { q: "9. How does the inclusion of environmental definitions and concepts in educational frameworks, such as the KCSE Geography syllabus in Kenya, contribute to fostering environmental awareness and responsibility?", a: "The inclusion of environmental definitions and concepts in educational frameworks, such as the KCSE Geography syllabus in Kenya, contributes to <strong>fostering environmental awareness and responsibility from an early stage</strong>. This is considered crucial for building a society capable of sustainable development." },
+            { q: "10. List two necessities—ecological, social, or economic—from which the imperative for diligent environmental management stems.", a: "The imperative for diligent environmental management and conservation stems from a confluence of ecological, social, and economic necessities. Two such necessities include: <ol><li><strong>Sustaining resource availability</strong> (economic/ecological).</li><li><strong>Mitigating pollution and protecting health</strong> (social/ecological/economic).</li></ol>" },
+            { q: "11. State the primary driver for environmental management and conservation related to resource availability.", a: "A primary driver for environmental management and conservation is the need <strong>\"To ensure effective utilisation of the available resources/ avoid wastage/ depletion\"</strong>." },
+            { q: "12. Give two examples of natural resources that form the bedrock of economic activity and human sustenance but can be depleted if overexploited.", a: "Two examples of natural resources that form the bedrock of economic activity and human sustenance but can be depleted if overexploited are <strong>forests</strong> and <strong>fisheries</strong>. Other examples include minerals, water, and fertile land." },
+            { q: "13. Explain how unchecked exploitation of natural resources, driven by factors like population growth and industrialization, can jeopardize the ability of future generations to meet their needs.", a: "Unchecked exploitation of natural resources, often driven by factors like population growth and the demands of expanding economic activities such as agriculture and industrialization, can lead to <strong>rapid resource degradation and scarcity</strong>. This, in turn, <strong>compromises the ability of future generations to meet their own needs</strong> by diminishing the resource base they will inherit." },
+            { q: "14. Identify one way conservation practices focusing on sustainable harvesting contribute to ensuring the long-term availability of essential inputs for societal functioning.", a: "Conservation practices focusing on <strong>sustainable harvesting</strong> ensure that resources are used at a rate that allows them to regenerate, thus securing their long-term availability as essential inputs for societal functioning and economic stability, rather than leading to their depletion." },
+            { q: "15. Why is environmental stewardship vital for reducing pollution and protecting health?", a: "Environmental stewardship is vital <strong>\"To reduce pollution which causes diseases to animals/ plants resulting into good health/ prolonged life/ reduce global warming\"</strong>. Pollution is a significant byproduct of human activities that can have severe impacts on human health (e.g., respiratory illnesses, waterborne diseases) and the health of ecosystems." },
+            { q: "16. Name two forms of pollution that are significant byproducts of human activities mentioned in the sources.", a: "Two forms of pollution mentioned as significant byproducts of human activities are <strong>air pollution</strong> and <strong>water pollution</strong>. Other forms mentioned are land and noise pollution." },
+            { q: "17. Provide two specific examples of severe and direct impacts of pollution on human health.", a: "Two specific examples of severe and direct impacts of pollution on human health are: <ol><li><strong>Respiratory illnesses</strong> (from air pollution).</li><li><strong>Waterborne diseases</strong> (like cholera or typhoid from water pollution).</li></ol> Pollution can also lead to stress-related conditions, headaches, increased blood pressure, and hearing impairment." },
+            { q: "18. How does pollution extend its impact beyond human health to affect ecosystems and wildlife?", a: "Beyond human health, pollution <strong>degrades ecosystems, harms wildlife</strong>, and can have far-reaching consequences such as the <strong>contamination of food chains</strong> and the contribution to global climate change. Toxic substances from pollution can lead to the death of aquatic organisms and damage vegetation." },
+            { q: "19. What is essential for the stability and resilience of ecosystems, according to the sources?", a: "According to the sources, <strong>biodiversity</strong>, the variety of life on Earth, is essential for the stability and resilience of ecosystems." },
+            { q: "20. List two examples of \"ecosystem services\" critical for human survival, as mentioned in the sources.", a: "Two examples of \"ecosystem services\" critical for human survival mentioned in the sources are: <ol><li><strong>Pollination of crops</strong>.</li><li><strong>Climate regulation</strong>.</li></ol> Other examples include water purification and soil fertility maintenance." },
+            { q: "21. Identify two human activities that are primary drivers of biodiversity loss.", a: "Two human activities that are primary drivers of biodiversity loss are: <ol><li><strong>Habitat destruction</strong> due to the expansion of settlements and agriculture.</li><li><strong>Pollution</strong>.</li></ol> Overexploitation of species is also a primary driver." },
+            { q: "22. What ethical dimension does the principle of preserving biodiversity \"for posterity\" introduce to environmental stewardship?", a: "The principle of preserving biodiversity \"for posterity\" introduces an <strong>ethical dimension</strong>, recognizing a <strong>responsibility to safeguard the planet's natural heritage for future generations</strong>." },
+            { q: "23. State one way conservation efforts must extend beyond species-specific protection programs.", a: "Conservation efforts must extend beyond species-specific protection programs to also include the <strong>preservation and restoration of their habitats</strong>, such as through the establishment of national parks and reserves." },
+            { q: "24. Why does the environment's inherent aesthetic value and direct economic benefits necessitate its careful management?", a: "The environment's inherent aesthetic qualities and direct economic benefits necessitate its careful management because <strong>natural beauty, scenic landscapes, and diverse wildlife promote tourism</strong>, and many <strong>natural resources have direct economic value</strong> when extracted, processed, and sold. Degradation undermines these benefits." },
+            { q: "25. Give one example of how preserving the beauty of landscapes or wildlife can promote tourism.", a: "Preserving the aesthetic value or beauty of landscapes or wildlife can promote tourism. For example, <strong>scenic landscapes such as mountains or coastlines, and diverse wildlife in national parks</strong> are significant attractions for tourists, generating income and employment." },
+            { q: "26. How can natural resources acquire \"economic value\" beyond tourism?", a: "Beyond tourism, natural resources can acquire \"economic value\" as they <strong>\"are extracted/ processed and sold earning income,\"</strong> such as timber from forests, minerals from mining, or fish from fisheries." },
+            { q: "27. Explain how the degradation of environmental assets like scenic beauty can directly undermine economic benefits.", a: "Degradation of environmental assets—through pollution, habitat destruction, or the loss of scenic beauty—can directly undermine economic benefits by <strong>reducing the attractiveness of an area for tourism</strong>, or by <strong>depleting resource stocks</strong> that support industries, leading to loss of income and jobs." },
+            { q: "28. What is a fundamental resource for life and a critical input for various sectors that necessitates environmental stewardship?", a: "<strong>Water</strong> is a fundamental resource for life and a critical input for agriculture, industry, and domestic use that necessitates environmental stewardship." },
+            { q: "29. Describe the vital role played by water catchment areas in preserving water sources and maintaining the water cycle.", a: "Water catchment areas, such as forests and mountainous regions, play a vital role in <strong>capturing precipitation, regulating water flow, preventing soil erosion, and replenishing groundwater sources</strong>. This helps preserve water sources and maintain the water cycle." },
+            { q: "30. How do wetlands function in relation to water purification and flood buffering?", a: "Wetlands function as <strong>natural filters, purifying water</strong> by trapping sediments and pollutants. They also serve as important <strong>buffers against floods</strong> by absorbing and slowly releasing excess water." },
+            { q: "31. List two severe consequences that can result from the degradation of water catchment areas and wetlands.", a: "Two severe consequences that can result from the degradation of water catchment areas and wetlands are: <ol><li><strong>Water scarcity</strong> due to reduced replenishment and storage.</li><li><strong>Increased frequency and intensity of floods and droughts</strong> due to loss of regulatory functions.</li></ol> Reduced water quality and disruption of the hydrological cycle are also severe consequences." },
+            { q: "32. How is the capacity to produce sufficient food intrinsically linked to environmental health?", a: "The capacity to produce sufficient food is intrinsically linked to environmental health, particularly <strong>soil fertility and water availability</strong>. Healthy ecosystems provide these essential inputs for agriculture." },
+            { q: "33. What key environmental element is described as essential for agriculture and the source of food?", a: "<strong>Soil</strong> is described as essential for agriculture and the source of food. Healthy soils are essential for agriculture, providing nutrients and a medium for plant growth." },
+            { q: "34. Identify two environmental degradation processes that can diminish soil fertility and reduce agricultural productivity, threatening food security.", a: "Two environmental degradation processes that can diminish soil fertility and reduce agricultural productivity, threatening food security, are: <ol><li><strong>Soil erosion</strong> (often exacerbated by deforestation and poor farming practices).</li><li><strong>Land pollution</strong> from excessive chemical use.</li></ol> Desertification also has these effects." },
+            { q: "35. Explain the need for environmental management and conservation in sustaining sources of raw materials for industries.", a: "Environmental management and conservation are needed <strong>\"To sustain sources of raw materials for industries e.g. forests and mineral reserves need to be managed well\"</strong>. This ensures that these resources are not depleted, allowing for continued industrial activity." },
+            { q: "36. How can unsustainable exploitation practices lead to the depletion of industrial raw materials?", a: "Unsustainable exploitation practices, such as <strong>indiscriminate logging of forests or exhaustive mining of minerals</strong>, can lead to the depletion of industrial raw materials. This thereby undermines the long-term viability of the industries that depend on them." },
+            { q: "37. What overarching principle links ecological health, social well-being, and economic prosperity, highlighting the multifaceted need for environmental stewardship?", a: "The overarching principle is that <strong>ecological health underpins social well-being and economic prosperity</strong>. This highlights the multifaceted need for environmental stewardship, as degradation in one area affects the others." },
+            { q: "38. In educational contexts in Kenya, what does emphasizing the multifaceted needs for environmental management and conservation aim to cultivate?", a: "In educational contexts in Kenya, emphasizing the multifaceted needs for environmental management and conservation aims to <strong>cultivate a generation that understands the principles of sustainable development</strong> and recognizes that long-term national and global prosperity is inextricably linked to the health and responsible stewardship of the environment. It also aims to foster environmental awareness and responsibility." },
+            { q: "39. Define Environmental hazards based on their description in the sources.", a: "Environmental hazards are defined as <strong>\"dangers or disasters within the environment due to natural causes or human activities\"</strong>." },
+            { q: "40. List five examples of environmental hazards studied in the context of environmental management.", a: "Five examples of environmental hazards studied are: <ol><li>Floods</li><li>Lightning</li><li>Windstorms</li><li>Pests and diseases</li><li>Environmental pollution</li></ol> Other examples include volcanic eruptions, drought/desertification, earthquakes, and heat waves/fires." },
+            { q: "41. Explain the concept of a dual origin (natural vs. human-influenced) for environmental hazards, providing an example.", a: "Many environmental hazards have a dual origin: they can stem from natural causes or be significantly influenced or exacerbated by human activities. For instance, while volcanic eruptions are primarily natural, <strong>floods can be exacerbated by human actions like deforestation</strong> which increases surface runoff." },
+            { q: "42. How is climate change expected to influence the frequency and intensity of certain environmental hazards?", a: "Climate change, largely driven by human activities, is projected to <strong>increase the frequency and intensity of many weather-related hazards</strong> like droughts, heatwaves, and severe storms." },
+            { q: "43. Define Floods as described in the sources.", a: "Floods are defined as <strong>\"an overflow of large amount of water over dry land\"</strong>." },
+            { q: "44. List four distinct causes of floods identified in the sources.", a: "Four distinct causes of floods are: <ol><li>High intensity or prolonged rainfall.</li><li>Blockage of drainage systems in urban areas (by garbage/improper construction).</li><li>Deforestation in catchment areas (increases runoff).</li><li>Siltation of rivers and lakes (reduces water-holding capacity).</li></ol>" },
+            { q: "45. Name three specific areas in Kenya that are particularly vulnerable to flooding.", a: "Three specific areas in Kenya particularly vulnerable to flooding are: <ol><li>The <strong>Budalangi area</strong> in Busia County.</li><li>The <strong>Nyando and Kano plains</strong> in Kisumu County.</li><li>Areas along the <strong>Tana River</strong> (Tana River County/Lower Tana).</li></ol>" },
+            { q: "46. Identify two major rivers in Kenya known for causing large-scale flooding.", a: "Two major rivers in Kenya known for causing large-scale flooding are the <strong>Yala River</strong> and the <strong>Nyando River</strong>. Other major rivers include Nzoia, Kuja, Tana, Ewaso Nyiro, and Sondu Miriu." },
+            { q: "47. Describe two agricultural effects of flooding in Kenya.", a: "Two agricultural effects of flooding in Kenya are: <ol><li><strong>Waterlogging and leaching of soil nutrients</strong>, significantly lowering crop production.</li><li>Floods can <strong>destroy crops outright, disrupt farmers' calendars, and cause food shortages and famine</strong>.</li></ol>" },
+            { q: "48. Explain how stagnant floodwaters contribute to the spread of diseases.", a: "Stagnant floodwaters contribute to the spread of diseases by <strong>creating breeding grounds for disease vectors like mosquitoes</strong> (transmitting malaria) and by contaminating water sources, leading to an increase in <strong>waterborne diseases such as cholera and typhoid</strong>." },
+            { q: "49. How can floods impact transport routes and communication lines?", a: "Floods can impact transport routes and communication lines by <strong>destroying them (e.g., washing away roads and bridges, damaging cables)</strong>, thereby hindering movement of people and goods, and disrupting emergency response and communication services." },
+            { q: "50. State two control and management measures for floods that involve vegetation.", a: "Two control and management measures for floods that involve vegetation are: <ol><li><strong>Afforestation and revegetation in river catchment areas</strong> to reduce surface runoff and increase infiltration.</li><li><strong>Planting vegetation along riverbanks</strong> (riparian buffers) to stabilize banks and slow water flow.</li></ol>" },
+            { q: "51. Give two examples of structural measures used to control floods.", a: "Two examples of structural measures used to control floods are: <ol><li>The <strong>construction of dykes, levees, or embankments</strong> to restrict river overflow.</li><li>The <strong>building of dams, canals, or water pans</strong> to store excess water and regulate river discharge.</li></ol>" },
+            { q: "52. Why is regular dredging and cleaning of drainage systems essential for flood control in urban areas?", a: "Regular dredging and cleaning of drainage systems, especially in urban areas, are essential for flood control to <strong>maintain their capacity to carry water effectively</strong>, preventing blockages that can lead to localized flooding when heavy rainfall occurs." },
+            { q: "53. How does effective land-use zoning contribute to managing flood risks?", a: "Effective land-use zoning contributes to managing flood risks by <strong>restricting development in high-risk flood-prone areas</strong>, thereby reducing the potential for damage to property and loss of life. It may also involve relocating vulnerable communities from these hazardous zones." },
+            { q: "54. Explain the basic process of how lightning occurs, starting with intense solar heating.", a: "Lightning typically occurs starting with <strong>intense solar heating of the ground</strong>, leading to localized air mass movements (breezes) and the formation of large, vertically developed <strong>cumulo-nimbus clouds</strong>. Within these turbulent clouds, a <strong>separation of electrical charges occurs</strong>, with the Earth's surface often acquiring a negative charge while the atmosphere above becomes positively charged. This charge differential creates an intense electrical field, and when the <strong>insulation of the air breaks down, a visible electrical discharge occurs</strong>." },
+            { q: "55. Identify two regions in Kenya specifically mentioned as being prone to lightning strikes.", a: "Two regions in Kenya specifically mentioned as being prone to lightning strikes are: <ol><li>The <strong>Lake Victoria region</strong>.</li><li>Areas <strong>west of the Rift Valley</strong>.</li></ol> The highlands of Kisii, Kericho, and Nandi are also prone." },
+            { q: "56. List two severe effects or problems caused by lightning strikes.", a: "Two severe effects or problems caused by lightning strikes are: <ol><li><strong>Deaths and injuries</strong> to both humans and animals.</li><li>Significant <strong>damage to property</strong>, including buildings and trees, often igniting fires.</li></ol> Lightning can also interrupt power and communication systems." },
+            { q: "57. State two public education safety precautions people should take during thunderstorms.", a: "Two public education safety precautions people should take during thunderstorms are: <ol><li><strong>Avoid sheltering under or near tall trees</strong>.</li><li><strong>Stay away from open fields</strong> and refrain from outdoor activities.</li></ol>" },
+            { q: "58. What is the function of lightning arrestors installed on buildings as a control measure?", a: "Lightning arrestors (conductors) are installed on buildings as a control measure to <strong>safely channel the electrical discharge from a lightning strike to the ground</strong>, thereby protecting the building and its occupants from damage or injury." },
+            { q: "59. Define Windstorms and explain their typical cause.", a: "<strong>Windstorms</strong> are defined as \"strong destructive winds blowing across landmasses\". They typically form due to <strong>significant differences in atmospheric pressure</strong> over an area." },
+            { q: "60. Name two types of windstorms mentioned by their regional names.", a: "Two types of windstorms mentioned by their regional names are: <ol><li><strong>Hurricanes</strong> (in the Atlantic and Northeast Pacific).</li><li><strong>Typhoons</strong> (in the Northwest Pacific).</li></ol> Willy-willies (Australia) and tornadoes are also mentioned." },
+            { q: "61. Describe two potential impacts of strong winds on vegetation and infrastructure.", a: "Two potential impacts of strong winds are: <ol><li>On vegetation: Strong winds can <strong>uproot or snap trees and destroy crops</strong>, leading to agricultural losses.</li><li>On infrastructure: Buildings can suffer <strong>structural damage, including roofs being blown off</strong>, and transport/communication lines can be disrupted by damaged power poles and cables.</li></ol>" },
+            { q: "62. How can planting trees act as a control and management measure for windstorms?", a: "Planting trees can act as a control and management measure for windstorms by creating <strong>windbreaks</strong>. These rows of trees reduce wind speed at ground level, thereby protecting agricultural lands, settlements, and reducing soil erosion." },
+            { q: "63. Why is constructing buildings to higher wind-resistance standards a critical preparedness action in areas prone to severe windstorms?", a: "Constructing buildings to higher wind-resistance standards is a critical preparedness action in areas prone to severe windstorms to <strong>reduce their vulnerability to damage or collapse</strong>, thereby safeguarding human lives and property." },
+            { q: "64. List two effects that pests and diseases can have on agriculture.", a: "Two effects that pests and diseases can have on agriculture are: <ol><li><strong>Decimation of vegetation and destruction of crops</strong> by pests like locusts and armyworms, leading to reduced yields.</li><li>Transmission of <strong>diseases to livestock</strong> by ectoparasites like ticks and fleas, weakening or killing animals.</li></ol>" },
+            { q: "65. How can pests and diseases directly impact human health?", a: "Pests and diseases can directly impact human health by: <ol><li>Causing <strong>wounds susceptible to infection</strong> (e.g., jiggers).</li><li>Transmitting <strong>vector-borne diseases</strong> such as malaria (mosquitoes) or sleeping sickness (tsetse flies).</li></ol> Uncontrolled outbreaks can lead to widespread illness and death." },
+            { q: "66. State two control and management measures employed against pests and diseases.", a: "Two control and management measures employed against pests and diseases are: <ol><li>The <strong>application of chemicals</strong>, including herbicides, fungicides, and pesticides/insecticides.</li><li>The <strong>development and use of plant species that are genetically resistant</strong> to specific pests and diseases.</li></ol> Other measures include biological control and cultural practices." },
+            { q: "67. What is Integrated Pest Management (IPM) and what does it involve?", a: "<strong>Integrated Pest Management (IPM)</strong> is a strategy that incorporates multiple approaches to control pests in an environmentally conscious way. It involves using a combination of methods such as biological control, habitat manipulation, modification of cultural practices, and the use of resistant varieties, resorting to pesticides only when careful monitoring indicates they are needed." },
+            { q: "68. Explain how human activities often play a significant role in causing or exacerbating environmental hazards, providing an example.", a: "Human activities often play a significant role in causing or exacerbating environmental hazards by altering natural systems and increasing vulnerability. For example, <strong>deforestation (a human-induced change) reduces infiltration and increases surface runoff</strong>, which is a key contributor to more severe flooding and increased soil erosion." },
+            { q: "69. Define Environmental pollution as the introduction of substances into the environment.", a: "<strong>Environmental pollution</strong> is defined as \"the introduction of harmful/ poisonous substances into the environment which interferes with its quality\"." },
+            { q: "70. What does the core concept of pollution revolve around?", a: "The core concept of pollution revolves around the <strong>contamination of environmental media—air, water, or land—by substances or energy at levels that cause adverse effects</strong>, disrupting natural balances and potentially rendering parts of the environment unfit or unsafe." },
+            { q: "71. Define Air pollution according to the sources.", a: "<strong>Air pollution</strong> is defined as the \"introduction of toxic/ harmful substances into the atmosphere which destroy its purity\"." },
+            { q: "72. List four anthropogenic sources of air pollution detailed in the sources.", a: "Four anthropogenic sources of air pollution detailed are: <ol><li>The <strong>burning of fossil fuels</strong> (coal, oil, natural gas) in power plants, industries, and vehicles.</li><li><strong>Industrial emissions</strong> from factories releasing chemical pollutants.</li><li><strong>Smoke and poisonous gases from motor vehicle exhaust</strong>.</li><li>The <strong>burning of agricultural residues</strong> after harvest.</li></ol>" },
+            { q: "73. Give one natural source of air pollution.", a: "One natural source of air pollution is <strong>volcanic eruptions</strong>, which release poisonous gases like sulfur dioxide, as well as dust and ash into the atmosphere." },
+            { q: "74. Describe two ways air pollution affects the physical environment.", a: "Two ways air pollution affects the physical environment are: <ol><li>It contributes to the formation of <strong>acid rain</strong>, which can damage vegetation, acidify soils and water bodies, and corrode buildings.</li><li>The increase in greenhouse gases, particularly CO2, is a primary driver of <strong>global warming and climate change</strong>, leading to rising temperatures.</li></ol>" },
+            { q: "75. How can suspended particulate matter and dust affect plants and human health?", a: "Suspended particulate matter and dust can affect plants by <strong>inhibiting photosynthesis</strong> by coating leaves and reducing sunlight penetration. They can affect human and animal health by causing <strong>respiratory problems</strong>." },
+            { q: "76. State two control measures for air pollution that involve fuel modification or industrial practices.", a: "Two control measures for air pollution involving fuel modification or industrial practices are: <ol><li>Transitioning to <strong>cleaner fuels</strong>, such as unleaded petrol for vehicles and low-sulfur coal for industries.</li><li>Regular inspection and maintenance of industrial facilities to ensure compliance with emission standards and the <strong>installation of pollution control technologies</strong> (e.g., scrubbers, filters).</li></ol>" },
+            { q: "77. Explain the role of afforestation and vegetation in the control of air pollution.", a: "Afforestation and the planting of vegetation play a role in controlling air pollution as <strong>trees and plants absorb carbon dioxide (CO2) during photosynthesis</strong>, acting as natural air filters or \"sinks\" for this major greenhouse gas." },
+            { q: "78. Define Water pollution.", a: "<strong>Water pollution</strong> is characterized by the \"introduction of harmful/ poisonous substances in water interfering with its quality\"." },
+            { q: "79. List four sources contributing to water pollution.", a: "Four sources contributing to water pollution are: <ol><li>The discharge of <strong>untreated or inadequately treated industrial wastewater</strong>.</li><li><strong>Domestic wastewater</strong>, including sewage and greywater.</li><li><strong>Agricultural runoff</strong> carrying fertilizers, pesticides, herbicides, and animal waste.</li><li><strong>Surface runoff</strong>, especially from urban areas and disturbed land, washing silt, debris, and various pollutants.</li></ol>" },
+            { q: "80. Describe two consequences of water pollution on aquatic life.", a: "Two consequences of water pollution on aquatic life are: <ol><li><strong>Toxic substances can lead to the death of aquatic organisms</strong>, including fish, invertebrates, and plants, disrupting aquatic ecosystems.</li><li>Excess nutrients can lead to <strong>eutrophication</strong> (overgrowth of algae), which depletes dissolved oxygen when the algae decompose, harming or killing other aquatic life.</li></ol>" },
+            { q: "81. How does contaminated water contribute to the spread of waterborne diseases?", a: "Contaminated water acts as a <strong>primary vehicle for the spread of waterborne diseases</strong> by carrying pathogens (like bacteria and viruses from sewage or animal waste) that cause illnesses such as cholera, typhoid, and dysentery when ingested or used for hygiene by humans." },
+            { q: "82. What is eutrophication, and what causes it in water bodies?", a: "<strong>Eutrophication</strong> is an overgrowth of algae and aquatic weeds in water bodies. It is caused by an excess of nutrients, particularly <strong>nitrates and phosphates</strong>, which often originate from agricultural fertilizers, sewage, and industrial discharges." },
+            { q: "83. State two essential measures for managing water pollution through wastewater treatment.", a: "Two essential measures for managing water pollution through wastewater treatment are: <ol><li><strong>Treating industrial wastewater</strong> before discharge to remove or reduce harmful pollutants.</li><li><strong>Treating municipal (domestic) wastewater and sewage</strong> before discharge.</li></ol> Recycling and reusing industrial wastewater can also minimize discharge volumes." },
+            { q: "84. How can agricultural practices be adapted to reduce agro-chemical runoff into water bodies?", a: "Agricultural practices can be adapted to reduce agro-chemical runoff by: <ol><li>Promoting the use of <strong>organic manure over synthetic fertilizers</strong>.</li><li>Adopting techniques like <strong>Integrated Pest Management (IPM)</strong> to minimize pesticide use.</li></ol>" },
+            { q: "85. List one soil conservation measure that helps protect water quality from siltation.", a: "One soil conservation measure that helps protect water quality from siltation is <strong>planting trees along riverbanks (riparian buffers)</strong>. Practicing contour ploughing also helps control soil erosion and reduce siltation." },
+            { q: "86. Define Sound or noise pollution.", a: "<strong>Sound or noise pollution</strong> is defined as \"a discordant sound which is excessive, unwanted and of a disturbing nature\"." },
+            { q: "87. List four common sources of noise pollution mentioned in the sources.", a: "Four common sources of noise pollution mentioned are: <ol><li>Repeated <strong>hooting from motor vehicles</strong>.</li><li><strong>Loud music</strong> from entertainment venues (nightclubs, shops) and public transport vehicles.</li><li>Noise from <strong>large flying aircraft</strong>, particularly near airports.</li><li><strong>Machinery in factories and construction sites</strong>.</li></ol>" },
+            { q: "88. Describe two negative effects of noise pollution on human health and well-being.", a: "Two negative effects of noise pollution on human health and well-being are: <ol><li>It can cause <strong>headaches and induce stress</strong>.</li><li>It can lead to <strong>temporary or permanent hearing impairment</strong> due to damage to the eardrums.</li></ol> It can also make individuals irritable, reduce concentration, and contribute to physical and mental illnesses like neurosis and raised blood pressure." },
+            { q: "89. State two control measures aimed at reducing noise pollution at its source.", a: "Two control measures aimed at reducing noise pollution at its source are: <ol><li>Ensuring that <strong>vehicles and industrial machinery are fitted with effective silencers</strong>.</li><li>Providing and mandating the use of <strong>personal protective equipment such as earplugs or earmuffs</strong> for workers in noisy industrial environments.</li></ol>" },
+            { q: "90. How can zoning regulations help in controlling noise pollution?", a: "Zoning regulations can help in controlling noise pollution by <strong>separating noisy industrial areas from residential zones</strong> through land-use planning. This minimizes the exposure of residential populations to high levels of industrial or commercial noise." },
+            { q: "91. Define Land pollution.", a: "<strong>Land pollution</strong> refers to the \"introduction of harmful/ poisonous substances in the soil/ land leading to deterioration of their state\"." },
+            { q: "92. What is identified as the primary cause of land pollution?", a: "The primary cause of land pollution is identified as the <strong>improper disposal of waste</strong>." },
+            { q: "93. List three other causes of land pollution besides improper waste disposal.", a: "Three other causes of land pollution besides improper waste disposal are: <ol><li>The <strong>disposal of untreated human and animal waste</strong> on land.</li><li><strong>Mining and quarrying activities</strong> often result in land dereliction and leave behind waste materials.</li><li>The <strong>excessive or improper use of chemical fertilizers, pesticides, and herbicides</strong> in agriculture.</li></ol>" },
+            { q: "94. Describe two adverse effects of land pollution, such as the accumulation of garbage.", a: "Two adverse effects of land pollution from garbage accumulation are: <ol><li>Accumulations of garbage are <strong>aesthetically displeasing (an eyesore) and can produce foul odors</strong>, posing a hazard to human health.</li><li>Garbage dumps provide <strong>breeding grounds for pests and disease vectors</strong> (e.g., rats, flies), increasing public health risks.</li></ol>" },
+            { q: "95. Identify two types of waste materials typically found in urban areas.", a: "Two types of waste materials typically found in urban areas are: <ol><li><strong>Household waste</strong> (kitchen scraps, packaging).</li><li><strong>Industrial waste</strong> (from manufacturing processes).</li></ol> Other types include biomedical/clinical waste, commercial/business waste, construction/demolition waste, sewage/sludge, and e-waste." },
+            { q: "96. State three measures included in a comprehensive waste management strategy to control land pollution.", a: "Three measures included in a comprehensive waste management strategy to control land pollution are: <ol><li><strong>Reducing waste generation at the source</strong> (e.g., minimizing packaging).</li><li>Implementing <strong>proper collection and disposal methods</strong>, such as sanitary landfills or designated rubbish pits.</li><li>Promoting the <strong>\"3Rs\" hierarchy: Reduce, Reuse, and Recycle</strong>.</li></ol>" },
+            { q: "97. What does the \"3Rs\" hierarchy stand for in modern waste management?", a: "In modern waste management, the \"3Rs\" hierarchy stands for <strong>Reduce, Reuse, and Recycle</strong>." },
+            { q: "98. Explain how different forms of environmental pollution can be interconnected, providing a specific example mentioned in the sources.", a: "Different forms of environmental pollution are often interconnected. For example, <strong>pollutants released into the air can be deposited onto land and water surfaces (e.g., acid rain forming from air pollutants and then affecting soil and water)</strong>. Another example is <strong>leachate from mismanaged landfill sites (land pollution) can contaminate groundwater and surface water sources (water pollution)</strong>." },
+            { q: "99. List four strategies employed for environmental management and conservation in Kenya.", a: "Four strategies employed for environmental management and conservation in Kenya are: <ol><li>Establishing <strong>legislative and institutional frameworks</strong>.</li><li>Promoting <strong>public awareness, education, and participation</strong>.</li><li>Investing in <strong>research and technological applications</strong>.</li><li>Implementing <strong>waste management and recycling efforts</strong>.</li></ol> Others include international cooperation and land rehabilitation/afforestation." },
+            { q: "100. Identify two components of the legislative and institutional frameworks supporting environmental governance in Kenya.", a: "Two components of the legislative and institutional frameworks supporting environmental governance in Kenya are: <ol><li>The establishment of <strong>legislative laws that govern environmental management and conservation</strong>.</li><li>The creation of dedicated governmental bodies such as <strong>ministries to deal with various aspects of environment</strong> (e.g., Ministry of Environment and Natural Resources) and the <strong>National Environment Management Authority (NEMA)</strong>.</li></ol>" },
+            { q: "101. What is the role of the National Environment Management Authority (NEMA) in environmental management in Kenya?", a: "The National Environment Management Authority (NEMA) plays a crucial role in <strong>policy implementation, environmental impact assessment (EIA), and the enforcement of environmental standards</strong>, including those related to noise pollution control and waste management." },
+            { q: "102. Give one example of how public awareness, education, and participation are promoted in Kenya for environmental stewardship.", a: "One example of how public awareness, education, and participation are promoted in Kenya is through <strong>\"creating public awareness through mass media/ seminars education on the need to conserve the environment\"</strong>. Another is encouraging public participation in activities like <strong>\"tree planting during environmental day\"</strong>." },
+            { q: "103. What is the purpose of investing in research on environmental aspects in institutions like KARI/ACIPG?", a: "The purpose of investing in research on environmental aspects in institutions like KARI (Kenya Agricultural Research Institute) and ICIPE (International Centre of Insect Physiology and Ecology) is to <strong>develop improved agricultural practices that are less damaging to the environment, find innovative solutions for pest and disease control, gain a better understanding of ecosystem dynamics, and develop technologies for pollution abatement or resource efficiency</strong>." },
+            { q: "104. State one benefit of setting up recycling plants as part of waste management efforts in Kenya.", a: "One benefit of setting up recycling plants as part of waste management efforts in Kenya is that <strong>recycling helps to reduce the volume of waste destined for landfills</strong>. It also conserves natural resources by reusing materials and can create economic opportunities." },
+            { q: "105. How does Kenya engage in international cooperation regarding environmental issues?", a: "Kenya engages in international cooperation regarding environmental issues by <strong>\"Signing international agreement to reduce greenhouse gases emission to protect the environment from pollution\"</strong>. This facilitates access to shared knowledge, financial resources, and collaborative action on issues of global concern." },
+            { q: "106. Describe one method of land rehabilitation mentioned as being undertaken in Kenya.", a: "One method of land rehabilitation mentioned as being undertaken in Kenya is the <strong>\"Rehabilitation of derelict land by filling pits with rocks/ soils then planting vegetation\"</strong>. This is particularly important in areas affected by mining or severe erosion." },
+            { q: "107. List two benefits of afforestation and reforestation programs in Kenya.", a: "Two benefits of afforestation and reforestation programs in Kenya are: <ol><li><strong>Controlling air pollution</strong> by sequestering carbon dioxide.</li><li><strong>Preventing soil erosion</strong> and protecting water catchments.</li></ol> They also help in controlling floods when trees are planted along riverbanks." },
+            { q: "108. According to the sources, what do the array of strategies employed in Kenya indicate about the required approach to environmental management?", a: "According to the sources, the array of strategies employed in Kenya indicates a recognition that environmental management and conservation require a <strong>holistic and multi-stakeholder approach</strong>, involving not only governmental regulation but also active participation from civil society, the scientific community, and the general public." },
+            { q: "109. Identify two underlying systemic challenges that can impede the effectiveness of environmental strategies in developing nations like Kenya.", a: "Two underlying systemic challenges that can impede the effectiveness of environmental strategies in developing nations like Kenya are: <ol><li><strong>Resource constraints</strong> (financial and human).</li><li><strong>Competing development priorities</strong>.</li></ol> Occasional gaps between policy formulation and on-the-ground implementation, and governance issues can also be challenges." },
+            { q: "110. Explain how rapid population growth inherently increases the demand for resources and can lead to unsustainable practices.", a: "Rapid population growth inherently <strong>increases the demand for resources</strong> such as land for settlement and agriculture, water for domestic and irrigation purposes, food, and energy. This heightened demand can lead to <strong>unsustainable practices like deforestation, over-extraction of water resources, and increased waste generation</strong>, thereby exacerbating environmental degradation." },
+            { q: "111. How does urbanization present environmental challenges, particularly regarding pollution?", a: "Urbanization presents environmental challenges as the <strong>concentration of populations and economic activities in urban centers typically leads to intensified pollution</strong>. As documented, urban areas grapple with air pollution from increased traffic and industrial emissions, water pollution from domestic and industrial effluent, land pollution from concentrated solid waste, and noise pollution." },
+            { q: "112. Name one area that warrants continued and enhanced focus for promoting long-term environmental sustainability, building upon existing strategies in Kenya.", a: "One area that warrants continued and enhanced focus for promoting long-term environmental sustainability in Kenya, building upon existing strategies, is <strong>strengthening governance and enforcement</strong> of environmental laws. Other areas include investing in green/circular economies, integrating climate change adaptation/mitigation, empowering local communities, and sustainable urban planning/development." }
+        ];
+
+
+        // --- 2. DOM Elements ---
+        const sidebarNavEl = document.getElementById('sidebar-nav');
+        const contentAreaEl = document.getElementById('content-area');
+        const breadcrumbTrailEl = document.getElementById('breadcrumb-trail');
+        const prevButtonEl = document.getElementById('prev-button');
+        const nextButtonEl = document.getElementById('next-button');
+        const menuToggleEl = document.getElementById('menu-toggle');
+        const wrapperEl = document.getElementById('wrapper');
+        const mainContentScrollAreaEl = document.getElementById('main-content-scroll-area'); 
+        const currentYearEl = document.getElementById('currentYear');
+
+
+        // --- 3. State Variables ---
+        let currentGuideDataIndex = -1; 
+
+        // --- 4. Core Functions ---
+        function populateSidebar() {
+            console.log("Attempting to populate sidebar...");
+            if (!sidebarNavEl) {
+                console.error("Sidebar nav element (#sidebar-nav) not found in populateSidebar!");
+                return;
+            }
+            sidebarNavEl.innerHTML = ''; 
+            let currentCategory = "";
+
+            guideData.forEach((item, index) => {
+                if (item.category && item.category !== currentCategory) {
+                    currentCategory = item.category;
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'category-heading';
+                    categoryDiv.textContent = currentCategory;
+                    sidebarNavEl.appendChild(categoryDiv);
+                }
+
+                const link = document.createElement('a');
+                link.href = `#${item.id}`; 
+                link.className = 'list-group-item list-group-item-action'; 
+                if (!item.isChapter && item.parentId) { 
+                    link.classList.add('sub-item');
+                } else if (item.isChapter) {
+                    link.classList.add('fw-bold'); 
+                }
+                link.textContent = item.title;
+                link.setAttribute('role', 'button');
+                link.setAttribute('tabindex', '0'); 
+                link.dataset.index = index; 
+
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    console.log(`Sidebar link clicked: ${item.title} (Index: ${index})`);
+                    loadContentByIndex(index, 'directClick');
+                    if (window.innerWidth < 992 && wrapperEl && wrapperEl.classList.contains('toggled')) {
+                        wrapperEl.classList.remove('toggled');
+                    }
+                });
+                link.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        console.log(`Sidebar link activated by key: ${item.title} (Index: ${index})`);
+                        loadContentByIndex(index, 'directClick');
+                         if (window.innerWidth < 992 && wrapperEl && wrapperEl.classList.contains('toggled')) {
+                            wrapperEl.classList.remove('toggled');
+                        }
+                    }
+                });
+                sidebarNavEl.appendChild(link);
+            });
+            console.log("Sidebar populated with items.");
+        }
+        
+        function loadContentByIndex(index, navigationSource = 'directClick') {
+            console.log(`loadContentByIndex called. Index: ${index}, Source: ${navigationSource}`);
+            if (!guideData || guideData.length === 0) {
+                console.error("guideData is empty or not defined in loadContentByIndex.");
+                if (contentAreaEl) contentAreaEl.innerHTML = "<p>Error: Guide data is missing.</p>";
+                return;
+            }
+            if (index < 0 || index >= guideData.length) {
+                console.warn("Invalid content index in loadContentByIndex:", index, ".Attempting to load default (index 0).");
+                index = 0; 
+                if (guideData.length === 0) { 
+                     if (contentAreaEl) contentAreaEl.innerHTML = "<p>No content available to display.</p>";
+                     return;
+                }
+            }
+
+            currentGuideDataIndex = index;
+            const sectionData = guideData[index]; 
+
+            if (!sectionData) {
+                console.error("Section data missing for index:", index);
+                if (contentAreaEl) contentAreaEl.innerHTML = "<p>Error loading content: Section data not found.</p>";
+                return;
+            }
+            if (!contentAreaEl) {
+                console.error("Content area element missing in loadContentByIndex.");
+                return;
+            }
+            
+            contentAreaEl.innerHTML = sectionData.content; 
+            console.log(`Content for "${sectionData.title}" loaded.`);
+
+            updateActiveSidebarLink();
+            updateBreadcrumbsUI(sectionData);
+            updateNavigationButtons();
+            sessionStorage.setItem('currentEnvMgtSectionIndex', currentGuideDataIndex); // Updated session key
+            
+            if (navigationSource !== 'scroll') {
+                window.location.hash = sectionData.id; 
+            }
+
+            if (sectionData.id === "env_ch7_rev") { // Updated ID for revision questions chapter
+                console.log("Rendering revision questions...");
+                renderRevisionQuestions();
+            }
+
+            if (navigationSource !== 'scroll' && mainContentScrollAreaEl) {
+                console.log("Scrolling content area to top.");
+                mainContentScrollAreaEl.scrollTop = 0; 
+            }
+            
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                console.log("Typesetting MathJax content...");
+                MathJax.typesetPromise([contentAreaEl]).catch(err => console.error('MathJax typesetting error:', err));
+            }
+            console.log("loadContentByIndex finished.");
+        }
+
+        function updateActiveSidebarLink() {
+            if (!sidebarNavEl) {
+                console.warn("sidebarNavEl not found in updateActiveSidebarLink");
+                return;
+            }
+            const links = sidebarNavEl.querySelectorAll('.list-group-item');
+            links.forEach(link => link.classList.remove('active'));
+
+            if (currentGuideDataIndex === -1 || currentGuideDataIndex >= guideData.length) return;
+            
+            const activeEntry = guideData[currentGuideDataIndex];
+            if (!activeEntry) return;
+
+            const currentLink = sidebarNavEl.querySelector(`[data-index="${currentGuideDataIndex}"]`);
+            if (currentLink) {
+                currentLink.classList.add('active');
+            }
+        }
+
+        function updateBreadcrumbsUI(currentSectionData) {
+            if (!breadcrumbTrailEl) {
+                 console.warn("breadcrumbTrailEl not found in updateBreadcrumbsUI");
+                 return;
+            }
+            const trails = [breadcrumbTrailEl]; 
+            trails.forEach(trail => {
+                if (!trail) return;
+                trail.innerHTML = ''; 
+
+                const homeLi = document.createElement('li');
+                homeLi.classList.add('breadcrumb-item');
+                const homeLink = document.createElement('a');
+                homeLink.href = '#'; 
+                homeLink.textContent = 'Home';
+                homeLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContentByIndex(0, 'directClick'); 
+                });
+                homeLi.appendChild(homeLink);
+                trail.appendChild(homeLi);
+
+                if (!currentSectionData) return;
+
+                const parentEntry = currentSectionData.parentId ? guideData.find(item => item.id === currentSectionData.parentId && item.isChapter) : null;
+                
+                if (parentEntry) { 
+                    const parentChapterLi = document.createElement('li');
+                    parentChapterLi.classList.add('breadcrumb-item');
+                    const parentChapterLink = document.createElement('a');
+                    parentChapterLink.href = `#${parentEntry.id}`;
+                    parentChapterLink.textContent = parentEntry.breadcrumb || parentEntry.title.replace(/^[0-9]+\.\s*/, ''); 
+                    parentChapterLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        loadContentByIndex(guideData.indexOf(parentEntry), 'directClick');
+                    });
+                    parentChapterLi.appendChild(parentChapterLink);
+                    trail.appendChild(parentChapterLi);
+                }
+                
+                if (currentSectionData.breadcrumb) {
+                    const activeLi = document.createElement('li');
+                    activeLi.classList.add('breadcrumb-item', 'active');
+                    activeLi.setAttribute('aria-current', 'page');
+                    activeLi.textContent = currentSectionData.breadcrumb; 
+                    trail.appendChild(activeLi);
+                }
+            });
+        }
+        
+        function updateNavigationButtons() {
+            if (prevButtonEl) prevButtonEl.disabled = currentGuideDataIndex <= 0;
+            else console.warn("prevButtonEl not found in updateNavigationButtons");
+
+            if (nextButtonEl) nextButtonEl.disabled = currentGuideDataIndex >= guideData.length - 1;
+            else console.warn("nextButtonEl not found in updateNavigationButtons");
+        }
+
+        function renderRevisionQuestions() {
+            const container = document.getElementById('environmental-revision-questions-container'); // Updated container ID
+            if (!container) {
+                console.error("Revision questions container 'environmental-revision-questions-container' not found.");
+                return;
+            }
+            container.innerHTML = ''; 
+            const accordion = document.createElement('div');
+            accordion.className = 'accordion'; 
+            accordion.id = 'envMgtRevisionAccordion'; // Updated accordion ID
+
+            environmentalRevisionQuestionsData.forEach((item, index) => { 
+                const questionId = `env-question-${index}`; // Updated question ID prefix
+                const answerId = `env-answer-${index}`;   // Updated answer ID prefix
+
+                const accordionItem = document.createElement('div');
+                accordionItem.className = 'accordion-item revision-question-item';
+
+                const header = document.createElement('h2'); 
+                header.className = 'accordion-header'; 
+                header.id = `heading-${questionId}`;
+
+                const button = document.createElement('button'); 
+                button.className = 'accordion-button collapsed revision-question-header'; 
+                button.type = 'button';
+                button.setAttribute('data-bs-toggle', 'collapse');
+                button.setAttribute('data-bs-target', `#${answerId}`);
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-controls', answerId);
+                // Using textContent for question to avoid HTML injection issues if 'q' is ever dynamic
+                // For item.a, innerHTML is used as it's expected to contain HTML formatting.
+                button.textContent = item.q ? item.q : 'Question not available'; 
+                const arrowSpan = document.createElement('span');
+                arrowSpan.className = 'arrow-icon ms-auto';
+                arrowSpan.innerHTML = '&#9660;'; // Down arrow
+                button.appendChild(arrowSpan);
+                
+                header.appendChild(button);
+
+                const answerCollapseDiv = document.createElement('div');
+                answerCollapseDiv.id = answerId;
+                answerCollapseDiv.className = 'accordion-collapse collapse revision-answer';
+                answerCollapseDiv.setAttribute('aria-labelledby', `heading-${questionId}`);
+                answerCollapseDiv.setAttribute('data-bs-parent', '#envMgtRevisionAccordion'); // Link to parent accordion
+
+                const answerBody = document.createElement('div');
+                answerBody.className = 'accordion-body';
+                answerBody.innerHTML = item.a ? item.a : '<p>Answer not available</p>';
+                
+                answerCollapseDiv.appendChild(answerBody);
+                accordionItem.appendChild(header);
+                accordionItem.appendChild(answerCollapseDiv);
+                accordion.appendChild(accordionItem);
+            });
+            container.appendChild(accordion);
+            console.log("Revision questions rendered.");
+        }
+        
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("DOMContentLoaded event fired.");
+
+            if (!sidebarNavEl) console.error("sidebarNavEl NOT FOUND in DOMContentLoaded!"); else console.log("sidebarNavEl found.");
+            if (!contentAreaEl) console.error("contentAreaEl NOT FOUND in DOMContentLoaded!"); else console.log("contentAreaEl found.");
+            if (!breadcrumbTrailEl) console.error("breadcrumbTrailEl NOT FOUND in DOMContentLoaded!"); else console.log("breadcrumbTrailEl found.");
+            if (!prevButtonEl) console.error("prevButtonEl NOT FOUND in DOMContentLoaded!"); else console.log("prevButtonEl found.");
+            if (!nextButtonEl) console.error("nextButtonEl NOT FOUND in DOMContentLoaded!"); else console.log("nextButtonEl found.");
+            if (!menuToggleEl) console.error("menuToggleEl NOT FOUND in DOMContentLoaded!"); else console.log("menuToggleEl found.");
+            if (!wrapperEl) console.error("wrapperEl NOT FOUND in DOMContentLoaded!"); else console.log("wrapperEl found.");
+            if (!mainContentScrollAreaEl) console.error("mainContentScrollAreaEl NOT FOUND in DOMContentLoaded!"); else console.log("mainContentScrollAreaEl found.");
+            if (!currentYearEl) console.error("currentYearEl NOT FOUND in DOMContentLoaded!"); else console.log("currentYearEl found.");
+
+
+            if (currentYearEl) {
+                currentYearEl.textContent = new Date().getFullYear();
+            }
+
+            if (menuToggleEl && wrapperEl) {
+                menuToggleEl.addEventListener('click', () => {
+                    wrapperEl.classList.toggle('toggled');
+                });
+            }
+
+            if (prevButtonEl) {
+                prevButtonEl.addEventListener('click', () => {
+                    if (currentGuideDataIndex > 0) loadContentByIndex(currentGuideDataIndex - 1, 'button');
+                });
+            } 
+
+            if (nextButtonEl) {
+                nextButtonEl.addEventListener('click', () => {
+                    if (currentGuideDataIndex < guideData.length - 1) loadContentByIndex(currentGuideDataIndex + 1, 'button');
+                });
+            } 
+
+            if (mainContentScrollAreaEl && contentAreaEl) {
+                let scrollTimeout;
+                mainContentScrollAreaEl.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        let mostProminentItemId = null;
+                        let minDistanceToViewportTop = Infinity;
+                        const viewportTopEdge = mainContentScrollAreaEl.getBoundingClientRect().top + (window.innerHeight * 0.2); 
+
+                        guideData.forEach((item) => {
+                            const element = contentAreaEl.querySelector(`#${item.id}`); 
+                            if (element) {
+                                const rect = element.getBoundingClientRect();
+                                if (rect.top < viewportTopEdge + 100 && rect.bottom > viewportTopEdge - 100) { 
+                                    const distance = Math.abs(rect.top - viewportTopEdge);
+                                    if (distance < minDistanceToViewportTop) {
+                                        minDistanceToViewportTop = distance;
+                                        mostProminentItemId = item.id;
+                                    }
+                                }
+                            }
+                        });
+                        
+                        if (!mostProminentItemId) { 
+                            if (mainContentScrollAreaEl.scrollTop <= 50 && guideData.length > 0) {
+                                mostProminentItemId = guideData[0].id;
+                            } else if ((mainContentScrollAreaEl.scrollTop + mainContentScrollAreaEl.clientHeight) >= mainContentScrollAreaEl.scrollHeight - 50 && guideData.length > 0) {
+                                mostProminentItemId = guideData[guideData.length - 1].id;
+                            }
+                        }
+
+                        if (mostProminentItemId && mostProminentItemId !== (guideData[currentGuideDataIndex] ? guideData[currentGuideDataIndex].id : null)) {
+                            const newIndex = guideData.findIndex(item => item.id === mostProminentItemId);
+                            if (newIndex !== -1 && newIndex !== currentGuideDataIndex) {
+                                currentGuideDataIndex = newIndex; 
+                                sessionStorage.setItem('currentEnvMgtSectionIndex', currentGuideDataIndex); // Updated session key
+                                updateActiveSidebarLink();
+                                const currentSectionData = guideData[currentGuideDataIndex];
+                                updateBreadcrumbsUI(currentSectionData);
+                                updateNavigationButtons();
+                                window.history.replaceState(null, '', `#${currentSectionData.id}`); 
+                            }
+                        }
+                    }, 150); 
+                });
+            } 
+
+            populateSidebar(); 
+            
+            const savedIndexStr = sessionStorage.getItem('currentEnvMgtSectionIndex'); // Updated session key
+            let initialIndex = 0; 
+
+            const hash = window.location.hash.substring(1); 
+            if (hash) {
+                const itemFromHash = guideData.find(item => item.id === hash);
+                if (itemFromHash) {
+                    initialIndex = guideData.indexOf(itemFromHash);
+                }
+            } else if (savedIndexStr !== null) { 
+                const savedIdx = parseInt(savedIndexStr, 10);
+                if (!isNaN(savedIdx) && savedIdx >= 0 && savedIdx < guideData.length) {
+                    initialIndex = savedIdx;
+                }
+            }
+            
+            if (guideData && guideData.length > 0) {
+                 setTimeout(() => { 
+                    loadContentByIndex(initialIndex, 'initialLoad');
+                    if (hash && initialIndex > 0) { 
+                        const targetElement = document.getElementById(hash);
+                        if (targetElement && mainContentScrollAreaEl) {
+                           const scrollContainerTop = mainContentScrollAreaEl.getBoundingClientRect().top;
+                           const targetElementTop = targetElement.getBoundingClientRect().top;
+                           const offset = targetElementTop - scrollContainerTop - (document.querySelector('.navbar')?.offsetHeight || 60); 
+                           mainContentScrollAreaEl.scrollTop += offset;
+                        }
+                    }
+                 }, 50); 
+            } else {
+                console.error("guideData is empty. Cannot load initial content in DOMContentLoaded.");
+                if(contentAreaEl) contentAreaEl.innerHTML = "<p>Error: No content available to display because guide data is empty.</p>";
+            }
+            console.log("DOMContentLoaded processing finished.");
+        });
+    } catch (e) {
+        console.error("A critical error occurred in the Env Mgt Guide App script:", e);
+        const errorDisplayArea = document.getElementById('content-area') || document.body;
+        errorDisplayArea.innerHTML = `<div class="alert alert-danger" role="alert">
+                                        <h4 class="alert-heading">Application Error!</h4>
+                                        <p>A critical error occurred while loading the application. This is often due to a syntax issue in the embedded content data.</p>
+                                        <hr>
+                                        <p class="mb-0">Please check the browser's Developer Console (usually F12) for specific error messages and line numbers. The error is likely an unescaped quote or backtick within an HTML string in the 'guideData' or 'environmentalRevisionQuestionsData' arrays, or a missing comma.</p>
+                                        <p><strong>Error details:</strong> ${e.message}</p>
+                                      </div>`;
+    }
+    </script>
+</body>
+</html>

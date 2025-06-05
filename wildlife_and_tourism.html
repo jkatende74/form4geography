@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCSE Geography - Wildlife and Tourism Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa; /* Light gray background */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Wrapper for sidebar and page content */
+        #wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+            min-height: 100vh; /* Ensure wrapper takes full viewport height */
+        }
+
+        /* Sidebar Styles */
+        #sidebar-wrapper {
+            min-height: 100vh;
+            width: 280px; 
+            background-color: #f8f9fa; 
+            border-right: 1px solid #dee2e6; 
+            transition: margin-left 0.25s ease-out;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1030; 
+            overflow-y: auto; 
+        }
+
+        .sidebar-heading {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #198754; /* Bootstrap green for Wildlife/Tourism theme */
+            display: flex;
+            align-items: center;
+        }
+        .sidebar-heading img {
+            width: 30px;
+            height: 30px;
+        }
+
+        #sidebar-nav .list-group-item {
+            border: none; 
+            padding: 0.75rem 1.25rem;
+            font-size: 0.95rem;
+            color: #495057; 
+            background-color: transparent; 
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+
+        #sidebar-nav .list-group-item:hover,
+        #sidebar-nav .list-group-item:focus {
+            background-color: #e2f0e9; /* Lighter green for hover */
+            color: #146c43; /* Darker green on hover */
+            text-decoration: none;
+        }
+
+        #sidebar-nav .list-group-item.active {
+            background-color: #198754; /* Bootstrap success green */
+            color: white;
+            font-weight: 500;
+            border-left: 3px solid #146c43; /* Darker green accent */
+            padding-left: calc(1.25rem - 3px); 
+        }
+
+        #sidebar-nav .category-heading {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #5a8670; /* Muted green */
+            padding: 0.75rem 1.25rem 0.25rem;
+            text-transform: uppercase;
+            margin-top: 0.5rem;
+        }
+         #sidebar-nav .sub-item {
+            padding-left: 2.25rem; /* Indent sub-items more */
+            font-size: 0.9rem;
+        }
+
+
+        /* Page Content Wrapper Styles */
+        #page-content-wrapper {
+            flex: 1;
+            padding-left: 280px; 
+            transition: padding-left 0.25s ease-out;
+            display: flex;
+            flex-direction: column;
+            min-width: 0; 
+        }
+
+        /* Toggled state for sidebar */
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: -280px; 
+        }
+
+        #wrapper.toggled #page-content-wrapper {
+            padding-left: 0; 
+        }
+
+        /* Mobile Styles for Sidebar */
+        @media (max-width: 991.98px) { /* lg breakpoint */
+            #sidebar-wrapper {
+                margin-left: -280px; 
+                position: fixed; 
+                height: 100%;
+                z-index: 1040; 
+            }
+
+            #wrapper.toggled #sidebar-wrapper {
+                margin-left: 0; 
+            }
+
+            #page-content-wrapper {
+                padding-left: 0; 
+            }
+        }
+
+        /* Top Navigation Bar */
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        #menu-toggle {
+            border: 1px solid #198754; /* Green border */
+            color: #198754; /* Green text */
+        }
+        #menu-toggle:hover {
+            background-color: #198754; /* Green background on hover */
+            color: white;
+        }
+
+        /* Breadcrumb Styles */
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+        }
+        .breadcrumb-item a {
+            color: #198754; /* Green links */
+            text-decoration: none;
+        }
+        .breadcrumb-item a:hover {
+            text-decoration: underline;
+        }
+        .breadcrumb-item.active {
+            color: #6c757d; 
+        }
+
+        /* Main Content Area */
+        #content-area {
+            background-color: #ffffff;
+            border-radius: 0.375rem; 
+            min-height: calc(100vh - 150px); 
+        }
+
+        #content-area h1, #content-area h2, #content-area h3, #content-area h4, #content-area h5 {
+            color: #146c43; /* Darker green for headings */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        #content-area h1 { font-size: 2rem; border-bottom: 2px solid #d1e7dd; padding-bottom: 0.5rem;} /* Light green border */
+        #content-area h2 { font-size: 1.75rem; }
+        #content-area h3 { font-size: 1.5rem; margin-top: 1.75rem; } 
+        #content-area h4 { font-size: 1.25rem; margin-top: 1.5rem; } 
+
+
+        #content-area p {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+
+        #content-area ul, #content-area ol {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem; 
+        }
+        #content-area li {
+            margin-bottom: 0.5rem;
+        }
+        #content-area ul ul, #content-area ol ol { /* Nested lists */
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+        }
+
+
+        /* Diagram Placeholder Styles */
+        .diagram-placeholder {
+            border: 2px dashed #5a8670; /* Muted green border */
+            background-color: #f0f5f1; /* Very light green background */
+            padding: 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+            color: #5a8670;
+        }
+        .diagram-placeholder img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Revision Question Styles */
+        .revision-question-item {
+            background-color: #f0f5f1; /* Very light green */
+            border: 1px solid #d1e7dd; /* Light green border */
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .revision-question-header {
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #146c43; /* Darker green */
+        }
+        .revision-question-header:hover {
+            background-color: #d1e7dd; /* Light green hover */
+        }
+        .revision-question-header .arrow-icon {
+            transition: transform 0.2s ease-in-out;
+        }
+        .revision-question-header[aria-expanded="true"] .arrow-icon {
+            transform: rotate(180deg);
+        }
+
+
+        .revision-answer {
+            padding: 1.25rem;
+            border-top: 1px solid #d1e7dd; /* Light green border */
+            background-color: #fff;
+        }
+        .revision-answer ul, .revision-answer ol {
+            padding-left: 1.25rem; 
+        }
+
+
+        /* MathJax Scaling for Mobile */
+        .MathJax_Display { /* For MathJax v2 */
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+        }
+        mjx-container[jax="CHTML"][display="true"] { /* For MathJax v3 */
+            display: block;
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+        }
+
+
+        /* Navigation Buttons */
+        #navigation-buttons button.btn-outline-secondary {
+            border-color: #5a8670;
+            color: #5a8670;
+        }
+        #navigation-buttons button.btn-outline-secondary:hover {
+            background-color: #5a8670;
+            color: white;
+        }
+        #navigation-buttons button.btn-outline-primary {
+            border-color: #198754;
+            color: #198754;
+        }
+         #navigation-buttons button.btn-outline-primary:hover {
+            background-color: #198754;
+            color: white;
+        }
+
+
+        /* Footer */
+        footer {
+            font-size: 0.9rem;
+        }
+
+        /* Accessibility: Focus visible for keyboard navigation */
+        :focus-visible {
+          outline: 2px solid #198754;
+          outline-offset: 2px;
+          box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+        }
+        .btn:focus-visible, .list-group-item:focus-visible {
+          outline: 2px solid #198754 !important; 
+          outline-offset: 2px !important;
+          box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <nav class="bg-light border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading border-bottom bg-light p-3">
+                <img src="https://placehold.co/30x30/198754/white?text=WT" alt="Wildlife & Tourism Guide Logo" class="me-2 rounded"> W&T Guide
+            </div>
+            <div class="list-group list-group-flush" id="sidebar-nav">
+                </div>
+        </nav>
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom sticky-top">
+                <div class="container-fluid">
+                    <button class="btn btn-success d-lg-none" id="menu-toggle">☰ Menu</button>
+                    <nav aria-label="breadcrumb" class="ms-3 flex-grow-1">
+                        <ol class="breadcrumb mb-0" id="breadcrumb-trail">
+                            </ol>
+                    </nav>
+                </div>
+            </nav>
+            <main class="container-fluid p-4">
+                <div id="content-area" class="bg-white p-4 rounded shadow-sm">
+                    <h1 id="main-title">Welcome to the Wildlife & Tourism Guide</h1>
+                    <p>Please select a topic from the menu on the left to begin your learning journey.</p>
+                </div>
+
+                <div class="d-flex justify-content-between mt-4" id="navigation-buttons">
+                    <button class="btn btn-outline-secondary" id="prev-button" disabled>&laquo; Previous</button>
+                    <button class="btn btn-outline-primary" id="next-button" disabled>Next &raquo;</button>
+                </div>
+            </main>
+            <footer class="bg-light text-center text-muted p-3 mt-auto border-top">
+                <p class="mb-0">&copy; 2025 KCSE Wildlife & Tourism Guide</p>
+            </footer>
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // content.js - Stores the learning guide material for Wildlife and Tourism
+        const guideData = [
+            {
+                id: "intro",
+                title: "1. Introduction",
+                breadcrumb: "Introduction",
+                category: "General Overview",
+                content: `
+                    <h2>1. Introduction</h2>
+                    <p>Wildlife and tourism are intrinsically linked, forming a significant component of the physical and human geography of many regions, particularly in East Africa. Wildlife refers to undomesticated animals and plants in their natural habitats. Tourism involves people traveling to and staying in places outside their usual environment for leisure, business, or other purposes. Eco-tourism, a specific branch, emphasizes responsible travel to natural areas that conserves the environment and improves the well-being of local people.</p>
+                    <p>This guide will explore these concepts as outlined in the KCSE Geography syllabus, covering definitions, factors influencing their distribution, their significance, challenges, and management strategies, with a focus on East Africa and comparative studies.</p>
+                `
+            },
+            {
+                id: "definitions",
+                title: "2. Defining Key Terms",
+                breadcrumb: "Definitions",
+                category: "General Overview",
+                content: `
+                    <h2>2. Defining Key Terms</h2>
+                    <p>Understanding the terminology is crucial for this topic:</p>
+                    <ul>
+                        <li><strong>Wildlife:</strong> All non-domesticated plants and animals existing in their natural habitats. This includes all flora (plants) and fauna (animals).</li>
+                        <li><strong>Tourism:</strong> The activities of people traveling to and staying in places outside their usual environment for not more than one consecutive year for leisure, business, and other purposes.</li>
+                        <li><strong>Eco-tourism:</strong> Responsible travel to natural areas that conserves the environment, sustains the well-being of the local people, and involves interpretation and education. It aims to minimize negative impacts and often contributes to conservation efforts.</li>
+                        <li><strong>National Park:</strong> An area set aside by the national government for the preservation of wildlife, scenic beauty, or historical sites, where human activities like settlement, farming, and grazing are generally prohibited. They are managed by central government bodies (e.g., Kenya Wildlife Service - KWS).</li>
+                        <li><strong>Game Reserve:</strong> An area set aside for the conservation of wildlife where limited human activities, such as controlled grazing or human settlement (often by local communities), may be permitted. They are often managed by local authorities or county governments.</li>
+                        <li><strong>Wildlife/Game Sanctuary:</strong> An area set aside for the protection of specific animals, plants, or birds, especially those threatened with extinction. Hunting is typically not permitted, and efforts may be made to control predators and support breeding.</li>
+                        <li><strong>Domestic Tourism:</strong> Travel for leisure or other tourism purposes by residents within their own country.</li>
+                        <li><strong>International Tourism:</strong> Travel by residents of one country to another country for tourism purposes.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "factors-wildlife",
+                title: "3. Factors Influencing Wildlife Distribution",
+                breadcrumb: "Wildlife Distribution Factors",
+                category: "Wildlife",
+                content: `
+                    <h2>3. Factors Influencing the Distribution of Wildlife in East Africa</h2>
+                    <p>The diverse wildlife of East Africa is not uniformly distributed. Its location and variety are influenced by several interconnected factors:</p>
+                    <ol>
+                        <li><strong>Climate:</strong>
+                            <ul>
+                                <li><strong>Rainfall:</strong> Areas with high and reliable rainfall support abundant and diverse vegetation, which in turn supports a greater variety and density of animal species. Arid and semi-arid lands (ASALs) with low rainfall have sparse vegetation and support fewer, specialized wildlife.</li>
+                                <li><strong>Temperature:</strong> Influences vegetation types and animal physiology. Most East African wildlife thrives in warm tropical conditions, but extreme temperatures (high or low) can be limiting.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Vegetation:</strong>
+                            <ul>
+                                <li><strong>Food Source:</strong> Vegetation is the primary food for herbivores, which are prey for carnivores. Savanna grasslands support grazers like wildebeest, while acacia woodlands are ideal for giraffes.</li>
+                                <li><strong>Habitat and Shelter:</strong> Forests offer shelter for forest-dwelling species, grasslands for plains game, and thickets provide cover.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Drainage (Water Availability):</strong>
+                            <ul>
+                                <li>Permanent water sources (rivers, lakes, waterholes) attract and support higher concentrations of wildlife, especially during dry seasons.</li>
+                                <li>Aquatic environments support unique wildlife like fish, hippos, crocodiles, and water birds.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Soil Type:</strong>
+                            <ul>
+                                <li>Soils influence vegetation type and luxuriance. Fertile volcanic soils support rich grasslands and forests, thus abundant wildlife. Poor soils in ASALs support sparse vegetation and less wildlife.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Relief (Topography):</strong>
+                            <ul>
+                                <li><strong>Altitude:</strong> Influences temperature, rainfall, vegetation, and wildlife types (e.g., mountain zonation).</li>
+                                <li><strong>Slope and Aspect:</strong> Steep slopes may limit habitat. Aspect affects microclimates.</li>
+                                <li><strong>Plains and Plateaus:</strong> Support vast herds of migratory herbivores (e.g., Serengeti-Mara).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Government Policy (Conservation Efforts):</strong>
+                            <ul>
+                                <li>Establishment of National Parks, Game Reserves, and Sanctuaries protects habitats and populations.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Human Activities:</strong>
+                            <ul>
+                                <li><strong>Negative Impacts:</strong> Habitat destruction (agriculture, settlement), poaching, human-wildlife conflict, pollution, bush fires.</li>
+                                <li><strong>Positive Impacts (Conservation):</strong> Protected areas, anti-poaching efforts, community conservation, animal translocation.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <div class="diagram-placeholder">
+                        <img src="https://placehold.co/600x300/e9ecef/6c757d?text=Diagram:+Factors+Affecting+Wildlife+Distribution" alt="Diagram: Interconnected Factors Affecting Wildlife Distribution (Climate, Vegetation, Water, Human Activity)">
+                        <p>Conceptual diagram showing how climate, vegetation, water, and human activities interact to influence wildlife distribution.</p>
+                    </div>
+                `
+            },
+            {
+                id: "protected-areas",
+                title: "4. Major Protected Areas in East Africa",
+                breadcrumb: "Protected Areas",
+                category: "Wildlife",
+                content: `
+                    <h2>4. Distribution of Major National Parks, Game Reserves, and Sanctuaries in East Africa</h2>
+                    <p>East Africa is renowned for its extensive network of protected areas. <em>(Students should refer to their atlas for precise locations.)</em></p>
+                    <h3>Kenya:</h3>
+                    <ul>
+                        <li><strong>National Parks:</strong> Maasai Mara National Reserve, Amboseli, Tsavo East & West, Nairobi, Lake Nakuru, Aberdare, Mount Kenya, Meru, Hell's Gate, Saiwa Swamp, Sibiloi, Ol Donyo Sabuk, Marsabit, Central Island, South Island, Ruma.</li>
+                        <li><strong>National Reserves:</strong> Samburu, Buffalo Springs, Shaba, Kora, South Kitui, Arawale, Boni, Dodori, Shimba Hills.</li>
+                        <li><strong>Marine Parks & Reserves:</strong> Mombasa, Malindi, Watamu, Kisite-Mpunguti, Kiunga.</li>
+                        <li><strong>Sanctuaries:</strong> Rhino sanctuaries (e.g., Lewa, Ol Pejeta, Solio Ranch), Giraffe Centre, Sheldrick Wildlife Trust (elephant orphanage), Kisumu Impala Sanctuary.</li>
+                    </ul>
+                    <div class="diagram-placeholder">
+                        <img src="https://placehold.co/600x300/e9ecef/6c757d?text=Map:+Major+Protected+Areas+in+Kenya" alt="Map: Major Protected Areas in Kenya">
+                        <p>Conceptual map of Kenya showing locations of key National Parks and Reserves.</p>
+                    </div>
+                    <h3>Tanzania:</h3>
+                    <ul>
+                        <li><strong>National Parks:</strong> Serengeti, Ngorongoro Conservation Area, Lake Manyara, Tarangire, Arusha, Kilimanjaro, Ruaha, Katavi, Gombe Stream, Mahale Mountains, Mikumi, Udzungwa Mountains.</li>
+                        <li><strong>Game Reserves:</strong> Selous (Nyerere National Park), Grumeti, Ikorongo.</li>
+                    </ul>
+                    <h3>Uganda:</h3>
+                    <ul>
+                        <li><strong>National Parks:</strong> Bwindi Impenetrable (mountain gorillas), Queen Elizabeth (tree-climbing lions), Murchison Falls, Kidepo Valley, Kibale (chimpanzees), Mgahinga Gorilla, Lake Mburo, Mount Elgon, Semuliki, Rwenzori Mountains.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "tourism-kenya-factors",
+                title: "5.1. Factors Influencing Tourism in Kenya",
+                breadcrumb: "Factors for Tourism",
+                category: "Tourism in Kenya",
+                content: `
+                    <h2>5. Tourism in Kenya</h2>
+                    <h3>5.1. Factors Influencing Tourism in Kenya</h3>
+                    <p>Kenya is a major tourist destination in Africa, influenced by several factors:</p>
+                    <ol>
+                        <li><strong>Abundant and Diverse Wildlife:</strong> The "Big Five" (lion, elephant, buffalo, leopard, rhino), wildebeest migration.</li>
+                        <li><strong>Beautiful Scenery:</strong>
+                            <ul>
+                                <li>Coastal Features: Sandy beaches (Diani, Watamu), coral reefs, marine parks.</li>
+                                <li>Rift Valley Features: Escarpments, lakes (Nakuru, Bogoria, Naivasha), volcanic mountains.</li>
+                                <li>Mountains: Mt. Kenya, Mt. Elgon, Aberdare Ranges.</li>
+                                <li>Waterfalls and Gorges.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Climate:</strong> Pleasant warm tropical climate with plenty of sunshine.</li>
+                        <li><strong>Rich Cultural Heritage:</strong> Diverse ethnic cultures (Maasai, Samburu), traditional dances, music, handicrafts.</li>
+                        <li><strong>Historical Sites and Monuments:</strong> Fort Jesus, Gedi Ruins, Olorgesailie, Kariandusi. Museums.</li>
+                        <li><strong>Accessibility and Infrastructure:</strong> International airports (JKIA, Moi International), developing road networks, tour companies.</li>
+                        <li><strong>Accommodation and Facilities:</strong> Wide range from luxury hotels/lodges to budget options.</li>
+                        <li><strong>Government Policy and Promotion:</strong> KWS management, KTB marketing, efforts for political stability.</li>
+                        <li><strong>Hospitality:</strong> Friendly and welcoming nature of Kenyans.</li>
+                        <li><strong>Conferences and Events:</strong> Facilities like KICC attract business tourists.</li>
+                    </ol>
+                `
+            },
+            {
+                id: "tourism-kenya-attractions",
+                title: "5.2. Tourist Attractions in Kenya",
+                breadcrumb: "Tourist Attractions",
+                category: "Tourism in Kenya",
+                content: `
+                    <h3>5.2. Tourist Attractions in Kenya</h3>
+                    <h4>A. Coastal Attractions:</h4>
+                    <ul>
+                        <li><strong>Beaches:</strong> Diani, Nyali, Watamu, Malindi for relaxation and water sports.</li>
+                        <li><strong>Marine National Parks and Reserves:</strong> Mombasa, Malindi, Watamu, Kisite-Mpunguti for snorkeling, diving, coral reefs.</li>
+                        <li><strong>Historical Sites:</strong> Fort Jesus, Gedi Ruins, Vasco da Gama Pillar, Old Towns of Mombasa and Lamu.</li>
+                        <li><strong>Cultural Attractions:</strong> Mijikenda and Swahili culture.</li>
+                        <li><strong>Mangrove Ecosystems.</strong></li>
+                        <li><strong>Haller Park.</strong></li>
+                    </ul>
+                    <div class="diagram-placeholder">
+                        <img src="https://placehold.co/600x300/e9ecef/6c757d?text=Image:+Kenyan+Coastal+Beach+Scene" alt="Image: Kenyan Coastal Beach Scene">
+                        <p>Placeholder for a typical Kenyan coastal beach scene with palm trees and sandy shores.</p>
+                    </div>
+
+                    <h4>B. Inland Attractions:</h4>
+                    <ul>
+                        <li><strong>Wildlife in National Parks and Reserves:</strong> Maasai Mara (migration), Amboseli (elephants, Kilimanjaro view), Tsavo, Lake Nakuru (flamingos, rhinos), Samburu (unique northern species).</li>
+                        <li><strong>Scenic Features:</strong> Mt. Kenya, Great Rift Valley, Aberdare Ranges, Hell's Gate.</li>
+                        <li><strong>Lakes:</strong> Rift Valley soda lakes (Nakuru, Bogoria) and freshwater lakes (Naivasha, Baringo).</li>
+                        <li><strong>Cultural Heritage:</strong> Maasai villages, Bomas of Kenya.</li>
+                        <li><strong>Pre-historic Sites:</strong> Olorgesailie, Kariandusi, Koobi Fora.</li>
+                        <li><strong>Museums:</strong> Nairobi National Museum, Karen Blixen Museum.</li>
+                        <li><strong>Agro-tourism:</strong> Coffee and tea plantations.</li>
+                    </ul>
+                     <div class="diagram-placeholder">
+                        <img src="https://placehold.co/600x300/e9ecef/6c757d?text=Image:+Wildlife+Safari+Scene+(e.g.,+Maasai+Mara)" alt="Image: Wildlife Safari Scene in Maasai Mara">
+                        <p>Placeholder for a typical wildlife safari scene with animals like elephants or wildebeest in a savanna setting.</p>
+                    </div>
+                `
+            },
+            {
+                id: "significance-wildlife-tourism",
+                title: "6. Significance of Wildlife & Tourism",
+                breadcrumb: "Significance",
+                category: "Importance & Impact",
+                content: `
+                    <h2>6. Significance of Wildlife and Tourism</h2>
+                    <h3>6.1. Significance of Wildlife</h3>
+                    <ul>
+                        <li><strong>Tourist Attraction:</strong> Primary basis for Kenya's tourism, earning foreign exchange.</li>
+                        <li><strong>Ecological Balance:</strong> Crucial role in pollination, seed dispersal, nutrient cycling, predator-prey relationships.</li>
+                        <li><strong>Educational and Research Value:</strong> Opportunities for scientific research and education.</li>
+                        <li><strong>Cultural Value:</strong> Part of cultural heritage and identity.</li>
+                        <li><strong>Source of Food (Game Meat):</strong> In controlled situations (culling, game ranching).</li>
+                        <li><strong>Genetic Resource:</strong> Unique genetic material for medicine, agriculture.</li>
+                        <li><strong>Aesthetic Value:</strong> Beauty enhances quality of life and recreation.</li>
+                        <li><strong>Source of Medicine:</strong> Traditional medicinal uses of plants/animals.</li>
+                        <li><strong>Climate Modification:</strong> Forests influence climate.</li>
+                        <li><strong>Water Catchment Protection:</strong> Natural vegetation protects water sources.</li>
+                    </ul>
+
+                    <h3>6.2. Significance of Tourism to Kenya</h3>
+                    <ul>
+                        <li><strong>Foreign Exchange Earnings:</strong> Major source, helps balance payments, fund imports.</li>
+                        <li><strong>Employment Creation:</strong> Direct (hotel staff, guides) and indirect jobs (agriculture, handicrafts).</li>
+                        <li><strong>Government Revenue:</strong> Taxes (VAT, airport tax), park fees, licenses.</li>
+                        <li><strong>Development of Infrastructure:</strong> Stimulates development of roads, airports, utilities.</li>
+                        <li><strong>Market for Local Products:</strong> Tourists buy agricultural produce, handicrafts, souvenirs.</li>
+                        <li><strong>Conservation of Wildlife and Environment:</strong> Revenue can be reinvested in conservation.</li>
+                        <li><strong>Diversification of the Economy:</strong> Reduces reliance on agriculture.</li>
+                        <li><strong>Promotion of International Understanding:</strong> Cultural exchange.</li>
+                        <li><strong>Stimulation of other Sectors:</strong> Benefits agriculture, transport, manufacturing.</li>
+                        <li><strong>Regional Development:</strong> Can open up remote areas.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "problems-wildlife-tourism",
+                title: "7. Problems Facing Wildlife & Tourism",
+                breadcrumb: "Problems",
+                category: "Challenges",
+                content: `
+                    <h2>7. Problems Facing Wildlife and Tourism</h2>
+                    <h3>7.1. Problems Facing Wildlife in East Africa</h3>
+                    <ol>
+                        <li><strong>Poaching/Illegal Hunting:</strong> For trophies, bushmeat, leading to population declines (elephants, rhinos).</li>
+                        <li><strong>Habitat Loss and Fragmentation:</strong> Due to human encroachment (settlement, agriculture, infrastructure).</li>
+                        <li><strong>Human-Wildlife Conflict:</strong> Crop damage, livestock predation, human attacks leading to retaliatory killings.</li>
+                        <li><strong>Climate Change and Adverse Climatic Conditions:</strong> Droughts (scarcity of water/pasture), floods.</li>
+                        <li><strong>Pests and Diseases:</strong> Rinderpest, anthrax, tsetse flies.</li>
+                        <li><strong>Pollution:</strong> Industrial, agricultural, domestic waste harming wildlife and habitats.</li>
+                        <li><strong>Bush Fires:</strong> Often human-caused, destroying habitats and killing animals.</li>
+                        <li><strong>Inadequate Capital and Resources for Conservation:</strong> Limited funding for KWS, anti-poaching.</li>
+                        <li><strong>Civil Wars and Insecurity:</strong> Increased poaching, habitat destruction in conflict zones.</li>
+                        <li><strong>Blocked Migration Routes:</strong> Fences, settlements, infrastructure.</li>
+                        <li><strong>Overpopulation of some animals:</strong> Leading to habitat degradation.</li>
+                    </ol>
+
+                    <h3>7.2. Problems Facing and Associated with Tourism in Kenya</h3>
+                    <ol>
+                        <li><strong>Insecurity and Crime:</strong> Targeting tourists or general insecurity (terrorism, ethnic clashes) leading to negative travel advisories.</li>
+                        <li><strong>Negative International Publicity:</strong> Damaging Kenya's image.</li>
+                        <li><strong>Competition from Other Destinations:</strong> Other African countries and global destinations.</li>
+                        <li><strong>High Cost of Travel and Services:</strong> Airfares, park fees, hotel tariffs.</li>
+                        <li><strong>Inadequate Infrastructure:</strong> Poor roads, unreliable power/water in some areas.</li>
+                        <li><strong>Environmental Degradation:</strong> Overcrowding in parks, pollution from facilities, off-road driving.</li>
+                        <li><strong>Leakage of Tourism Revenue:</strong> Profits going to foreign-owned companies.</li>
+                        <li><strong>Seasonality of Tourism:</strong> Underutilization of facilities and unstable employment in off-peak seasons.</li>
+                        <li><strong>Over-reliance on Wildlife-based Tourism:</strong> Need for diversification.</li>
+                        <li><strong>Negative Socio-Cultural Impacts:</strong> Erosion of local cultures, social problems (prostitution), displacement of communities.</li>
+                        <li><strong>Inadequate Marketing and Promotion.</strong></li>
+                        <li><strong>Lack of Product Diversification and Innovation.</strong></li>
+                        <li><strong>Adverse climatic conditions affecting wildlife which reduces tourist numbers.</strong></li>
+                        <li><strong>Negative attitudes by some Kenyans towards domestic tourism.</strong></li>
+                    </ol>
+                `
+            },
+            {
+                id: "management-conservation-wildlife",
+                title: "8. Management & Conservation of Wildlife",
+                breadcrumb: "Wildlife Management",
+                category: "Management & Conservation",
+                content: `
+                    <h2>8. Management and Conservation of Wildlife in East Africa</h2>
+                    <p>Effective management and conservation are essential:</p>
+                    <ol>
+                        <li><strong>Establishing Protected Areas:</strong> National Parks, Game Reserves, Sanctuaries.</li>
+                        <li><strong>Anti-Poaching Measures:</strong> Well-equipped ranger units, technology (aerial surveillance, GPS), stiff penalties.</li>
+                        <li><strong>Legislation and Policy:</strong> Enacting and enforcing strong conservation laws (e.g., Wildlife Conservation and Management Act), banning trade in endangered species products.</li>
+                        <li><strong>Community Conservation and Participation:</strong> Involving local communities in management, benefit-sharing (community conservancies), providing alternative livelihoods, compensation for human-wildlife conflict.</li>
+                        <li><strong>Research and Monitoring:</strong> On wildlife populations, diseases, habitats (e.g., KREMU).</li>
+                        <li><strong>Public Awareness and Education:</strong> Through media, wildlife clubs, community outreach.</li>
+                        <li><strong>Translocation of Animals:</strong> Moving animals from threatened areas or to establish new populations.</li>
+                        <li><strong>Veterinary Services:</strong> Treating sick/injured animals, managing disease outbreaks.</li>
+                        <li><strong>Habitat Management and Restoration:</strong> Controlling invasive species, managing fires, securing wildlife corridors.</li>
+                        <li><strong>International Cooperation:</strong> With CITES, WWF, IUCN, and neighboring countries.</li>
+                        <li><strong>Culling:</strong> Selective reduction of overpopulated species (controversial).</li>
+                        <li><strong>Encouraging Domestic Tourism:</strong> Lowering park fees for locals to foster support.</li>
+                    </ol>
+                     <div class="diagram-placeholder">
+                        <img src="https://placehold.co/600x300/e9ecef/6c757d?text=Diagram:+Wildlife+Conservation+Strategies" alt="Diagram: Wildlife Conservation Strategies (Protected Areas, Anti-Poaching, Community Involvement)">
+                        <p>Illustrating key wildlife conservation strategies like protected areas, anti-poaching patrols, and community engagement.</p>
+                    </div>
+                `
+            },
+            {
+                id: "future-tourism-kenya",
+                title: "9. Future of Tourism in Kenya",
+                breadcrumb: "Future of Tourism",
+                category: "Tourism in Kenya",
+                content: `
+                    <h2>9. The Future of Tourism in Kenya</h2>
+                    <p>The future depends on addressing challenges and capitalizing on opportunities.</p>
+                    <h4>Positive Indicators / Strategies for a Bright Future:</h4>
+                    <ul>
+                        <li><strong>Aggressive Marketing and Promotion:</strong> By Ministry of Tourism and KTB in traditional and new markets.</li>
+                        <li><strong>Product Diversification:</strong> Beyond wildlife safaris to cultural, eco-, agro-, sports, and MICE tourism.</li>
+                        <li><strong>Improved Security:</strong> Enhancing security in tourist areas and nationally.</li>
+                        <li><strong>Infrastructure Development:</strong> Investing in roads, airports.</li>
+                        <li><strong>Lowering Costs/Tariffs:</strong> Competitive pricing, especially in low seasons.</li>
+                        <li><strong>Development of Sustainable Tourism (Eco-tourism):</strong> Emphasizing environmental friendliness, community involvement.</li>
+                        <li><strong>Opening Up New Tourist Circuits:</strong> Developing attractions in less-explored regions.</li>
+                        <li><strong>National Tourism Master Plans/Vision 2030:</strong> Strategic government planning.</li>
+                        <li><strong>Strength of the Kenya Shilling:</strong> A relatively weaker shilling can make Kenya cheaper for international tourists.</li>
+                        <li><strong>Community-Based Tourism Initiatives:</strong> Empowering local communities.</li>
+                    </ul>
+                    <h4>Potential Challenges:</h4>
+                    <ul>
+                        <li>Continued global economic uncertainties.</li>
+                        <li>Climate change impacts on wildlife and landscapes.</li>
+                        <li>Persistent security concerns if not fully addressed.</li>
+                        <li>Competition from other destinations.</li>
+                    </ul>
+                `
+            },
+            {
+                id: "kenya-switzerland-comparison",
+                title: "10. Kenya vs. Switzerland Tourism",
+                breadcrumb: "Kenya-Switzerland Comparison",
+                category: "Comparative Studies",
+                content: `
+                    <h2>10. Comparative Study: Tourism in Kenya and Switzerland</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr><th>Feature</th><th>Kenya</th><th>Switzerland</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>Main Attractions</strong></td><td>Wildlife (Big Five, migrations), beaches, diverse cultures, scenic landscapes (Rift Valley, Mt. Kenya).</td><td>Mountain scenery (Alps - snow-capped peaks, glaciers), lakes, waterfalls, winter sports (skiing), picturesque towns/villages, cultural events.</td></tr>
+                                <tr><td><strong>Climate for Tourism</strong></td><td>Tropical: Warm/sunny year-round (beach tourism, safaris).</td><td>Temperate: Distinct seasons. Sunny summers (hiking), snowy winters (skiing).</td></tr>
+                                <tr><td><strong>Location & Accessibility</strong></td><td>Far from major source markets (Europe, N. America).</td><td>Centrally located in Europe, easily accessible.</td></tr>
+                                <tr><td><strong>Political Stability</strong></td><td>Generally stable but can face periods of insecurity.</td><td>Highly stable, politically neutral, very safe.</td></tr>
+                                <tr><td><strong>Transport Infrastructure</strong></td><td>Developing; some key tourist roads good, others poor. Major airports.</td><td>Highly efficient and well-developed (trains, roads, cable cars).</td></tr>
+                                <tr><td><strong>Accommodation</strong></td><td>Wide range from luxury lodges/hotels to budget options.</td><td>Excellent, high-quality hotels, chalets; often fairly priced.</td></tr>
+                                <tr><td><strong>Target Market</strong></td><td>Primarily international tourists; growing domestic market.</td><td>Strong international market; significant domestic tourism.</td></tr>
+                                <tr><td><strong>Economic Reliance</strong></td><td>Tourism is a major foreign exchange earner and employer.</td><td>Important sector, but economy is highly diversified (finance, manufacturing).</td></tr>
+                                <tr><td><strong>Language</strong></td><td>English and Swahili widely spoken.</td><td>Multiple official languages; English widely spoken in tourist areas.</td></tr>
+                                <tr><td><strong>Training & Service</strong></td><td>Improving; Utalii College provides training.</td><td>Highly trained personnel, renowned for high-quality service.</td></tr>
+                                <tr><td><strong>Wildlife Focus</strong></td><td>Central to tourism (natural habitats).</td><td>Wildlife present but not primary draw; often in zoos or managed settings.</td></tr>
+                                <tr><td><strong>Coastal vs. Lakeside</strong></td><td>Indian Ocean coastal beaches.</td><td>Lakeside beaches and resorts on numerous clear lakes.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h4>Similarities:</h4>
+                    <ul>
+                        <li>Both have beautiful natural scenery (mountains, lakes, waterfalls).</li>
+                        <li>Both have well-established hotel industries.</li>
+                        <li>Both use tour packages and have international marketing efforts.</li>
+                        <li>Both generally enjoy political stability conducive to tourism (Kenya has faced more challenges).</li>
+                        <li>Tourism is a significant foreign exchange earner for both.</li>
+                        <li>Both experience year-round tourist visits (seasonality differs).</li>
+                        <li>Both have national parks and protected areas.</li>
+                        <li>Both have health spas with mineral water.</li>
+                    </ul>
+                    <h4>Differences (Summary from notes):</h4>
+                    <ul>
+                        <li>Climate types and associated activities.</li>
+                        <li>Main scenic attractions (wildlife vs. alpine).</li>
+                        <li>Accessibility from source markets.</li>
+                        <li>Perceived security levels.</li>
+                        <li>Efficiency and development of transport networks.</li>
+                        <li>Nature of wildlife viewing (natural habitat vs. managed settings).</li>
+                    </ul>
+                `
+            },
+            {
+                id: "conclusion-wt",
+                title: "11. Conclusion",
+                breadcrumb: "Conclusion",
+                category: "Summary",
+                content: `
+                    <h2>11. Conclusion</h2>
+                    <p>Wildlife and tourism are vital components of Kenya's geography, economy, and environment. The rich biodiversity is a primary tourist draw, making conservation efforts essential not just for ecological reasons but also for the sustainability of the tourism industry. While facing challenges like poaching, habitat loss, and competition, strategic management, community involvement, product diversification, and a focus on sustainable practices like eco-tourism hold the key to a vibrant future for both wildlife and tourism in Kenya. Understanding these dynamics is crucial for any student of KCSE Geography.</p>
+                `
+            },
+            {
+                id: "revision-wt",
+                title: "Revision Questions",
+                breadcrumb: "Revision",
+                category: "Self-Assessment",
+                content: `
+                    <h2>Revision Questions</h2>
+                    <p>Test your understanding of Wildlife and Tourism with these questions.</p>
+                    <div id="revision-questions-container">
+                        </div>
+                `
+            }
+        ];
+
+        // Revision Questions Data for Wildlife and Tourism
+        const revisionQuestionsData = [
+            // Definitions
+            { q: "1. Define the term 'wildlife'.", a: "Wildlife refers to all non-domesticated plants (flora) and animals (fauna) existing in their natural habitats." },
+            { q: "2. What is 'tourism'?", a: "Tourism involves the activities of people traveling to and staying in places outside their usual environment for not more than one consecutive year for leisure, business, and other purposes." },
+            { q: "3. Explain the concept of 'eco-tourism'.", a: "Eco-tourism is responsible travel to natural areas that conserves the environment, sustains the well-being of the local people, and involves interpretation and education. It aims to minimize negative impacts." },
+            { q: "4. Distinguish between a 'National Park' and a 'Game Reserve'.", a: "A National Park is set aside by the national government mainly for wildlife preservation, with human activities like settlement and farming generally prohibited, and managed by central bodies (e.g., KWS). A Game Reserve is set aside for wildlife conservation where limited human activities (e.g., controlled grazing, settlement by local communities) may be permitted and is often managed by local authorities." },
+            { q: "5. What is the main purpose of a 'Wildlife Sanctuary'?", a: "A Wildlife Sanctuary is primarily for the protection of specific animals, plants, or birds, especially those threatened with extinction. Hunting is typically not permitted, and efforts may be made to control predators and support breeding." },
+            { q: "6. Differentiate between 'domestic tourism' and 'international tourism'.", a: "Domestic tourism is travel by residents within their own country for tourism purposes. International tourism is travel by residents of one country to another country for tourism purposes." },
+
+            // Factors Influencing Wildlife Distribution
+            { q: "7. How does climate, specifically rainfall, influence the distribution of wildlife in East Africa?", a: "Areas with high and reliable rainfall support abundant and diverse vegetation, which in turn supports a greater variety and density of animal species. Arid and semi-arid lands with low rainfall have sparse vegetation and support fewer, specialized wildlife." },
+            { q: "8. Explain the effect of temperature on wildlife distribution.", a: "Temperature influences vegetation types and animal physiology. Most East African wildlife thrives in warm tropical conditions, but extreme temperatures (high or low at high altitudes) limit the types of plants and animals that can survive." },
+            { q: "9. Discuss how vegetation acts as a food source for wildlife.", a: "Vegetation is the primary food source for herbivores, which in turn are prey for carnivores. The type and density of vegetation (e.g., savanna grasslands for grazers, acacia woodlands for giraffes) directly determine the animal species an area can support." },
+            { q: "10. How does vegetation provide habitat and shelter for wildlife?", a: "Different vegetation types provide different living places (habitats) and cover. Forests offer shelter for forest-dwelling species, grasslands for plains game, and thickets provide cover from predators and harsh weather." },
+            { q: "11. Explain the role of drainage and water availability in influencing wildlife distribution.", a: "Permanent water sources (rivers, lakes, waterholes) are essential for all life and attract higher concentrations of wildlife, especially during dry seasons. Aquatic environments also support their own unique wildlife." },
+            { q: "12. How does soil type indirectly influence the distribution of wildlife?", a: "Soil type influences the type and luxuriance of vegetation. Fertile soils support rich vegetation, which in turn supports abundant wildlife. Poor soils support sparse vegetation and less wildlife." },
+            { q: "13. How does relief (topography), such as plains and plateaus, influence wildlife distribution?", a: "Relatively flat or gently undulating areas like plains and plateaus (e.g., Serengeti-Mara) support vast herds of migratory herbivores. Steep slopes may be difficult for some animals to inhabit." },
+            { q: "14. Explain how government policy (conservation efforts) influences wildlife distribution.", a: "The establishment of National Parks, Game Reserves, and Sanctuaries by governments plays a crucial role in protecting wildlife habitats and populations from human encroachment and poaching, thus concentrating wildlife in these protected areas." },
+            { q: "15. Identify two negative human activities that affect wildlife distribution.", a: "1. Habitat destruction/encroachment for agriculture or settlement. 2. Poaching/illegal hunting." },
+            
+            // Protected Areas
+            { q: "16. Name three National Parks located in Kenya.", a: "Maasai Mara National Reserve, Amboseli National Park, Tsavo East National Park, Tsavo West National Park, Nairobi National Park, Lake Nakuru National Park." },
+            { q: "17. List two Game Reserves found in Kenya.", a: "Samburu National Reserve, Buffalo Springs National Reserve, Shaba National Reserve, Shimba Hills National Reserve." },
+            { q: "18. Identify one Marine Park in Kenya.", a: "Mombasa Marine National Park, Malindi Marine National Park, Watamu Marine National Park, Kisite-Mpunguti Marine Park." },
+            { q: "19. Name two National Parks in Tanzania renowned for wildlife.", a: "Serengeti National Park, Ngorongoro Conservation Area, Lake Manyara National Park, Tarangire National Park." },
+            { q: "20. Which National Park in Uganda is famous for mountain gorillas?", a: "Bwindi Impenetrable National Park (also Mgahinga Gorilla National Park)." },
+
+            // Tourism in Kenya - Factors
+            { q: "21. Explain why abundant and diverse wildlife is a major factor influencing tourism in Kenya.", a: "Kenya's rich wildlife, including the 'Big Five' and events like the wildebeest migration, are primary attractions for international tourists seeking safari experiences." },
+            { q: "22. Mention two specific scenic features of the Great Rift Valley in Kenya that attract tourists.", a: "1. The dramatic escarpments of the valley itself. 2. Rift Valley lakes like Nakuru (flamingos), Bogoria (hot springs, geysers), and Naivasha (boat rides, hippos)." },
+            { q: "23. How does Kenya's climate make it an attractive tourist destination?", a: "Kenya generally has a pleasant warm tropical climate with plenty of sunshine throughout much of the year, which is attractive to tourists from temperate regions, especially during their colder seasons." },
+            { q: "24. Give one example of how Kenya's rich cultural heritage attracts tourists.", a: "The diverse cultures of ethnic groups like the Maasai and Samburu, with their traditional dances, music, ceremonies, dress, and handicrafts, offer unique cultural experiences for visitors." },
+            { q: "25. Name one historical site on the Kenyan coast that is a tourist attraction.", a: "Fort Jesus (Mombasa), Gedi Ruins, Vasco da Gama Pillar (Malindi)." },
+            { q: "26. How does government policy on security influence tourism in Kenya?", a: "Government efforts to ensure political stability and security are crucial for tourist confidence. Perceived or actual insecurity can lead to negative travel advisories and a decline in tourist arrivals." },
+            { q: "27. What role does the Kenya Tourism Board (KTB) play?", a: "The Kenya Tourism Board (KTB) is responsible for marketing Kenya as a tourist destination internationally and domestically." },
+
+            // Tourist Attractions in Kenya
+            { q: "28. List two activities tourists engage in at Kenyan coastal beaches.", a: "Relaxation/sunbathing, swimming, water sports (e.g., snorkeling, diving, surfing, sailing)." },
+            { q: "29. What attracts tourists to Marine National Parks in Kenya?", a: "Opportunities for snorkeling and diving to view coral reefs and diverse marine life like colorful fish and sea turtles." },
+            { q: "30. Name one unique wildlife species that attracts tourists to Samburu National Reserve.", a: "The 'Samburu Special Five': Grevy's zebra, reticulated giraffe, Beisa oryx, Somali ostrich, gerenuk." },
+            { q: "31. Why is Lake Nakuru National Park a famous tourist destination?", a: "It is famous for its large flocks of flamingos (though numbers can vary) and as a sanctuary for rhinoceros (both black and white)." },
+            { q: "32. What is the main attraction of the Maasai Mara National Reserve?", a: "The annual wildebeest migration (July-October) and its high concentration of predators like lions, leopards, and cheetahs." },
+
+            // Significance of Wildlife
+            { q: "33. State three ways in which wildlife is significant to Kenya's economy.", a: "1. Forms the primary basis for the tourism industry, earning foreign exchange. 2. Creates employment through tourism and conservation. 3. Game ranching/culling can provide meat and other products." },
+            { q: "34. Explain how wildlife contributes to ecological balance.", a: "Wildlife plays crucial roles in processes like pollination (bees, birds, bats), seed dispersal (birds, mammals), nutrient cycling (decomposers, herbivores), and maintaining predator-prey relationships which regulate populations." },
+            { q: "35. What is the educational and research value of wildlife?", a: "Wildlife and their ecosystems provide living laboratories for scientific research in biology, ecology, ethology (animal behavior), and conservation science. They are also vital for environmental education." },
+            { q: "36. How do forests, as part of wildlife habitat, influence climate?", a: "Forests influence local and regional climate patterns through processes like transpiration (releasing moisture into the atmosphere), providing shade (cooling effect), and acting as windbreaks." },
+            { q: "37. In what way does wildlife act as a genetic resource?", a: "Wild species possess unique genetic material (genes) that could be important for improving domesticated crops and livestock, or for developing new medicines and other biotechnological applications." },
+
+            // Significance of Tourism
+            { q: "38. Explain how tourism is a major source of foreign exchange earnings for Kenya.", a: "International tourists pay for services (accommodation, transport, tours, park fees) in foreign currency, which helps Kenya fund imports and improve its balance of payments." },
+            { q: "39. Give two examples of direct employment created by tourism.", a: "Hotel staff (managers, chefs, waiters, housekeepers), tour guides, safari drivers, KWS rangers." },
+            { q: "40. Give two examples of indirect employment created by tourism.", a: "Farmers supplying food to hotels, artisans making handicrafts and souvenirs, transport operators (taxis, buses), construction workers building tourist facilities." },
+            { q: "41. How does tourism generate revenue for the Kenyan government?", a: "Through taxes (e.g., Value Added Tax on tourist services, airport departure taxes, corporate taxes from tourism businesses), park entry fees, and licensing fees for tour operators and hotels." },
+            { q: "42. Explain how tourism can stimulate the development of infrastructure.", a: "To support tourism, governments and private investors often develop or improve roads, airports, communication networks, and utilities (water, electricity) in tourist areas, which also benefit local communities." },
+            { q: "43. How does tourism provide a market for local products?", a: "Tourists purchase local agricultural produce (fruits, vegetables consumed in hotels), handicrafts (wood carvings, beadwork, textiles), and souvenirs, thereby supporting local artisans and farmers." },
+            { q: "44. In what way can revenue from tourism be reinvested into conservation efforts?", a: "Park entry fees and a portion of taxes from tourism can be allocated to funding wildlife conservation activities, anti-poaching efforts, habitat management, and community conservation programs." },
+            { q: "45. How does tourism contribute to the diversification of Kenya's economy?", a: "It provides an alternative major source of income and employment, reducing the country's over-reliance on traditional sectors like agriculture, which can be vulnerable to weather changes." },
+
+            // Problems Facing Wildlife
+            { q: "46. Explain how poaching threatens wildlife populations.", a: "Poaching, the illegal hunting of animals, directly reduces their numbers. It often targets specific species for valuable parts (e.g., elephants for ivory, rhinos for horns), leading to drastic population declines and pushing them towards extinction." },
+            { q: "47. What is meant by 'habitat loss and fragmentation' and how does it affect wildlife?", a: "Habitat loss is the destruction or conversion of natural environments (e.g., forests, grasslands) for human uses like agriculture or settlement. Fragmentation is the breaking up of large habitats into smaller, isolated patches. Both reduce the area available for wildlife, limit resources, restrict movement, and can isolate populations, making them more vulnerable." },
+            { q: "48. Give an example of human-wildlife conflict.", a: "Elephants raiding and destroying farmers' crops, or lions attacking livestock. This often leads to communities retaliating against the animals." },
+            { q: "49. How can prolonged droughts impact wildlife in East Africa?", a: "Droughts lead to scarcity of water and pasture/browse, causing starvation, dehydration, reduced breeding success, increased susceptibility to diseases, and death of animals. It can also force animals to move into human areas, increasing conflict." },
+            { q: "50. Name one disease that can affect wildlife populations.", a: "Rinderpest (historically), anthrax, canine distemper, rabies." },
+            { q: "51. How do blocked migration routes affect wildlife?", a: "Fences, settlements, roads, and other infrastructure can block traditional routes used by animals to access seasonal food, water, or breeding grounds, disrupting their life cycles and potentially leading to population declines." },
+
+            // Problems Facing Tourism
+            { q: "52. How can insecurity and crime negatively affect tourism in Kenya?", a: "Incidents of crime targeting tourists or general insecurity (e.g., terrorism threats, political instability) can create fear, lead to negative travel advisories from source countries, and cause a sharp decline in tourist arrivals and revenue." },
+            { q: "53. What is meant by 'leakage of tourism revenue'?", a: "This refers to the situation where a significant portion of the money spent by tourists in a destination country 'leaks' out to foreign countries, for example, through payments to foreign-owned airlines, tour operators, hotel chains, or for imported goods and services used by the tourism industry. This reduces the actual economic benefit to the host country." },
+            { q: "54. Explain the problem of 'seasonality' in tourism.", a: "Seasonality means that tourist arrivals and activities are concentrated in certain periods of the year (peak seasons), often due to climate or holiday patterns. This leads to underutilization of facilities and unstable employment during off-peak seasons." },
+            { q: "55. Give one example of a negative socio-cultural impact of tourism.", a: "Erosion of local traditional cultures as communities adopt foreign lifestyles or as cultural practices become commercialized for tourists. OR Potential for social problems like increased crime or prostitution in tourist areas." },
+            { q: "56. How can competition from other tourist destinations affect Kenya?", a: "Kenya faces competition from other African countries (e.g., Tanzania, South Africa) and global destinations offering similar wildlife, beach, or cultural experiences. If these destinations offer better value, more diverse products, or are perceived as safer, Kenya may lose tourists to them." },
+            { q: "57. Why is over-reliance on wildlife-based tourism a potential problem for Kenya?", a: "If wildlife populations decline (due to poaching, disease, climate change) or if tourist preferences change, an over-reliance on this single product makes the entire tourism industry vulnerable. Diversification is needed." },
+
+            // Management and Conservation of Wildlife
+            { q: "58. State three anti-poaching measures used in wildlife conservation.", a: "1. Deploying well-equipped and trained anti-poaching units (rangers). 2. Using modern technology like aerial surveillance, GPS tracking, and sniffer dogs. 3. Imposing stiff penalties for poaching and illegal wildlife trade." },
+            { q: "59. What is the role of community conservation programs in wildlife management?", a: "They involve local communities living near protected areas in wildlife management and conservation efforts, often through benefit-sharing schemes (e.g., revenue from tourism in community conservancies) and providing alternative livelihoods, which fosters local support for conservation." },
+            { q: "60. Why is public awareness and education important for wildlife conservation?", a: "Educating the public, especially local communities and younger generations (e.g., through wildlife clubs), about the importance of wildlife, the threats they face, and the benefits of conservation helps to build support for conservation efforts and encourage responsible behavior." },
+            { q: "61. What is 'translocation of animals' in wildlife management?", a: "It involves capturing animals in one area and moving them to another. This may be done to move animals from areas where they are threatened or overpopulated to safer or less populated areas, or to reintroduce species to areas where they have become extinct." },
+            { q: "62. What does CITES stand for and what is its role?", a: "CITES stands for the Convention on International Trade in Endangered Species of Wild Fauna and Flora. Its role is to ensure that international trade in specimens of wild animals and plants does not threaten their survival." },
+            { q: "63. What is 'culling' in wildlife management, and why is it sometimes controversial?", a: "Culling is the selective reduction of animal populations, usually when they exceed the carrying capacity of their habitat, to prevent habitat degradation and maintain healthy populations. It is controversial due to ethical concerns about killing animals." },
+
+            // Future of Tourism in Kenya
+            { q: "64. Suggest two ways Kenya can diversify its tourism product.", a: "1. Developing and promoting cultural tourism, focusing on the diverse ethnic cultures, traditions, and historical sites. 2. Expanding eco-tourism and agro-tourism opportunities that emphasize sustainability and unique local experiences." },
+            { q: "65. Why is improving infrastructure important for the future of tourism in Kenya?", a: "Good infrastructure (roads, airports, reliable power and water) improves accessibility to tourist sites and enhances the overall quality of the tourist experience, making Kenya a more attractive destination." },
+            { q: "66. How can community-based tourism initiatives contribute to a brighter future for tourism?", a: "They empower local communities to develop and manage tourism enterprises, ensuring that benefits flow directly to them. This fosters local support for tourism and conservation, and offers authentic experiences to tourists." },
+
+            // Comparative Study: Kenya and Switzerland
+            { q: "67. State one major type of tourist attraction found in Kenya but largely absent as a primary draw in Switzerland.", a: "Abundant wildlife in natural savanna habitats (e.g., the 'Big Five', large animal migrations) is a primary draw in Kenya, while wildlife in Switzerland is present but not the main attraction and often seen in more managed settings like zoos or specific national parks." },
+            { q: "68. State one major type of tourist attraction found in Switzerland but largely absent as a primary draw in Kenya.", a: "Winter sports based on snow-capped alpine scenery (e.g., skiing, snowboarding, glaciers) are a primary draw in Switzerland, which is not a feature of Kenyan tourism." },
+            { q: "69. How does the climate influence the main tourist seasons in Kenya versus Switzerland?", a: "Kenya's tropical warm/sunny climate supports year-round tourism, especially for safaris and beach holidays, with peak seasons often coinciding with dry periods or European/North American holidays. Switzerland's temperate climate has distinct seasons, leading to a peak summer season for hiking/mountaineering and a peak winter season for snow sports." },
+            { q: "70. Compare the accessibility of Kenya and Switzerland for international tourists from Europe.", a: "Switzerland, being centrally located in Europe, is highly accessible and relatively easy/cheap to reach for many European tourists. Kenya is further away from major European source markets, making travel more expensive and time-consuming." },
+            { q: "71. Contrast the perceived political stability and its impact on tourism in Kenya and Switzerland.", a: "Switzerland is renowned for its high political stability and neutrality, which is very attractive to tourists. Kenya is generally stable but has faced periods of political tension or insecurity that can negatively impact tourist arrivals due to safety concerns and travel advisories." },
+            { q: "72. How does the transport infrastructure differ between Kenya and Switzerland for tourists?", a: "Switzerland has a highly efficient, modern, and well-developed transport infrastructure (electric trains, excellent roads, cable cars). Kenya's transport infrastructure is still developing; while major tourist routes and airports are functional, some remote areas can have poor road conditions." },
+            { q: "73. What is a key similarity in the natural scenery that attracts tourists to both Kenya and Switzerland?", a: "Both countries boast beautiful natural scenery, including mountains and lakes, although the specific types of mountains (volcanic/block vs. alpine) and lake environments differ." },
+            { q: "74. How does the economic reliance on tourism differ between Kenya and Switzerland?", a: "Tourism is a major foreign exchange earner and a very significant employer in Kenya, making the economy quite reliant on it. In Switzerland, while tourism is an important sector, the economy is highly diversified with strong finance, manufacturing, and pharmaceutical sectors, making it less solely reliant on tourism." },
+            { q: "75. What is a similarity in government involvement in tourism for both Kenya and Switzerland?", a: "Both governments are involved in promoting their countries as tourist destinations and have bodies/policies for managing tourism and protected areas (e.g., KWS in Kenya, national park management in Switzerland)." },
+            { q: "76. Compare the training and service standards in the hospitality industry of Kenya and Switzerland.", a: "Switzerland is renowned for its highly trained personnel and exceptionally high-quality service in the hospitality industry, with a long tradition of hotel management schools. Kenya's training (e.g., Utalii College) and service standards are improving but generally not yet at the same level as Switzerland's." },
+            { q: "77. What is a key difference in how wildlife is presented as a tourist attraction in Kenya versus Switzerland?", a: "In Kenya, wildlife is central to tourism and is primarily viewed in its natural, extensive habitats (National Parks and Reserves). In Switzerland, while wildlife exists, it's not the main draw; any wildlife tourism is more focused on specific parks or animals often in more managed or enclosed settings like zoos, rather than vast, free-roaming herds." }
+        ];
+    </script>
+
+    <script>
+        // script.js - Handles the interactivity of the learning guide
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarNav = document.getElementById('sidebar-nav');
+            const contentArea = document.getElementById('content-area');
+            const mainTitle = document.getElementById('main-title');
+            const breadcrumbTrail = document.getElementById('breadcrumb-trail');
+            const prevButton = document.getElementById('prev-button');
+            const nextButton = document.getElementById('next-button');
+            const menuToggle = document.getElementById('menu-toggle');
+            const wrapper = document.getElementById('wrapper');
+
+            let currentSectionIndex = -1; 
+
+            function generateSidebar() {
+                sidebarNav.innerHTML = ''; 
+                let currentCategory = "";
+                guideData.forEach((section, index) => {
+                    if (section.category && section.category !== currentCategory) {
+                        currentCategory = section.category;
+                        const categoryDiv = document.createElement('div');
+                        categoryDiv.classList.add('category-heading');
+                        categoryDiv.textContent = currentCategory;
+                        sidebarNav.appendChild(categoryDiv);
+                    }
+
+                    const link = document.createElement('a');
+                    link.href = `#${section.id}`;
+                    link.classList.add('list-group-item', 'list-group-item-action', 'list-group-item-light', 'p-3');
+                    if (section.category) { 
+                        link.classList.add('sub-item');
+                    }
+                    link.textContent = section.title;
+                    link.setAttribute('role', 'button');
+                    link.setAttribute('tabindex', '0'); 
+                    link.dataset.index = index;
+
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        loadSection(index);
+                        if (window.innerWidth < 992) { 
+                            wrapper.classList.remove('toggled');
+                        }
+                    });
+                    link.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            loadSection(index);
+                            if (window.innerWidth < 992) {
+                                wrapper.classList.remove('toggled');
+                            }
+                        }
+                    });
+                    sidebarNav.appendChild(link);
+                });
+            }
+
+            function loadSection(index) {
+                if (index < 0 || index >= guideData.length) {
+                    console.error("Invalid section index:", index);
+                    return;
+                }
+
+                currentSectionIndex = index;
+                const section = guideData[index];
+
+                mainTitle.textContent = section.title.substring(section.title.indexOf('.') + 2); 
+                contentArea.innerHTML = section.content; 
+
+                updateBreadcrumbs(section.category, section.breadcrumb);
+                updateNavigationButtons();
+                updateActiveSidebarLink();
+                saveProgress();
+
+                if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                    MathJax.typesetPromise([contentArea]).catch(function (err) {
+                        console.error('MathJax Typesetting Error:', err);
+                    });
+                } else if (typeof MathJax !== 'undefined' && MathJax.Hub && MathJax.Hub.Queue) {
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, contentArea]);
+                }
+
+                if (section.id === "revision-wt") { 
+                    renderRevisionQuestions();
+                }
+                
+                contentArea.scrollTop = 0;
+                document.getElementById('page-content-wrapper').scrollTop = 0; 
+            }
+
+            menuToggle.addEventListener('click', () => {
+                wrapper.classList.toggle('toggled');
+            });
+
+            prevButton.addEventListener('click', () => {
+                if (currentSectionIndex > 0) {
+                    loadSection(currentSectionIndex - 1);
+                }
+            });
+            prevButton.addEventListener('keydown', (e) => {
+                if ((e.key === 'Enter' || e.key === ' ') && currentSectionIndex > 0) {
+                    e.preventDefault();
+                    loadSection(currentSectionIndex - 1);
+                }
+            });
+
+            nextButton.addEventListener('click', () => {
+                if (currentSectionIndex < guideData.length - 1) {
+                    loadSection(currentSectionIndex + 1);
+                }
+            });
+             nextButton.addEventListener('keydown', (e) => {
+                if ((e.key === 'Enter' || e.key === ' ') && currentSectionIndex < guideData.length - 1) {
+                    e.preventDefault();
+                    loadSection(currentSectionIndex + 1);
+                }
+            });
+
+            function updateNavigationButtons() {
+                prevButton.disabled = currentSectionIndex <= 0;
+                nextButton.disabled = currentSectionIndex >= guideData.length - 1;
+            }
+
+            function updateActiveSidebarLink() {
+                const links = sidebarNav.querySelectorAll('.list-group-item');
+                links.forEach((link, idx) => {
+                    if (idx === currentSectionIndex) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+
+            function updateBreadcrumbs(category, breadcrumbText) {
+                breadcrumbTrail.innerHTML = ''; 
+                const homeLi = document.createElement('li');
+                homeLi.classList.add('breadcrumb-item');
+                const homeLink = document.createElement('a');
+                homeLink.href = '#';
+                homeLink.textContent = 'Home';
+                homeLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    currentSectionIndex = -1;
+                    mainTitle.textContent = "Welcome to the Wildlife & Tourism Guide";
+                    contentArea.innerHTML = "<p>Please select a topic from the menu on the left to begin your learning journey.</p>";
+                    updateBreadcrumbs("Home", "");
+                    updateNavigationButtons();
+                    updateActiveSidebarLink();
+                    sessionStorage.removeItem('currentWildlifeTourismSectionIndex');
+                });
+                homeLi.appendChild(homeLink);
+                breadcrumbTrail.appendChild(homeLi);
+
+                if (category && currentSectionIndex !== -1) {
+                    const categoryLi = document.createElement('li');
+                    categoryLi.classList.add('breadcrumb-item');
+                    const categoryLink = document.createElement('a');
+                    categoryLink.href = '#';
+                    categoryLink.textContent = category;
+                    categoryLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const firstInCategory = guideData.findIndex(item => item.category === category);
+                        if (firstInCategory !== -1) loadSection(firstInCategory);
+                    });
+                    categoryLi.appendChild(categoryLink);
+                    breadcrumbTrail.appendChild(categoryLi);
+                }
+
+                if (breadcrumbText && breadcrumbText !== "Home" && currentSectionIndex !== -1) {
+                    const activeLi = document.createElement('li');
+                    activeLi.classList.add('breadcrumb-item', 'active');
+                    activeLi.setAttribute('aria-current', 'page');
+                    activeLi.textContent = breadcrumbText;
+                    breadcrumbTrail.appendChild(activeLi);
+                }
+            }
+            
+            function renderRevisionQuestions() {
+                const container = document.getElementById('revision-questions-container');
+                if (!container) {
+                    console.error("Revision questions container not found.");
+                    return;
+                }
+                container.innerHTML = ''; 
+
+                revisionQuestionsData.forEach((item, index) => {
+                    const questionId = `wt-question-${index}`; // Unique prefix
+                    const answerId = `wt-answer-${index}`;   // Unique prefix
+
+                    const questionDiv = document.createElement('div');
+                    questionDiv.classList.add('revision-question-item');
+
+                    const header = document.createElement('div');
+                    header.classList.add('revision-question-header');
+                    header.setAttribute('data-bs-toggle', 'collapse');
+                    header.setAttribute('data-bs-target', `#${answerId}`);
+                    header.setAttribute('aria-expanded', 'false');
+                    header.setAttribute('aria-controls', answerId);
+                    header.setAttribute('role', 'button');
+                    header.setAttribute('tabindex', '0'); 
+                    header.innerHTML = `
+                        <span>${item.q}</span>
+                        <span class="arrow-icon">&#9662;</span> `;
+
+                    const answerDiv = document.createElement('div');
+                    answerDiv.id = answerId;
+                    answerDiv.classList.add('revision-answer', 'collapse');
+                    answerDiv.innerHTML = `<p>${item.a}</p>`;
+
+                    questionDiv.appendChild(header);
+                    questionDiv.appendChild(answerDiv);
+                    container.appendChild(questionDiv);
+
+                    header.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            new bootstrap.Collapse(answerDiv).toggle(); 
+                        }
+                    });
+                    
+                    answerDiv.addEventListener('show.bs.collapse', function () {
+                        header.querySelector('.arrow-icon').style.transform = 'rotate(180deg)';
+                    });
+                    answerDiv.addEventListener('hide.bs.collapse', function () {
+                         header.querySelector('.arrow-icon').style.transform = 'rotate(0deg)';
+                    });
+                });
+            }
+
+            function saveProgress() {
+                if (currentSectionIndex !== -1) {
+                    sessionStorage.setItem('currentWildlifeTourismSectionIndex', currentSectionIndex);
+                }
+            }
+
+            function loadProgress() {
+                const savedIndex = sessionStorage.getItem('currentWildlifeTourismSectionIndex');
+                if (savedIndex !== null && savedIndex >= 0 && savedIndex < guideData.length) {
+                    loadSection(parseInt(savedIndex, 10));
+                } else {
+                    loadSection(0); 
+                }
+            }
+
+            generateSidebar();
+            loadProgress(); 
+            if(currentSectionIndex !== -1 && guideData[currentSectionIndex]){
+                 updateBreadcrumbs(guideData[currentSectionIndex].category, guideData[currentSectionIndex].breadcrumb);
+            } else {
+                 updateBreadcrumbs("Home", "");
+            }
+        });
+    </script>
+</body>
+</html>

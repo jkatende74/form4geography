@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCSE Geography - Settlement Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        // MathJax v3 configuration (included for consistency)
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          },
+          svg: {
+            fontCache: 'global'
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f0f4f8; /* Light blue-gray background */
+            color: #333; 
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #wrapper {
+            display: flex;
+            width: 100%;
+            align-items: stretch;
+            min-height: 100vh;
+        }
+
+        #sidebar-wrapper {
+            min-height: 100vh;
+            width: 280px; 
+            background-color: #ffffff; 
+            border-right: 1px solid #d1d9e6; /* Softer border */
+            transition: margin-left 0.25s ease-out;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1030; 
+            overflow-y: auto; 
+            padding-top: 10px; 
+            box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-heading {
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            color: #004085; /* Darker blue for heading */
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid #e0e6ed; 
+        }
+        .sidebar-heading img {
+            width: 32px; 
+            height: 32px;
+            margin-right: 0.75rem;
+            border-radius: 50%; /* Circular logo */
+        }
+
+        #sidebar-nav .list-group-item {
+            border: none; 
+            padding: 0.8rem 1.25rem; 
+            font-size: 0.95rem;
+            color: #495057; 
+            background-color: transparent; 
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, border-left-color 0.2s ease-in-out;
+            border-left: 4px solid transparent; 
+        }
+
+        #sidebar-nav .list-group-item:hover,
+        #sidebar-nav .list-group-item:focus {
+            background-color: #e9ecef; 
+            color: #0056b3; 
+            text-decoration: none;
+            border-left-color: #007bff; 
+        }
+
+        #sidebar-nav .list-group-item.active {
+            background-color: #007bff; 
+            color: white;
+            font-weight: 500;
+            border-left-color: #0056b3; 
+        }
+        #sidebar-nav .list-group-item.active:hover {
+             background-color: #0069d9; /* Slightly darker blue on hover for active item */
+        }
+
+
+        #sidebar-nav .category-heading {
+            font-size: 0.85rem; 
+            font-weight: bold;
+            color: #5a6268; /* Slightly darker gray for category */
+            padding: 1rem 1.25rem 0.3rem; 
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.75rem; 
+        }
+         #sidebar-nav .sub-item { 
+            padding-left: 2.5rem; 
+            font-size: 0.9rem;
+        }
+
+        #page-content-wrapper {
+            flex: 1;
+            padding-left: 280px; 
+            transition: padding-left 0.25s ease-out;
+            display: flex;
+            flex-direction: column;
+            min-width: 0; 
+            background-color: #f0f4f8; /* Consistent background */
+        }
+
+        #wrapper.toggled #sidebar-wrapper {
+            margin-left: -280px; 
+        }
+
+        #wrapper.toggled #page-content-wrapper {
+            padding-left: 0; 
+        }
+
+        @media (max-width: 991.98px) { 
+            #sidebar-wrapper {
+                margin-left: -280px; 
+                position: fixed; 
+                height: 100%;
+                z-index: 1040; 
+            }
+            #wrapper.toggled #sidebar-wrapper { margin-left: 0; }
+            #page-content-wrapper { padding-left: 0; }
+        }
+
+        .navbar {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+            background-color: #ffffff !important; 
+        }
+        .navbar .navbar-brand, .navbar .breadcrumb-item a, .navbar .breadcrumb-item.active {
+             color: #343a40 !important; 
+        }
+         .navbar .breadcrumb-item a:hover { color: #0056b3 !important; }
+
+        #menu-toggle {
+            border: 1px solid #007bff;
+            color: #007bff;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        #menu-toggle:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .breadcrumb {
+            background-color: transparent;
+            padding: 0.5rem 0;
+            font-size: 0.9rem;
+            margin-bottom: 0; 
+        }
+        .breadcrumb-item a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .breadcrumb-item a:hover { text-decoration: underline; }
+        .breadcrumb-item.active { color: #6c757d; }
+
+        #content-area {
+            background-color: #ffffff; 
+            border-radius: 0.5rem; /* Slightly more rounded corners */
+            min-height: calc(100vh - 160px); 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.07); /* Softer shadow */
+        }
+
+        #content-area h1, #content-area h2, #content-area h3, #content-area h4, #content-area h5 {
+            color: #0056b3; /* Consistent heading color */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        #content-area h1 { font-size: 2rem; border-bottom: 2px solid #e0e6ed; padding-bottom: 0.5rem;}
+        #content-area h2 { font-size: 1.75rem; }
+        #content-area h3 { font-size: 1.5rem; margin-top: 1.75rem; }
+        #content-area h4 { font-size: 1.25rem; margin-top: 1.5rem; }
+        #content-area h5 { font-size: 1.1rem; font-weight: bold; margin-top: 1.25rem;}
+
+
+        #content-area p, #content-area ul, #content-area ol, #content-area table {
+            margin-bottom: 1rem;
+            color: #495057;
+        }
+        #content-area ul, #content-area ol { padding-left: 1.5rem; }
+        #content-area li { margin-bottom: 0.5rem; }
+        #content-area ul ul, #content-area ol ol { 
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+        }
+         #content-area .table {
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            border: 1px solid #dee2e6; /* Add border to table */
+        }
+        #content-area .table th {
+            background-color: #e9ecef; 
+            color: #343a40;
+            font-weight: 600;
+        }
+         #content-area .table td, #content-area .table th {
+            vertical-align: middle;
+            border: 1px solid #dee2e6; /* Add border to cells */
+        }
+        #content-area strong { color: #0056b3; } /* Emphasize strong text */
+        #content-area blockquote {
+            border-left: 4px solid #007bff;
+            padding-left: 1rem;
+            margin-left: 0;
+            font-style: italic;
+            color: #555;
+        }
+
+
+        .diagram-placeholder {
+            border: 2px dashed #adb5bd; /* Softer dashed border */
+            background-color: #f8f9fa; 
+            padding: 2rem;
+            text-align: center;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+            color: #6c757d;
+        }
+        .diagram-placeholder img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+      
+        .revision-question-item {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+        .revision-question-header { /* Applied to the button inside accordion-header */
+            padding: 0.75rem 1.25rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #0056b3; /* Dark blue for question text */
+            background-color: #f8f9fa; /* Light gray background for header */
+            border: none; /* Remove default button border */
+            width: 100%; /* Make button full width */
+            text-align: left; /* Align text to left */
+        }
+        .revision-question-header:hover { background-color: #e9ecef; }
+        .revision-question-header .arrow-icon { 
+            transition: transform 0.2s ease-in-out; 
+            font-size: 0.8em; /* Smaller arrow */
+        }
+        .revision-question-header[aria-expanded="true"] .arrow-icon { transform: rotate(180deg); }
+
+        .revision-answer { /* Applied to accordion-collapse */
+            border-top: 1px solid #dee2e6;
+            background-color: #fff;
+        }
+        .revision-answer .accordion-body { /* Style the inner body of the accordion */
+             padding: 1.25rem;
+        }
+        .revision-answer ul, .revision-answer ol { padding-left: 1.25rem; margin-top: 0.5rem;}
+        .revision-answer li { margin-bottom: 0.3rem; }
+
+
+        .MathJax_Display, mjx-container[jax="CHTML"][display="true"] {
+            display: block;
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+        }
+
+        #navigation-buttons button { min-width: 100px; }
+
+        footer {
+            font-size: 0.9rem;
+            background-color: #ffffff; 
+            border-top: 1px solid #e0e6ed;
+        }
+
+        /* Accessibility Focus Styles */
+        :focus-visible {
+          outline: 3px solid #007bff !important; /* More prominent focus */
+          outline-offset: 2px;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.35) !important;
+        }
+        /* Ensure buttons and list items also get this strong focus */
+        .btn:focus-visible, .list-group-item:focus-visible, .accordion-button:focus-visible {
+          outline: 3px solid #007bff !important; 
+          outline-offset: 2px !important;
+          box-shadow: 0 0 0 0.25rem rgba(0, 123, 255, 0.35) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex" id="wrapper">
+        <!-- Sidebar -->
+        <nav class="border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading">
+                <img src="https://placehold.co/32x32/28a745/white?text=S" alt="Settlement Guide Logo" class="me-2"> Settlement Guide
+            </div>
+            <div class="list-group list-group-flush" id="sidebar-nav">
+                <!-- Sidebar items will be populated by JavaScript -->
+            </div>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom sticky-top">
+                <div class="container-fluid">
+                    <button class="btn btn-outline-primary btn-sm" id="menu-toggle" aria-label="Toggle Menu">☰ Menu</button>
+                    <nav aria-label="breadcrumb" class="ms-3 flex-grow-1">
+                        <ol class="breadcrumb mb-0" id="breadcrumb-trail"></ol>
+                    </nav>
+                </div>
+            </nav>
+
+            <main class="container-fluid p-4" id="main-content-scroll-area">
+                <div id="content-area" class="p-md-4 p-3">
+                    <!-- Welcome message or initial content -->
+                    <h1 id="main-title-placeholder">Welcome to the Settlement Guide</h1>
+                    <p>Please select a topic from the menu on the left to begin your learning journey on Settlement studies.</p>
+                </div>
+                <div class="d-flex justify-content-between mt-4" id="navigation-buttons">
+                    <button class="btn btn-outline-secondary" id="prev-button" disabled>&laquo; Previous</button>
+                    <button class="btn btn-outline-primary" id="next-button" disabled>Next &raquo;</button>
+                </div>
+            </main>
+
+            <footer class="text-center text-muted p-3 mt-auto">
+                <p class="mb-0">&copy; <span id="currentYear"></span> KCSE Settlement Guide. All rights reserved.</p>
+            </footer>
+        </div>
+        <!-- /#page-content-wrapper -->
+    </div>
+    <!-- /#wrapper -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Script execution started log
+    console.log("Settlement Guide App Script: Execution started. If app is stuck, check console for SyntaxErrors with line numbers, or other runtime errors.");
+
+    try {
+        // --- 1. GUIDE CONTENT DATA ---
+        // CRITICAL DEBUGGING NOTE FOR "SyntaxError: Invalid or unexpected token":
+        // This error usually means there's a mistake in how the JavaScript data below (guideData or settlementRevisionQuestionsData) is written.
+        // The MOST COMMON CAUSE is an unescaped backtick (`) character *inside* the HTML content
+        // of the `content` or `a` properties IF those properties are defined using backticks.
+        // If properties are defined with double quotes (e.g., a: "..."), then an unescaped DOUBLE QUOTE (")
+        // inside the HTML would be the problem. It must be escaped as \\\".
+        // Other common causes:
+        //   - Missing commas (,) between objects in the arrays (e.g., between one { ... }, and the next { ... }).
+        //   - Missing commas (,) between properties in an object (e.g., between `title: "..."`, and `breadcrumb: "..."`).
+        //   - Invisible problematic characters if content was copied from a word processor or PDF.
+        // PLEASE CAREFULLY CHECK THE BROWSER'S DEVELOPER CONSOLE (usually F12, then Console tab).
+        // IT WILL USUALLY INDICATE THE LINE NUMBER WHERE THE PARSER FIRST ENCOUNTERED THE PROBLEM.
+        // This line number is your best clue to find the exact location of the syntax error.
+        const guideData = [
+            // Chapter 1: Foundations of Human Settlement
+            {
+                id: "set_ch1",
+                title: "1. Foundations of Human Settlement",
+                breadcrumb: "Foundations",
+                category: "Introduction & Concepts",
+                isChapter: true, 
+                content: `
+                    <h1 id="set_ch1">1. Foundations of Human Settlement</h1>
+                    <p>The study of human settlement is fundamental to understanding how populations organize themselves spatially, interact with their environment, and create distinctive cultural and economic landscapes. It explores where people live, why they live there, and how their living spaces evolve over time.</p>
+                `
+            },
+            {
+                id: "set_ch1_s1",
+                title: "1.1 Defining Settlement: Concepts and Scope",
+                breadcrumb: "Defining Settlement",
+                category: "Introduction & Concepts",
+                parentId: "set_ch1",
+                content: `
+                    <h2 id="set_ch1_s1">1.1 Defining Settlement: Concepts and Scope</h2>
+                    <p><strong>Human settlement</strong>, in its most basic sense, refers to <strong>a place with houses where people live</strong>. This definition, while straightforward, encompasses a vast array of human habitation, from isolated homesteads to sprawling megacities. It signifies a tangible human imprint on the Earth's surface, characterized by dwellings and the presence of a community.</p>
+                    <p>The study of settlement is not merely about describing these places but also about analyzing the processes that lead to their formation, growth, decline, and transformation. Settlements are rarely static; they are dynamic systems that constantly adapt to changing environmental conditions, socio-economic forces, technological advancements, and political contexts. For instance, a settlement initially established due to a specific resource may change its primary function if that resource is depleted or if new economic opportunities arise. Similarly, population growth, migration, and shifts in lifestyle can lead to the physical expansion or internal restructuring of settlements. Understanding this dynamic nature is crucial for effective planning and management of human environments, ensuring they can sustainably meet the needs of their inhabitants over time. The KCSE Geography syllabus (24.2.1) emphasizes this foundational definition as a starting point for exploring the complexities of where and how people live.</p>
+                `
+            },
+            {
+                id: "set_ch1_s2",
+                title: "1.2 Defining Urbanization: Processes and Manifestations",
+                breadcrumb: "Defining Urbanization",
+                category: "Introduction & Concepts",
+                parentId: "set_ch1",
+                content: `
+                    <h2 id="set_ch1_s2">1.2 Defining Urbanization: Processes and Manifestations</h2>
+                    <p><strong>Urbanization</strong> is a multifaceted phenomenon defined as "the process by which a population is transformed from rural based agricultural lifestyles to urban based non-agricultural lifestyles". It also signifies "the process whereby an increasing population of the total population in a country settles in towns" and "the process through which towns/ cities grow in numbers and size". This comprehensive definition, as required by the KCSE syllabus (24.2.1), captures the demographic shift (population concentration), the socio-economic transformation (change in lifestyle and economic activities), and the physical expansion (growth of urban areas) inherent in the process.</p>
+                    <p>Urbanization is more than just the movement of people; it represents a profound transformation of society. The shift from agrarian livelihoods to industrial, commercial, and service-based economies fundamentally alters economic structures and employment patterns. This economic reorientation, in turn, fosters new social interactions, community structures, and cultural norms distinct from those found in rural settings. As towns and cities grow in number and physical extent, they also reshape the physical environment through construction, infrastructure development, and increased resource consumption, leading to unique environmental challenges. The transformative power of urbanization presents both significant opportunities, such as economic agglomeration and innovation, and considerable challenges, including strain on resources, infrastructure deficits, social inequalities, and environmental degradation, all of which require careful and strategic management.</p>
+                `
+            },
+            {
+                id: "set_ch1_s3",
+                title: "1.3 Classifying Human Settlements: Rural vs. Urban",
+                breadcrumb: "Rural vs. Urban",
+                category: "Introduction & Concepts",
+                parentId: "set_ch1",
+                content: `
+                    <h2 id="set_ch1_s3">1.3 Classifying Human Settlements: Rural vs. Urban</h2>
+                    <p>Human settlements are broadly classified into two main types: rural and urban, each with distinct characteristics.</p>
+                    <p><strong>Rural Settlements</strong> "consist of villages/ scattered homesteads in the countryside where people engage mainly in agricultural activities/primary economic activities". Agriculture is often the main source of occupation, and dominant activities are typically extractive or primary, such as mining, lumbering, fishing, livestock keeping, and crop production. These settlements are generally characterized by lower population densities, a strong connection to land-based economies, dispersed or nucleated patterns often dictated by agricultural practices or resource availability, and social structures that may be more traditional.</p>
+                    <p><strong>Urban Settlements</strong>, conversely, "are built-up areas in town with dense population and people engage mainly in industrial/commercial activities". They are preoccupied with industrial and commercial functions, with trading being a principal activity. Urban settlements typically "have dense settlements" and often serve specialized functions; for example, some towns perform religious functions, such as Rome, Jerusalem, and Mecca. They are characterized by higher population densities, a dominance of secondary (manufacturing), tertiary (services), and quaternary (information-based) economic activities, a more complex social organization, and a greater concentration of infrastructure and amenities.</p>
+                    <p>While the KCSE syllabus often emphasizes these distinct characteristics for analytical clarity, it is important to recognize that in reality, a continuum exists between purely rural and purely urban environments. Peri-urban areas, for instance, often exhibit a blend of rural and urban features, facing unique challenges such as land-use conflicts and infrastructural gaps as they undergo transformation. However, for examination purposes, understanding the clear distinctions is paramount.</p>
+                    <h4 id="set_ch1_s3_t1">Table 1: Characteristics of Rural vs. Urban Settlements</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Rural Settlement</th>
+                                    <th>Urban Settlement</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Population Density</strong></td>
+                                    <td>Generally low; dispersed or small clusters.</td>
+                                    <td>Generally high; concentrated in built-up areas.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Main Economic Activity</strong></td>
+                                    <td>Primarily agriculture, fishing, forestry, mining (primary sector).</td>
+                                    <td>Primarily industry, commerce, services, administration (secondary, tertiary, quaternary sectors).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dominant Land Use</strong></td>
+                                    <td>Farmland, pasture, forests, undeveloped natural areas.</td>
+                                    <td>Residential, commercial, industrial, institutional, transport networks.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Social Interaction</strong></td>
+                                    <td>Often characterized by close-knit communities, strong traditional ties, and less social stratification.</td>
+                                    <td>More impersonal, diverse populations, greater social stratification, and specialized social groups.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Availability of Services</strong></td>
+                                    <td>Basic services may be limited or less accessible (e.g., specialized healthcare, higher education, varied retail).</td>
+                                    <td>Higher concentration and wider variety of services (e.g., specialized hospitals, universities, shopping malls, entertainment).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Administrative Structure</strong></td>
+                                    <td>May be part of larger administrative units (e.g., sub-counties, wards) with less localized governance.</td>
+                                    <td>Often have their own specific administrative structures (e.g., city councils, municipal councils).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Lifestyle</strong></td>
+                                    <td>Generally slower-paced, closely tied to natural rhythms and agricultural seasons.</td>
+                                    <td>Generally faster-paced, more diverse, and influenced by industrial/commercial schedules.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            // Chapter 2: Dynamics of Settlement Location and Development
+            {
+                id: "set_ch2",
+                title: "2. Dynamics of Settlement Location & Development",
+                breadcrumb: "Location Dynamics",
+                category: "Factors & Patterns",
+                isChapter: true,
+                content: `
+                    <h1 id="set_ch2">2. Dynamics of Settlement Location and Development</h1>
+                    <p>The decision of where to establish a settlement is influenced by a complex interplay of factors that can be broadly categorized into physical, human, and economic elements. These factors not only determine the initial location but also shape the subsequent development and character of settlements.</p>
+                `
+            },
+            {
+                id: "set_ch2_s1",
+                title: "2.1 Key Physical Factors Influencing Settlement",
+                breadcrumb: "Physical Factors",
+                category: "Factors & Patterns",
+                parentId: "set_ch2",
+                content: `
+                    <h2 id="set_ch2_s1">2.1 Key Physical Factors Influencing Settlement</h2>
+                    <p>The physical environment provides the foundational context for human settlement, offering both opportunities and constraints.</p>
+                    <h4 id="set_ch2_s1_c1">Climate:</h4>
+                    <p>Climatic conditions are a primary determinant of settlement. Areas receiving "high rainfall" and having moderate temperatures are conducive to diverse agricultural activities and are thus often "densely" settled. Conversely, "areas with low rainfall," such as arid and semi-arid lands, are "sparsely settled" due to limited agricultural potential. Extreme conditions, such as very high or very low temperatures, or areas "prone to strong winds," also tend to "discourage settlements". Human comfort and the viability of livelihoods are directly linked to climatic suitability.</p>
+                    <h4 id="set_ch2_s1_c2">Relief (Topography):</h4>
+                    <p>The shape and nature of the land surface significantly impact settlement. "Gentle slopes/lowlands are densely settled" as they are favorable for agriculture, construction of buildings, and development of transport networks. In contrast, "steep slopes are sparsely settled" due to thin soils, difficulties in cultivation, and challenges in building infrastructure. "High mountain tops are not settled" because of extreme cold and thin air. Historically, "some hills have dense settlement because they are safe and secure," offering defensive advantages. The leeward sides of mountains, often experiencing rain shadow effects, tend to be drier and thus "sparsely settled".</p>
+                    <h4 id="set_ch2_s1_c3">Soils:</h4>
+                    <p>Soil quality is crucial, especially for agriculturally based settlements. "Areas with well drained soils," particularly fertile ones like volcanic soils, "attract settlements as a wide range of crops can be grown". Conversely, "areas with thin/ waterlogged soils discourages settlement as they are unsuitable for arable farming".</p>
+                    <h4 id="set_ch2_s1_c4">Drainage/Presence of Water Bodies:</h4>
+                    <p>Access to water is fundamental. "Rivers and springs with clean water may attract settlement as they provide water for domestic/ industrial uses". However, "swampy and marshy areas discourage settlement" as they can be "hosts to disease causing organism and it’s also difficult/expensive to put up housing units". Fear of floods or attacks by wild animals near certain water bodies can also deter settlement.</p>
+                    <h4 id="set_ch2_s1_c5">Vegetation:</h4>
+                    <p>The type and density of natural vegetation influence settlement. "Thick vegetation e.g. forest may discourage establishment of settlements as they may not be easily accessible and can be habitats to disease causing organisms and dangerous animals". However, forest edges might attract settlement due to access to resources. Open grasslands might support pastoral communities, leading to dispersed settlement patterns.</p>
+                    <h4 id="set_ch2_s1_c6">Environmental Diseases (Pests and Diseases):</h4>
+                    <p>The prevalence of diseases significantly affects habitability. "Regions infested with environmental diseases e.g. sleeping sickness have low concentration of settlements as they are avoided by people due to fear of contracting diseases". Areas with tsetse flies or high mosquito populations (leading to malaria) are generally less attractive for dense or permanent settlement.</p>
+                    <p><em>It is important to recognize that these physical factors rarely operate in isolation. For instance, relief directly influences local climate patterns, such as the formation of rain shadow areas on the leeward slopes of mountains. This climatic variation, in turn, affects the type of vegetation that can thrive and the nature of soil development. Consequently, a combination of steep relief, cold temperatures due to altitude, and either dense, difficult-to-clear forests on windward slopes or arid conditions on leeward slopes would collectively render an area unsuitable for dense settlement. This demonstrates that a holistic assessment, considering the interactions between various physical elements, is essential when evaluating the settlement potential of a region.</em></p>
+                `
+            },
+            {
+                id: "set_ch2_s2",
+                title: "2.2 Key Human and Economic Factors",
+                breadcrumb: "Human & Economic Factors",
+                category: "Factors & Patterns",
+                parentId: "set_ch2",
+                content: `
+                    <h2 id="set_ch2_s2">2.2 Key Human and Economic Factors Influencing Settlement</h2>
+                    <p>Beyond the physical landscape, human decisions, activities, and societal structures play a vital role in shaping settlement patterns.</p>
+                    <h4 id="set_ch2_s2_c1">Government Policy:</h4>
+                    <p>Governments wield significant influence over settlement. "The government may displace people in order to set up projects in an area/ projects set up by the government may attract settlements". Furthermore, policies can "set up settlement schemes to resettle the landless" or "gazette certain areas as reserves thus controlling settlement". The establishment of new administrative centers or infrastructure projects can create new settlement nodes or alter existing ones.</p>
+                    <h4 id="set_ch2_s2_c2">Historical Factors:</h4>
+                    <p>Past events have enduring impacts. "In the historical times, many communities settled in areas that were safe/secure from hostile communities". Migration routes, tribal conflicts, and the legacy of colonialism, such as the partitioning of land where "Africans were confined at native reserves while British colonialists settled in large farms," have significantly shaped current distributions.</p>
+                    <h4 id="set_ch2_s2_c3">Economic Factors:</h4>
+                    <p>The pursuit of livelihood is a fundamental driver. "Mining attract workers who settle near the mine fields," "Trade leads to development of market centres thereby attracting many people," and "Industrialisation leads to creation of jobs hence encouraging many people to live near industries". Similarly, "Transportation results to accessibility of services/goods thus attracting more settlements," and productive "Agriculture/irrigation schemes leads to siting of collection centres hence development of urban centres/new settlements". Areas rich in economic opportunities naturally become focal points for population concentration. This economic magnetism often leads to the development of a settlement hierarchy.</p>
+                    <h4 id="set_ch2_s2_c4">Social-Cultural Practices:</h4>
+                    <p>Cultural norms and traditions also play a part. "Cultural practices like land inheritance may lead to land fragmentation thus dense settlements" in some areas, while "Cultures like communal land ownership may influence dense settlement patterns" in others. Attachment to ancestral lands or specific community living arrangements can also influence settlement choices.</p>
+                    <h4 id="set_ch2_s2_c5">Security:</h4>
+                    <p>While mentioned under historical factors, security remains a crucial contemporary human factor. Areas perceived as safe and stable tend to attract and retain populations, fostering permanent and often dense settlements. Conversely, regions plagued by conflict, crime, or general insecurity often experience sparse settlement, out-migration, or the formation of temporary, defensive clusters.</p>
+                    <p><em>Among human factors, government policy holds a particularly potent ability to shape and reshape settlement landscapes. Policies related to land use planning, infrastructure development (like new roads or railways), the establishment of administrative capitals (e.g., Dodoma in Tanzania), or the creation of settlement schemes (e.g., Mwea) can fundamentally alter population distribution, sometimes overriding purely physical or organic economic rationales.</em></p>
+                `
+            },
+            // Chapter 3: Understanding Settlement Patterns
+            {
+                id: "set_ch3",
+                title: "3. Understanding Settlement Patterns",
+                breadcrumb: "Settlement Patterns",
+                category: "Factors & Patterns",
+                isChapter: true,
+                content: `
+                    <h1 id="set_ch3">3. Understanding Settlement Patterns</h1>
+                    <p>Settlement patterns refer to the "layout/arrangement of dwellings/housing units/buildings in a particular place". These patterns are not random but are shaped by the interplay of the physical, economic, social, and historical factors discussed previously. The KCSE syllabus requires an understanding of several distinct patterns.</p>
+                `
+            },
+            {
+                id: "set_ch3_s1",
+                title: "3.1 Nucleated/Clustered Settlement",
+                breadcrumb: "Nucleated/Clustered",
+                category: "Factors & Patterns",
+                parentId: "set_ch3",
+                content: `
+                    <h2 id="set_ch3_s1">3.1 Nucleated/Clustered Settlement Pattern</h2>
+                    <p>In a nucleated or clustered settlement pattern, "the houses, shops and other buildings are close to each other/ in one place". This concentration of structures and population often occurs around a central focal point.</p>
+                    <h5>Factors contributing to nucleated settlements:</h5>
+                    <ul>
+                        <li>Historically, "assurance of security/defence" was a primary driver.</li>
+                        <li>The "availability of social amenities" such as schools or markets.</li>
+                        <li>"Limitation of land for building" can force a compact arrangement.</li>
+                        <li>The "presence of a natural resource," like a water source or mineral deposit.</li>
+                        <li>The "presence of an industrial plant" or a major transport junction.</li>
+                        <li>"Government policy on settlement," such as planned villages.</li>
+                    </ul>
+                    <p><em>The formation of nucleated settlements can often be seen as a direct response to either a scarcity of a critical, localized resource or a concentration of a specific opportunity.</em></p>
+                `
+            },
+            {
+                id: "set_ch3_s2",
+                title: "3.2 Dispersed/Scattered Settlement",
+                breadcrumb: "Dispersed/Scattered",
+                category: "Factors & Patterns",
+                parentId: "set_ch3",
+                content: `
+                    <h2 id="set_ch3_s2">3.2 Dispersed/Scattered Settlement Pattern</h2>
+                    <p>A dispersed or scattered settlement pattern is characterized by "dwellings/structures are scattered," where individual "dwellings may be separated from one another by physical features" and are generally "found a distance apart". This pattern is common in areas of extensive agriculture or where resources are not concentrated at a single point.</p>
+                    <h5>Factors influencing dispersed settlements:</h5>
+                    <ul>
+                        <li>The "presence of adequate land for expansion and settlement".</li>
+                        <li>"Improved security over a wide area".</li>
+                        <li>If essential resources like water points or fertile land are "evenly distributed".</li>
+                        <li>Areas with "uniform deep, well drained soils" suitable for farming.</li>
+                        <li>Systems of "individual ownership of land," particularly large holdings.</li>
+                    </ul>
+                    <p><em>This pattern often reflects a scenario where essential resources are widespread rather than point-specific.</em></p>
+                `
+            },
+            {
+                id: "set_ch3_s3",
+                title: "3.3 Linear Settlement Pattern",
+                breadcrumb: "Linear Pattern",
+                category: "Factors & Patterns",
+                parentId: "set_ch3",
+                content: `
+                    <h2 id="set_ch3_s3">3.3 Linear Settlement Pattern</h2>
+                    <p>In a linear settlement pattern, "the dwellings/buildings are found along a line of transport like a river/canal/road/railway". The settlement essentially elongates, maximizing access to the linear feature.</p>
+                    <h5>Factors influencing linear patterns:</h5>
+                    <ul>
+                        <li>Proximity to rivers offers "water provision".</li>
+                        <li>Settlements along "roads/railway line" benefit from "ease of transport".</li>
+                        <li>Coastal or lakeside locations ("lakes/sea shores") attract for "fishing activities/tourism".</li>
+                        <li>Settling along "ridges for easy house construction/security" or "forest fringes to access forest products".</li>
+                        <li>Alignment along the "foot/base/bottom of escarpment for water/farming/easy house construction".</li>
+                    </ul>
+                    <p><em>The distinct elongated shape of linear settlements strongly indicates a dependency on the line feature around which they are organized.</em></p>
+                `
+            },
+            {
+                id: "set_ch3_s4",
+                title: "3.4 Radial/Star-Shaped Settlement",
+                breadcrumb: "Radial/Star-Shaped",
+                category: "Factors & Patterns",
+                parentId: "set_ch3",
+                content: `
+                    <h2 id="set_ch3_s4">3.4 Radial/Star-Shaped Settlement Pattern</h2>
+                    <p>A radial or star-shaped settlement pattern occurs where "the dwellings/buildings are found where major/busy roads meet e.g. at road junction". Development radiates outwards from this central node along the connecting transport routes.</p>
+                    <p>These patterns typically emerge at points of high accessibility and interaction. Road junctions are prime for businesses and services that thrive on accessibility. As commercial activities grow, they attract residential settlement, which then expands outwards along the main roads.</p>
+                    <h4 id="set_ch3_s4_t2">Table 2: Factors Influencing Different Settlement Patterns</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Settlement Pattern</th>
+                                    <th>Key Defining Feature</th>
+                                    <th>Primary Influencing Factors (Examples)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Nucleated/Clustered</strong></td>
+                                    <td>Buildings and population are concentrated in one place.</td>
+                                    <td>Security/defence, availability of social amenities, limited land, presence of a key resource (e.g., water point, mine), industrial plant, government policy.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Dispersed/Scattered</strong></td>
+                                    <td>Dwellings are spread out over a wide area.</td>
+                                    <td>Ample land, widespread resource availability (e.g., fertile soil, water), individual land tenure, improved security over a large area.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Linear</strong></td>
+                                    <td>Settlements are elongated along a line feature.</td>
+                                    <td>Transport routes (road, railway), rivers/canals (water, transport), coastlines (fishing, tourism), ridges (defence, building ease), escarpment base (water, farming).</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Radial/Star-Shaped</strong></td>
+                                    <td>Settlements develop outwards from a central transport node.</td>
+                                    <td>Major road junctions, convergence of transport routes, accessibility for trade and services.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            // Chapter 4: Urbanization in East Africa
+            {
+                id: "set_ch4",
+                title: "4. Urbanization in East Africa",
+                breadcrumb: "Urbanization in E.A.",
+                category: "Urban Studies",
+                isChapter: true,
+                content: `
+                    <h1 id="set_ch4">4. Urbanization: Trends and Characteristics in East Africa</h1>
+                    <p>Urbanization is a defining demographic and socio-economic trend across East Africa, characterized by the growth of towns and cities and an increasing proportion of the population residing in urban areas.</p>
+                `
+            },
+            {
+                id: "set_ch4_s1",
+                title: "4.1 Distribution & Typology of Urban Centres",
+                breadcrumb: "Urban Typology",
+                category: "Urban Studies",
+                parentId: "set_ch4",
+                content: `
+                    <h2 id="set_ch4_s1">4.1 Distribution and Typology of Major Urban Centres in East Africa</h2>
+                    <p>The urban landscape of East Africa is diverse, with urban centers varying in size, function, and historical origin. Key types include:</p>
+                    <ul>
+                        <li><strong>Capital Towns:</strong> Primary administrative and political centers (e.g., Nairobi, Dodoma, Kampala).</li>
+                        <li><strong>Cities:</strong> Largest urban agglomerations, hubs for diplomacy and specialized services (e.g., Nairobi, Dar-es-Salaam, Kampala).</li>
+                        <li><strong>Sea Ports:</strong> Vital for international trade (e.g., Mombasa, Dar-es-Salaam).</li>
+                        <li><strong>Lake Ports:</strong> Facilitate regional trade and fishing (e.g., Kisumu, Mwanza).</li>
+                        <li><strong>Mining Towns:</strong> Developed due to mineral exploitation (e.g., Magadi).</li>
+                        <li><strong>Industrial Towns:</strong> Manufacturing and processing are dominant (e.g., Thika, Jinja).</li>
+                        <li><strong>Collecting Towns (Agricultural Collection Centres):</strong> Gather and market agricultural produce (e.g., Nakuru, Eldoret).</li>
+                        <li><strong>Gap Towns (Route Convergence Towns):</strong> Grown at transport route convergences (e.g., Voi, Moshi).</li>
+                        <li><strong>Administrative Towns:</strong> Headquarters for government units (e.g., County HQs in Kenya).</li>
+                    </ul>
+                    <p><em>The current distribution and functional hierarchy of many major urban centers in East Africa bear a significant imprint of the colonial era, which established transport infrastructure and administrative centers for resource extraction and governance.</em></p>
+                `
+            },
+            {
+                id: "set_ch4_s2",
+                title: "4.2 Factors Driving Urban Growth in E.A.",
+                breadcrumb: "Urban Growth Factors",
+                category: "Urban Studies",
+                parentId: "set_ch4",
+                content: `
+                    <h2 id="set_ch4_s2">4.2 Critical Factors Driving the Growth of Major Urban Centres in East Africa</h2>
+                    <p>The expansion of urban centers in East Africa is propelled by a combination of factors:</p>
+                    <ul>
+                        <li><strong>Rural-Urban Migration:</strong> A primary driver due to search for better opportunities.</li>
+                        <li><strong>Industrialization:</strong> Creates employment, attracting labor.</li>
+                        <li><strong>Natural Population Growth:</strong> Births within urban areas, often from young migrant populations.</li>
+                        <li><strong>Development of Transport and Communication Networks:</strong> Enhances accessibility and connectivity.</li>
+                        <li><strong>Administration:</strong> Designation as headquarters attracts services and people.</li>
+                        <li><strong>Agriculture:</strong> Urban centers serve as markets and processing hubs.</li>
+                        <li><strong>Mining:</strong> Can lead to rapid population influx.</li>
+                        <li><strong>Tourism:</strong> Infrastructure development contributes to expansion.</li>
+                        <li><strong>Trading Activities:</strong> Growth of commerce is fundamental.</li>
+                        <li><strong>Educational Institutions:</strong> Universities and colleges draw populations.</li>
+                    </ul>
+                    <p><em>Urban growth in East Africa frequently exhibits a self-reinforcing cycle, where initial advantages attract investment and population, leading to further growth and development, but also potential challenges like urban primacy.</em></p>
+                `
+            },
+            // Chapter 5: Internal Structure of Urban Centres
+            {
+                id: "set_ch5",
+                title: "5. Internal Structure of Urban Centres",
+                breadcrumb: "Urban Structure",
+                category: "Urban Studies",
+                isChapter: true,
+                content: `
+                    <h1 id="set_ch5">5. The Internal Structure of Urban Centres: Morphology and Functional Zones</h1>
+                    <p>Urban centers are not uniform entities; they possess an internal structure characterized by different areas or zones, each with specific dominant land uses and functions. The study of this internal organization is known as urban morphology.</p>
+                `
+            },
+            {
+                id: "set_ch5_s1",
+                title: "5.1 Introduction to Urban Morphology",
+                breadcrumb: "Urban Morphology",
+                category: "Urban Studies",
+                parentId: "set_ch5",
+                content: `
+                    <h2 id="set_ch5_s1">5.1 Introduction to Urban Morphology</h2>
+                    <p>"<strong>Urban Morphology</strong>... refers to the internal structure and arrangement of towns. It is concerned with the physical shape of towns, their history of development, variations in land uses and functions within towns". Understanding urban morphology helps in analyzing how cities are organized, how different parts relate to each other, and how they evolve over time. "<strong>Urban zoning</strong> is the division of a town into concrete rings/zones with specific functions", reflecting the spatial differentiation of activities.</p>
+                `
+            },
+            {
+                id: "set_ch5_s2",
+                title: "5.2 Functional Zones",
+                breadcrumb: "Functional Zones",
+                category: "Urban Studies",
+                parentId: "set_ch5",
+                content: `
+                    <h2 id="set_ch5_s2">5.2 Detailed Examination of Functional Zones</h2>
+                    <p>Idealized models of urban structure often depict several distinct functional zones:</p>
+                    <h4 id="set_ch5_s2_c1">5.2.1 The Central Business District (CBD)</h4>
+                    <p>The CBD (town center/downtown) is typically "centrally located". It's characterized by the "highest concentrations of the tallest buildings" and "high rental values". Key functions include "Trading, Administration, Recreation, Commerce/Banking/Insurance, Offices, Location of light industries". Its central location offers maximum accessibility, driving up land values and leading to vertical development.</p>
+                    <h4 id="set_ch5_s2_c2">5.2.2 The Transition Zone (Zone of Transition)</h4>
+                    <p>This zone "surrounds the CBD", often has "older buildings", and may be replaced by CBD expansion. "Land values are slightly low" compared to the CBD. Land uses "include shopping malls, government offices and wholesale outlets". It's an area of urban flux, often targeted for renewal.</p>
+                    <h4 id="set_ch5_s2_c3">5.2.3 Industrial Zones</h4>
+                    <p>These typically "border transition zone" and were traditionally "located next to railways/ports". Modern industry often requires extensive, cheaper land on the urban periphery with good highway access, moving away from central areas due to cost and environmental concerns.</p>
+                    <h4 id="set_ch5_s2_c4">5.2.4 Residential Zones</h4>
+                    <p>These zones house workers and differentiate into "low class residential estates to middle and high class". Socio-economic segregation is common, with lower-income housing historically near industrial areas and higher-income groups in more amenable locations.</p>
+                    <h4 id="set_ch5_s2_c5">5.2.5 The Commuter Zone (Suburbanization)</h4>
+                    <p>This zone "emerges into the surrounding rural areas". It consists of residential areas on the outskirts, with populations commuting to the city for work. Growth is driven by affluence and improved transportation, but can lead to sprawl and congestion.</p>
+                `
+            },
+            // Chapter 6: Case Studies of Kenyan Urban Centres
+            {
+                id: "set_ch6",
+                title: "6. Case Studies: Kenyan Urban Centres",
+                breadcrumb: "Kenyan Case Studies",
+                category: "Case Studies",
+                isChapter: true,
+                content: `
+                    <h1 id="set_ch6">6. In-Focus: Case Studies of Kenyan Urban Centres</h1>
+                    <p>The KCSE syllabus (24.2.5) requires a detailed study of specific Kenyan towns to illustrate different urban functions and development paths: Thika (industrial town), Kisumu (lake port), and Eldoret (agricultural collection centre). Each town's trajectory is unique.</p>
+                `
+            },
+            {
+                id: "set_ch6_s1",
+                title: "6.1 Thika: Industrial Town",
+                breadcrumb: "Thika",
+                category: "Case Studies",
+                parentId: "set_ch6",
+                content: `
+                    <h2 id="set_ch6_s1">6.1 Thika: Profile of an Industrial Town</h2>
+                    <p>Thika is a significant industrial town in Kenya.</p>
+                    <h4 id="set_ch6_s1_f1">Functions:</h4>
+                    <p>Educational (Mount Kenya University), recreational (Blue Post Hotel), primary role as an <strong>industrial centre</strong> (Delmonte, Bidco, Devki Steel Mills), transport (Thika Superhighway), commercial, residential, administrative, religious, agricultural, and health services.</p>
+                    <h4 id="set_ch6_s1_f2">Factors for Growth:</h4>
+                    <p>Proximity to Nairobi (market, labor), rich agricultural hinterland (raw materials), Chania and Thika rivers (water, power), good transport links, labor availability, supportive government policy.</p>
+                    <h4 id="set_ch6_s1_f3">Problems:</h4>
+                    <p>Water pollution from industrial effluent, housing shortages, traffic congestion, unemployment, inadequate social amenities.</p>
+                    <p><em>Thika's development illustrates the link between industrial growth and agricultural raw materials, but also highlights environmental challenges if not managed sustainably.</em></p>
+                `
+            },
+            {
+                id: "set_ch6_s2",
+                title: "6.2 Kisumu: Lake Port",
+                breadcrumb: "Kisumu",
+                category: "Case Studies",
+                parentId: "set_ch6",
+                content: `
+                    <h2 id="set_ch6_s2">6.2 Kisumu: Profile of a Lake Port</h2>
+                    <p>Kisumu is a major city and port on Lake Victoria.</p>
+                    <h4 id="set_ch6_s2_f1">Functions:</h4>
+                    <p>Educational (Kisumu National Polytechnic), recreational/tourist (Dunga Beach, Impala Sanctuary), industrial (fish processing, bottling), transport hub (Kisumu International Airport, lake port), commercial, residential, administrative (Kisumu County HQ), religious, health, cultural.</p>
+                    <h4 id="set_ch6_s2_f2">Factors for Growth:</h4>
+                    <p>Early Asian settlement, strategic location on Lake Victoria (regional trade), high local population (labor, market), abundant water supply, developed transport networks, productive agricultural hinterland, industries, administrative role, historical railway terminus.</p>
+                    <h4 id="set_ch6_s2_f3">Problems:</h4>
+                    <p>Water pollution in Lake Victoria, invasive water hyacinth, housing shortages, unemployment, poor road conditions, decline in fishing industry.</p>
+                    <p><em>Kisumu's vitality is linked to Lake Victoria's ecological health; pollution and invasive species threaten its core functions.</em></p>
+                `
+            },
+            {
+                id: "set_ch6_s3",
+                title: "6.3 Eldoret: Agricultural Collection Centre",
+                breadcrumb: "Eldoret",
+                category: "Case Studies",
+                parentId: "set_ch6",
+                content: `
+                    <h2 id="set_ch6_s3">6.3 Eldoret: Profile of an Agricultural Collection Centre</h2>
+                    <p>Eldoret is a prominent agricultural collection and processing centre.</p>
+                    <h4 id="set_ch6_s3_f1">Functions:</h4>
+                    <p>Educational (Moi University), recreational, industrial (Rivatex, Unga Limited, Brookside), transport node (international airport, railway), commercial, residential, administrative (Uasin Gishu County HQ), key agricultural centre (NCPB, KFA), major health hub (Moi Teaching and Referral Hospital).</p>
+                    <h4 id="set_ch6_s3_f2">Factors for Growth:</h4>
+                    <p>Origin as railway station, rich agricultural hinterland, cool/wet climate, plateau terrain (expansion), international airport, local investment, high population (market, labor), government decentralization, administrative status, educational institutions.</p>
+                    <h4 id="set_ch6_s3_f3">Problems:</h4>
+                    <p>Housing shortages, poor road conditions, water shortages, inadequate urban planning, unemployment.</p>
+                    <p><em>Eldoret shows how a strong agricultural base can spur diversified urban growth, evolving into a complex urban economy.</em></p>
+                `
+            },
+            // Chapter 7: Global Perspectives: Comparative Studies
+            {
+                id: "set_ch7",
+                title: "7. Global Perspectives: Comparative Studies",
+                breadcrumb: "Global Comparisons",
+                category: "Case Studies",
+                isChapter: true,
+                content: `
+                    <h1 id="set_ch7">7. Global Perspectives: Comparative Studies of Urban Centres</h1>
+                    <p>The KCSE syllabus (24.2.6) requires comparative studies of Kenyan urban centres with international counterparts: Nairobi with New York, and Mombasa Port with Rotterdam Port. These comparisons reveal universal urban processes and context-specific outcomes.</p>
+                `
+            },
+            {
+                id: "set_ch7_s1",
+                title: "7.1 Nairobi vs. New York",
+                breadcrumb: "Nairobi vs. New York",
+                category: "Case Studies",
+                parentId: "set_ch7",
+                content: `
+                    <h2 id="set_ch7_s1">7.1 Nairobi (Kenya) and New York (USA): A Tale of Two Metropolises</h2>
+                    <h4 id="set_ch7_s1_n">Nairobi:</h4>
+                    <p><strong>Factors for Growth:</strong> Railway depot origin, administrative capital, fertile highlands, trade, industry, transport hub.</p>
+                    <p><strong>Functions:</strong> Administrative, financial, commercial capital; industrial centre; transport hub; educational; tourist gateway; international HQs.</p>
+                    <p><strong>Problems:</strong> Traffic congestion, unemployment, housing shortage (slums), pollution, crime, strained social amenities.</p>
+                    <h4 id="set_ch7_s1_ny">New York City:</h4>
+                    <p><strong>Factors for Growth:</strong> Natural harbor, gateway for immigrants/trade, rich hinterland, finance, industry.</p>
+                    <p><strong>Functions:</strong> Global financial centre, international trade, cultural capital, tourism, transport node, UN HQ.</p>
+                    <p><strong>Problems:</strong> Traffic congestion, housing cost/availability, pollution, crime, aging infrastructure, social inequality.</p>
+                    <h4 id="set_ch7_s1_sim">Similarities:</h4>
+                    <p>Major administrative/commercial hubs, migrant attraction, industrial functions, transport nodes, similar urban problems (congestion, housing, pollution, crime).</p>
+                    <h4 id="set_ch7_s1_diff">Differences:</h4>
+                    <p>Scale of economy/population/influence (New York larger), industrial/technological level (New York higher), hinterland development, age of city, nature of housing problems, resources for solutions.</p>
+                    <p><em>This comparison shows that while large cities face common challenges, their scale, manifestations, and solutions differ based on development stage and context.</em></p>
+                    <h4 id="set_ch7_s1_t3">Table 3: Comparative Summary: Nairobi vs. New York</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead><tr><th>Feature</th><th>Nairobi</th><th>New York City</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Key Growth Factors</strong></td><td>Railway depot, administrative capital, trade, industrialization, fertile highlands, cool climate.</td><td>Natural harbor, gateway location, rich hinterland, early trade, financial center, industrialization, immigration.</td></tr>
+                                <tr><td><strong>Major Urban Functions</strong></td><td>Administrative, commercial, industrial, transport hub (regional), financial, educational, tourist.</td><td>Global financial center, international trade, cultural hub, tourism, transport hub (global), UN HQ, educational.</td></tr>
+                                <tr><td><strong>Major Urban Problems</strong></td><td>Traffic congestion, unemployment, housing shortage (slums), pollution, crime, inadequate social amenities.</td><td>Traffic congestion, housing cost/availability, pollution, crime, aging infrastructure, social inequality.</td></tr>
+                                <tr><td><strong>Scale of Influence</strong></td><td>Regional (East Africa)</td><td>Global</td></tr>
+                                <tr><td><strong>Development Stage</strong></td><td>Primate city in a developing country.</td><td>Leading metropolis in a highly developed country.</td></tr>
+                                <tr><td><strong>Nature of Housing Problem</strong></td><td>Acute shortage, proliferation of informal settlements.</td><td>High cost of housing, issues of affordability, aging housing stock.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            {
+                id: "set_ch7_s2",
+                title: "7.2 Mombasa vs. Rotterdam Port",
+                breadcrumb: "Mombasa vs. Rotterdam",
+                category: "Case Studies",
+                parentId: "set_ch7",
+                content: `
+                    <h2 id="set_ch7_s2">7.2 Mombasa (Kenya) and Rotterdam (Netherlands): A Comparative Study of Major Ports</h2>
+                    <h4 id="set_ch7_s2_m">Mombasa Port:</h4>
+                    <p><strong>Factors for Growth:</strong> Deep natural harbor, strategic coastal location, large hinterland, oil refinery, tourism, historical defensive site.</p>
+                    <p><strong>Functions:</strong> Port city (imports/exports for region), industrial centre, transport hub, commercial centre, administrative HQ, tourist destination.</p>
+                    <p><strong>Problems:</strong> Water shortages, inadequate social amenities, housing shortages, limited expansion space, traffic congestion, crime, pollution.</p>
+                    <h4 id="set_ch7_s2_r">Rotterdam Port (Europoort):</h4>
+                    <p><strong>Factors for Growth:</strong> Vast/rich European hinterland (Rhine access), strategic North Sea location, ice-free, modern/efficient facilities, deep harbor.</p>
+                    <p><strong>Functions:</strong> World's largest port, entrepôt, massive industrial complex (petrochemicals), transport/logistics centre.</p>
+                    <h4 id="set_ch7_s2_sim">Similarities:</h4>
+                    <p>Modern port facilities, spacious/sheltered/deep harbors, handle containerized cargo, serve extensive hinterlands, well-connected to interiors, commercial/industrial centres, attract tourists, ice-free.</p>
+                    <h4 id="set_ch7_s2_diff">Differences:</h4>
+                    <p>Rotterdam: vastly greater cargo volume, more advanced technology, more expansion room, sophisticated hinterland connections (waterways), exports manufactured goods, serves developed hinterland. Mombasa: exports agricultural/raw materials, serves developing hinterland. Different climates.</p>
+                    <p><em>This comparison highlights the importance of efficiency, technology, infrastructure, and hinterland integration for a port's competitiveness.</em></p>
+                    <h4 id="set_ch7_s2_t4">Table 4: Comparative Summary: Mombasa Port vs. Rotterdam Port</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead><tr><th>Feature</th><th>Mombasa Port</th><th>Rotterdam Port</th></tr></thead>
+                            <tbody>
+                                <tr><td><strong>Key Growth Factors</strong></td><td>Natural deep harbor, strategic coastal location, large regional hinterland, railway link, oil refinery.</td><td>Extensive/rich European hinterland, Rhine River access, strategic North Sea location, ice-free, advanced technology, deep channels.</td></tr>
+                                <tr><td><strong>Major Port Functions/Cargo</strong></td><td>Imports (machinery, vehicles, oil), Exports (tea, coffee, horticultural products), regional transit cargo.</td><td>Transshipment hub, bulk cargo (oil, ore, coal), containers, general cargo, petrochemicals. Exports manufactured goods.</td></tr>
+                                <tr><td><strong>Hinterland Connectivity</strong></td><td>Road, rail, pipeline, air.</td><td>Road, rail, extensive inland waterways (Rhine, canals), pipeline, air.</td></tr>
+                                <tr><td><strong>Technological Level</strong></td><td>Modernizing, but less mechanized than Rotterdam.</td><td>Highly mechanized, state-of-the-art container terminals, advanced logistics.</td></tr>
+                                <tr><td><strong>Scale of Operation</strong></td><td>Major regional port for East and Central Africa.</td><td>One of the world's largest and busiest ports, major global hub.</td></tr>
+                                <tr><td><strong>Key Associated Industries</strong></td><td>Oil refining, cement, some manufacturing, tourism.</td><td>Petrochemicals, ship building/repair, steel, extensive logistics and distribution industries.</td></tr>
+                                <tr><td><strong>Challenges</strong></td><td>Limited expansion space, traffic congestion to/from port, efficiency improvements needed, water shortages.</td><td>Environmental pressures, competition from other European ports, maintaining vast infrastructure.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            // Chapter 8: Impacts and Challenges of Urbanization
+            {
+                id: "set_ch8",
+                title: "8. Impacts & Challenges of Urbanization",
+                breadcrumb: "Urbanization Impacts",
+                category: "Urban Issues & Conclusion",
+                isChapter: true,
+                content: `
+                    <h1 id="set_ch8">8. The Impacts and Challenges of Urbanization</h1>
+                    <p>Urbanization, as a global and regional process, brings about profound changes, yielding both significant benefits and considerable challenges for societies and the environment.</p>
+                `
+            },
+            {
+                id: "set_ch8_s1",
+                title: "8.1 Positive Effects of Urbanization",
+                breadcrumb: "Positive Effects",
+                category: "Urban Issues & Conclusion",
+                parentId: "set_ch8",
+                content: `
+                    <h2 id="set_ch8_s1">8.1 Positive Socio-Economic Effects of Urbanization</h2>
+                    <p>Urbanization is often associated with progress and development due to several positive impacts:</p>
+                    <ul>
+                        <li><strong>Encourages National Unity:</strong> Brings diverse people together, fostering interaction and understanding.</li>
+                        <li><strong>Creates Employment Opportunities:</strong> Concentration of activities generates jobs, improving livelihoods.</li>
+                        <li><strong>Development of Transport and Communication Networks:</strong> Spurs infrastructure development.</li>
+                        <li><strong>Development of Social Amenities:</strong> Higher concentration and quality of schools, hospitals, etc.</li>
+                        <li><strong>Provides Market for Goods:</strong> Dense populations create markets for agricultural and manufactured goods.</li>
+                        <li><strong>Tourism Hubs:</strong> Urban centers can be tourist gateways, generating foreign exchange.</li>
+                    </ul>
+                    <p><em>Despite challenges, urbanization is a critical engine for economic modernization, fostering growth in industrial and service sectors.</em></p>
+                `
+            },
+            {
+                id: "set_ch8_s2",
+                title: "8.2 Negative Effects of Urbanization",
+                breadcrumb: "Negative Effects",
+                category: "Urban Issues & Conclusion",
+                parentId: "set_ch8",
+                content: `
+                    <h2 id="set_ch8_s2">8.2 Negative Socio-Economic and Environmental Effects of Urbanization</h2>
+                    <p>Rapid and often unplanned urbanization can lead to a host of problems:</p>
+                    <ul>
+                        <li><strong>Inadequate Housing and Slum Development:</strong> Influx outpaces housing supply, leading to slums.</li>
+                        <li><strong>Traffic Congestion:</strong> Increased vehicles in confined spaces cause delays and pollution.</li>
+                        <li><strong>Unemployment and Underemployment:</strong> Job opportunities may not suffice for all migrants.</li>
+                        <li><strong>Pollution:</strong> Air, water, land, and noise pollution from waste, emissions, and activities.</li>
+                        <li><strong>Strain on Social Amenities:</strong> Rapid growth pressures services like water, sanitation, schools, healthcare.</li>
+                        <li><strong>Increased Crime Rates:</strong> Linked to unemployment and poverty.</li>
+                        <li><strong>Emergence of Street Families:</strong> Due to poverty and social breakdown.</li>
+                        <li><strong>Cultural Erosion:</strong> Mixing of cultures can erode traditional values.</li>
+                        <li><strong>Breakdown of the Family Unit:</strong> Migration can strain family structures.</li>
+                    </ul>
+                    <p><em>Many adverse effects arise when urban growth outstrips planning and infrastructure capacity, creating an "urban penalty."</em></p>
+                    <h4 id="set_ch8_s2_t5">Table 5: Positive and Negative Effects of Urbanization</h4>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                            <thead><tr><th>Positive Effects of Urbanization</th><th>Negative Effects of Urbanization</th></tr></thead>
+                            <tbody>
+                                <tr><td>Encourages national unity through inter-ethnic interaction.</td><td>Inadequate housing leading to slums and shantytowns.</td></tr>
+                                <tr><td>Creates diverse employment opportunities.</td><td>High rates of unemployment and underemployment.</td></tr>
+                                <tr><td>Leads to development of transport and communication networks.</td><td>Severe traffic congestion and transport problems.</td></tr>
+                                <tr><td>Improves access to and quality of social amenities (health, education).</td><td>Strain on and inadequacy of social amenities.</td></tr>
+                                <tr><td>Provides a large market for agricultural and industrial goods.</td><td>Increased environmental pollution (air, water, land, noise).</td></tr>
+                                <tr><td>Fosters innovation and economic dynamism.</td><td>Higher crime rates and social problems.</td></tr>
+                                <tr><td>Can be centres for tourism, earning foreign exchange.</td><td>Emergence of street families and increased poverty in some segments.</td></tr>
+                                <tr><td>Facilitates cultural exchange and exposure to new ideas.</td><td>Potential for cultural erosion and breakdown of traditional family units.</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                `
+            },
+            {
+                id: "set_ch8_s3",
+                title: "8.3 Addressing Key Urban Problems",
+                breadcrumb: "Addressing Urban Problems",
+                category: "Urban Issues & Conclusion",
+                parentId: "set_ch8",
+                content: `
+                    <h2 id="set_ch8_s3">8.3 Addressing Key Urban Problems</h2>
+                    <h4 id="set_ch8_s3_c1">8.3.1 The Proliferation of Slums and Informal Settlements</h4>
+                    <p>Key causes include "low income/ are unemployed" status, "shortage of houses/ affordable houses," "inadequate financial ability," "high cost of land/ houses," "poor urban planning," and "high rate of migration". Addressing slums requires tackling root causes like income inequality and housing market failures through slum upgrading, site and service schemes, low-cost housing, and participatory planning.</p>
+                    <h4 id="set_ch8_s3_c2">8.3.2 Urban Traffic Congestion</h4>
+                    <p>Causes: Concentration of activities in CBD, narrow streets, increased commuters/vehicles, similar working schedules, non-compliance with traffic rules. Measures in Nairobi include: traffic police/lights, by-passes/expressway, commuter rail/high occupancy buses, road upgrades, higher parking charges, decentralization of services.</p>
+                    <h4 id="set_ch8_s3_c3">8.3.3 Environmental Degradation in Urban Areas</h4>
+                    <p>Causes: Smoke/fumes (air pollution), effluent discharge (water pollution), garbage dumping (land pollution), construction (landscape destruction), noise (sound pollution). Control measures include treating industrial waste, educating on refuse disposal, and enforcing environmental laws.</p>
+                    <p><em>Sustainable urbanization requires a shift towards a circular economy, green infrastructure, renewable energy, and pollution control.</em></p>
+                `
+            },
+            // Chapter 9: Conclusion
+            {
+                id: "set_ch9",
+                title: "9. Synthesis and Conclusion",
+                breadcrumb: "Conclusion",
+                category: "Urban Issues & Conclusion",
+                isChapter: true,
+                content: `
+                    <h1 id="set_ch9">9. Synthesis and Conclusion: Key Insights for KCSE Geography</h1>
+                    <p>The study of settlement in KCSE Geography provides a critical lens through which to understand the complex and dynamic relationship between human populations and their environments. From the fundamental definitions of settlement and urbanization to the intricate factors influencing settlement patterns, the internal structure of urban centers, and the multifaceted impacts of urban growth, this topic encapsulates core geographical concepts.</p>
+                    <p>Key concepts such as the interplay of physical and human factors in determining settlement location, the distinct characteristics of rural and urban settlements, and the various patterns (nucleated, dispersed, linear, radial) that human habitations adopt, are central to this understanding. The process of urbanization, with its attendant growth of towns like Thika, Kisumu, and Eldoret, and the comparative analysis of major cities like Nairobi with New York, and ports like Mombasa with Rotterdam, further illuminates both universal urban dynamics and context-specific challenges.</p>
+                    <p>The study of settlement is not merely an academic exercise; it is vital for comprehending national development challenges and opportunities in Kenya and the broader East African region. Effective management of urban growth, strategic rural development to ensure balanced national progress, and informed infrastructure planning are all predicated on a sound understanding of settlement dynamics. The significant negative environmental and social impacts associated with rapid and unplanned urbanization underscore the urgent need for sustainable practices in settlement planning and management. This includes promoting affordable and adequate housing, developing efficient and environmentally sound transport systems, ensuring equitable access to social amenities, and implementing robust environmental protection measures.</p>
+                    <p>For KCSE candidates, a thorough grasp of definitions, the ability to explain influencing factors with relevant examples, the capacity to describe and account for different settlement patterns, and the skill to analyze case studies and comparative examples are crucial. Questions frequently test the understanding of urban functions, the causes and consequences of urbanization, and potential solutions to urban problems.</p>
+                    <p>Ultimately, the nature, distribution, and challenges of settlements within a country or region serve as a clear reflection of its stage of economic development, its technological capabilities, its social organization and cultural values, its historical trajectory, and the efficacy of its environmental management strategies. By examining where and how people live, geographers gain profound insights into the overall development path and priorities of a society, making the study of settlement an indispensable component of understanding the human-environment interface.</p>
+                `
+            },
+            // Chapter 10: Revision Questions
+            {
+                id: "set_ch10_rev", 
+                title: "10. Settlement Revision Questions",
+                breadcrumb: "Revision Questions",
+                category: "Urban Issues & Conclusion",
+                isChapter: true, 
+                content: `
+                    <h1 id="set_ch10_rev">10. Settlement Revision Questions</h1>
+                    <p>Test your understanding of the Settlement topic with these revision questions. Click on a question to reveal the answer.</p>
+                    <div id="settlement-revision-questions-container">
+                        <!-- Revision questions will be rendered here by JavaScript -->
+                    </div>
+                `
+            }
+        ];
+
+        // ATTENTION: THE ERROR AT LINE 1060 IS WITHIN THIS DATA ARRAY.
+        // Please carefully check the HTML content for each 'q' (question) and 'a' (answer)
+        // string below. Line 1060 is estimated to be around QUESTION 58.
+        // LOOK FOR:
+        // 1. Unescaped DOUBLE QUOTES ("). If you use a double quote INSIDE an HTML attribute or text
+        //    that is part of these strings, it MUST be escaped like this: \\\".
+        //    Example: a: "<p class=\\"my-class\\">Text with a \\"quote\\".</p>"
+        // 2. Missing commas between objects, e.g., }, {
+        // 3. Any other typos that would break JavaScript syntax.
+        const settlementRevisionQuestionsData = [
+            { q: "1. According to the sources, what is the basic definition of human settlement?", a: "<strong>Human settlement</strong>, in its most basic sense, refers to <strong>a place with houses where people live</strong>. It signifies a tangible human imprint on the Earth's surface, characterized by dwellings and the presence of a community." },
+            { q: "2. Define the term \"Urbanization\" as described in the sources.", a: "<strong>Urbanization</strong> is defined as \"the process by which a population is transformed from rural based agricultural lifestyles to urban based non-agricultural lifestyles\". It also signifies \"the process whereby an increasing population of the total population in a country settles in towns\" and \"the process through which towns/ cities grow in numbers and size\"." },
+            { q: "3. In what ways does urbanization represent a transformation of society according to the sources?", a: "According to the sources, urbanization represents a profound transformation of society by: <ul><li>Altering <strong>economic structures and employment patterns</strong> with a shift from agrarian livelihoods to industrial, commercial, and service-based economies.</li><li>Fostering new <strong>social interactions, community structures, and cultural norms</strong> distinct from rural settings.</li><li>Reshaping the <strong>physical environment</strong> through construction, infrastructure development, and increased resource consumption.</li></ul>" },
+            { q: "4. Name the two broad types of human settlements mentioned in the sources.", a: "The two broad types of human settlements mentioned are <strong>rural settlements</strong> and <strong>urban settlements</strong>." },
+            { q: "5. Describe the key characteristics of rural settlements based on the sources, including dominant economic activities.", a: "<strong>Rural settlements</strong> consist of villages or scattered homesteads in the countryside. Key characteristics include: <ul><li>People engage mainly in <strong>agricultural activities or primary economic activities</strong>.</li><li>Dominant activities include mining, lumbering, fishing, livestock keeping, and crop production.</li><li>Generally have <strong>lower population densities</strong>.</li><li>A strong connection to land-based economies.</li><li>Social structures may be more traditional.</li></ul>" },
+            { q: "6. Describe the key characteristics of urban settlements based on the sources, including dominant economic activities and population density.", a: "<strong>Urban settlements</strong> are built-up areas in town with dense population. Key characteristics include: <ul><li>People engage mainly in <strong>industrial or commercial activities</strong>.</li><li>Trading is a principal activity.</li><li>Typically have <strong>dense settlements (high population density)</strong>.</li><li>Often serve specialized functions (e.g., religious, administrative).</li><li>Dominance of secondary (manufacturing), tertiary (services), and quaternary (information-based) economic activities.</li><li>More complex social organization and greater concentration of infrastructure and amenities.</li></ul>" },
+            { q: "7. Identify three examples of primary economic activities typically associated with rural settlements as listed in the sources.", a: "Three examples of primary economic activities typically associated with rural settlements listed in the sources are: <ol><li><strong>Mining</strong></li><li><strong>Lumbering</strong></li><li><strong>Fishing</strong></li></ol> Livestock keeping and crop production are also mentioned." },
+            { q: "8. According to the sources, what types of economic activities are primarily found in urban settlements?", a: "According to the sources, urban settlements primarily feature <strong>secondary (manufacturing), tertiary (services), and quaternary (information-based) economic activities</strong>. Industry, commerce, services, and administration are listed as main economic activities." },
+            { q: "9. Give three examples of specialized functions some urban settlements perform, as mentioned in the sources.", a: "Three examples of specialized functions some urban settlements perform are: <ol><li><strong>Capital Towns</strong> (primary administrative and political centers).</li><li><strong>Sea Ports</strong> (vital for international trade).</li><li>Towns performing <strong>religious functions</strong> (e.g., Rome, Jerusalem, Mecca).</li></ol> Other examples include lake ports, mining towns, industrial towns, collecting towns, gap towns, and administrative towns." },
+            { q: "10. State one key difference in population density between rural and urban settlements.", a: "One key difference is that <strong>rural settlements generally have low population density</strong> (dispersed or small clusters), while <strong>urban settlements generally have high population density</strong> (concentrated in built-up areas)." },
+            { q: "11. Explain how climate influences the location of settlements, using examples from the sources regarding rainfall.", a: "Climate significantly influences settlement location. According to the sources: <ul><li>Areas receiving <strong>\"high rainfall\"</strong> and having moderate temperatures are conducive to diverse agricultural activities and are thus often <strong>\"densely\" settled</strong>.</li><li>Conversely, <strong>\"areas with low rainfall,\"</strong> such as arid and semi-arid lands, are <strong>\"sparsely settled\"</strong> due to limited agricultural potential.</li><li>Extreme temperatures or areas \"prone to strong winds\" also tend to \"discourage settlements\".</li></ul>" },
+            { q: "12. Describe the influence of relief (topography) on settlement density, citing examples of land types and their suitability.", a: "Relief (topography) strongly influences settlement density: <ul><li><strong>\"Gentle slopes/lowlands are densely settled\"</strong> as they are favorable for agriculture, construction of buildings, and development of transport networks.</li><li>In contrast, <strong>\"steep slopes are sparsely settled\"</strong> due to thin soils, difficulties in cultivation, and challenges in building infrastructure.</li><li><strong>\"High mountain tops are not settled\"</strong> because of extreme cold and thin air.</li><li>Historically, <strong>\"some hills have dense settlement because they are safe and secure,\"</strong> offering defensive advantages.</li><li>The <strong>leeward sides of mountains</strong>, often drier, tend to be <strong>\"sparsely settled\"</strong>.</li></ul>" },
+            { q: "13. How does the nature of soils affect where people choose to settle?", a: "The nature of soils is crucial, especially for agriculturally based settlements. <strong>\"Areas with well drained soils,\" particularly fertile ones like volcanic soils, \"attract settlements as a wide range of crops can be grown.\"</strong> Conversely, <strong>\"areas with thin/ waterlogged soils discourages settlement as they are unsuitable for arable farming.\"</strong>" },
+            { q: "14. Discuss the dual influence of water bodies (drainage) on settlement patterns, including both attraction and discouragement factors.", a: "Water bodies (drainage) have a dual influence: <ul><li><strong>Attraction:</strong> \"Rivers and springs with clean water may attract settlement as they provide water for domestic/ industrial uses.\"</li><li><strong>Discouragement:</strong> \"Swampy and marshy areas discourage settlement\" as they can be \"hosts to disease causing organism and it’s also difficult/expensive to put up housing units.\" Fear of floods or attacks by wild animals near certain water bodies can also deter settlement.</li></ul>" },
+            { q: "15. Explain how the type and density of natural vegetation can influence whether an area is settled or not.", a: "The type and density of natural vegetation influence settlement because: <ul><li><strong>\"Thick vegetation e.g. forest may discourage establishment of settlements</strong> as they may not be easily accessible and can be habitats to disease causing organisms and dangerous animals.\"</li><li>However, forest edges might attract settlement due to access to resources.</li><li>Open grasslands might support pastoral communities, leading to dispersed settlement patterns.</li></ul>" },
+            { q: "16. How do environmental diseases, such as sleeping sickness, impact the concentration of settlements in a region?", a: "Environmental diseases significantly impact settlement concentration. <strong>\"Regions infested with environmental diseases e.g. sleeping sickness have low concentration of settlements as they are avoided by people due to fear of contracting diseases.\"</strong> Areas with tsetse flies or high mosquito populations (leading to malaria) are generally less attractive for dense or permanent settlement." },
+            { q: "17. Identify three ways in which government policy can influence the location and pattern of settlements.", a: "Three ways government policy influences settlement are: <ol><li>The government may <strong>displace people to set up projects</strong> or <strong>attract settlements with new projects</strong>.</li><li>Policies can <strong>establish settlement schemes to resettle the landless</strong>.</li><li>The government may <strong>gazette certain areas as reserves (e.g., national parks, forest reserves), thus controlling or restricting settlement</strong> in those areas.</li></ol>" },
+            { q: "18. According to the sources, how have historical factors, like tribal conflicts or colonialism, shaped current population distributions?", a: "Historical factors have significantly shaped current population distributions: <ul><li><strong>Tribal conflicts:</strong> \"In the historical times, many communities settled in areas that were safe/secure from hostile communities.\"</li><li><strong>Colonialism:</strong> The legacy of colonialism, such as the \"partitioning of land where Africans were confined at native reserves while British colonialists settled in large farms,\" has had enduring impacts on where different groups live.</li><li>Migration routes also played a role.</li></ul>" },
+            { q: "19. Explain the role of economic factors in attracting settlements, providing examples of specific activities.", a: "Economic factors are fundamental drivers for settlement. The pursuit of livelihood attracts people: <ul><li><strong>\"Mining attract workers who settle near the mine fields.\"</strong></li><li><strong>\"Trade leads to development of market centres thereby attracting many people.\"</strong></li><li><strong>\"Industrialisation leads to creation of jobs hence encouraging many people to live near industries.\"</strong></li><li>Productive <strong>\"Agriculture/irrigation schemes leads to siting of collection centres hence development of urban centres/new settlements.\"</strong></li><li><strong>\"Transportation results to accessibility of services/goods thus attracting more settlements.\"</strong></li></ul>" },
+            { q: "20. How can social-cultural practices, such as land inheritance or communal ownership, influence settlement patterns?", a: "Social-cultural practices influence settlement patterns: <ul><li><strong>\"Cultural practices like land inheritance may lead to land fragmentation thus dense settlements\"</strong> in some areas as land is subdivided among heirs.</li><li><strong>\"Cultures like communal land ownership may influence dense settlement patterns\"</strong> in others, or alternatively, dispersed patterns if communal land is used for extensive grazing.</li><li>Attachment to ancestral lands can also restrict movement and influence where people choose to live.</li></ul>" },
+            { q: "21. Define settlement patterns according to the sources.", a: "<strong>Settlement patterns</strong> refer to the <strong>\"layout/arrangement of dwellings/housing units/buildings in a particular place.\"</strong>" },
+            { q: "22. Name the four settlement patterns required for understanding in the KCSE syllabus.", a: "The four settlement patterns are: <ol><li><strong>Nucleated/Clustered</strong></li><li><strong>Dispersed/Scattered</strong></li><li><strong>Linear</strong></li><li><strong>Radial/Star-Shaped</strong></li></ol>" },
+            { q: "23. Describe the arrangement of dwellings in a Nucleated/Clustered settlement pattern.", a: "In a <strong>Nucleated/Clustered settlement pattern</strong>, \"the houses, shops and other buildings are <strong>close to each other/ in one place</strong>.\" This concentration often occurs around a central focal point." },
+            { q: "24. Identify three factors that lead to the development of nucleated settlement patterns.", a: "Three factors that lead to nucleated settlement patterns are: <ol><li><strong>Assurance of security/defence.</strong></li><li><strong>Availability of social amenities.</strong></li><li><strong>Limitation of land for building.</strong></li></ol> Other factors include the presence of a natural resource, an industrial plant, or government policy." },
+            { q: "25. Explain how the presence of a key resource can lead to a nucleated settlement.", a: "The presence of a key resource, such as a <strong>singular water source (an oasis in a desert), a mineral deposit, or a fishing ground</strong>, can lead to a nucleated settlement because this resource becomes the nucleus around which the settlement forms. People gather around this localized resource to access and utilize it, leading to a concentration of dwellings and activities." },
+            { q: "26. Describe the arrangement of dwellings in a Dispersed/Scattered settlement pattern.",  a: "In a <strong>dispersed/scattered settlement pattern</strong>, dwellings or structures are <strong>spread out</strong>, with individual units often separated by physical features such as rivers, hills, or forests. These dwellings are generally located a <strong>considerable distance apart</strong> from one another." },
+            { q: "27. Identify three factors that lead to the development of dispersed settlement patterns.", a: "Three factors that lead to dispersed settlement patterns are: <ol><li><strong>Presence of adequate land for expansion and settlement.</strong></li><li><strong>Improved security over a wide area.</strong></li><li><strong>Presence of evenly distributed water points/resources.</strong></li></ol> Uniform deep, well-drained soils and individual land ownership also contribute." },
+            { q: "28. How does individual ownership of land contribute to a dispersed settlement pattern?", a: "<strong>Individual ownership of land</strong>, particularly if it involves large holdings or farmsteads, naturally leads to dispersed homesteads. Each family or individual unit settles on their own piece of land, which is often separated from others, rather than clustering together." },
+            { q: "29. Describe the arrangement of dwellings in a Linear settlement pattern.", a: "In a <strong>Linear settlement pattern</strong>, \"the dwellings/buildings are found <strong>along a line of transport like a river/canal/road/railway</strong>.\" The settlement essentially elongates, maximizing access to this linear feature." },
+            { q: "30. Identify three factors that influence the development of a linear settlement pattern.", a: "Three factors influencing linear settlement patterns are: <ol><li>Proximity to <strong>rivers for water provision</strong>.</li><li>Location along <strong>roads/railway lines for ease of transport</strong>.</li><li>Development along <strong>lakes/sea shores for fishing activities/tourism</strong>.</li></ol> Settling along ridges or forest fringes are other factors." },
+            { q: "31. Explain why settlements might develop along rivers or railway lines in a linear pattern.", a: "Settlements might develop along rivers in a linear pattern to maximize access to <strong>water for domestic, agricultural, or industrial use</strong>, and for <strong>transportation</strong>. They develop along railway lines or roads to benefit from the <strong>ease of transport</strong> for goods, services, and people, facilitating trade and communication." },
+            { q: "32. Describe the arrangement of dwellings in a Radial/Star-Shaped settlement pattern.", a: "In a <strong>Radial/Star-Shaped settlement pattern</strong>, \"the dwellings/buildings are found where <strong>major/busy roads meet e.g. at road junction</strong>.\" Development radiates outwards from this central node along the connecting transport routes." },
+            { q: "33. What geographical feature is typically associated with the development of a radial settlement pattern?", a: "A <strong>major road junction</strong> or a point where multiple busy transport routes converge is typically associated with the development of a radial settlement pattern." },
+            { q: "34. Explain how road junctions contribute to the formation of radial settlement patterns.", a: "Road junctions contribute to radial patterns because they are points of <strong>high accessibility and interaction</strong>. Such locations are prime for businesses and services (markets, fuel stations, inns) that thrive on access to a wide catchment area. As these activities grow, they attract residential settlement, which then tends to expand outwards along the main roads leading from the junction, creating the characteristic radial or star shape." },
+            { q: "35. Identify three types of major urban centers in East Africa mentioned in the sources, based on their primary function.", a: "Three types of major urban centers in East Africa based on primary function are: <ol><li><strong>Capital Towns</strong> (e.g., Nairobi, Dodoma, Kampala)</li><li><strong>Sea Ports</strong> (e.g., Mombasa, Dar-es-Salaam)</li><li><strong>Industrial Towns</strong> (e.g., Thika, Jinja)</li></ol> Other types include Cities, Lake Ports, Mining Towns, Collecting Towns, Gap Towns, and Administrative Towns." },
+            { q: "36. Give one example of a capital town in East Africa according to the sources.", a: "An example of a capital town in East Africa is <strong>Nairobi (Kenya)</strong>, <strong>Dodoma (Tanzania)</strong>, or <strong>Kampala (Uganda)</strong>." },
+            { q: "37. Give one example of a city in East Africa according to the sources.", a: "An example of a city in East Africa is <strong>Nairobi</strong>, <strong>Dar-es-Salaam</strong>, or <strong>Kampala</strong>." },
+            { q: "38. Give two examples of sea ports in East Africa mentioned in the sources.", a: "Two examples of sea ports in East Africa are <strong>Mombasa (Kenya)</strong> and <strong>Dar-es-Salaam (Tanzania)</strong>. Malindi and Tanga are also mentioned." },
+            { q: "39. Give two examples of lake ports in East Africa mentioned in the sources.", a: "Two examples of lake ports in East Africa are <strong>Kisumu (Kenya)</strong> and <strong>Mwanza (Tanzania)</strong>. Jinja (Uganda) is also mentioned." },
+            { q: "40. Give one example of a mining town in East Africa mentioned in the sources.", a: "An example of a mining town in East Africa is <strong>Magadi (soda ash, Kenya)</strong>, Kakamega (historically gold, Kenya), or Kilembe (copper, Uganda)." },
+            { q: "41. Give one example of an industrial town in East Africa mentioned in the sources.", a: "An example of an industrial town in East Africa is <strong>Thika (Kenya)</strong> or <strong>Jinja (Uganda)</strong>. Athi River (Kenya) is also mentioned." },
+            { q: "42. What are Collecting Towns (Agricultural Collection Centres), and give one example from Kenya.", a: "<strong>Collecting Towns (Agricultural Collection Centres)</strong> are located within rich agricultural regions and serve as centers for gathering, marketing, and sometimes processing agricultural produce. An example from Kenya is <strong>Nakuru</strong>, <strong>Kisii</strong>, or <strong>Eldoret</strong>." },
+            { q: "43. What are Gap Towns (Route Convergence Towns), and give one example from East Africa.", a: "<strong>Gap Towns (Route Convergence Towns)</strong> are towns that have grown at points where major transport routes converge, facilitating trade and transit. An example from East Africa is <strong>Voi (Kenya)</strong>, <strong>Moshi (Tanzania)</strong>, or <strong>Tabora (Tanzania)</strong>." },
+            { q: "44. Explain how colonial administrations influenced the initial location and functions of major urban centers in East Africa.", a: "Colonial administrations significantly influenced urban centers by <strong>establishing transport infrastructure (railways, ports) and administrative centers</strong> primarily to facilitate resource extraction, export, and governance. Cities like Nairobi, Mombasa, Dar-es-Salaam, and Kisumu were pivotal nodes in these colonial networks, and their initial functions as administrative HQs, transport termini, or commercial hubs laid the groundwork for their later growth." },
+            { q: "45. Identify three key factors driving the growth of major urban centers in East Africa.", a: "Three key factors driving urban growth in East Africa are: <ol><li><strong>Rural-Urban Migration</strong> (people seeking better opportunities).</li><li><strong>Industrialization</strong> (creation of employment).</li><li><strong>Natural Population Growth</strong> (births within urban areas, often from young migrant populations).</li></ol>" },
+            { q: "46. Explain how rural-urban migration contributes to urban growth.", a: "<strong>Rural-urban migration</strong> contributes to urban growth as people move from rural areas to towns and cities in search of better economic opportunities (jobs), education, healthcare, and perceived better lifestyles. This influx directly increases the urban population and often leads to the expansion of urban areas to accommodate the new residents." },
+            { q: "47. How does industrialization spur the growth of urban centers?", a: "<strong>Industrialization</strong> spurs urban growth by creating employment opportunities in factories and related services. This attracts a labor force from rural areas and other regions, leading to an increase in population and the development of housing, commerce, and infrastructure around industrial zones." },
+            { q: "48. Discuss the role of natural population growth in contributing to the increase in urban populations.", a: "<strong>Natural population growth</strong> contributes to urban population increase as urban areas themselves experience more births than deaths. Migrants to cities are often in their reproductive years, which can contribute to higher urban birth rates. Additionally, improved access to healthcare and sanitation in urban areas often leads to lower death rates compared to rural areas, further contributing to natural increase within the urban population." },
+            { q: "49. How does the development of transport and communication networks facilitate urban growth?", a: "The development of <strong>transport and communication networks</strong> (roads, railways, airports, digital connectivity) enhances the accessibility and connectivity of urban centers. This facilitates trade, investment, the movement of labor, and the diffusion of information, making cities more attractive places to live and do business, thereby fueling further migration and expansion." },
+            { q: "50. Explain how a town being designated as an administrative headquarters can lead to its growth.", a: "When a town is designated as an <strong>administrative headquarters</strong> (national, regional, or local), it leads to an influx of government employees, the establishment of government offices, and the growth of supporting services (e.g., housing, retail, banking) to cater to the administrative functions and personnel. This concentration of activity and employment attracts more people and investment, stimulating urban growth." },
+            { q: "51. How does the relationship between urban centers and their agricultural hinterlands contribute to urban growth?", a: "Urban centers serve as crucial <strong>markets for agricultural produce</strong> from their hinterlands and often host <strong>agro-processing industries</strong>. This demand stimulates agricultural production in surrounding rural areas and provides income for farmers, some of whom may migrate to or invest in the urban center. The urban center, in turn, supplies goods and services to the hinterland, creating a symbiotic relationship that supports urban growth." },
+            { q: "52. What is Urban Morphology concerned with?", a: "<strong>Urban Morphology</strong> is concerned with the <strong>internal structure and arrangement of towns</strong>. This includes their physical shape, their history of development, and the variations in land uses and functions within different parts of the town." },
+            { q: "53. Define Urban zoning as described in the sources.", a: "<strong>Urban zoning</strong> is defined as the <strong>division of a town into concrete rings/zones with specific functions</strong>. It involves classifying urban centers on the basis of land use within them, reflecting the spatial differentiation of activities." },
+            { q: "54. Name three functional zones of an ideal urban center according to the sources.", a: "Three functional zones of an ideal urban center are: <ol><li><strong>The Central Business District (CBD)</strong></li><li><strong>The Transition Zone</strong></li><li><strong>Industrial Zones</strong></li></ol> Residential Zones and the Commuter Zone are also mentioned." },
+            { q: "55. What does CBD stand for, and where is it typically located?", a: "<strong>CBD</strong> stands for <strong>Central Business District</strong>. It is typically <strong>\"centrally located in the urban centre.\"</strong>" },
+            { q: "56. Describe two key characteristics of the Central Business District (CBD).", a: "Two key characteristics of the CBD are: <ol><li>It has the <strong>\"highest concentrations of the tallest buildings/vertically extended buildings.\"</strong></li><li>It has <strong>\"high rental values.\"</strong></li></ol>" },
+            { q: "57. Identify three key functions performed in the CBD.", a: "Three key functions performed in the CBD are: <ol><li><strong>Trading</strong> (retail and wholesale)</li><li><strong>Administration</strong> (government and corporate offices)</li><li><strong>Commerce/Banking/Insurance</strong></li></ol> Recreation and the location of some light industries are also mentioned." },
+            // Browser reported error at line 1060. This Q/A object is an ESTIMATE of where that line might fall.
+            // CHECK THIS OBJECT AND THOSE AROUND IT VERY CAREFULLY for unescaped double quotes (") inside the 'a' string or missing commas.
+            { q: "58. Explain why the CBD typically has the highest land values and tallest buildings.", a: "The CBD typically has the highest land values because its <strong>central location usually corresponds to the point of maximum accessibility</strong> from all other parts of the urban area. This high accessibility creates intense competition for land from businesses and services. To maximize the use of this expensive land, development tends to be intensive and <strong>vertical, leading to the characteristic skyline of tall buildings.</strong>" },
+            { q: "59. Where is the Transition Zone located in relation to the CBD?", a: "The <strong>Transition Zone \"surrounds the CBD.\"</strong>" },
+            { q: "60. Describe the typical condition of the buildings in the Transition Zone.", a: "The Transition Zone often <strong>\"has older buildings and may be replaced by expansion of the CBD.\"</strong> This can sometimes lead to underinvestment and a degree of physical deterioration or \"blight\"." },
+            { q: "61. What types of activities are often found in the Transition Zone?", a: "Activities often found in the Transition Zone <strong>\"include shopping malls, government offices and wholesale outlets.\"</strong> It is suitable for activities requiring proximity to the CBD but with slightly lower land values." },
+            { q: "62. Why were industrial zones traditionally located next to railways or ports?", a: "Industrial zones were traditionally <strong>\"located next to railways/ports to ease transport of raw materials and finished products.\"</strong>" },
+            { q: "63. What is a key difference between the size and location requirements of modern industrial plants compared to traditional ones near city centers?", a: "A key difference is that <strong>modern industrial plants often require extensive, relatively cheap land for single-story layouts, large parking areas, and storage</strong>, which is typically unavailable or prohibitively expensive in central urban areas. They also often favor peripheral locations with good access to major highways for road transport, unlike traditional plants that were closer to city centers for rail/waterway access." },
+            { q: "64. According to the sources, where are Residential Zones often located in relation to industrial zones?", a: "In some models, Residential Zones primarily <strong>\"houses workers hence located close to industrial zones.\"</strong>" },
+            { q: "65. Describe the general differentiation of residential areas based on socio-economic class.", a: "Residential areas generally differentiate based on socio-economic class, often starting with <strong>\"low class residential estates to middle and high class.\"</strong> Lower-income housing was historically near industrial zones, while higher-income groups could afford more amenable environments further from the industrial core." },
+            { q: "66. What is the Commuter Zone, and where does it emerge?", a: "The <strong>Commuter Zone \"emerges into the surrounding rural areas.\"</strong> It consists of residential areas located on the outskirts of the main urban built-up area, from which a significant portion of the population travels daily to work in the city center or other employment nodes." },
+            { q: "67. How have increased personal affluence and advancements in transportation contributed to the growth of the commuter zone?", a: "Increased personal affluence allows households to aspire to larger homes with more space, often perceived to offer a better quality of life than denser urban cores. Advancements in transportation, such as the <strong>proliferation of private car ownership and the development of extensive road networks or efficient commuter rail systems</strong>, have made longer daily commutes feasible, allowing people to live further from their workplaces and thus contributing to the growth of the commuter zone." },
+            { q: "68. Identify Thika as a case study town in Kenya based on its primary function.", a: "Thika is identified as an <strong>industrial town</strong> in Kenya." },
+            { q: "69. Name two industrial enterprises mentioned as being located in Thika.", a: "Two industrial enterprises in Thika are <strong>Delmonte (pineapple processing)</strong> and <strong>Bidco Oil Refineries (edible oils and soaps)</strong>. Devki Steel Mills is also mentioned." },
+            { q: "70. Identify three functions of Thika town other than its industrial role, as listed in the sources.", a: "Three other functions of Thika are: <ol><li><strong>Educational centre</strong> (e.g., Mount Kenya University)</li><li><strong>Recreational hub</strong> (e.g., Blue Post Hotel)</li><li><strong>Transport centre</strong> (e.g., Thika Superhighway)</li></ol>" },
+            { q: "71. Explain one factor that favored the growth of Thika town as an industrial center, related to its proximity to Nairobi.", a: "Thika's <strong>proximity to Nairobi</strong> favored its growth as an industrial center because it provided access to a <strong>large market and a substantial labor pool</strong> from the capital city." },
+            { q: "72. How did Thika's agricultural hinterland contribute to its industrial development?", a: "Thika's <strong>rich agricultural hinterland</strong>, supplying raw materials like pineapples and coffee, was crucial for its <strong>agro-based industries</strong>, providing the necessary inputs for processing." },
+            { q: "73. Name one problem facing Thika town as identified in the sources.", a: "One problem facing Thika is <strong>water pollution from industrial effluent</strong> discharged into the Chania and Thika rivers. Others include housing shortages and traffic congestion." },
+            { q: "74. Identify Kisumu as a case study town in Kenya based on its primary function.", a: "Kisumu is identified as a <strong>lake port</strong> on the shores of Lake Victoria." },
+            { q: "75. Name two industrial activities mentioned as being located in Kisumu.", a: "Two industrial activities in Kisumu are <strong>fish processing</strong> and <strong>bottling plants</strong>." },
+            { q: "76. Identify three functions of Kisumu town other than its port role, as listed in the sources.", a: "Three other functions of Kisumu are: <ol><li><strong>Educational centre</strong> (e.g., Kisumu National Polytechnic)</li><li><strong>Recreational and tourist destination</strong> (e.g., Dunga Beach, Kisumu Impala Sanctuary)</li><li><strong>Administrative centre</strong> (Kisumu County headquarters)</li></ol>" },
+            { q: "77. Explain one factor that favored the growth of Kisumu town as a lake port, related to its location.", a: "Kisumu's <strong>strategic location on Lake Victoria</strong> favored its growth as a lake port because it facilitated <strong>trade with Uganda and Tanzania</strong> across the lake." },
+            { q: "78. How did Kisumu's historical role as a railway terminus contribute to its growth?", a: "Kisumu's historical role as a <strong>terminus for the Kenya-Uganda railway</strong> contributed to its growth by attracting early Asian settlement, which spurred commercial development and established it as a key transport and trade node." },
+            { q: "79. Name two problems facing Kisumu town as identified in the sources, related to Lake Victoria.", a: "Two problems facing Kisumu related to Lake Victoria are: <ol><li><strong>Water pollution</strong> in the lake from industrial and raw sewage discharge.</li><li>The invasive <strong>water hyacinth</strong> which chokes the lake, affecting fishing and transport.</li></ol>" },
+            { q: "80. Identify Eldoret as a case study town in Kenya based on its primary function.", a: "Eldoret is identified as an <strong>agricultural collection centre</strong> in the Kenyan highlands." },
+            { q: "81. Name two industrial activities mentioned as being located in Eldoret.", a: "Two industrial activities in Eldoret are <strong>textile manufacturing (Rivatex)</strong> and <strong>grain milling (Unga Limited)</strong>. Dairy processing (Brookside) is also mentioned." },
+            { q: "82. Identify three functions of Eldoret town other than its agricultural collection role, as listed in the sources.", a: "Three other functions of Eldoret are: <ol><li><strong>Educational centre</strong> (e.g., Moi University)</li><li><strong>Industrial centre</strong> (e.g., Rivatex, Unga Limited)</li><li><strong>Major health hub</strong> (Moi Teaching and Referral Hospital)</li></ol>" },
+            { q: "83. Explain one factor that favored the growth of Eldoret town as an agricultural collection center, related to its origin.", a: "Eldoret's origin as a <strong>railway station on the Kenya-Uganda line</strong> attracted initial settlement and facilitated the transport of agricultural produce, cementing its role as a collection center." },
+            { q: "84. How does Eldoret's location within a rich agricultural hinterland explain its primary function?", a: "Eldoret's location within a <strong>rich agricultural hinterland</strong> (producing maize, wheat, dairy) directly explains its primary function as an agricultural collection and processing hub, as it serves as a central point for these activities." },
+            { q: "85. Name one problem facing Eldoret town as identified in the sources.", a: "One problem facing Eldoret is <strong>housing shortages</strong>. Others include poor road conditions and periodic water shortages." },
+            { q: "86. Identify Nairobi as a case study city for comparison with New York.", a: "<strong>Nairobi</strong> (Kenya) is the case study city for comparison with New York." },
+            { q: "87. Identify New York as a case study city for comparison with Nairobi.", a: "<strong>New York City</strong> (USA) is the case study city for comparison with Nairobi." },
+            { q: "88. State two key factors that influenced the growth of Nairobi City according to the sources.", a: "Two key factors for Nairobi's growth were: <ol><li>Its origin as a <strong>railway depot for the Uganda Railway</strong>.</li><li>Its selection as the <strong>administrative capital of colonial British East Africa</strong>.</li></ol>" },
+            { q: "89. State two key factors that influenced the growth of New York City according to the sources.", a: "Two key factors for New York City's growth were: <ol><li>Its <strong>excellent natural harbor</strong> at the mouth of the Hudson River, ideal for a port.</li><li>Its <strong>strategic position on the US East Coast</strong>, making it a gateway for European immigrants and trade.</li></ol>" },
+            { q: "90. Name three functions of Nairobi City as listed in the sources.", a: "Three functions of Nairobi are: <ol><li>Kenya's <strong>administrative, financial, and commercial capital</strong>.</li><li>A <strong>major industrial centre</strong>.</li><li>A significant <strong>transport and communication hub for East Africa</strong>.</li></ol>" },
+            { q: "91. Name three functions of New York City as listed in the sources.", a: "Three functions of New York City are: <ol><li>A premier <strong>global financial centre (Wall Street)</strong>.</li><li>A hub for <strong>international trade and commerce</strong>.</li><li>A world-renowned <strong>cultural capital</strong> (theatres, museums, arts).</li></ol>" },
+            { q: "92. State two similarities between Nairobi and New York Cities regarding the urban problems they face.", a: "Two similar urban problems faced by both Nairobi and New York are: <ol><li><strong>Traffic congestion</strong>.</li><li><strong>Housing shortages</strong> (though differing in nature and scale).</li></ol> Pollution and crime are also mentioned as common problems." },
+            { q: "93. State two differences between Nairobi and New York Cities as described in the sources.", a: "Two differences are: <ol><li><strong>Scale of economies, populations, and global influence:</strong> New York operates at a much higher level.</li><li><strong>Level of industrialization and technological advancement:</strong> Far greater in New York.</li></ol> Other differences include their hinterlands' economic development, age, nature of housing problems, and resources to tackle problems." },
+            { q: "94. Identify Mombasa Port as a case study port for comparison with Rotterdam.", a: "<strong>Mombasa Port</strong> (Kenya) is the case study port for comparison with Rotterdam." },
+            { q: "95. Identify Rotterdam Port as a case study port for comparison with Mombasa.", a: "<strong>Rotterdam Port</strong> (Netherlands) is the case study port for comparison with Mombasa." },
+            { q: "96. State two similarities between Mombasa Port and Rotterdam Port according to the sources.", a: "Two similarities are: <ol><li>Both possess <strong>modern port facilities and spacious, sheltered, deep harbors</strong>.</li><li>Both <strong>handle containerized cargo</strong>.</li></ol> Both also serve extensive hinterlands, are well-connected, function as commercial/industrial centers, attract tourists, and are ice-free." },
+            { q: "97. State two differences between Mombasa Port and Rotterdam Port, focusing on scale, technology, or hinterland connectivity.", a: "Two differences are: <ol><li><strong>Scale of Operation & Cargo Volume:</strong> Rotterdam handles a vastly greater volume of cargo than Mombasa.</li><li><strong>Technological Level:</strong> Rotterdam employs far more advanced and mechanized cargo handling technology compared to Mombasa.</li></ol> Rotterdam also has more room for expansion and more sophisticated hinterland connections (including extensive inland waterways)." },
+            { q: "98. Identify three positive socio-economic effects of urbanization.", a: "Three positive socio-economic effects of urbanization are: <ol><li>It <strong>encourages national unity</strong> by bringing diverse people together.</li><li>It <strong>creates employment opportunities</strong> in various sectors.</li><li>It leads to the <strong>development of transport and communication networks</strong>.</li></ol>" },
+            { q: "99. Identify three negative socio-economic or environmental effects of urbanization.", a: "Three negative effects of urbanization are: <ol><li><strong>Inadequate housing leading to the development of slums</strong> and shantytowns.</li><li><strong>Traffic congestion</strong> in urban centers.</li><li><strong>Environmental pollution</strong> (air, water, land, noise).</li></ol>" },
+            { q: "100. According to the sources, state two causes for the emergence of slums in urban centres.", a: "Two causes for the emergence of slums are: <ol><li>The <strong>\"low income/ are unemployed\" status of many urban dwellers</strong>.</li><li>A critical <strong>\"shortage of houses/ affordable houses.\"</strong></li></ol> Other causes include inadequate financial ability, high cost of land/houses elsewhere, poor urban planning, and high rates of in-migration." }
+        ];
+
+
+        // --- 2. DOM Elements ---
+        // These must match the IDs in your HTML
+        const sidebarNavEl = document.getElementById('sidebar-nav');
+        const contentAreaEl = document.getElementById('content-area');
+        const breadcrumbTrailEl = document.getElementById('breadcrumb-trail');
+        const prevButtonEl = document.getElementById('prev-button');
+        const nextButtonEl = document.getElementById('next-button');
+        const menuToggleEl = document.getElementById('menu-toggle');
+        const wrapperEl = document.getElementById('wrapper');
+        const mainContentScrollAreaEl = document.getElementById('main-content-scroll-area'); 
+        const currentYearEl = document.getElementById('currentYear');
+
+
+        // --- 3. State Variables ---
+        let currentGuideDataIndex = -1; 
+
+        // --- 4. Core Functions ---
+        function populateSidebar() {
+            console.log("Attempting to populate sidebar...");
+            if (!sidebarNavEl) {
+                console.error("Sidebar nav element (#sidebar-nav) not found in populateSidebar!");
+                return;
+            }
+            sidebarNavEl.innerHTML = ''; 
+            let currentCategory = "";
+
+            guideData.forEach((item, index) => {
+                if (item.category && item.category !== currentCategory) {
+                    currentCategory = item.category;
+                    const categoryDiv = document.createElement('div');
+                    categoryDiv.className = 'category-heading';
+                    categoryDiv.textContent = currentCategory;
+                    sidebarNavEl.appendChild(categoryDiv);
+                }
+
+                const link = document.createElement('a');
+                link.href = `#${item.id}`; 
+                link.className = 'list-group-item list-group-item-action'; 
+                if (!item.isChapter && item.parentId) { 
+                    link.classList.add('sub-item');
+                } else if (item.isChapter) {
+                    link.classList.add('fw-bold'); 
+                }
+                link.textContent = item.title;
+                link.setAttribute('role', 'button');
+                link.setAttribute('tabindex', '0'); 
+                link.dataset.index = index; 
+
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    console.log(`Sidebar link clicked: ${item.title} (Index: ${index})`);
+                    loadContentByIndex(index, 'directClick');
+                    if (window.innerWidth < 992 && wrapperEl && wrapperEl.classList.contains('toggled')) {
+                        wrapperEl.classList.remove('toggled');
+                    }
+                });
+                link.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        console.log(`Sidebar link activated by key: ${item.title} (Index: ${index})`);
+                        loadContentByIndex(index, 'directClick');
+                         if (window.innerWidth < 992 && wrapperEl && wrapperEl.classList.contains('toggled')) {
+                            wrapperEl.classList.remove('toggled');
+                        }
+                    }
+                });
+                sidebarNavEl.appendChild(link);
+            });
+            console.log("Sidebar populated with items.");
+        }
+        
+        function loadContentByIndex(index, navigationSource = 'directClick') {
+            console.log(`loadContentByIndex called. Index: ${index}, Source: ${navigationSource}`);
+            if (!guideData || guideData.length === 0) {
+                console.error("guideData is empty or not defined in loadContentByIndex.");
+                if (contentAreaEl) contentAreaEl.innerHTML = "<p>Error: Guide data is missing.</p>";
+                return;
+            }
+            if (index < 0 || index >= guideData.length) {
+                console.warn("Invalid content index in loadContentByIndex:", index, ".Attempting to load default (index 0).");
+                index = 0; 
+                if (guideData.length === 0) { // Double check if guideData became empty
+                     if (contentAreaEl) contentAreaEl.innerHTML = "<p>No content available to display.</p>";
+                     return;
+                }
+            }
+
+            currentGuideDataIndex = index;
+            const sectionData = guideData[index]; 
+
+            if (!sectionData) {
+                console.error("Section data missing for index:", index);
+                if (contentAreaEl) contentAreaEl.innerHTML = "<p>Error loading content: Section data not found.</p>";
+                return;
+            }
+            if (!contentAreaEl) {
+                console.error("Content area element missing in loadContentByIndex.");
+                return;
+            }
+            
+            contentAreaEl.innerHTML = sectionData.content; 
+            console.log(`Content for "${sectionData.title}" loaded.`);
+
+            updateActiveSidebarLink();
+            updateBreadcrumbsUI(sectionData);
+            updateNavigationButtons();
+            sessionStorage.setItem('currentSettlementSectionIndex', currentGuideDataIndex); 
+            
+            if (navigationSource !== 'scroll') {
+                window.location.hash = sectionData.id; 
+            }
+
+
+            if (sectionData.id === "set_ch10_rev") { 
+                console.log("Rendering revision questions...");
+                renderRevisionQuestions();
+            }
+
+            if (navigationSource !== 'scroll' && mainContentScrollAreaEl) {
+                console.log("Scrolling content area to top.");
+                mainContentScrollAreaEl.scrollTop = 0; 
+            }
+            
+            if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                console.log("Typesetting MathJax content...");
+                MathJax.typesetPromise([contentAreaEl]).catch(err => console.error('MathJax typesetting error:', err));
+            }
+            console.log("loadContentByIndex finished.");
+        }
+
+        function updateActiveSidebarLink() {
+            if (!sidebarNavEl) {
+                console.warn("sidebarNavEl not found in updateActiveSidebarLink");
+                return;
+            }
+            const links = sidebarNavEl.querySelectorAll('.list-group-item');
+            links.forEach(link => link.classList.remove('active'));
+
+            if (currentGuideDataIndex === -1 || currentGuideDataIndex >= guideData.length) return;
+            
+            const activeEntry = guideData[currentGuideDataIndex];
+            if (!activeEntry) return;
+
+            const currentLink = sidebarNavEl.querySelector(`[data-index="${currentGuideDataIndex}"]`);
+            if (currentLink) {
+                currentLink.classList.add('active');
+            }
+        }
+
+        function updateBreadcrumbsUI(currentSectionData) {
+            if (!breadcrumbTrailEl) {
+                 console.warn("breadcrumbTrailEl not found in updateBreadcrumbsUI");
+                 return;
+            }
+            const trails = [breadcrumbTrailEl]; 
+            trails.forEach(trail => {
+                if (!trail) return;
+                trail.innerHTML = ''; 
+
+                const homeLi = document.createElement('li');
+                homeLi.classList.add('breadcrumb-item');
+                const homeLink = document.createElement('a');
+                homeLink.href = '#'; 
+                homeLink.textContent = 'Home';
+                homeLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadContentByIndex(0, 'directClick'); 
+                });
+                homeLi.appendChild(homeLink);
+                trail.appendChild(homeLi);
+
+                if (!currentSectionData) return;
+
+                const parentEntry = currentSectionData.parentId ? guideData.find(item => item.id === currentSectionData.parentId && item.isChapter) : null;
+                
+                if (parentEntry) { 
+                    const parentChapterLi = document.createElement('li');
+                    parentChapterLi.classList.add('breadcrumb-item');
+                    const parentChapterLink = document.createElement('a');
+                    parentChapterLink.href = `#${parentEntry.id}`;
+                    parentChapterLink.textContent = parentEntry.breadcrumb || parentEntry.title.replace(/^[0-9]+\.\s*/, ''); 
+                    parentChapterLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        loadContentByIndex(guideData.indexOf(parentEntry), 'directClick');
+                    });
+                    parentChapterLi.appendChild(parentChapterLink);
+                    trail.appendChild(parentChapterLi);
+                }
+                
+                if (currentSectionData.breadcrumb) {
+                    const activeLi = document.createElement('li');
+                    activeLi.classList.add('breadcrumb-item', 'active');
+                    activeLi.setAttribute('aria-current', 'page');
+                    activeLi.textContent = currentSectionData.breadcrumb; 
+                    trail.appendChild(activeLi);
+                }
+            });
+        }
+        
+        function updateNavigationButtons() {
+            if (prevButtonEl) prevButtonEl.disabled = currentGuideDataIndex <= 0;
+            else console.warn("prevButtonEl not found in updateNavigationButtons");
+
+            if (nextButtonEl) nextButtonEl.disabled = currentGuideDataIndex >= guideData.length - 1;
+            else console.warn("nextButtonEl not found in updateNavigationButtons");
+        }
+
+        function renderRevisionQuestions() {
+            const container = document.getElementById('settlement-revision-questions-container'); 
+            if (!container) {
+                console.error("Revision questions container 'settlement-revision-questions-container' not found.");
+                return;
+            }
+            container.innerHTML = ''; 
+            const accordion = document.createElement('div');
+            accordion.className = 'accordion'; 
+            accordion.id = 'settlementRevisionAccordion'; 
+
+            settlementRevisionQuestionsData.forEach((item, index) => { 
+                const questionId = `set-question-${index}`;
+                const answerId = `set-answer-${index}`;
+
+                const accordionItem = document.createElement('div');
+                accordionItem.className = 'accordion-item revision-question-item';
+
+                const header = document.createElement('h2'); 
+                header.className = 'accordion-header'; 
+                header.id = `heading-${questionId}`;
+
+                const button = document.createElement('button'); 
+                button.className = 'accordion-button collapsed revision-question-header'; 
+                button.type = 'button';
+                button.setAttribute('data-bs-toggle', 'collapse');
+                button.setAttribute('data-bs-target', `#${answerId}`);
+                button.setAttribute('aria-expanded', 'false');
+                button.setAttribute('aria-controls', answerId);
+                button.innerHTML = `${item.q ? item.q : 'Question not available'} <span class="arrow-icon ms-auto">&#9660;</span>`;
+                
+                header.appendChild(button);
+
+                const answerCollapseDiv = document.createElement('div');
+                answerCollapseDiv.id = answerId;
+                answerCollapseDiv.className = 'accordion-collapse collapse revision-answer';
+                answerCollapseDiv.setAttribute('aria-labelledby', `heading-${questionId}`);
+                answerCollapseDiv.setAttribute('data-bs-parent', '#settlementRevisionAccordion'); 
+
+                const answerBody = document.createElement('div');
+                answerBody.className = 'accordion-body';
+                answerBody.innerHTML = item.a ? item.a : '<p>Answer not available</p>';
+                
+                answerCollapseDiv.appendChild(answerBody);
+                accordionItem.appendChild(header);
+                accordionItem.appendChild(answerCollapseDiv);
+                accordion.appendChild(accordionItem);
+            });
+            container.appendChild(accordion);
+            console.log("Revision questions rendered.");
+        }
+
+        // --- 5. Event Listeners ---
+        // Moved listener attachments into DOMContentLoaded to ensure elements exist
+        
+        // --- Initialization ---
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("DOMContentLoaded event fired.");
+
+            if (!sidebarNavEl) console.error("sidebarNavEl NOT FOUND in DOMContentLoaded!"); else console.log("sidebarNavEl found.");
+            if (!contentAreaEl) console.error("contentAreaEl NOT FOUND in DOMContentLoaded!"); else console.log("contentAreaEl found.");
+            if (!breadcrumbTrailEl) console.error("breadcrumbTrailEl NOT FOUND in DOMContentLoaded!"); else console.log("breadcrumbTrailEl found.");
+            if (!prevButtonEl) console.error("prevButtonEl NOT FOUND in DOMContentLoaded!"); else console.log("prevButtonEl found.");
+            if (!nextButtonEl) console.error("nextButtonEl NOT FOUND in DOMContentLoaded!"); else console.log("nextButtonEl found.");
+            if (!menuToggleEl) console.error("menuToggleEl NOT FOUND in DOMContentLoaded!"); else console.log("menuToggleEl found.");
+            if (!wrapperEl) console.error("wrapperEl NOT FOUND in DOMContentLoaded!"); else console.log("wrapperEl found.");
+            if (!mainContentScrollAreaEl) console.error("mainContentScrollAreaEl NOT FOUND in DOMContentLoaded!"); else console.log("mainContentScrollAreaEl found.");
+            if (!currentYearEl) console.error("currentYearEl NOT FOUND in DOMContentLoaded!"); else console.log("currentYearEl found.");
+
+
+            if (currentYearEl) {
+                currentYearEl.textContent = new Date().getFullYear();
+                console.log("Current year set in footer.");
+            } else {
+                console.warn("currentYear element not found for footer.");
+            }
+
+            if (menuToggleEl && wrapperEl) {
+                menuToggleEl.addEventListener('click', () => {
+                    console.log("Menu toggle clicked.");
+                    wrapperEl.classList.toggle('toggled');
+                });
+                console.log("Menu toggle event listener attached.");
+            } else {
+                console.error("Could not attach menu toggle listener: element(s) missing.");
+            }
+
+            if (prevButtonEl) {
+                prevButtonEl.addEventListener('click', () => {
+                    console.log("Previous button clicked.");
+                    if (currentGuideDataIndex > 0) loadContentByIndex(currentGuideDataIndex - 1, 'button');
+                });
+                console.log("Previous button event listener attached.");
+            } else {
+                 console.error("Could not attach previous button listener: element missing.");
+            }
+
+            if (nextButtonEl) {
+                nextButtonEl.addEventListener('click', () => {
+                    console.log("Next button clicked.");
+                    if (currentGuideDataIndex < guideData.length - 1) loadContentByIndex(currentGuideDataIndex + 1, 'button');
+                });
+                console.log("Next button event listener attached.");
+            } else {
+                console.error("Could not attach next button listener: element missing.");
+            }
+
+            if (mainContentScrollAreaEl && contentAreaEl) {
+                let scrollTimeout;
+                mainContentScrollAreaEl.addEventListener('scroll', () => {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(() => {
+                        let mostProminentItemId = null;
+                        let minDistanceToViewportTop = Infinity;
+                        const viewportTopEdge = mainContentScrollAreaEl.getBoundingClientRect().top + (window.innerHeight * 0.2); 
+
+                        guideData.forEach((item) => {
+                            const element = contentAreaEl.querySelector(`#${item.id}`); 
+                            if (element) {
+                                const rect = element.getBoundingClientRect();
+                                if (rect.top < viewportTopEdge + 100 && rect.bottom > viewportTopEdge - 100) { 
+                                    const distance = Math.abs(rect.top - viewportTopEdge);
+                                    if (distance < minDistanceToViewportTop) {
+                                        minDistanceToViewportTop = distance;
+                                        mostProminentItemId = item.id;
+                                    }
+                                }
+                            }
+                        });
+                        
+                        if (!mostProminentItemId) { 
+                            if (mainContentScrollAreaEl.scrollTop <= 50 && guideData.length > 0) {
+                                mostProminentItemId = guideData[0].id;
+                            } else if ((mainContentScrollAreaEl.scrollTop + mainContentScrollAreaEl.clientHeight) >= mainContentScrollAreaEl.scrollHeight - 50 && guideData.length > 0) {
+                                mostProminentItemId = guideData[guideData.length - 1].id;
+                            }
+                        }
+
+                        if (mostProminentItemId && mostProminentItemId !== (guideData[currentGuideDataIndex] ? guideData[currentGuideDataIndex].id : null)) {
+                            const newIndex = guideData.findIndex(item => item.id === mostProminentItemId);
+                            if (newIndex !== -1 && newIndex !== currentGuideDataIndex) {
+                                console.log(`Scroll spy: updating to index ${newIndex}`);
+                                currentGuideDataIndex = newIndex; 
+                                sessionStorage.setItem('currentSettlementSectionIndex', currentGuideDataIndex); 
+                                updateActiveSidebarLink();
+                                const currentSectionData = guideData[currentGuideDataIndex];
+                                updateBreadcrumbsUI(currentSectionData);
+                                updateNavigationButtons();
+                                window.history.replaceState(null, '', `#${currentSectionData.id}`); 
+                            }
+                        }
+                    }, 150); 
+                });
+                console.log("Scroll-spy event listener attached.");
+            } else {
+                 console.error("Could not attach scroll-spy listener: mainContentScrollAreaEl or contentAreaEl missing.");
+            }
+
+            console.log("Attempting to populate sidebar...");
+            populateSidebar(); 
+            console.log("Sidebar population attempt finished.");
+            
+            const savedIndexStr = sessionStorage.getItem('currentSettlementSectionIndex'); 
+            let initialIndex = 0; 
+            console.log(`Retrieved savedIndexStr from session storage: ${savedIndexStr}`);
+
+
+            const hash = window.location.hash.substring(1); 
+            console.log(`Current URL hash: #${hash}`);
+            if (hash) {
+                const itemFromHash = guideData.find(item => item.id === hash);
+                if (itemFromHash) {
+                    initialIndex = guideData.indexOf(itemFromHash);
+                    console.log(`Found item from hash. Initial index set to: ${initialIndex}`);
+                } else {
+                    console.log(`No item found for hash: #${hash}.`);
+                }
+            } else if (savedIndexStr !== null) { 
+                const savedIdx = parseInt(savedIndexStr, 10);
+                if (!isNaN(savedIdx) && savedIdx >= 0 && savedIdx < guideData.length) {
+                    initialIndex = savedIdx;
+                    console.log(`Using saved index from session storage. Initial index set to: ${initialIndex}`);
+                } else {
+                     console.log(`Invalid saved index: ${savedIdx}. Using default initial index 0.`);
+                }
+            } else {
+                console.log("No hash and no saved index. Using default initial index 0.");
+            }
+            
+            if (guideData && guideData.length > 0) {
+                 console.log(`Initial index before load: ${initialIndex}`);
+                 setTimeout(() => { 
+                    console.log("Executing setTimeout for initial content load.");
+                    loadContentByIndex(initialIndex, 'initialLoad');
+                    if (hash && initialIndex > 0) { 
+                        const targetElement = document.getElementById(hash);
+                        if (targetElement && mainContentScrollAreaEl) {
+                           const scrollContainerTop = mainContentScrollAreaEl.getBoundingClientRect().top;
+                           const targetElementTop = targetElement.getBoundingClientRect().top;
+                           const offset = targetElementTop - scrollContainerTop - (document.querySelector('.navbar')?.offsetHeight || 60); // Adjust for sticky navbar
+                           mainContentScrollAreaEl.scrollTop += offset;
+                           console.log(`Scrolled to hash element #${hash}`);
+                        } else {
+                            console.warn(`Target element for hash #${hash} not found for scrolling.`);
+                        }
+                    }
+                 }, 50); 
+            } else {
+                console.error("guideData is empty. Cannot load initial content in DOMContentLoaded.");
+                if(contentAreaEl) contentAreaEl.innerHTML = "<p>Error: No content available to display because guide data is empty.</p>";
+            }
+            console.log("DOMContentLoaded processing finished.");
+        });
+    } catch (e) {
+        console.error("A critical error occurred in the Settlement Guide App script:", e);
+        const errorDisplayArea = document.getElementById('content-area') || document.body;
+        errorDisplayArea.innerHTML = `<div class="alert alert-danger" role="alert">
+                                        <h4 class="alert-heading">Application Error!</h4>
+                                        <p>A critical error occurred while loading the application. This is often due to a syntax issue in the embedded content data.</p>
+                                        <hr>
+                                        <p class="mb-0">Please check the browser's Developer Console (usually F12) for specific error messages and line numbers. The error is likely an unescaped backtick (\`) within an HTML string in the 'guideData' or 'settlementRevisionQuestionsData' arrays, or a missing comma.</p>
+                                        <p><strong>Error details:</strong> ${e.message}</p>
+                                      </div>`;
+    }
+    </script>
+</body>
+</html>
